@@ -1,0 +1,44 @@
+Parfait ✅
+Voici un **prompt complet, clair et optimisé** que tu peux copier-coller directement dans Replit (dans ton chat Replit AI ou Replit Ghostwriter) pour qu’il corrige l’erreur :
+
+---
+
+### 💬 Prompt à envoyer dans Replit :
+
+> Mon projet fullstack JS (frontend hébergé sur Vercel et backend sur Render) affiche désormais un écran blanc après mon dernier commit.
+> En inspectant la console du navigateur, j’ai l’erreur suivante :
+>
+> ```
+> Uncaught ReferenceError: can't access lexical declaration 'Mc' before initialization
+>     at https://altusfinancegroup.com/assets/index-Dntujoi9.js:542
+> ```
+>
+> Cette erreur indique qu’une variable, fonction ou constante est utilisée avant d’être définie, probablement à cause d’un **import circulaire**, d’un **ordre d’import incorrect**, ou d’un **problème de build i18n**.
+>
+> Voici ce que je veux que tu fasses :
+>
+> 1. Analyse tout le projet pour détecter :
+>
+>    * Les imports circulaires (fichiers qui s’importent mutuellement)
+>    * Les variables ou fonctions déclarées après leur utilisation
+>    * Les problèmes de dépendance entre `i18n`, `App`, ou `index.jsx`
+> 2. Corrige proprement le code pour supprimer ces dépendances circulaires ou ces déclarations dans le mauvais ordre.
+> 3. Assure-toi que le projet puisse **builder correctement sur Vercel** et que le frontend démarre sans erreur JS.
+> 4. Si l’erreur vient de la configuration de `i18n`, corrige-la pour que les fichiers de traduction soient chargés normalement et que le site reste multilingue.
+> 5. Fournis-moi un résumé clair des changements appliqués (fichiers modifiés + cause trouvée).
+
+---
+
+💡 **Astuce :**
+Si Replit a du mal à trouver l’origine, ajoute ensuite cette commande dans le shell Replit :
+
+```bash
+npx madge --circular src
+```
+
+Cela lui listera tous les imports circulaires dans ton code (il pourra alors les corriger plus vite).
+
+---
+
+Souhaites-tu que je t’ajoute une **deuxième version du prompt**, plus directe et “exécutable” (qui inclut les commandes shell exactes à lancer dans Replit) ?
+Ça peut l’aider à résoudre automatiquement le problème sans que tu aies à intervenir.

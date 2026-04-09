@@ -1,0 +1,46 @@
+PROMPT REPLIT – Restaurer la version dev pour qu’elle soit identique à la version production
+
+🎯 Objectif :
+Rétablir la version development pour qu’elle reproduise exactement l’apparence, les textes, les images et les composants de la version production du site altusfinancesgroup.com.
+Aucune amélioration, interprétation ou modification non demandée.
+Seulement restaurer à l’identique.
+
+🔧 PROMPT À COLLER DANS REPLIT
+Tu es un assistant de développement chargé de synchroniser ma version de développement avec la version en production du site altusfinancesgroup.com.
+
+OBJECTIF :
+Reproduire à l’identique dans la version DEV l’apparence complète, la structure, les textes, les images, les boutons, les couleurs, les espacements et la mise en page visibles sur la version PRODUCTION.
+
+RÈGLES STRICTES :
+1. Ne pas improviser, modifier ou traduire du texte.
+2. Ne pas changer le design, les couleurs ou les proportions.
+3. Ne pas remplacer d’images par d’autres images.
+4. Chaque section doit correspondre exactement au rendu visible sur la version production.
+5. Tous les boutons doivent reprendre :
+   - le texte exact
+   - le style exact
+   - la couleur exacte
+   - les marges / paddings exacts
+6. Le texte en production doit être reproduit mot pour mot.
+7. Les images de la section HERO doivent être rétablies à l’identique à celles utilisées en production.
+8. Les labels, icônes et éléments de la topbar doivent correspondre exactement à la production.
+9. Le menu doit rétablir les libellés, leur ordre, leurs espacements, et les langues affichées comme en production.
+10. Tous les styles CSS doivent être alignés sur la version production, pas sur la dev.
+
+CE QUE TU DOIS FAIRE :
+- Comparer la version DEV avec la capture d’écran de la version PRODUCTION.
+- Pour chaque différence :
+    • restaurer le bon texte  
+    • restaurer la bonne image  
+    • restaurer les bonnes classes / styles Tailwind  
+    • restaurer la bonne structure du composant  
+    • restaurer les bons boutons (design + texte)  
+- Ne supprimer aucune fonctionnalité existante : seulement synchroniser le design.
+
+NE FAIS AUCUNE SUGGESTION.  
+NE FAIS AUCUNE MODIFICATION CRÉATIVE.  
+NE CHANGE AUCUNE LANGUE.  
+CONTENTE-TOI DE RENDRE LA VERSION DEV IDENTIQUE À LA VERSION PRODUCTION.
+
+À LA FIN :
+Donne-moi la liste exacte des fichiers modifiés et les changements apportés pour vérification.

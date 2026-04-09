@@ -1,0 +1,298 @@
+/* Circular Reveal Menu - Mobile Only */
+
+.circular-menu-trigger {
+  position: relative;
+  z-index: 99999;
+}
+
+.circular-menu-container {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circular-menu-content {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #0d0d1a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 99999;
+  clip-path: circle(0px at var(--menu-origin-x, 50%) var(--menu-origin-y, 50%));
+  animation: circleRevealOpen 500ms ease-out forwards;
+}
+
+.circular-menu-content.closing {
+  animation: circleRevealClose 400ms ease-in forwards;
+}
+
+@keyframes circleRevealOpen {
+  0% {
+    clip-path: circle(0px at var(--menu-origin-x, 50%) var(--menu-origin-y, 50%));
+  }
+  100% {
+    /* Limit to 70% of viewport to avoid full screen coverage */
+    clip-path: circle(65vh at var(--menu-origin-x, 50%) var(--menu-origin-y, 50%));
+  }
+}
+
+@keyframes circleRevealClose {
+  0% {
+    clip-path: circle(65vh at var(--menu-origin-x, 50%) var(--menu-origin-y, 50%));
+  }
+  100% {
+    clip-path: circle(0px at var(--menu-origin-x, 50%) var(--menu-origin-y, 50%));
+  }
+}
+
+/* Central menu wrapper - top level container */
+.circular-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  height: 65vh;
+}
+
+/* Inner wrapper with scroll - contains all scrollable content */
+.circular-menu-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 450px;
+  padding: 0 1.5rem;
+  max-height: calc(65vh - 5rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Custom scrollbar styling for dark theme */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 58, 237, 0.4) transparent;
+}
+
+.circular-menu-inner-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.circular-menu-inner-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.circular-menu-inner-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.4);
+  border-radius: 3px;
+}
+
+.circular-menu-inner-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.6);
+}
+
+.circular-menu-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.circular-menu-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Navigation section */
+.circular-menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.circular-menu-link {
+  padding: 0.875rem 1.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  transition: all 300ms ease-out;
+  cursor: pointer;
+  text-align: center;
+}
+
+.circular-menu-link:hover {
+  background: rgba(124, 58, 237, 0.15);
+  color: #a78bfa;
+  transform: translateX(0.25rem);
+}
+
+/* Separator divider */
+.circular-menu-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(124, 58, 237, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Languages section */
+.circular-menu-languages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.circular-menu-languages-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  text-align: center;
+}
+
+.circular-menu-languages-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 360px;
+}
+
+.circular-menu-lang-button {
+  padding: 0.625rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  white-space: nowrap;
+}
+
+.circular-menu-lang-button:hover {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.circular-menu-lang-button.active {
+  background: rgba(124, 58, 237, 0.4);
+  border-color: rgba(124, 58, 237, 0.6);
+  color: #c4b5fd;
+}
+
+/* Auth section */
+.circular-menu-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.circular-menu-cta-button {
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  text-decoration: none;
+  text-align: center;
+}
+
+.circular-menu-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.circular-menu-cta-button.outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.circular-menu-cta-button.outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .circular-menu-wrapper {
+    max-width: 100%;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .circular-menu-inner-wrapper {
+    max-width: 100%;
+    padding: 0 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .circular-menu-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .circular-menu-languages-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 280px;
+    gap: 0.5rem;
+  }
+
+  .circular-menu-lang-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .circular-menu-cta-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Desktop: hide circular menu completely */
+@media (min-width: 1024px) {
+  .circular-menu-trigger {
+    display: none !important;
+  }
+
+  .circular-menu-container {
+    display: none !important;
+  }
+}

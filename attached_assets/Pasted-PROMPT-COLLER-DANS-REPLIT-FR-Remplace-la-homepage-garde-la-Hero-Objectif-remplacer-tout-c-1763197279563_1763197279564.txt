@@ -1,0 +1,337 @@
+PROMPT À COLLER DANS REPLIT (FR) — Remplace la homepage (garde la Hero)
+
+Objectif : remplacer tout ce qui suit la Hero sur la page d’accueil par un nouveau design premium Fintech 2025.
+Contraintes strictes : ne toucher que à la partie frontend (UI). Ne pas modifier : backend, endpoints, logique métier, routes, variables d’environnement. Le front continuera d’être déployé sur Vercel, le backend sur Render.
+
+Tâches à créer :
+
+client/src/pages/HomepagePremium.tsx — page d’accueil complète qui importe la Hero existante puis insère les nouvelles sections.
+
+client/src/components/ui/InfoBarPremium.tsx — bandeau d’info animé (fade/carrousel).
+
+client/src/components/ui/ExpertiseSection.tsx — “Nos domaines d’expertise” (3 colonnes).
+
+client/src/components/ui/HowItWorks.tsx — 4 étapes (animations).
+
+client/src/components/ui/Testimonials.tsx — slider client (3 cartes).
+
+client/src/components/ui/SecuritySection.tsx — bloc sécurité (AES-256, KYC/AML, MFA).
+
+client/src/components/ui/FinalCTA.tsx — CTA final premium.
+
+Mettre à jour tailwind.config.js (couleurs/palette) et ajouter client/src/styles/theme.css.
+
+Dépendances : framer-motion, swiper (si vous voulez slider), lucide-react pour icônes. Installer si absent.
+
+Important : la page doit être responsive et ne doit pas répliquer la page “Nos Prêts”.
+
+Livrable : fichiers React/Tailwind listés ci-dessous, guides d’intégration, checklist QA.
+
+N’ajoute rien d’autre.
+
+🔧 Dépendances (installer dans le projet)
+npm install framer-motion lucide-react swiper
+# ou
+yarn add framer-motion lucide-react swiper
+
+🗂 Fichiers à créer / code (à copier-coller)
+
+Remarque : j’indique des composants en TypeScript/JSX générique — adapte l’extension (.tsx/.jsx) selon ton projet.
+
+1) client/src/pages/HomepagePremium.tsx
+
+Remplace (après la Hero existante) le contenu par ces composants.
+
+import React from "react";
+import HeroExisting from "../components/HeroExisting"; // GARDER la Hero existante (importer la tienne)
+import InfoBarPremium from "../components/ui/InfoBarPremium";
+import ExpertiseSection from "../components/ui/ExpertiseSection";
+import HowItWorks from "../components/ui/HowItWorks";
+import Testimonials from "../components/ui/Testimonials";
+import SecuritySection from "../components/ui/SecuritySection";
+import FinalCTA from "../components/ui/FinalCTA";
+
+export default function HomepagePremium() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero : NE PAS TOUCHER (utiliser la Hero existante) */}
+      <HeroExisting />
+
+      {/* Toutes les nouvelles sections ci-dessous */}
+      <InfoBarPremium />
+
+      <main className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 -mt-6">
+        <ExpertiseSection />
+        <HowItWorks />
+        <Testimonials />
+        <SecuritySection />
+        <FinalCTA />
+      </main>
+    </div>
+  );
+}
+
+2) client/src/components/ui/InfoBarPremium.tsx
+
+Bandeau d’information/carrousel (fade).
+
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const MESSAGES = [
+  "🔒 Authentification renforcée – Vos données sont protégées.",
+  "⚡ Demandes traitées en 24h ouvrées (sous conditions).",
+  "📄 Contrat numérique : signature sécurisée et traçable.",
+  "🤝 Conseillers dédiés — accompagnement personnalisé."
+];
+
+export default function InfoBarPremium() {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx(i => (i + 1) % MESSAGES.length), 3800);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <div className="w-full bg-gradient-to-r from-[#5b21b6] via-[#6366f1] to-[#3b82f6] text-white">
+      <div className="max-w-[1200px] mx-auto px-4 py-2 text-center text-sm">
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.6 }}
+        >
+          {MESSAGES[idx]}
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+3) client/src/components/ui/ExpertiseSection.tsx
+
+3 colonnes, icônes, texte premium.
+
+import React from "react";
+import { Briefcase, Banknote, PieChart } from "lucide-react";
+
+const cards = [
+  { icon: <Briefcase />, title: "Financement professionnel", text: "Solutions sur mesure pour entreprises et TPE." },
+  { icon: <Banknote />, title: "Financement personnel", text: "Prêts optimisés pour projets privés." },
+  { icon: <PieChart />, title: "Consolidation & trésorerie", text: "Rééquilibrage financier et affacturage." },
+];
+
+export default function ExpertiseSection() {
+  return (
+    <section className="pt-12">
+      <div className="text-center max-w-3xl mx-auto">
+        <h2 className="text-3xl font-semibold text-gray-900">Nos domaines d’expertise</h2>
+        <p className="mt-3 text-gray-600">Des solutions adaptées à chaque besoin — professionnel ou personnel.</p>
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {cards.map((c, i) => (
+          <div key={i} className="p-6 rounded-2xl bg-white shadow-soft-2025 border border-gray-100">
+            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[#e9d5ff] to-[#dbeafe] flex items-center justify-center text-indigo-700">
+              {c.icon}
+            </div>
+            <h3 className="mt-4 text-xl font-semibold text-gray-900">{c.title}</h3>
+            <p className="mt-2 text-gray-600">{c.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+4) client/src/components/ui/HowItWorks.tsx
+
+4 étapes animées.
+
+import React from "react";
+import { motion } from "framer-motion";
+import { ClipboardList, CheckCircle, Pencil, Sparkles } from "lucide-react";
+
+const steps = [
+  { icon: <Pencil />, title: "1 — Soumission", desc: "Remplissez votre dossier en quelques minutes." },
+  { icon: <ClipboardList />, title: "2 — Analyse", desc: "Vérification KYC & évaluation rapide." },
+  { icon: <CheckCircle />, title: "3 — Signature", desc: "Signature électronique sécurisée." },
+  { icon: <Sparkles />, title: "4 — Déblocage", desc: "Mise à disposition sous 24h ouvrées." }
+];
+
+export default function HowItWorks() {
+  return (
+    <section className="pt-12">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-semibold text-gray-900">Comment ça marche</h2>
+        <p className="mt-2 text-gray-600">Un processus simple, transparent et sécurisé.</p>
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-4 gap-6">
+        {steps.map((s, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.12, duration: 0.5 }}
+            className="p-6 text-center rounded-2xl bg-white shadow-soft-2025 border border-gray-100"
+          >
+            <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+              {s.icon}
+            </div>
+            <h3 className="mt-4 font-semibold text-gray-900">{s.title}</h3>
+            <p className="mt-2 text-gray-600">{s.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+5) client/src/components/ui/Testimonials.tsx
+
+Slider Swiper pour 3 avis.
+
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
+const reviews = [
+  { text: "Service rapide et pro. Désormais je conseille Altus.", author: "M. Dupont" },
+  { text: "Excellent accompagnement pour mon entreprise.", author: "S. Martin" },
+  { text: "Contrat signé en ligne, fonds disponibles rapidement.", author: "A. Renaud" }
+];
+
+export default function Testimonials() {
+  return (
+    <section className="pt-12">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-semibold text-gray-900">Ils nous font confiance</h2>
+        <p className="mt-2 text-gray-600">Avis vérifiés de clients accompagnés par Altus.</p>
+      </div>
+
+      <div className="mt-8 max-w-2xl mx-auto">
+        <Swiper spaceBetween={20} slidesPerView={1} loop>
+          {reviews.map((r, i) => (
+            <SwiperSlide key={i}>
+              <div className="p-6 rounded-2xl bg-white shadow-soft-2025 border border-gray-100">
+                <p className="text-gray-800">“{r.text}”</p>
+                <p className="mt-4 font-semibold text-indigo-600">— {r.author}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+}
+
+6) client/src/components/ui/SecuritySection.tsx
+
+Bloc sécurité bancaire.
+
+import React from "react";
+import { Lock, ShieldCheck } from "lucide-react";
+
+export default function SecuritySection() {
+  return (
+    <section className="pt-12 bg-gradient-to-r from-[#0f172a]/80 via-[#111827]/80 to-[#071043]/80 text-white rounded-2xl p-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-start gap-6">
+          <div className="p-4 rounded-lg bg-white/10">
+            <Lock className="h-8 w-8 text-white"/>
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold">Votre sécurité, notre priorité absolue</h2>
+            <p className="mt-2 text-gray-200">Chiffrement AES-256, hébergement UE, conformité KYC/AML, authentification multi-facteurs et audits réguliers.</p>
+
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+              <div className="bg-white/6 p-4 rounded-lg">
+                <ShieldCheck className="h-5 w-5 text-white/90"/>
+                <p className="mt-2">Chiffrement AES-256</p>
+              </div>
+              <div className="bg-white/6 p-4 rounded-lg">
+                <p className="mt-6">Hébergement sécurisé UE</p>
+              </div>
+              <div className="bg-white/6 p-4 rounded-lg">
+                <p className="mt-6">KYC & AML stricts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+7) client/src/components/ui/FinalCTA.tsx
+
+CTA de conversion.
+
+import React from "react";
+
+export default function FinalCTA() {
+  return (
+    <section className="pt-12 pb-20">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-white to-white border border-gray-100 shadow-soft-2025">
+          <h2 className="text-3xl font-semibold text-gray-900">Prêt à concrétiser vos projets ?</h2>
+          <p className="mt-2 text-gray-600">Un conseiller dédié vous accompagne de A à Z. Ouvrez votre dossier dès maintenant.</p>
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <a href="/loan-request" className="px-6 py-3 rounded-lg bg-[#6366f1] text-white font-semibold shadow-md">Ouvrir mon dossier</a>
+            <a href="/contact" className="px-6 py-3 rounded-lg border border-gray-200 text-gray-700">Parler à un conseiller</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+🧾 CSS / Tailwind : tailwind.config.js (ajout essentiel)
+
+Ajoute ces extensions si tu utilises Tailwind :
+
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        altus: {
+          indigo: "#6366f1",
+        }
+      },
+      boxShadow: {
+        'soft-2025': '0 8px 40px rgba(11,15,30,0.06)'
+      }
+    }
+  }
+}
+
+
+Et importe client/src/styles/theme.css (variables de logo/typographie si besoin).
+
+✅ Checklist avant déploiement (indispensable)
+
+Vérifier que la Hero existante reste inchangée (import correcte).
+
+Installer dépendances (framer-motion, swiper, lucide-react).
+
+Lancer localement (npm run dev) → vérifier desktop/mobile.
+
+Tester les flux critiques : login, download contrat, upload, envoi mail, transfert. Les composants UI ne doivent jamais remplacer handlers.
+
+Commit sur branche theme/homepage/premium → PR → tester sur staging (Vercel preview).
+
+QA cross-browser (Chrome, Firefox, Safari).
+
+Merge en production si OK.
+
+🔒 Aucune modification backend — déploiement Vercel & Render
+
+Frontend sur Vercel : même NEXT_PUBLIC_API_URL (inchangé) → continuera d’appeler Render.
+
+Backend sur Render : inchangé.
+
+Aucun danger pour la communication frontend↔backend si tu suis la checklist.

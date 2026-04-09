@@ -1,0 +1,55 @@
+2026-01-12T09:38:55.00279461Z         'Host: api.sendpulse.com\r\n' +
+2026-01-12T09:38:55.00279704Z         'Connection: keep-alive\r\n' +
+2026-01-12T09:38:55.0027991Z         '\r\n',
+2026-01-12T09:38:55.00280121Z       _keepAliveTimeout: 0,
+2026-01-12T09:38:55.00280322Z       _onPendingData: [Function: nop],
+2026-01-12T09:38:55.0028053Z       agent: [Agent],
+2026-01-12T09:38:55.00280741Z       socketPath: undefined,
+2026-01-12T09:38:55.00280949Z       method: 'POST',
+2026-01-12T09:38:55.002819231Z       maxHeaderSize: undefined,
+2026-01-12T09:38:55.002821541Z       insecureHTTPParser: undefined,
+2026-01-12T09:38:55.002823661Z       joinDuplicateHeaders: undefined,
+2026-01-12T09:38:55.002825771Z       path: '/smtp/emails',
+2026-01-12T09:38:55.002827891Z       _ended: true,
+2026-01-12T09:38:55.002829972Z       res: [IncomingMessage],
+2026-01-12T09:38:55.002832012Z       aborted: false,
+2026-01-12T09:38:55.002834102Z       timeoutCb: null,
+2026-01-12T09:38:55.002836132Z       upgradeOrConnect: false,
+2026-01-12T09:38:55.002838242Z       parser: null,
+2026-01-12T09:38:55.002840242Z       maxHeadersCount: null,
+2026-01-12T09:38:55.002842282Z       reusedSocket: true,
+2026-01-12T09:38:55.002844332Z       host: 'api.sendpulse.com',
+2026-01-12T09:38:55.002846392Z       protocol: 'https:',
+2026-01-12T09:38:55.002848512Z       _redirectable: [Writable],
+2026-01-12T09:38:55.002850723Z       [Symbol(shapeMode)]: false,
+2026-01-12T09:38:55.002852863Z       [Symbol(kCapture)]: false,
+2026-01-12T09:38:55.002855013Z       [Symbol(kBytesWritten)]: 0,
+2026-01-12T09:38:55.002857063Z       [Symbol(kNeedDrain)]: true,
+2026-01-12T09:38:55.002859133Z       [Symbol(corked)]: 0,
+2026-01-12T09:38:55.002861343Z       [Symbol(kChunkedBuffer)]: [],
+2026-01-12T09:38:55.002863513Z       [Symbol(kChunkedLength)]: 0,
+2026-01-12T09:38:55.002865704Z       [Symbol(kSocket)]: [TLSSocket],
+2026-01-12T09:38:55.002867764Z       [Symbol(kOutHeaders)]: [Object: null prototype],
+2026-01-12T09:38:55.002869954Z       [Symbol(errored)]: null,
+2026-01-12T09:38:55.002872124Z       [Symbol(kHighWaterMark)]: 65536,
+2026-01-12T09:38:55.002875944Z       [Symbol(kRejectNonStandardBodyWrites)]: false,
+2026-01-12T09:38:55.002878264Z       [Symbol(kUniqueHeaders)]: null
+2026-01-12T09:38:55.002880414Z     },
+2026-01-12T09:38:55.002882964Z     data: { message: 'Message size limit exceeded', error_code: 422 }
+2026-01-12T09:38:55.002886325Z   },
+2026-01-12T09:38:55.002888625Z   status: 422
+2026-01-12T09:38:55.002890845Z }
+2026-01-12T09:38:55.286492652Z 9:38:55 AM [express] POST /api/loans 201 in 2466ms
+2026-01-12T09:38:55.909795952Z 9:38:55 AM [express] GET /api/loans 200 in 282ms
+2026-01-12T09:38:56.276594776Z 9:38:56 AM [express] GET /api/dashboard 304 in 650ms
+2026-01-12T09:39:00.114200298Z 9:39:00 AM [express] GET /api/notifications 304 in 278ms
+2026-01-12T09:39:00.156213698Z 9:39:00 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T09:39:00.818509921Z 9:39:00 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T09:39:02.252369285Z 9:39:02 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T09:39:06.50850124Z 9:39:06 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T09:39:08.228842139Z 9:39:08 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T09:39:12.304357609Z 9:39:12 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T09:39:14.219544044Z 9:39:14 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T09:39:17.983415844Z 9:39:17 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T09:39:20.300971682Z 9:39:20 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T09:39:23.67415493Z 9:39:23 AM [express] GET /api/user/stats 304 in 376ms

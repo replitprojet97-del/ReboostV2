@@ -1,0 +1,70 @@
+Sélecteur de langue : Choix parmi 7 langues disponibles : Français, Anglais, Espagnol, Portugais, Italien, Allemand, Néerlandais.
+
+Barre de notifications : Annonce des nouvelles fonctionnalités ou des mises à jour importantes.
+
+2. Bannière principale (Hero Section)
+
+Titre d'accroche : "Obtenez un prêt en quelques étapes simples."
+
+Sous-titre : "Gérez vos fonds, calculez vos remboursements, et transférez directement vers votre compte bancaire en toute sécurité."
+
+Call to Action (CTA) : Bouton clair "Commencez maintenant" redirigeant vers l'inscription ou la demande de prêt.
+
+Image de fond : Illustration moderne liée à la finance numérique (tableaux de bord financiers, graphiques, personnes utilisant des appareils).
+
+3. Section d'explication des services (Features Section)
+
+Titre : "Comment ça marche ?"
+
+Sous-sections :
+
+Demander un prêt : Processus simple pour faire une demande, informations nécessaires et documentation.
+
+Gérer son compte virtuel : Suivi des fonds disponibles, historique des transactions, et gestion des prêts.
+
+Transfert vers un compte externe : Explication du processus de validation par code de sécurité (envoyé par email/SMS), avec des étapes de vérification.
+
+Tableau d'amortissement interactif : Un graphique dynamique montrant l'évolution des mensualités, du solde du prêt et des intérêts payés.
+
+4. Tableau d'amortissement interactif
+
+Graphique dynamique : Afficher un tableau et un graphique détaillant le remboursement du prêt (principal et intérêts).
+
+Personnalisation : Permettre à l'utilisateur de modifier le montant et la durée du prêt pour voir instantanément l'impact sur les remboursements.
+
+5. Espace utilisateur (Dashboard)
+
+Vue d'ensemble : Affichage du solde actuel, des prêts en cours, des paiements effectués, et de la capacité à emprunter de nouveaux fonds.
+
+Section des frais : Affichage des frais jugés nécessaires par le système, avec motif et montant. Le système doit afficher les frais associés à chaque étape (demande de prêt, transferts, etc.).
+
+Transferts en attente : Suivi détaillé des demandes de transfert, avec un état de validation et des étapes de progression visibles.
+
+Graphiques dynamiques : Visualisation des fonds disponibles et des remboursements à venir (graphiques interactifs).
+
+Actions rapides : Boutons pour initier un nouveau prêt, transférer des fonds ou consulter l’historique des transactions.
+
+6. Processus de validation de transfert (Step-by-Step)
+
+Étape 1 : L'utilisateur sélectionne le montant à transférer et le compte externe.
+
+Étape 2 : Envoi d’un code de validation par email ou SMS.
+
+Étape 3 : Vérification de l'utilisateur via code de validation.
+
+Étape 4 : Progression du transfert vers le compte externe (indication de progression visuelle réaliste avec pourcentage d’avancement).
+
+Pause de la progression selon le nombre de codes nécessaires, définis par l'administrateur.
+
+L'administrateur peut définir le nombre de codes requis pour chaque transfert et ajuster les montants des frais dans la console admin avec envoi de message direct vers le Dashboard de l'utilisateur
+
+7. Inscription et validation de compte
+
+Formulaire d'inscription : Collecte des informations personnelles et bancaires nécessaires à la création du compte.
+
+Vérification par email : Envoi d’un e-mail de confirmation pour activer le compte utilisateur.
+
+KYC (Know Your Customer) : Demande de pièces justificatives comme une pièce d'identité et un justificatif de domicile pour la validation du compte.
+
+Notification d'activation du compte : Notification envoyée à l’utilisateur une fois son compte validé.
+

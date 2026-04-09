@@ -1,0 +1,107 @@
+2025-11-20T20:30:30.744060826Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:831:27)
+2025-11-20T20:30:30.744062836Z     at async file:///opt/render/project/src/dist/index.js:7242:20 {
+2025-11-20T20:30:30.744064826Z   length: 114,
+2025-11-20T20:30:30.744067636Z   severity: 'ERROR',
+2025-11-20T20:30:30.744072477Z   code: '42703',
+2025-11-20T20:30:30.744074666Z   detail: undefined,
+2025-11-20T20:30:30.744076626Z   hint: undefined,
+2025-11-20T20:30:30.744078586Z   position: '38',
+2025-11-20T20:30:30.744081077Z   internalPosition: undefined,
+2025-11-20T20:30:30.744083157Z   internalQuery: undefined,
+2025-11-20T20:30:30.744085107Z   where: undefined,
+2025-11-20T20:30:30.744087127Z   schema: undefined,
+2025-11-20T20:30:30.744089107Z   table: undefined,
+2025-11-20T20:30:30.744091017Z   column: undefined,
+2025-11-20T20:30:30.744093567Z   dataType: undefined,
+2025-11-20T20:30:30.744095667Z   constraint: undefined,
+2025-11-20T20:30:30.744097627Z   file: 'parse_relation.c',
+2025-11-20T20:30:30.744099587Z   line: '3716',
+2025-11-20T20:30:30.744101667Z   routine: 'errorMissingColumn'
+2025-11-20T20:30:30.744103697Z }
+2025-11-20T20:30:30.773628284Z 8:30:30 PM [express] GET /api/dashboard 500 in 2107ms
+2025-11-20T20:31:00.763955868Z 8:31:00 PM [express] GET /api/notifications 304 in 412ms
+2025-11-20T20:31:01.087549979Z 8:31:01 PM [express] GET /api/charts/upcoming-repayments 500 in 62ms
+2025-11-20T20:31:01.123589932Z Dashboard error: error: column "loan_reference" does not exist
+2025-11-20T20:31:01.123611523Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T20:31:01.123618943Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T20:31:01.123623343Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T20:31:01.123627273Z     at async DatabaseStorage.getUserLoans (file:///opt/render/project/src/dist/index.js:765:16)
+2025-11-20T20:31:01.123631203Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:831:27)
+2025-11-20T20:31:01.123635313Z     at async file:///opt/render/project/src/dist/index.js:7242:20 {
+2025-11-20T20:31:01.123639124Z   length: 114,
+2025-11-20T20:31:01.123643824Z   severity: 'ERROR',
+2025-11-20T20:31:01.123648244Z   code: '42703',
+2025-11-20T20:31:01.123652184Z   detail: undefined,
+2025-11-20T20:31:01.123656514Z   hint: undefined,
+2025-11-20T20:31:01.123660824Z   position: '38',
+2025-11-20T20:31:01.123665364Z   internalPosition: undefined,
+2025-11-20T20:31:01.123669774Z   internalQuery: undefined,
+2025-11-20T20:31:01.123674264Z   where: undefined,
+2025-11-20T20:31:01.123678374Z   schema: undefined,
+2025-11-20T20:31:01.123682264Z   table: undefined,
+2025-11-20T20:31:01.123686045Z   column: undefined,
+2025-11-20T20:31:01.123689885Z   dataType: undefined,
+2025-11-20T20:31:01.123693654Z   constraint: undefined,
+2025-11-20T20:31:01.123697455Z   file: 'parse_relation.c',
+2025-11-20T20:31:01.123701635Z   line: '3716',
+2025-11-20T20:31:01.123718905Z   routine: 'errorMissingColumn'
+2025-11-20T20:31:01.123721435Z }
+2025-11-20T20:31:01.163640145Z 8:31:01 PM [express] GET /api/dashboard 500 in 948ms
+2025-11-20T20:31:01.271069973Z 8:31:01 PM [express] GET /api/notifications/unread-count 304 in 620ms
+2025-11-20T20:33:01.291686949Z Dashboard error: error: column "loan_reference" does not exist
+2025-11-20T20:33:01.29170852Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T20:33:01.29171342Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T20:33:01.29171799Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T20:33:01.29173376Z     at async DatabaseStorage.getUserLoans (file:///opt/render/project/src/dist/index.js:765:16)
+2025-11-20T20:33:01.29173791Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:831:27)
+2025-11-20T20:33:01.29174207Z     at async file:///opt/render/project/src/dist/index.js:7242:20 {
+2025-11-20T20:33:01.29174594Z   length: 114,
+2025-11-20T20:33:01.29175017Z   severity: 'ERROR',
+2025-11-20T20:33:01.2917541Z   code: '42703',
+2025-11-20T20:33:01.29175809Z   detail: undefined,
+2025-11-20T20:33:01.29176185Z   hint: undefined,
+2025-11-20T20:33:01.29176555Z   position: '38',
+2025-11-20T20:33:01.291770061Z   internalPosition: undefined,
+2025-11-20T20:33:01.291774011Z   internalQuery: undefined,
+2025-11-20T20:33:01.291777641Z   where: undefined,
+2025-11-20T20:33:01.291781351Z   schema: undefined,
+2025-11-20T20:33:01.291785171Z   table: undefined,
+2025-11-20T20:33:01.291788881Z   column: undefined,
+2025-11-20T20:33:01.291792801Z   dataType: undefined,
+2025-11-20T20:33:01.291796661Z   constraint: undefined,
+2025-11-20T20:33:01.291800331Z   file: 'parse_relation.c',
+2025-11-20T20:33:01.291803971Z   line: '3716',
+2025-11-20T20:33:01.291807731Z   routine: 'errorMissingColumn'
+2025-11-20T20:33:01.291811471Z }
+2025-11-20T20:33:01.29890843Z 8:33:01 PM [express] GET /api/dashboard 500 in 394ms
+2025-11-20T20:33:01.649273254Z 8:33:01 PM [express] GET /api/notifications 304 in 554ms
+2025-11-20T20:33:02.073291786Z 8:33:02 PM [express] GET /api/notifications/unread-count 304 in 455ms
+2025-11-20T20:33:02.076765354Z 8:33:02 PM [express] GET /api/charts/upcoming-repayments 500 in 591ms
+2025-11-20T20:33:05.616076099Z Dashboard error: error: column "loan_reference" does not exist
+2025-11-20T20:33:05.616100569Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T20:33:05.61610567Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T20:33:05.616109959Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T20:33:05.61611372Z     at async DatabaseStorage.getUserLoans (file:///opt/render/project/src/dist/index.js:765:16)
+2025-11-20T20:33:05.61611765Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:831:27)
+2025-11-20T20:33:05.61612123Z     at async file:///opt/render/project/src/dist/index.js:7242:20 {
+2025-11-20T20:33:05.61612481Z   length: 114,
+2025-11-20T20:33:05.61612905Z   severity: 'ERROR',
+2025-11-20T20:33:05.61613263Z   code: '42703',
+2025-11-20T20:33:05.61613633Z   detail: undefined,
+2025-11-20T20:33:05.61613983Z   hint: undefined,
+2025-11-20T20:33:05.61614336Z   position: '38',
+2025-11-20T20:33:05.61614747Z   internalPosition: undefined,
+2025-11-20T20:33:05.6161509Z   internalQuery: undefined,
+2025-11-20T20:33:05.6161544Z   where: undefined,
+2025-11-20T20:33:05.616158211Z   schema: undefined,
+2025-11-20T20:33:05.616188971Z   table: undefined,
+2025-11-20T20:33:05.616192271Z   column: undefined,
+2025-11-20T20:33:05.616194591Z   dataType: undefined,
+2025-11-20T20:33:05.616196801Z   constraint: undefined,
+2025-11-20T20:33:05.616202111Z   file: 'parse_relation.c',
+2025-11-20T20:33:05.616204381Z   line: '3716',
+2025-11-20T20:33:05.616206892Z   routine: 'errorMissingColumn'
+2025-11-20T20:33:05.616209421Z }
+2025-11-20T20:33:05.621209479Z 8:33:05 PM [express] GET /api/dashboard 500 in 13ms
+2025-11-20T20:33:06.389262702Z 8:33:06 PM [express] GET /api/charts/upcoming-repayments 500 in 9ms
+2025-11-20T20:33:07.392000199Z 8:33:07 PM [express] GET /api/notifications 304 in 422ms

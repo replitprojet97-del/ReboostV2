@@ -1,0 +1,129 @@
+PROMPT COMPLET À ENVOYER À REPLIT — MAJ PAGE D’ACCUEIL + HARMONISATION SITE
+
+IMPORTANT :
+➡️ Ne supprimer aucune route, aucune logique backend, aucune intégration API, aucun workflow existant.
+➡️ Conserver l’architecture actuelle.
+➡️ Toutes les modifications doivent être purement visuelles / front-end.
+➡️ Design premium fintech 2025, cohérent sur toutes les pages.
+
+🎨 1. Ajustement de la Hero Section
+
+➡️ Réduire la taille verticale de la Hero pour qu’elle soit plus compacte, moderne, élégante.
+➡️ Garder le contenu existant (titre, texte, boutons), mais :
+
+Diminuer la hauteur globale
+
+Réduire les marges hautes et basses
+
+Adapter l’image de fond pour un rendu plus fin
+
+Faire en sorte que la Hero s’intègre visuellement avec la structure de la nouvelle page d’accueil
+
+Ajouter un léger fade-in / parallax discret
+
+⭐ 2. Ajouter plus de témoignages (section “Ils nous font confiance”)
+
+➡️ Transformer la section témoignages en slider moderne (type Stripe, Wise, Qonto)
+➡️ Ajouter au moins 6 témoignages, avec :
+
+photo ronde du client (placeholder ok)
+
+nom
+
+statut (ex : entrepreneur, dirigeant, particulier, PME, consultant…)
+
+courte citation (2 lignes max)
+➡️ Style premium : cartes glassmorphism légères + ombres douces
+➡️ Animation auto, navigation par points
+
+🔄 3. Section “Comment ça marche” = harmonisée avec la FAQ
+
+➡️ La section “Comment ça marche” de la page d’accueil doit utiliser exactement la même information que la page FAQ.
+➡️ Extraire les 4 étapes réelles de la FAQ et les afficher dans une timeline fintech 2025 :
+
+Soumission du dossier
+
+Étude et analyse KYC/credit scoring
+
+Validation / Signature électronique
+
+Déblocage des fonds
+
+➡️ Design premium animé (lignes progressives, icônes modernes, étapes espacées).
+➡️ Totalement responsive.
+
+💬 4. Améliorer le texte de chaque section (style premium)
+
+➡️ Retravailler les paragraphes pour qu’ils soient plus professionnels et plus adaptés à une fintech 2025.
+➡️ Syntaxe claire, haut de gamme, rassurante.
+➡️ Pas de jargon inutile.
+
+🎨 5. Harmoniser TOUTES les autres pages accessibles depuis le header
+
+➡️ Améliorer visuellement toutes les pages suivantes pour qu’elles reprennent exactement le même style que la nouvelle page d’accueil :
+
+Nos Prêts
+
+Comment ça marche
+
+FAQ
+
+À propos
+
+Contact
+
+➡️ Les rendre plus propres, plus aérées, plus modernes.
+➡️ Ajouter :
+
+des espacements plus élégants
+
+des cartes plus premium
+
+des titres plus cohérents
+
+des icônes adaptées
+
+une hiérarchie visuelle forte
+
+➡️ NE PAS modifier :
+
+le contenu textuel principal
+
+la logique des formulaires
+
+les routes
+
+le fonctionnement interne
+➡️ Seulement améliorer le design et la lisibilité.
+
+🖌️ 6. Maintenir la cohérence globale
+
+➡️ Polices, couleurs, arrondis, ombres, espacements doivent être uniformisés sur tout le site.
+➡️ Utilisation de :
+
+blanc pur (#FFFFFF)
+
+bleu Altus (déjà existant)
+
+gris doux
+
+ombres fines
+
+animations légères au scroll
+➡️ Style global : minimaliste / clean / fintech moderne.
+
+🖼️ 7. Ne toucher ni au tableau de bord utilisateur ni au workflow backend
+
+➡️ Aucune modification du dashboard utilisateur
+➡️ Aucune modification du transfert, KYC, validation, back-office
+➡️ Aucun changement dans les endpoints API
+➡️ Le front doit rester 100% compatible avec Vercel
+➡️ Le backend doit rester 100% compatible avec Render
+
+🎉 Demande finale
+
+Merci de :
+➡️ Générer le code mis à jour de la page d’accueil
+➡️ Générer les améliorations visuelles pour toutes les autres pages du header
+➡️ Sans casser aucune logique
+➡️ Avec un style fintech premium 2025 parfaitement cohérent.

@@ -1,0 +1,155 @@
+✅ PROMPT À ENVOYER À REPLIT — VERSION FINALE ET PROPRE
+
+Je te décris précisément la situation afin que tu corriges le chat natif (frontend + backend + PostgreSQL) qui fonctionnait parfaitement dans l’environnement Replit, mais plus du tout en production (Vercel + Render).
+
+1️⃣ Contexte général
+
+Frontend déployé sur Vercel : https://altusfinancesgroup.com
+
+Backend Express + TypeScript déployé sur Render : https://api.altusfinancesgroup.com
+
+Base de données PostgreSQL également sur Render
+
+Le chat natif créé précédemment fonctionnait parfaitement en développement (Replit), avec envoi/réception de messages et stockage en DB.
+
+Aujourd’hui en production, le chat s’affiche, mais :
+
+❌ Les messages écrits disparaissent immédiatement
+
+❌ Les requêtes du chat renvoient des 404 NOT FOUND
+
+❌ Le frontend appelle des routes inexistantes comme :
+
+/api/chat/conversations
+
+/api/chat/unread/.../messages
+
+❌ J’obtiens aussi des erreurs en ouvrant la console (F12)
+
+⚠️ Important :
+Je ne veux pas de nouveau service, pas d’intégration externe.
+→ Je veux que le chat natif déjà construit soit réparé.
+→ Toute la logique doit continuer à passer par le backend et la DB PostgreSQL.
+→ Aucune variable frontend supplémentaire ne doit être ajoutée.
+
+2️⃣ Symptômes exacts en production
+Frontend
+
+Le widget de chat s’affiche, mais :
+
+les messages envoyés n’apparaissent pas
+
+la conversation reste vide
+
+le chat tente d’appeler des URLs inexistantes
+
+Console navigateur
+
+On observe en boucle des erreurs :
+
+GET https://altusfinancesgroup.com/api/chat/conversations 404 (Not Found)
+GET https://altusfinancesgroup.com/api/chat/conversations/xxx/messages 404
+
+
+Alors que les routes correctes devraient être appelées sur le backend :
+
+https://api.altusfinancesgroup.com/...
+
+
+Donc le frontend appelle encore des chemins relatifs au lieu du backend absolu.
+
+3️⃣ Ce que je veux que tu fasses
+🎯 A. Vérifier et corriger le routing du chat côté frontend
+
+Le chat doit appeler les routes backend (Render), PAS les routes frontend.
+
+Donc toutes les requêtes doivent passer par :
+
+import.meta.env.VITE_API_URL  (ex: https://api.altusfinancesgroup.com)
+
+
+et NON :
+
+/api/chat/...
+
+
+Il faut :
+
+Rechercher toutes les requêtes du chat (fetch / axios)
+
+Remplacer les URLs relatives par des URLs basées sur VITE_API_URL
+
+Vérifier que le proxy local de Replit n’a pas masqué le problème
+
+🎯 B. Vérifier les routes côté backend
+
+Dans Render, vérifier que ces routes existent réellement :
+
+GET /chat/conversations
+GET /chat/conversations/:id/messages
+POST /chat/messages
+GET /chat/unread/:userId
+
+
+Si elles n’existent pas → les créer (selon l’architecture précédente).
+Si elles existent → vérifier la syntaxe Express (router, prefix, middleware, auth, etc.)
+
+🎯 C. Vérifier la gestion PostgreSQL
+
+Vérifier :
+
+Les tables conversations, messages, users
+
+Les colonnes utilisées par le chat
+
+Que la connexion PostgreSQL en production fonctionne
+
+Que les messages sont bien insérés en DB
+
+🎯 D. Vérifier les CORS
+
+Ajouter explicitement dans le backend Render :
+
+origin: [
+  "https://altusfinancesgroup.com",
+  "https://www.altusfinancesgroup.com"
+]
+
+🎯 E. Synchroniser la configuration
+
+Le système fonctionnait en développement.
+Donc il faut :
+
+Identifier ce que Replit faisait automatiquement (ex: proxy local)
+
+Reproduire la configuration proprement dans Vercel / Render
+
+4️⃣ Résultat attendu
+
+Je veux :
+
+Que le chat natif fonctionne exactement comme avant :
+
+Messages envoyés
+
+Messages reçus
+
+Conversations persistantes en DB
+
+Pas de 404
+
+Que la version production (Vercel + Render) fonctionne sans hack, proprement.
+
+Que le widget soit visible correctement dans l’espace utilisateur et admin.
+
+Merci de bien analyser l’intégralité du problème et de me fournir :
+
+Les fichiers à corriger
+
+Le code corrigé
+
+Les nouvelles routes (si nécessaire)
+
+Les mises à jour frontend
+
+Les instructions pour reconfigurer les environnements

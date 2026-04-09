@@ -1,0 +1,85 @@
+CONTEXTE DU PROJET
+J’ai un projet full-stack JavaScript :
+
+Front-end déployé sur Vercel : altusfinancesgroup.com
+
+Back-end déployé sur Render : api.altusfinancesgroup.com
+
+Le projet fonctionne parfaitement SAUF pour une erreur critique en production :
+Tous les emails envoyés par le backend affichent encore l’ancien logo "SOLVENTIS" — c’est incorrect.
+Ils doivent afficher le logo officiel "Altus Finances Group", le même que celui visible sur mon site (header ou page de login).
+
+🎯 OBJECTIF À ATTEINDRE
+
+Corriger TOUS LES TEMPLATES EMAIL utilisés dans le projet pour remplacer le logo SOLVENTIS par le logo Altus Finances Group.
+
+📌 CONTRAINTES OBLIGATOIRES
+
+Identifier tous les fichiers du backend qui génèrent ou contiennent du HTML pour les emails.
+(Ex : Nodemailer, Resend, SendGrid, React Email, fichiers .html, .tsx, ou strings HTML dans du JS.)
+
+Ne modifier que ce qui concerne le logo. NE TOUCHE À RIEN D’AUTRE.
+
+Ne pas changer les styles, le texte, la structure, ni le contenu des emails.
+Seulement remplacer :
+
+l’URL du logo
+
+son "alt"
+
+son nom si nécessaire.
+
+Le nouveau logo doit être :
+
+https://altusfinancesgroup.com/logo.png
+
+
+(Si nécessaire, suggérer l’image exacte trouvée dans le code du front-end.)
+
+Dans tous les templates, remplacer toute référence à :
+
+"solventis"
+
+ancien logo
+
+ancienne URL
+
+ou nom de fichier lié au logo
+par :
+
+<img src="https://altusfinancesgroup.com/logo.png" alt="Altus Finances Group" style="max-width: 180px;" />
+
+
+Fournir le code corrigé fichier par fichier, sans approximation, sans reformuler, sans improviser.
+
+Avant d’écrire la correction, l’IA doit :
+
+scanner le repository,
+
+identifier tous les templates email concernés,
+
+expliquer brièvement où se trouvent les logos incorrects.
+
+À la fin, l’IA doit produire :
+✅ une liste des fichiers modifiés
+✅ le diff clair AVANT → APRÈS
+✅ le code final propre et fonctionnel.
+
+Ne pas inventer de nouveaux chemins ou variables. Utiliser exactement ce qui existe déjà.
+
+❗ INSTRUCTIONS FINALES À L’IA
+
+Voici ce que je veux EXACTEMENT de toi :
+
+👉 Analyse mon projet complet pour identifier tous les templates d’email.
+👉 Trouve toutes les références au logo SOLVENTIS.
+👉 Remplace-les proprement par le logo Altus.
+👉 Montre-moi pour chaque fichier :
+
+où tu as fait la modification,
+
+l’ancien contenu,
+
+le nouveau contenu corrigé.
+
+👉 Assure-toi que tes modifications n’impactent rien d’autre dans l’app.

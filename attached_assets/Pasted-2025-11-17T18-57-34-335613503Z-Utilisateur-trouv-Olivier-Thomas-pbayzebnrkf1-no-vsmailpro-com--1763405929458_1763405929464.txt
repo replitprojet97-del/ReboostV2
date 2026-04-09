@@ -1,0 +1,50 @@
+2025-11-17T18:57:34.335613503Z ✓ Utilisateur trouvé: Olivier Thomas (pbayzebnrkf1@no.vsmailpro.com)
+2025-11-17T18:57:34.335632984Z 
+2025-11-17T18:57:34.335638934Z --- Début génération de contrat PDF ---
+2025-11-17T18:57:37.064550536Z 6:57:37 PM [express] GET /api/notifications 304 in 197ms
+2025-11-17T18:57:38.672676017Z === DÉBUT GÉNÉRATION CONTRAT PDF ===
+2025-11-17T18:57:38.672699767Z Loan ID: 8dfc1eb2-d2f6-42e8-8aad-586660e24662, User: Olivier Thomas, Amount: 30000.00
+2025-11-17T18:57:38.67561734Z ✓ Template HTML généré
+2025-11-17T18:57:38.763996885Z Vérification répertoire: /opt/render/project/src/uploads/contracts
+2025-11-17T18:57:38.764054656Z Création du répertoire uploads/contracts...
+2025-11-17T18:57:38.764354974Z ✓ Répertoire créé
+2025-11-17T18:57:38.764369934Z Chemin du fichier PDF: /opt/render/project/src/uploads/contracts/contrat_8dfc1eb2-d2f6-42e8-8aad-586660e24662_1763405858764.pdf
+2025-11-17T18:57:38.764375474Z Chemin Chromium par défaut: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium
+2025-11-17T18:57:38.764382975Z Recherche de Chromium sur le système...
+2025-11-17T18:57:38.779003931Z ⚠ Erreur lors de la recherche de Chromium: Error: Command failed: which chromium || which chromium-browser || which google-chrome
+2025-11-17T18:57:38.779029762Z Utilisation du chemin par défaut
+2025-11-17T18:57:38.779034642Z Vérification de l'existence de Chromium...
+2025-11-17T18:57:38.779929864Z ✗ ERREUR: Chromium n'existe PAS à: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium
+2025-11-17T18:57:38.78017404Z 
+2025-11-17T18:57:38.7801851Z ✗✗✗ ERREUR LORS DE LA GÉNÉRATION DU CONTRAT PDF ✗✗✗
+2025-11-17T18:57:38.780326354Z Type d'erreur: Error
+2025-11-17T18:57:38.780334204Z Message d'erreur: Chromium introuvable au chemin: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium
+2025-11-17T18:57:38.86397922Z Stack trace: Error: Chromium introuvable au chemin: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium
+2025-11-17T18:57:38.86400956Z     at generateContractPDF (/opt/render/project/src/server/services/contractGenerator.ts:579:11)
+2025-11-17T18:57:38.864014671Z     at <anonymous> (/opt/render/project/src/server/routes.ts:3229:29)
+2025-11-17T18:57:38.864019211Z Erreur complète: {
+2025-11-17T18:57:38.864023931Z   "stack": "Error: Chromium introuvable au chemin: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium\n    at generateContractPDF (/opt/render/project/src/server/services/contractGenerator.ts:579:11)\n    at <anonymous> (/opt/render/project/src/server/routes.ts:3229:29)",
+2025-11-17T18:57:38.864032191Z   "message": "Chromium introuvable au chemin: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
+2025-11-17T18:57:38.864036391Z }
+2025-11-17T18:57:38.864041521Z ✗✗✗ FIN DE L'ERREUR ✗✗✗
+2025-11-17T18:57:38.864045452Z 
+2025-11-17T18:57:38.879586011Z 6:57:38 PM [express] GET /api/notifications/unread-count 304 in 2008ms
+2025-11-17T18:57:38.884371351Z 6:57:38 PM [express] POST /api/admin/loans/8dfc1eb2-d2f6-42e8-8aad-586660e24662/approve 200 in 4558ms
+2025-11-17T18:57:40.068601101Z 6:57:40 PM [express] GET /api/admin/loans 200 in 915ms
+2025-11-17T18:57:42.301992437Z 6:57:42 PM [express] GET /api/notifications 304 in 10ms
+2025-11-17T18:57:44.146397718Z 6:57:44 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-17T18:57:47.550068744Z 6:57:47 PM [express] GET /api/notifications 304 in 10ms
+2025-11-17T18:57:49.400309941Z 6:57:49 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-17T18:57:52.864328079Z 6:57:52 PM [express] GET /api/notifications 304 in 84ms
+2025-11-17T18:57:54.763947092Z 6:57:54 PM [express] GET /api/notifications/unread-count 304 in 102ms
+2025-11-17T18:57:56.754884514Z 6:57:56 PM [express] GET /api/loans 304 in 8ms
+2025-11-17T18:57:56.779835819Z 6:57:56 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-17T18:57:56.961174882Z 6:57:56 PM [express] GET /api/user 304 in 9ms
+2025-11-17T18:57:57.163549382Z 6:57:57 PM [express] GET /api/notifications 304 in 10ms
+2025-11-17T18:57:58.290265311Z 6:57:58 PM [express] GET /api/admin/loans 304 in 1051ms
+2025-11-17T18:58:02.051315689Z 6:58:02 PM [express] GET /api/notifications/unread-count 304 in 21ms
+2025-11-17T18:58:02.423082223Z 6:58:02 PM [express] GET /api/notifications 304 in 15ms
+2025-11-17T18:58:07.286384578Z 6:58:07 PM [express] GET /api/notifications/unread-count 304 in 13ms
+2025-11-17T18:58:07.677094486Z 6:58:07 PM [express] GET /api/notifications 304 in 14ms
+2025-11-17T18:58:12.533409075Z 6:58:12 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-17T18:58:13.001370219Z 6:58:13 PM [express] GET /api/notifications 304 in 10ms

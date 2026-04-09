@@ -1,0 +1,78 @@
+Redemarre le service pour prendre en compte les key et passons au taches suivantes:
+
+
+PROMPT RÉSUMÉ À ENVOYER
+
+Corrige les problèmes suivants dans mon projet full-stack (frontend sur Vercel, backend Express sur Render), en respectant strictement la logique et le workflow existant :
+
+🔥 PROBLÈME 1 — Le transfert s’initialise instantanément (100%) au lieu de démarrer à l’étape 1
+
+Lorsqu’un utilisateur clique sur “Initier le transfert”, la page de progression s’ouvre directement avec 100% complété, aucun code requis, comme si le transfert était déjà validé.
+
+Pourtant, le backend crée normalement un transfert avec :
+
+currentStep = 1
+
+progressPercent = 10
+
+codesValidated = 0
+
+requiredCodes = 6
+
+statut pending
+
+Donc il existe une incohérence entre la valeur enregistrée en base et la valeur affichée dans le frontend.
+
+➡️ Demande :
+
+Vérifie et corrige la logique frontend qui lit l’état du transfert (currentStep, progressPercent, codesValidated).
+
+Assure que la page n’affiche JAMAIS 100% tant que codesValidated < requiredCodes.
+
+Assure que la progression commence à 10% (ou la valeur définie par le backend).
+
+Vérifie que le frontend ne force pas la progression à 100% après la création.
+
+Vérifie que l’endpoint /api/transfers/initiate renvoie bien les bonnes valeurs.
+
+Vérifie que le store React Query n’utilise pas de données stale qui feraient croire que le transfert est déjà terminé.
+
+🔥 PROBLÈME 2 — Le transfert n’est jamais finalisé, ce qui bloque les nouveaux prêts
+
+Le transfert reste toujours dans l’état :
+
+"status": "pending"
+
+Donc :
+
+Aucun code n’est demandé
+
+La progression n’avance jamais
+
+Le transfert n’est jamais marqué comme "completed"
+
+L’utilisateur ne peut plus faire de demande de prêt (car une demande en cours bloque les suivantes)
+
+➡️ Demande :
+
+Vérifie la logique backend : l’endpoint de validation des codes /api/transfers/:id/validate-code doit réellement mettre à jour codesValidated, currentStep, progressPercent et status.
+
+Vérifie que le frontend appelle bien l’endpoint de validation des codes, et n’est pas bloqué par un bug de session / cookie / CSRF.
+
+Vérifie que la progression ne saute pas directement à 100% sans la boucle de validation des 6 codes.
+
+Vérifie que le système considère un transfert “terminé” uniquement lorsque :
+
+codesValidated === requiredCodes
+
+et status === "completed"
+
+🔥 Objectif final
+
+Le transfert doit commencer à l’étape 1, afficher 10%, demander 6 codes, progresser étape par étape.
+
+Une fois les 6 codes validés → transfert passe à completed.
+
+L’utilisateur peut alors refaire un prêt.
+
+Plus aucun affichage 100% immédiat au moment de l’initiation.

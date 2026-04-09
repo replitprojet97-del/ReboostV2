@@ -1,0 +1,59 @@
+19:32:53.032 Running build in Washington, D.C., USA (East) – iad1
+19:32:53.033 Build machine configuration: 2 cores, 8 GB
+19:32:53.157 Cloning github.com/gitunivers-web/Lepari1 (Branch: main, Commit: 985a76b)
+19:32:53.157 Previous build caches not available.
+19:32:53.677 Cloning completed: 520.000ms
+19:32:54.111 Running "vercel build"
+19:32:54.523 Vercel CLI 48.8.2
+19:32:55.350 Running "install" command: `npm install`...
+19:33:00.822 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+19:33:00.899 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+19:33:13.683 
+19:33:13.683 added 610 packages, and audited 611 packages in 18s
+19:33:13.684 
+19:33:13.684 78 packages are looking for funding
+19:33:13.684   run `npm fund` for details
+19:33:13.713 
+19:33:13.713 8 vulnerabilities (3 low, 5 moderate)
+19:33:13.714 
+19:33:13.714 To address issues that do not require attention, run:
+19:33:13.714   npm audit fix
+19:33:13.715 
+19:33:13.715 To address all issues (including breaking changes), run:
+19:33:13.715   npm audit fix --force
+19:33:13.715 
+19:33:13.715 Run `npm audit` for details.
+19:33:14.352 
+19:33:14.353 > rest-express@1.0.0 build
+19:33:14.353 > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+19:33:14.353 
+19:33:14.637 [36mvite v5.4.20 [32mbuilding for production...[36m[39m
+19:33:14.692 transforming...
+19:33:16.487 
+19:33:16.487 A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+19:33:24.240 [32m✓[39m 3450 modules transformed.
+19:33:25.071 rendering chunks...
+19:33:25.092 computing gzip size...
+19:33:25.130 [2m../dist/public/[22m[32mindex.html                                                                    [39m[1m[2m    2.55 kB[22m[1m[22m[2m │ gzip:   0.97 kB[22m
+19:33:25.131 [2m../dist/public/[22m[2massets/[22m[32mLogo_1762278146504-Co7Z5DD7.jpeg                                       [39m[1m[2m   21.32 kB[22m[1m[22m
+19:33:25.132 [2m../dist/public/[22m[2massets/[22m[32mWhatsApp Image 2025-11-05 at 13.16.36_1762345203268-DaytfAEg.jpeg      [39m[1m[2m   36.29 kB[22m[1m[22m
+19:33:25.132 [2m../dist/public/[22m[2massets/[22m[32mWhatsApp Image 2025-11-05 at 13.16.36 (1)_1762345210880-BpdZc8e7.jpeg  [39m[1m[2m   37.02 kB[22m[1m[22m
+19:33:25.132 [2m../dist/public/[22m[2massets/[22m[32mprofessional_busines_02179932-Bk4D1CDa.jpg                             [39m[1m[2m  141.98 kB[22m[1m[22m
+19:33:25.132 [2m../dist/public/[22m[2massets/[22m[32mmodern_office_team_c_5fe4ebf4-DLekMsr-.jpg                             [39m[1m[2m  180.53 kB[22m[1m[22m
+19:33:25.132 [2m../dist/public/[22m[2massets/[22m[32mprofessional_busines_f5be1226-N3jcV-0D.jpg                             [39m[1m[2m  200.10 kB[22m[1m[22m
+19:33:25.132 [2m../dist/public/[22m[2massets/[22m[32mmodern_office_team_c_c1f316eb-ii2kPv4-.jpg                             [39m[1m[2m  216.65 kB[22m[1m[22m
+19:33:25.133 [2m../dist/public/[22m[2massets/[22m[32mProfessional_business_handshake_hero_a876f666-CEAPllJr.png             [39m[1m[2m1,275.51 kB[22m[1m[22m
+19:33:25.133 [2m../dist/public/[22m[2massets/[22m[35mindex-De4O_aEM.css                                                     [39m[1m[2m  143.00 kB[22m[1m[22m[2m │ gzip:  20.73 kB[22m
+19:33:25.133 [2m../dist/public/[22m[2massets/[22m[36mindex-DFLgAt-M.js                                                      [39m[1m[33m1,396.66 kB[39m[22m[2m │ gzip: 390.54 kB[22m
+19:33:25.139 [32m✓ built in 10.47s[39m
+19:33:25.140 [33m
+19:33:25.140 (!) Some chunks are larger than 500 kB after minification. Consider:
+19:33:25.140 - Using dynamic import() to code-split the application
+19:33:25.140 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+19:33:25.140 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+19:33:25.202 
+19:33:25.202   dist/index.js  182.2kb
+19:33:25.202 
+19:33:25.202 ⚡ Done in 15ms
+19:33:25.219 Error: No Output Directory named "dist" found after the Build completed. Configure the Output Directory in your Project Settings. Alternatively, configure vercel.json#outputDirectory.
+19:33:25.219 Learn More: https://vercel.link/missing-public-directory

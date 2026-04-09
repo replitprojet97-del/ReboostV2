@@ -1,0 +1,128 @@
+2025-11-23T00:09:13.341097535Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-23T00:09:13.341242454Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-23T00:09:13.34134251Z [CONFIG] Trust Proxy: enabled
+2025-11-23T00:09:13.341565694Z ============================================================
+2025-11-23T00:09:13.453091476Z [SOCKET.IO] ✅ Socket.IO configured with session authentication
+2025-11-23T00:09:13.748060845Z 12:09:13 AM [express] ✅ Backend API server listening on port 10000
+2025-11-23T00:09:13.752005386Z 12:09:13 AM [express] 🌍 Environment: production
+2025-11-23T00:09:13.752023677Z 12:09:13 AM [express] 🗄️ Database: Connected
+2025-11-23T00:09:13.752028517Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-23T00:09:13.752033247Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-23T00:09:13.752041398Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-23T00:09:13.752046268Z [CONFIG] Session Cookie Secure: true
+2025-11-23T00:09:13.752050508Z [CONFIG] Session Cookie SameSite: none
+2025-11-23T00:09:14.410925876Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-23T00:09:16.488317208Z ==> Your service is live 🎉
+2025-11-23T00:09:16.782344927Z ==> 
+2025-11-23T00:09:16.955359929Z ==> ///////////////////////////////////////////////////////////
+2025-11-23T00:09:17.111459763Z ==> 
+2025-11-23T00:09:17.269115807Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-23T00:09:17.42541255Z ==> 
+2025-11-23T00:09:17.582237334Z ==> ///////////////////////////////////////////////////////////
+2025-11-23T00:09:18.756923782Z Expired OTPs cleaned up
+2025-11-23T00:09:22.33501474Z [CORS ERROR] ❌ Origin rejected: https://nouveaudepart-msohllu0i-githuniversgmailcoms-projects.vercel.app
+2025-11-23T00:09:22.335070064Z [CORS ERROR] Allowed origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-23T00:09:22.335474759Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-23T00:09:22.335484019Z [ERROR] Message: Not allowed by CORS
+2025-11-23T00:09:22.335488399Z [ERROR] Origin: https://nouveaudepart-msohllu0i-githuniversgmailcoms-projects.vercel.app
+2025-11-23T00:09:22.335607577Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-23T00:09:22.335613867Z     at origin (file:///opt/render/project/src/dist/index.js:11106:16)
+2025-11-23T00:09:22.335618027Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-23T00:09:22.338058166Z Error: Not allowed by CORS
+2025-11-23T00:09:22.338072457Z     at origin (file:///opt/render/project/src/dist/index.js:11106:16)
+2025-11-23T00:09:22.338077178Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-23T00:09:22.338082158Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-23T00:09:22.338086218Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-23T00:09:22.338091058Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-23T00:09:22.338095539Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-23T00:09:22.338100469Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-23T00:09:22.338104849Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-23T00:09:22.33811853Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-23T00:09:22.33812152Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-23T00:09:22.454611386Z [CORS ERROR] ❌ Origin rejected: https://nouveaudepart-msohllu0i-githuniversgmailcoms-projects.vercel.app
+2025-11-23T00:09:22.454638338Z [CORS ERROR] Allowed origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-23T00:09:22.454796897Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-23T00:09:22.454805718Z [ERROR] Message: Not allowed by CORS
+2025-11-23T00:09:22.455047023Z [ERROR] Origin: https://nouveaudepart-msohllu0i-githuniversgmailcoms-projects.vercel.app
+2025-11-23T00:09:22.455055263Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-23T00:09:22.455058513Z     at origin (file:///opt/render/project/src/dist/index.js:11106:16)
+2025-11-23T00:09:22.455060984Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-23T00:09:22.456009231Z Error: Not allowed by CORS
+2025-11-23T00:09:22.456020672Z     at origin (file:///opt/render/project/src/dist/index.js:11106:16)
+2025-11-23T00:09:22.456022982Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-23T00:09:22.456025503Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-23T00:09:22.456029563Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-23T00:09:22.456031823Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-23T00:09:22.456033533Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-23T00:09:22.456035263Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-23T00:09:22.456037143Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-23T00:09:22.456038823Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-23T00:09:22.456040833Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-23T00:11:01.084282652Z ==> Deploying...
+2025-11-23T00:11:37.480322244Z ==> Running 'npm start'
+2025-11-23T00:11:38.476686818Z 
+2025-11-23T00:11:38.476718519Z > rest-express@1.0.0 start
+2025-11-23T00:11:38.476723789Z > NODE_ENV=production node dist/index.js
+2025-11-23T00:11:38.476726339Z 
+2025-11-23T00:11:56.577026161Z ✅ Cloudinary configured successfully
+2025-11-23T00:11:56.578390771Z ============================================================
+2025-11-23T00:11:56.578434582Z [CONFIG] Environment: production
+2025-11-23T00:11:56.578444982Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-23T00:11:56.578503114Z [CONFIG] Cookie SameSite: none
+2025-11-23T00:11:56.578522665Z [CONFIG] Cookie Secure: true
+2025-11-23T00:11:56.578581186Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-23T00:11:56.578681209Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-23T00:11:56.578758251Z [CONFIG] Trust Proxy: enabled
+2025-11-23T00:11:56.579000268Z ============================================================
+2025-11-23T00:11:56.689163457Z [SOCKET.IO] ✅ Socket.IO configured with session authentication
+2025-11-23T00:11:56.982910931Z 12:11:56 AM [express] ✅ Backend API server listening on port 10000
+2025-11-23T00:11:56.983115687Z 12:11:56 AM [express] 🌍 Environment: production
+2025-11-23T00:11:56.983244761Z 12:11:56 AM [express] 🗄️ Database: Connected
+2025-11-23T00:11:56.983252951Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-23T00:11:56.983269062Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-23T00:11:56.983276272Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-23T00:11:56.983282162Z [CONFIG] Session Cookie Secure: true
+2025-11-23T00:11:56.983285682Z [CONFIG] Session Cookie SameSite: none
+2025-11-23T00:11:57.668466418Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-23T00:11:59.118617271Z ==> Your service is live 🎉
+2025-11-23T00:11:59.304183272Z ==> 
+2025-11-23T00:11:59.461709946Z ==> ///////////////////////////////////////////////////////////
+2025-11-23T00:11:59.619785829Z ==> 
+2025-11-23T00:11:59.779300853Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-23T00:11:59.937145966Z ==> 
+2025-11-23T00:12:00.096681199Z ==> ///////////////////////////////////////////////////////////
+2025-11-23T00:12:01.992709591Z Expired OTPs cleaned up
+2025-11-23T00:14:09.327981403Z ==> Deploying...
+2025-11-23T00:14:52.712578971Z ==> Running 'npm start'
+2025-11-23T00:14:53.809269927Z 
+2025-11-23T00:14:53.809300607Z > rest-express@1.0.0 start
+2025-11-23T00:14:53.809305478Z > NODE_ENV=production node dist/index.js
+2025-11-23T00:14:53.809308048Z 
+2025-11-23T00:15:11.309208353Z ✅ Cloudinary configured successfully
+2025-11-23T00:15:11.310342728Z ============================================================
+2025-11-23T00:15:11.310360339Z [CONFIG] Environment: production
+2025-11-23T00:15:11.310367109Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-23T00:15:11.310476231Z [CONFIG] Cookie SameSite: none
+2025-11-23T00:15:11.310486761Z [CONFIG] Cookie Secure: true
+2025-11-23T00:15:11.310514792Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-23T00:15:11.310616284Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-23T00:15:11.310733627Z [CONFIG] Trust Proxy: enabled
+2025-11-23T00:15:11.310942232Z ============================================================
+2025-11-23T00:15:11.419523336Z [SOCKET.IO] ✅ Socket.IO configured with session authentication
+2025-11-23T00:15:11.705923698Z 12:15:11 AM [express] ✅ Backend API server listening on port 10000
+2025-11-23T00:15:11.706119193Z 12:15:11 AM [express] 🌍 Environment: production
+2025-11-23T00:15:11.706269196Z 12:15:11 AM [express] 🗄️ Database: Connected
+2025-11-23T00:15:11.706284036Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-23T00:15:11.706293017Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-23T00:15:11.706314657Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-23T00:15:11.706323117Z [CONFIG] Session Cookie Secure: true
+2025-11-23T00:15:11.706327937Z [CONFIG] Session Cookie SameSite: none
+2025-11-23T00:15:12.284825648Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-23T00:15:15.420970824Z ==> Your service is live 🎉
+2025-11-23T00:15:15.640165481Z ==> 
+2025-11-23T00:15:15.799629244Z ==> ///////////////////////////////////////////////////////////
+2025-11-23T00:15:15.955249158Z ==> 
+2025-11-23T00:15:16.12737229Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-23T00:15:16.415941279Z ==> 
+2025-11-23T00:15:16.572918253Z ==> ///////////////////////////////////////////////////////////
+2025-11-23T00:15:16.711970725Z Expired OTPs cleaned up

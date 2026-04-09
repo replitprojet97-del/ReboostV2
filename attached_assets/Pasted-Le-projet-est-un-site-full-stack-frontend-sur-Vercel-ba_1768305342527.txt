@@ -1,0 +1,119 @@
+Le projet est un site full-stack (frontend sur Vercel, backend sur Render).
+En développement (Replit), la soumission d’une demande avec pièces jointes fonctionne.
+En production, le bouton de soumission ne déclenche pas l’appel API et génère l’erreur :
+Unexpected token < in JSON at position 0.
+
+Objectif
+Identifier la différence DEV vs PROD qui empêche l’appel API lors du clic sur le bouton Submit Request.
+
+Action demandée
+Merci de me fournir uniquement le contenu brut des fichiers suivants (sans les modifier, sans résumé) :
+
+1️⃣ Fichier FRONTEND – Formulaire de soumission (OBLIGATOIRE)
+
+👉 Le fichier exact qui contient :
+
+le bouton Submit Request
+
+la fonction onSubmit / handleSubmit
+
+l’appel fetch ou axios.post
+
+la création du FormData
+
+Exemples possibles (selon le projet) :
+
+app/dashboard/page.tsx
+
+components/RequestForm.tsx
+
+components/SubmitRequest.tsx
+
+👉 Envoyer le fichier réel utilisé en production.
+
+2️⃣ Fichier FRONTEND – Configuration API (CRITIQUE)
+
+👉 Le fichier où est défini l’URL du backend.
+
+Exemples possibles :
+
+lib/api.ts
+
+utils/api.ts
+
+config.ts
+
+constants.ts
+
+Je cherche notamment :
+
+process.env.NEXT_PUBLIC_API_URL
+
+process.env.API_URL
+
+tout fallback type || "http://localhost:..."
+
+3️⃣ Fichier BACKEND – Route de soumission de demande
+
+👉 Le fichier backend qui reçoit la requête de soumission.
+
+Exemples possibles :
+
+routes/request.js
+
+routes/demandes.ts
+
+controllers/request.controller.js
+
+Je cherche :
+
+la route POST
+
+multer
+
+req.body
+
+req.files
+
+res.json(...)
+
+4️⃣ Fichier BACKEND – Entrée principale du serveur
+
+👉 Le fichier principal serveur.
+
+Exemples :
+
+server.js
+
+index.js
+
+app.js
+
+Je cherche :
+
+configuration cors
+
+middleware csrf
+
+bodyParser
+
+limites de taille
+
+app.use(...)
+
+5️⃣ (Optionnel mais utile) – Variables d’environnement
+
+👉 Fournir uniquement la liste des noms des variables, sans valeurs.
+
+Exemple :
+
+NEXT_PUBLIC_API_URL
+RESEND_API_KEY
+DATABASE_URL
+NODE_ENV
+
+
+⚠️ Important
+– Ne pas envoyer tout le repository
+– Ne pas modifier le code
+– Envoyer le contenu exact des fichiers listés

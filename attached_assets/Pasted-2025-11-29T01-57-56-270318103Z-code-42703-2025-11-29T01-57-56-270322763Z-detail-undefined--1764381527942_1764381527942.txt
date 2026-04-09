@@ -1,0 +1,199 @@
+2025-11-29T01:57:56.270318103Z   code: '42703',
+2025-11-29T01:57:56.270322763Z   detail: undefined,
+2025-11-29T01:57:56.270327423Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T01:57:56.270331953Z   position: '676',
+2025-11-29T01:57:56.270336954Z   internalPosition: undefined,
+2025-11-29T01:57:56.270341234Z   internalQuery: undefined,
+2025-11-29T01:57:56.270345254Z   where: undefined,
+2025-11-29T01:57:56.270349744Z   schema: undefined,
+2025-11-29T01:57:56.270353714Z   table: undefined,
+2025-11-29T01:57:56.270357674Z   column: undefined,
+2025-11-29T01:57:56.270361624Z   dataType: undefined,
+2025-11-29T01:57:56.270366304Z   constraint: undefined,
+2025-11-29T01:57:56.270370544Z   file: 'parse_relation.c',
+2025-11-29T01:57:56.270374665Z   line: '3723',
+2025-11-29T01:57:56.270378495Z   routine: 'errorMissingColumn'
+2025-11-29T01:57:56.270382625Z }
+2025-11-29T01:57:56.272543357Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-11-29T01:57:56.272556258Z     Error.captureStackTrace(err)
+2025-11-29T01:57:56.272576738Z           ^
+2025-11-29T01:57:56.272579418Z 
+2025-11-29T01:57:56.272582518Z error: column "verification_tier" does not exist
+2025-11-29T01:57:56.272585588Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T01:57:56.272588919Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T01:57:56.272591928Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T01:57:56.272594949Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:5990:27) {
+2025-11-29T01:57:56.272597549Z   length: 189,
+2025-11-29T01:57:56.272599479Z   severity: 'ERROR',
+2025-11-29T01:57:56.272601279Z   code: '42703',
+2025-11-29T01:57:56.272603749Z   detail: undefined,
+2025-11-29T01:57:56.272606749Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T01:57:56.272609349Z   position: '676',
+2025-11-29T01:57:56.272612179Z   internalPosition: undefined,
+2025-11-29T01:57:56.272614799Z   internalQuery: undefined,
+2025-11-29T01:57:56.272617149Z   where: undefined,
+2025-11-29T01:57:56.272619769Z   schema: undefined,
+2025-11-29T01:57:56.272622129Z   table: undefined,
+2025-11-29T01:57:56.272624529Z   column: undefined,
+2025-11-29T01:57:56.27262714Z   dataType: undefined,
+2025-11-29T01:57:56.2726299Z   constraint: undefined,
+2025-11-29T01:57:56.27263268Z   file: 'parse_relation.c',
+2025-11-29T01:57:56.27263447Z   line: '3723',
+2025-11-29T01:57:56.27263619Z   routine: 'errorMissingColumn'
+2025-11-29T01:57:56.27263792Z }
+2025-11-29T01:57:56.27263954Z 
+2025-11-29T01:57:56.27264134Z Node.js v22.16.0
+2025-11-29T01:58:03.380189078Z ==> Running 'npm start'
+2025-11-29T01:58:04.385791891Z 
+2025-11-29T01:58:04.385810482Z > rest-express@1.0.0 start
+2025-11-29T01:58:04.385814662Z > NODE_ENV=production node dist/index.js
+2025-11-29T01:58:04.385816512Z 
+2025-11-29T01:59:24.966085934Z   table: undefined,
+2025-11-29T01:59:24.966089824Z   column: undefined,
+2025-11-29T01:59:24.966093644Z   dataType: undefined,
+2025-11-29T01:59:24.966097784Z   constraint: undefined,
+2025-11-29T01:59:24.966101874Z   file: 'parse_relation.c',
+2025-11-29T01:59:24.966106344Z   line: '3723',
+2025-11-29T01:59:24.966110394Z   routine: 'errorMissingColumn'
+2025-11-29T01:59:24.966114595Z }
+2025-11-29T01:59:24.970319406Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-11-29T01:59:24.970337297Z     Error.captureStackTrace(err)
+2025-11-29T01:59:24.970357917Z           ^
+2025-11-29T01:59:24.970360817Z 
+2025-11-29T01:59:24.970364177Z error: column "verification_tier" does not exist
+2025-11-29T01:59:24.970370307Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T01:59:24.970373387Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T01:59:24.970376198Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T01:59:24.970378798Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:5990:27) {
+2025-11-29T01:59:24.970381568Z   length: 189,
+2025-11-29T01:59:24.970384288Z   severity: 'ERROR',
+2025-11-29T01:59:24.970386778Z   code: '42703',
+2025-11-29T01:59:24.970389338Z   detail: undefined,
+2025-11-29T01:59:24.970391908Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T01:59:24.970394428Z   position: '676',
+2025-11-29T01:59:24.970396828Z   internalPosition: undefined,
+2025-11-29T01:59:24.970399508Z   internalQuery: undefined,
+2025-11-29T01:59:24.970401928Z   where: undefined,
+2025-11-29T01:59:24.970404778Z   schema: undefined,
+2025-11-29T01:59:24.970407319Z   table: undefined,
+2025-11-29T01:59:24.970409788Z   column: undefined,
+2025-11-29T01:59:24.970412599Z   dataType: undefined,
+2025-11-29T01:59:24.970415299Z   constraint: undefined,
+2025-11-29T01:59:24.970417819Z   file: 'parse_relation.c',
+2025-11-29T01:59:24.970420409Z   line: '3723',
+2025-11-29T01:59:24.970423109Z   routine: 'errorMissingColumn'
+2025-11-29T01:59:24.970425709Z }
+2025-11-29T01:59:24.970427999Z 
+2025-11-29T01:59:24.970430559Z Node.js v22.16.0
+2025-11-29T01:59:35.106541194Z ==> No open ports detected, continuing to scan...
+2025-11-29T01:59:35.489779997Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-29T01:59:37.310450364Z ✅ Cloudinary configured successfully
+2025-11-29T01:59:37.314585348Z [SENTRY] ⚠️ SENTRY_DSN not set in production. Centralized logging disabled.
+2025-11-29T01:59:37.315690643Z ============================================================
+2025-11-29T01:59:37.315705123Z [CONFIG] Environment: production
+2025-11-29T01:59:37.315738584Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-29T01:59:37.315784585Z [CONFIG] Cookie SameSite: none
+2025-11-29T01:59:37.315804246Z [CONFIG] Cookie Secure: true
+2025-11-29T01:59:37.315937199Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-29T01:59:37.316084762Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-29T01:59:37.316388869Z [CONFIG] Trust Proxy: enabled
+2025-11-29T01:59:37.31643898Z ============================================================
+2025-11-29T01:59:37.602448012Z [DATA WS] Socket instance configured for real-time data updates
+2025-11-29T01:59:37.747900088Z 1:59:37 AM [express] ✅ Backend API server listening on port 10000
+2025-11-29T01:59:37.748156103Z 1:59:37 AM [express] 🌍 Environment: production
+2025-11-29T01:59:37.748250896Z 1:59:37 AM [express] 🗄️ Database: Connected
+2025-11-29T01:59:37.748257706Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-29T01:59:37.748264296Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-29T01:59:37.748275066Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-29T01:59:37.748280096Z [CONFIG] Session Cookie Secure: true
+2025-11-29T01:59:37.748325597Z [CONFIG] Session Cookie SameSite: none
+2025-11-29T01:59:38.97138361Z ==> Your service is live 🎉
+2025-11-29T01:59:39.065914795Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-11-29T01:59:39.065944846Z     Error.captureStackTrace(err)
+2025-11-29T01:59:39.065949306Z           ^
+2025-11-29T01:59:39.065953196Z 
+2025-11-29T01:59:39.065957686Z error: column "verification_tier" does not exist
+2025-11-29T01:59:39.065961946Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T01:59:39.065966086Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T01:59:39.065970286Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T01:59:39.065975527Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:5990:27) {
+2025-11-29T01:59:39.065979427Z   length: 189,
+2025-11-29T01:59:39.065983677Z   severity: 'ERROR',
+2025-11-29T01:59:39.065987497Z   code: '42703',
+2025-11-29T01:59:39.065991267Z   detail: undefined,
+2025-11-29T01:59:39.065995247Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T01:59:39.065998917Z   position: '676',
+2025-11-29T01:59:39.066002617Z   internalPosition: undefined,
+2025-11-29T01:59:39.066025378Z   internalQuery: undefined,
+2025-11-29T01:59:39.066090709Z   where: undefined,
+2025-11-29T01:59:39.066095649Z   schema: undefined,
+2025-11-29T01:59:39.06609942Z   table: undefined,
+2025-11-29T01:59:39.06610329Z   column: undefined,
+2025-11-29T01:59:39.06610698Z   dataType: undefined,
+2025-11-29T01:59:39.06611096Z   constraint: undefined,
+2025-11-29T01:59:39.06611496Z   file: 'parse_relation.c',
+2025-11-29T01:59:39.06611882Z   line: '3723',
+2025-11-29T01:59:39.06612252Z   routine: 'errorMissingColumn'
+2025-11-29T01:59:39.066140201Z }
+2025-11-29T01:59:39.066154691Z 
+2025-11-29T01:59:39.066157311Z Node.js v22.16.0
+2025-11-29T01:59:39.183959452Z ==> 
+2025-11-29T01:59:39.342360769Z ==> ///////////////////////////////////////////////////////////
+2025-11-29T01:59:39.499073617Z ==> 
+2025-11-29T01:59:39.660684343Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-29T01:59:39.821847129Z ==> 
+2025-11-29T01:59:39.982927086Z ==> ///////////////////////////////////////////////////////////
+2025-11-29T01:59:45.14081902Z ==> Running 'npm start'
+2025-11-29T01:59:46.137819583Z 
+2025-11-29T01:59:46.137844994Z > rest-express@1.0.0 start
+2025-11-29T01:59:46.137849224Z > NODE_ENV=production node dist/index.js
+2025-11-29T01:59:46.137851494Z 
+2025-11-29T02:00:15.228059343Z ✅ Cloudinary configured successfully
+2025-11-29T02:00:15.233026556Z [SENTRY] ⚠️ SENTRY_DSN not set in production. Centralized logging disabled.
+2025-11-29T02:00:15.23408624Z ============================================================
+2025-11-29T02:00:15.234110561Z [CONFIG] Environment: production
+2025-11-29T02:00:15.234127821Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:00:15.234178582Z [CONFIG] Cookie SameSite: none
+2025-11-29T02:00:15.234188052Z [CONFIG] Cookie Secure: true
+2025-11-29T02:00:15.234338226Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-29T02:00:15.234663113Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-29T02:00:15.234741165Z [CONFIG] Trust Proxy: enabled
+2025-11-29T02:00:15.234880628Z ============================================================
+2025-11-29T02:00:15.532138084Z [DATA WS] Socket instance configured for real-time data updates
+2025-11-29T02:00:15.728130856Z 2:00:15 AM [express] ✅ Backend API server listening on port 10000
+2025-11-29T02:00:15.728486484Z 2:00:15 AM [express] 🌍 Environment: production
+2025-11-29T02:00:15.728649948Z 2:00:15 AM [express] 🗄️ Database: Connected
+2025-11-29T02:00:15.728657198Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-29T02:00:15.728661368Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-29T02:00:15.728666198Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:00:15.728669818Z [CONFIG] Session Cookie Secure: true
+2025-11-29T02:00:15.728673328Z [CONFIG] Session Cookie SameSite: none
+2025-11-29T02:00:16.272761178Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-11-29T02:00:16.272784288Z     Error.captureStackTrace(err)
+2025-11-29T02:00:16.272801079Z           ^
+2025-11-29T02:00:16.272805569Z 
+2025-11-29T02:00:16.272811549Z error: column "verification_tier" does not exist
+2025-11-29T02:00:16.272817469Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T02:00:16.272823099Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T02:00:16.272828529Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T02:00:16.27283703Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:5990:27) {
+2025-11-29T02:00:16.27284195Z   length: 189,
+2025-11-29T02:00:16.27284783Z   severity: 'ERROR',
+2025-11-29T02:00:16.27285303Z   code: '42703',
+2025-11-29T02:00:16.27285744Z   detail: undefined,
+2025-11-29T02:00:16.27286196Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T02:00:16.27286672Z   position: '676',
+2025-11-29T02:00:16.27287147Z   internalPosition: undefined,
+2025-11-29T02:00:16.27287652Z   internalQuery: undefined,
+2025-11-29T02:00:16.27288134Z   where: undefined,
+2025-11-29T02:00:16.272886221Z   schema: undefined,
+2025-11-29T02:00:16.272891121Z   table: undefined,
+2025-11-29T02:00:16.272896271Z   column: undefined,
+2025-11-29T02:00:16.272900751Z   dataType: undefined,
+2025-11-29T02:00:16.272904981Z   constraint: undefined,
+2025-11-29T02:00:16.272909401Z   file: 'parse_relation.c',
+2025-11-29T02:00:16.272914201Z   line: '3723',
+2025-11-29T02:00:16.272918931Z   routine: 'errorMissingColumn'
+2025-11-29T02:00:16.272932922Z }
+2025-11-29T02:00:16.272935882Z 
+2025-11-29T02:00:16.272939132Z Node.js v22.16.0

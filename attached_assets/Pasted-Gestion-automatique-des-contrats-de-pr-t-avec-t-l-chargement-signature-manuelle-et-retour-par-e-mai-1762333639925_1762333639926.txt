@@ -1,0 +1,187 @@
+Gestion automatique des contrats de prêt avec téléchargement, signature manuelle et retour par e-mail
+⚙️ Stack technique
+
+Backend : FastAPI (hébergé sur Render)
+
+Base de données : PostgreSQL
+
+Frontend : React (hébergé sur Vercel)
+
+Stockage des fichiers : AWS S3 (ou équivalent compatible S3)
+
+Envoi d’e-mails : SMTP (Mailgun, SendGrid, Postmark ou serveur e-mail gratuit)
+
+🎯 Objectif fonctionnel
+
+L’utilisateur crée une demande de prêt via le site.
+
+L’administrateur ou le système valide la demande.
+
+Une fois validée :
+
+Le contrat de prêt est généré automatiquement (à partir d’un modèle HTML → PDF).
+
+Le fichier est enregistré sur S3 et un lien est créé.
+
+Le client voit le contrat dans son dashboard et peut le télécharger.
+
+Le client signe le document manuellement (papier ou outil PDF).
+
+Il renvoie le document signé par e-mail (adresse dédiée ou formulaire d’upload).
+
+L’administrateur reçoit le contrat signé, qui peut être archivé et visible dans le dashboard.
+
+🗃️ Structure de la base PostgreSQL
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(255) UNIQUE,
+  password_hash TEXT,
+  role VARCHAR(20) DEFAULT 'client'
+);
+
+CREATE TABLE loans (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  amount NUMERIC(12,2),
+  rate NUMERIC(5,2),
+  duration_months INT,
+  status VARCHAR(20) DEFAULT 'pending', -- pending, approved, rejected, signed
+  contract_url TEXT,
+  signed_contract_url TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+🧩 Backend — FastAPI
+
+Dossiers recommandés :
+
+/app
+ ├── main.py
+ ├── models.py
+ ├── routes/
+ │    ├── loans.py
+ │    ├── auth.py
+ ├── services/
+ │    ├── contract_generator.py
+ │    ├── s3_storage.py
+ │    ├── mailer.py
+ └── templates/
+      └── contrat_modele.html
+
+🔧 1. Génération du contrat PDF
+
+services/contract_generator.py :
+
+from jinja2 import Environment, FileSystemLoader
+from weasyprint import HTML
+import tempfile
+
+def generate_contract_pdf(data: dict) -> str:
+    env = Environment(loader=FileSystemLoader("templates"))
+    template = env.get_template("contrat_modele.html")
+    html_content = template.render(data)
+    
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
+    HTML(string=html_content).write_pdf(temp_file.name)
+    return temp_file.name
+
+🔧 2. Validation et génération automatique
+
+routes/loans.py :
+
+from fastapi import APIRouter, HTTPException
+from services.contract_generator import generate_contract_pdf
+from services.s3_storage import upload_to_s3
+from services.mailer import send_mail
+from db import get_loan_by_id, update_loan_status
+
+router = APIRouter()
+
+@router.patch("/api/loans/{loan_id}/validate")
+def validate_loan(loan_id: int):
+    loan = get_loan_by_id(loan_id)
+    if not loan:
+        raise HTTPException(404, "Loan not found")
+
+    update_loan_status(loan_id, "approved")
+
+    pdf_path = generate_contract_pdf({
+        "nom": loan.user.name,
+        "montant": loan.amount,
+        "taux": loan.rate,
+        "duree": loan.duration_months,
+        "date": "2025-11-04"
+    })
+
+    contract_url = upload_to_s3(pdf_path, f"contrats/contrat_{loan.id}.pdf")
+
+    send_mail(
+        to=loan.user.email,
+        subject="Votre contrat de prêt est disponible",
+        body=f"Bonjour {loan.user.name},\n\nVotre contrat est prêt. Téléchargez-le ici : {contract_url}\nSignez-le puis renvoyez-le à contrat@tonsite.com."
+    )
+
+    return {"message": "Contrat généré", "contract_url": contract_url}
+
+🔧 3. Envoi du contrat signé
+
+Deux options :
+
+Option 1 : Upload via dashboard
+@app.post("/api/loans/{loan_id}/upload_signed")
+def upload_signed_contract(loan_id: int, file: UploadFile):
+    path = f"/tmp/signed_{loan_id}.pdf"
+    with open(path, "wb") as f:
+        f.write(file.file.read())
+
+    url = upload_to_s3(path, f"signed/signed_{loan_id}.pdf")
+    update_loan_status(loan_id, "signed", signed_url=url)
+    return {"message": "Contrat signé reçu", "url": url}
+
+Option 2 : Envoi par e-mail
+
+Utilise services.mailer.py avec un SMTP gratuit (Mailjet, Gmail API, etc.).
+Tous les contrats signés reçus sont ensuite téléchargés et archivés manuellement.
+
+🖥️ Frontend (React / Vercel)
+Page Dashboard
+{loans.map(loan => (
+  <Card key={loan.id}>
+    <h3>Contrat #{loan.id}</h3>
+    {loan.status === "approved" && (
+      <>
+        <a href={loan.contract_url} target="_blank" rel="noreferrer">Télécharger le contrat</a>
+        <p>Veuillez le signer et le renvoyer à <b>contrat@tonsite.com</b></p>
+        <UploadButton loanId={loan.id} />
+      </>
+    )}
+    {loan.status === "signed" && (
+      <p>✅ Contrat signé reçu</p>
+    )}
+  </Card>
+))}
+
+💬 Sécurité & conformité
+
+Toutes les actions sont liées au compte connecté (JWT).
+
+Contrats stockés sur S3 avec permissions privées.
+
+Les URLs partagées sont temporaires.
+
+L’email d’envoi est enregistré dans les logs pour traçabilité.
+
+Conforme RGPD si tu respectes l’effacement à la demande et le stockage chiffré.
+
+✅ Résultat final
+
+Le client reçoit automatiquement un contrat PDF clair après validation.
+
+Il peut le télécharger depuis son espace client.
+
+Il signe manuellement et le renvoie par mail ou via le site.
+
+Le document signé devient visible pour les deux parties.
+
+Le tout est 100 % gratuit et entièrement hébergé sur ton infrastructure (Render + Vercel).

@@ -1,0 +1,135 @@
+2. STRUCTURE PROPRE À COLLER DANS Transfers.tsx
+
+⚠️ Tu remplaces uniquement ton container général + la partie du cercle.
+Le reste ne change pas.
+
+🔧 A. WRAPPER GLOBAL (mise en page modernisée)
+
+Remplace ton container principal par celui-ci :
+
+<div className="w-full flex justify-center px-4 py-6">
+  <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+    
+    {/* Colonne de gauche : infos transfert */}
+    <div className="col-span-2 flex flex-col gap-6">
+      {/** === Montant & détails === */}
+      {renderTransferMainCard()}
+      
+      {/** === Étapes du transfert === */}
+      {renderStepsCard()}
+    </div>
+
+    {/* Colonne de droite : progression + sécurité */}
+    <div className="col-span-1 flex flex-col gap-6">
+      {renderProgressCard()}
+      {renderSecurityCard()}
+      {renderValidationCard()}
+    </div>
+
+  </div>
+</div>
+
+
+Ce layout donne :
+
+Une colonne large pour les infos importantes
+
+Une colonne latérale fintech, très posée
+
+Un rendu compact même à 100% de zoom
+
+Pas besoin de scroller horizontalement
+
+🔥 3. CERCLE DE PROGRESSION ANIMÉ (fintech clean, sans casser ton workflow)
+🚀 Remplace ton cercle actuel par :
+const ProgressCircle = ({ percent }: { percent: number }) => {
+  return (
+    <div className="relative w-32 h-32 flex items-center justify-center">
+      <svg className="w-full h-full rotate-[-90deg]">
+        <circle
+          cx="64"
+          cy="64"
+          r="58"
+          stroke="#e5e7eb"
+          strokeWidth="10"
+          fill="none"
+        />
+        <circle
+          cx="64"
+          cy="64"
+          r="58"
+          stroke="url(#grad)"
+          strokeWidth="10"
+          fill="none"
+          strokeLinecap="round"
+          strokeDasharray={Math.PI * 2 * 58}
+          strokeDashoffset={(1 - percent / 100) * Math.PI * 2 * 58}
+          className="transition-all duration-700 ease-out"
+        />
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#4f46e5" />
+            <stop offset="100%" stopColor="#3b82f6" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div className="absolute text-center">
+        <p className="text-2xl font-semibold text-primary">{percent}%</p>
+        <span className="text-xs text-muted-foreground">Progression</span>
+      </div>
+    </div>
+  );
+};
+
+Comment l'utiliser :
+<ProgressCircle percent={transfer.progressPercent} />
+
+
+🎨 Effet obtenu :
+
+Animation fluide
+
+Dégradé bleu/purple fintech
+
+Aucun JS inutile
+
+Pas de charge
+
+Ultra propre visuellement
+
+⚙️ 4. CARTE DE PROGRESSION (plus compacte, élégante)
+
+Remplace ta carte actuelle du pourcentage par :
+
+const renderProgressCard = () => (
+  <div className="bg-white shadow-sm rounded-xl p-6 flex flex-col items-center">
+    <ProgressCircle percent={transfer.progressPercent} />
+    <div className="mt-4 text-center">
+      <p className="text-sm text-muted-foreground">Progression du transfert</p>
+    </div>
+  </div>
+);
+
+🧼 5. STYLE GLOBAL (facultatif mais conseillé)
+
+Ajoutes ceci dans globals.css :
+
+/* Équilibre du blanc, rendu fintech */
+.card {
+  @apply bg-white shadow-sm rounded-xl p-6;
+}
+
+🎯 Résultat final :
+
+Page parfaitement centrée
+
+Layout fintech propre, premium
+
+Aucun scroll horizontal
+
+Rien de cassé dans ton workflow
+
+Cercle animé et élégant
+
+UX clean comme une vraie banque digitale

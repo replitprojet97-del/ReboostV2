@@ -1,0 +1,124 @@
+PROMPT À ENVOYER À REPLIT
+
+Copie-colle tel quel :
+
+PROMPT :
+
+Je te résume précisément la situation et ce que je veux que tu corriges.
+
+🔵 CONTEXTE
+
+Mon frontend tourne sur https://altusfinancesgroup.com
+
+Mon backend API tourne sur https://api.altusfinancesgroup.com
+
+Je n’utilise plus l’ancien domaine altusfinancegroup.com
+(donc plus rien ne doit pointer vers lui).
+
+Tout fonctionne parfaitement :
+
+inscription
+
+connexion
+
+demandes
+
+validation admin
+
+téléchargement & envoi de contrat
+
+libération des fonds
+
+❌ Le seul problème se produit quand un utilisateur clique “Initier le transfert”.
+Le frontend reçoit une erreur
+
+“Impossible d’initier le transfert, veuillez réessayer”
+
+Le backend ne montre aucune erreur.
+
+Je veux que tu corriges le problème PROPREMENT, étape par étape.
+
+🔵 POINT IMPORTANT : fichier vercel.json incorrect
+
+Vercel utilisait encore l’ancien domaine.
+Voici le NOUVEAU vercel.json à utiliser, adapté au domaine actuel + au backend :
+
+{
+  "buildCommand": "npm run build:frontend",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install",
+
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.altusfinancesgroup.com"
+        }
+      ],
+      "destination": "https://altusfinancesgroup.com/:path*",
+      "permanent": true
+    }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://api.altusfinancesgroup.com/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
+
+Ce fichier doit être ignoré dans ton analyse car je veux que tu m’indiques :
+
+Si ce fichier est correct
+
+S’il manque des rewrites côté API
+
+Si le frontend appelle bien POST /api/transfers depuis le bon domaine
+
+S’il existe un problème entre credentials: 'include' + cross-domain
+
+La vraie raison POURQUOI “Initier transfert” échoue alors que tout le reste fonctionne.
+
+🔵 OBJECTIF FINAL
+
+Analyse exclusivement :
+
+la logique de création du transfert
+
+la requête POST /api/transfers
+
+les cookies de session
+
+la configuration cross-domain (CORS / SameSite / cookies / rewrites)
+
+ce qui peut empêcher Replit de déclencher correctement le POST
+
+pourquoi le backend ne reçoit rien
+
+pourquoi le frontend affiche l’erreur
+
+Je veux une analyse complète et une correction fiable, pas une hypothèse.
+
+🔵 CE QUE JE VEUX AU FINAL
+
+👉 Une liste précise des causes possibles
+👉 Le test exact à faire pour vérifier
+👉 La correction exacte à appliquer dans :
+
+frontend
+
+backend
+
+ou configuration Vercel
+
+👉 Et une version corrigée du code de la requête POST si nécessaire
+
+Merci d’analyser et de corriger ce problème de manière professionnelle et exhaustive.

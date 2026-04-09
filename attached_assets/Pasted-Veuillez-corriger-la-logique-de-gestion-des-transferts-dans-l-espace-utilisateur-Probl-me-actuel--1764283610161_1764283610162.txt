@@ -1,0 +1,62 @@
+Veuillez corriger la logique de gestion des transferts dans l’espace utilisateur.
+
+Problème actuel :
+
+Quand un transfert a été initié puis interrompu par l'utilisateur (ex : il ferme la page ou revient en arrière), alors :
+
+Lorsqu’il retourne dans le menu Transferts,
+
+et clique sur ce transfert interrompu,
+
+il est redirigé vers la page “nouveau transfert” (voir l’image que je fournirai),
+
+au lieu d’être redirigé vers la page de progression du transfert déjà en cours.
+
+Comportement attendu (à corriger) :
+1. Les transferts déjà commencés ne doivent jamais revenir sur la page “nouveau transfert”.
+
+Lorsque l’utilisateur clique sur un transfert existant :
+👉 Il doit être automatiquement redirigé vers la page de progression associée à ce transfert (étapes, statut, avancement, actions possibles).
+
+2. La page “nouveau transfert” ne doit être affichée que pour :
+
+un transfert vraiment nouveau
+
+quand aucun transfert existant n’a encore été démarré
+
+ou lorsqu’un ancien transfert est marqué comme terminé ou annulé.
+
+3. Affichage du statut dans le menu Transferts
+
+Pour chaque transfert affiché dans la liste (menu Transferts), merci d’ajouter un statut visible :
+
+“Transfert en attente” (si la création est commencée mais pas finalisée)
+
+“Transfert en cours” (pendant toute la phase de progression)
+
+“Transfert terminé” (quand le processus est complet)
+
+Ce statut doit être basé sur le champ ou l’état actuellement utilisé dans votre base de données pour suivre le workflow du transfert.
+
+Ce que je veux que vous corrigiez concrètement :
+
+Mettre à jour la logique de routing :
+
+Si un transfert possède un état ≠ “nouveau”, rediriger vers la page de progression automatiquement.
+
+Bloquer complètement l'accès à la page "nouveau transfert" tant que :
+
+un autre transfert est en statut "pending", "processing", ou similaire.
+
+Mettre à jour l’UI de la liste des transferts dans le menu pour afficher le statut dynamique.
+
+Vérifier qu’aucun transfert en cours ne peut être relancé comme un nouveau.
+
+Objectif final :
+
+👉 Un transfert existant ou en cours doit toujours ouvrir sa page de progression,
+👉 et le menu Transferts doit toujours afficher son statut en temps réel.
+
+Je fournirai une image pour illustrer la page qui ne doit plus s'afficher.
+
+Merci d’appliquer les correctifs nécessaires.

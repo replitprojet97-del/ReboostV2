@@ -1,0 +1,29 @@
+Tache à compléter. 
+
+📋 Fonctionnalités restantes :
+Tâche 6 - Pause automatique aux pourcentages :
+
+Besoin d'implémenter la logique backend pour pauser le transfert aux pourcentages configurés
+Afficher notification "Contacter le service pour obtenir le code"
+Tâche 7 - Récapitulatif à 100% :
+
+Le récapitulatif existe déjà dans l'étape complete
+À vérifier/améliorer si nécessaire
+Tâche 8 - Tests du flux complet
+
+
+Suite à ce prompt dont plusieurs taches ont été déjà complétées. 
+Flux de l'utilisateur dans son espace personnel et de l'admin
+1- L'utilisateur fait sa demande et envoie les document nécessaire suivant ce qui est exigé sur le site, du point de vu qu'il a soit un compte particulier ou un compte professionnel, cela est obligatoire. Tout les documents sans exception. 
+2- Une fois La demande faite, elle est mis en attente dans son Dashboard avec message lui précisant que sa demande est en cours de traitement, et qu'il recevra une réponse dans un intervalle de quelques minutes à 24h maximum. 
+3- Notification de l'admin si la demande est approuvé ou une notification Texte lui est envoyé dans son Dashboard s'il y a un problème, comme par exemple exiger les frais de traitement du dossier. 
+4- Le contrat est automatiquement généré et disponible dans l'espace utilisateur si la demande est approuvé par l'admin.
+6- Il télécharge et signe le contrat et l'envoi 
+7- Ensuite l'admin débloque les fonds et Le prêt est disponible pour l'utilisateur. 
+8- Apres l'utilisateur peut effectuer son transfert totalement ou partiellement - Entrer les donnés bancaires du compte (Nom, Iban, bic, Montant, et il lance la transaction).
+9- Le transfert est vérifié pendant 45 seconde durant lequel il reçoit une notification d'attente, de ne pas fermer la page. Apres 20 seconde, une notification automatique lui apparait dans son dashboard precisant que son transfert est approuvé et est en cours. Durant la progression, à un certain pourcentage de progression, le transfert se met en pause et requiert un code: 
+( selon le pourcentage appliqué à la barre de progression du transfert par l'admin qui va de 1 à 100%
+
+Aussitôt le code requis, une notification apparait dans le Dashboard: Contacter le service pour obtenir le code du transfert. Et c'est ainsi de suite pour chaque code requis coté utilisateur jusqu'à la fin du transfert. Lorsque la progression atteint 100%, une notification automatique apparait dans son espace personnel, precisant que le transfert a été effectué et en meme temps lorsque la barre de progression atteint les 100%, un message s'affiche avec le recapitulatif du transfert lui confirmant que le transfert a bien été effectué sur le compte qu'il a fourni et qu'il sera disponible sous telle durée. En cas de probleme de retard, de contacter le service. 
+
+Coté admin, mettre en place toute la structure pour gerer l'espace utilisateur comme decrit ci-dessus. 

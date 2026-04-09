@@ -1,0 +1,56 @@
+NE REFLECHIS PAS, NE MODIFIE PAS AUTRE CHOSE QUE CE QUI EST DEMANDE.
+APPLIQUE LES MODIFICATIONS EXACTEMENT COMME INDIQUE CI-DESSOUS.
+
+Objectif : Intégrer une section KYC dans le dashboard admin avec affichage des documents et bouton “Télécharger” sécurisé.
+
+1) Backend (server/routes.ts)
+- Crée une route pour lister les documents KYC d’un utilisateur :
+  GET /api/admin/users/:userId/kyc-documents
+  - Middleware : requireAuth, requireAdmin
+  - Retourne la liste des documents KYC pour l’utilisateur
+  - Exemple de champ retourné pour chaque document :
+    {
+      id,
+      fileName,
+      cloudinaryPublicId,
+      fileType,
+      uploadedAt,
+      status
+    }
+
+- Crée une route pour générer un lien signé Cloudinary pour télécharger un document :
+  GET /api/admin/kyc-documents/:docId/download
+  - Middleware : requireAuth, requireAdmin
+  - Utilise generateSignedCloudinaryDownloadUrl(publicId, fileType)
+  - Renvoie { url: lien_signe } au frontend
+
+- Assure-toi que les routes utilisent correctement les fonctions storage :
+  getUserKycDocuments(userId)
+  updateKycDocumentStatus(docId, status)
+
+2) Frontend (client/src/components/admin)
+- Dans AppSidebarAdmin.tsx, ajoute un menu “KYC” qui pointe vers /admin/kyc
+- Crée un nouveau composant/page : AdminKycPage.tsx
+  - Affiche une table des utilisateurs avec leurs documents KYC
+  - Pour chaque document, ajoute un bouton “Télécharger” qui :
+    1. Appelle GET /api/admin/kyc-documents/:docId/download
+    2. Récupère le lien signé
+    3. Ouvre le lien pour téléchargement (nouvel onglet ou download direct)
+  - La table doit supporter pagination et tri (comme AdminDataTable existant)
+  - Affiche l’état du document (ex : “en attente”, “validé”, “rejeté”)
+
+3) Intégration avec TanStack Query (React Query)
+- Utilise queryClient pour récupérer la liste des documents KYC
+- Rafraîchissement automatique et cache comme pour /api/admin/users
+
+4) Sécurité et workflow
+- Aucune modification des routes existantes pour utilisateurs ou prêts
+- Conserver le workflow actuel
+- Les documents KYC restent sécurisés via Cloudinary avec lien signé 3 à 6 heures
+
+Contraintes :
+- Ne touche pas à d’autres parties du dashboard
+- Respecte la structure existante des composants et menus
+- Ne supprime rien existant
+- Pas de secrets ni variables d’environnement dans le code
+- Applique directement les modifications dans le projet

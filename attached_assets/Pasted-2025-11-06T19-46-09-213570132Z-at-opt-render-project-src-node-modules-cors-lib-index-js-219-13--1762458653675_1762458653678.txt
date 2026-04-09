@@ -1,0 +1,100 @@
+2025-11-06T19:46:09.213570132Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:46:09.21495698Z Error: Not allowed by CORS
+2025-11-06T19:46:09.214970081Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:46:09.214973561Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:46:09.21497701Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-06T19:46:09.214980081Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-06T19:46:09.214983651Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-06T19:46:09.214987651Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-06T19:46:09.215002041Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-06T19:46:09.215005431Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-06T19:46:09.215008041Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-06T19:46:09.215010821Z     at file:///opt/render/project/src/dist/index.js:4959:3
+2025-11-06T19:48:01.620581958Z [CORS DEBUG] Incoming request: GET /api/csrf-token
+2025-11-06T19:48:01.620605188Z [CORS DEBUG] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:01.620620669Z [CORS DEBUG] Headers: {"x-csrf-token":"missing","user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac"}
+2025-11-06T19:48:01.620673049Z [CORS ERROR] ❌ Origin rejected: https://www.altusfinancegroup.com
+2025-11-06T19:48:01.62068188Z [CORS ERROR] Allowed origins: ["https://altusfinancegroup.com"]
+2025-11-06T19:48:01.620831451Z [ERROR] GET /api/csrf-token - Status: 500
+2025-11-06T19:48:01.620837642Z [ERROR] Message: Not allowed by CORS
+2025-11-06T19:48:01.620934293Z [ERROR] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:01.621024204Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-06T19:48:01.621037264Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:01.621042124Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:01.621835965Z Error: Not allowed by CORS
+2025-11-06T19:48:01.621844165Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:01.621849485Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:01.621854425Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-06T19:48:01.621858915Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-06T19:48:01.621864985Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-06T19:48:01.621869675Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-06T19:48:01.621872535Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-06T19:48:01.621875315Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-06T19:48:01.621878125Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-06T19:48:01.621881835Z     at file:///opt/render/project/src/dist/index.js:4959:3
+2025-11-06T19:48:01.802273491Z [CORS DEBUG] Incoming request: OPTIONS /api/auth/signup
+2025-11-06T19:48:01.802309122Z [CORS DEBUG] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:01.802360552Z [CORS DEBUG] Headers: {"x-csrf-token":"missing","user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac"}
+2025-11-06T19:48:01.802508605Z [CORS ERROR] ❌ Origin rejected: https://www.altusfinancegroup.com
+2025-11-06T19:48:01.802558025Z [CORS ERROR] Allowed origins: ["https://altusfinancegroup.com"]
+2025-11-06T19:48:01.802650456Z [ERROR] OPTIONS /api/auth/signup - Status: 500
+2025-11-06T19:48:01.802719967Z [ERROR] Message: Not allowed by CORS
+2025-11-06T19:48:01.802727757Z [ERROR] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:01.802855449Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-06T19:48:01.802860189Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:01.802863049Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:01.803780671Z Error: Not allowed by CORS
+2025-11-06T19:48:01.803790962Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:01.803794091Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:01.803797671Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-06T19:48:01.803800302Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-06T19:48:01.803803222Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-06T19:48:01.803805832Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-06T19:48:01.803808712Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-06T19:48:01.803811672Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-06T19:48:01.803813522Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-06T19:48:01.803815532Z     at file:///opt/render/project/src/dist/index.js:4959:3
+2025-11-06T19:48:08.877360623Z [CORS DEBUG] Incoming request: GET /api/csrf-token
+2025-11-06T19:48:08.877393614Z [CORS DEBUG] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:08.877432764Z [CORS DEBUG] Headers: {"x-csrf-token":"missing","user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac"}
+2025-11-06T19:48:08.877452934Z [CORS ERROR] ❌ Origin rejected: https://www.altusfinancegroup.com
+2025-11-06T19:48:08.877462485Z [CORS ERROR] Allowed origins: ["https://altusfinancegroup.com"]
+2025-11-06T19:48:08.877690348Z [ERROR] GET /api/csrf-token - Status: 500
+2025-11-06T19:48:08.877698698Z [ERROR] Message: Not allowed by CORS
+2025-11-06T19:48:08.877703938Z [ERROR] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:08.877822009Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-06T19:48:08.877831359Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:08.87783475Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:08.87860143Z Error: Not allowed by CORS
+2025-11-06T19:48:08.8786236Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:08.87862858Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:08.87863273Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-06T19:48:08.87863685Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-06T19:48:08.87864155Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-06T19:48:08.87864548Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-06T19:48:08.87864931Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-06T19:48:08.87865316Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-06T19:48:08.87866643Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-06T19:48:08.878669441Z     at file:///opt/render/project/src/dist/index.js:4959:3
+2025-11-06T19:48:09.05934396Z [CORS DEBUG] Incoming request: OPTIONS /api/auth/signup
+2025-11-06T19:48:09.05936042Z [CORS DEBUG] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:09.059387931Z [CORS DEBUG] Headers: {"x-csrf-token":"missing","user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac"}
+2025-11-06T19:48:09.059449382Z [CORS ERROR] ❌ Origin rejected: https://www.altusfinancegroup.com
+2025-11-06T19:48:09.059456352Z [CORS ERROR] Allowed origins: ["https://altusfinancegroup.com"]
+2025-11-06T19:48:09.059581154Z [ERROR] OPTIONS /api/auth/signup - Status: 500
+2025-11-06T19:48:09.059584983Z [ERROR] Message: Not allowed by CORS
+2025-11-06T19:48:09.059587563Z [ERROR] Origin: https://www.altusfinancegroup.com
+2025-11-06T19:48:09.059676525Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-06T19:48:09.059679865Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:09.059681715Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:09.060366344Z Error: Not allowed by CORS
+2025-11-06T19:48:09.060377064Z     at origin (file:///opt/render/project/src/dist/index.js:4973:16)
+2025-11-06T19:48:09.060379194Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-06T19:48:09.060381754Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-06T19:48:09.060383664Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-06T19:48:09.060385974Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-06T19:48:09.060387654Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-06T19:48:09.060389594Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-06T19:48:09.060391294Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-06T19:48:09.060393164Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-06T19:48:09.060394914Z     at file:///opt/render/project/src/dist/index.js:4959:3

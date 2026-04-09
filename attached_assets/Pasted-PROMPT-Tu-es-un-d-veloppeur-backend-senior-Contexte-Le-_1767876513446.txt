@@ -1,0 +1,90 @@
+PROMPT :
+> Tu es un développeur backend senior.
+
+
+Contexte :
+Le projet utilise actuellement une intégration email via Brevo (Sendinblue), que ce soit via SDK, API ou SMTP.Cette intégration doit être entièrement supprimée et remplacée par SendPulse via son API officielle (pas SMTP).
+
+---
+TÂCHE 1 — Nettoyage
+1. Supprime tout code lié à Brevo / Sendinblue :
+SDK Brevo / Sendinblue
+Appels API Brevo
+SMTP Brevo
+Toute logique d’envoi d’email associée
+
+
+2. Supprime toutes les variables d’environnement Brevo :
+BREVO_API_KEY
+SENDINBLUE_*
+Toute clé ou config similaire
+
+
+3. Vérifie qu’aucune référence à Brevo ne reste dans le projet.
+
+
+
+---
+TÂCHE 2 — Variables d’environnement
+Ajouter et utiliser uniquement les variables suivantes :
+SENDPULSE_API_ID=SENDPULSE_API_SECRET=SENDPULSE_FROM_EMAIL=noreply@solventisgroup.orgSENDPULSE_FROM_NAME=Solventis Group
+Aucune clé ne doit être exposée côté frontend
+Toutes les variables sont lues depuis process.env
+
+
+---
+TÂCHE 3 — Authentification SendPulse
+Implémente une fonction backend qui :
+Appellehttps://api.sendpulse.com/oauth/access_token
+Utilise le flow client_credentials
+Récupère un access_token
+Réutilise le token tant qu’il est valide (cache mémoire simple)
+
+
+---
+TÂCHE 4 — Envoi d’email transactionnel
+Implémente une fonction :
+sendTransactionalEmail(toEmail, subject, html, text)
+Cette fonction doit :
+Utiliser l’endpointhttps://api.sendpulse.com/smtp/emails
+Envoyer les emails depuis :
+email : SENDPULSE_FROM_EMAIL
+name : SENDPULSE_FROM_NAME
+
+Supporter :
+HTML
+Texte brut (fallback)
+
+
+
+---
+TÂCHE 5 — Cas d’usage
+Connecte cette fonction SendPulse aux emails transactionnels existants du projet, par exemple :
+Inscription utilisateur
+Notifications système
+Emails déjà présents dans le code
+
+ Ne change pas la logique métier existante, seulement le moteur d’envoi d’email.
+
+---
+TÂCHE 6 — Qualité
+Code clair et commenté
+Gestion des erreurs SendPulse (logs serveur uniquement)
+Aucun console.log de secrets
+Code prêt pour la production
+
+
+---
+IMPORTANT
+ N’utilise PAS SMTP
+ N’utilise PAS Brevo / Sendinblue
+ N’ajoute PAS de dépendances inutiles
+ Utilise uniquement l’API SendPulse
+ Backend uniquement
+
+
+---
+À la fin, confirme clairement :
+Que Brevo est totalement supprimé
+Que SendPulse API est fonctionnel
+Où se situe la nouvelle logique d’envoi d’email dans le projet

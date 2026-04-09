@@ -1,0 +1,366 @@
+2025-11-20T19:10:43.303445265Z ==> Cloning from https://github.com/gitunivers-web/Lepari1
+2025-11-20T19:10:46.535768719Z ==> Checking out commit 4b929f8fd1f4923d9536fcf73305e5f093b383d1 in branch main
+2025-11-20T19:10:48.371462378Z ==> Using Node.js version 22.16.0 (default)
+2025-11-20T19:10:48.395350245Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2025-11-20T19:10:50.250084374Z ==> Running build command 'npm install && npm run build:backend'...
+2025-11-20T19:11:05.89688041Z 
+2025-11-20T19:11:05.89690752Z added 560 packages, and audited 561 packages in 16s
+2025-11-20T19:11:05.896919281Z 
+2025-11-20T19:11:05.896924401Z 76 packages are looking for funding
+2025-11-20T19:11:05.896928551Z   run `npm fund` for details
+2025-11-20T19:11:05.898016187Z 
+2025-11-20T19:11:05.898026527Z found 0 vulnerabilities
+2025-11-20T19:11:06.06793113Z 
+2025-11-20T19:11:06.067954101Z > rest-express@1.0.0 build:backend
+2025-11-20T19:11:06.067959341Z > npx esbuild server/index.ts --platform=node --packages=external --external:./vite --bundle --format=esm --outdir=dist
+2025-11-20T19:11:06.067967051Z 
+2025-11-20T19:11:06.35439988Z 
+2025-11-20T19:11:06.354421801Z   dist/index.js  426.0kb
+2025-11-20T19:11:06.354423971Z 
+2025-11-20T19:11:06.354426121Z ⚡ Done in 18ms
+2025-11-20T19:11:13.415909979Z ==> Uploading build...
+2025-11-20T19:11:33.949830036Z ==> Uploaded in 16.4s. Compression took 4.1s
+2025-11-20T19:11:34.083758063Z ==> Build successful 🎉
+2025-11-20T19:11:47.933673691Z ==> Deploying...
+2025-11-20T19:12:28.647622253Z ==> Running 'npm start'
+2025-11-20T19:12:29.647537927Z 
+2025-11-20T19:12:29.647567778Z > rest-express@1.0.0 start
+2025-11-20T19:12:29.647572288Z > NODE_ENV=production node dist/index.js
+2025-11-20T19:12:29.647574528Z 
+2025-11-20T19:12:41.244861935Z ✅ Cloudinary configured successfully
+2025-11-20T19:12:41.2460641Z ============================================================
+2025-11-20T19:12:41.24607685Z [CONFIG] Environment: production
+2025-11-20T19:12:41.246082041Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-20T19:12:41.246091011Z [CONFIG] Cookie SameSite: none
+2025-11-20T19:12:41.246163142Z [CONFIG] Cookie Secure: true
+2025-11-20T19:12:41.246169132Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-20T19:12:41.246220973Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-20T19:12:41.246298025Z [CONFIG] Trust Proxy: enabled
+2025-11-20T19:12:41.246495449Z ============================================================
+2025-11-20T19:12:41.651509081Z 7:12:41 PM [express] ✅ Backend API server listening on port 10000
+2025-11-20T19:12:41.652688546Z 7:12:41 PM [express] 🌍 Environment: production
+2025-11-20T19:12:41.652698306Z 7:12:41 PM [express] 🗄️ Database: Connected
+2025-11-20T19:12:41.652731896Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-20T19:12:41.652751647Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-20T19:12:41.652758147Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-20T19:12:41.652762087Z [CONFIG] Session Cookie Secure: true
+2025-11-20T19:12:41.652765927Z [CONFIG] Session Cookie SameSite: none
+2025-11-20T19:12:46.662784077Z Expired OTPs cleaned up
+2025-11-20T19:12:48.844088348Z ==> Your service is live 🎉
+2025-11-20T19:12:49.257829761Z ==> 
+2025-11-20T19:12:49.452065315Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T19:12:49.620430702Z ==> 
+2025-11-20T19:12:49.791459548Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-20T19:12:51.048281116Z ==> 
+2025-11-20T19:12:51.334740737Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T19:13:11.275495111Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:13:11.275518791Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:13:11.275524271Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:13:11.275531032Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:13:11.275538222Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:13:11.275541142Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:13:11.275543862Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:13:11.275546762Z   length: 116,
+2025-11-20T19:13:11.275551172Z   severity: 'ERROR',
+2025-11-20T19:13:11.275554402Z   code: '42703',
+2025-11-20T19:13:11.275557602Z   detail: undefined,
+2025-11-20T19:13:11.275560852Z   hint: undefined,
+2025-11-20T19:13:11.275564112Z   position: '14',
+2025-11-20T19:13:11.275567862Z   internalPosition: undefined,
+2025-11-20T19:13:11.275571062Z   internalQuery: undefined,
+2025-11-20T19:13:11.275574282Z   where: undefined,
+2025-11-20T19:13:11.275577473Z   schema: undefined,
+2025-11-20T19:13:11.275580662Z   table: undefined,
+2025-11-20T19:13:11.275583833Z   column: undefined,
+2025-11-20T19:13:11.275587043Z   dataType: undefined,
+2025-11-20T19:13:11.275590273Z   constraint: undefined,
+2025-11-20T19:13:11.275593473Z   file: 'parse_relation.c',
+2025-11-20T19:13:11.275596693Z   line: '3716',
+2025-11-20T19:13:11.275599923Z   routine: 'errorMissingColumn'
+2025-11-20T19:13:11.275603173Z }
+2025-11-20T19:13:11.28164085Z 7:13:11 PM [express] GET /api/dashboard 500 in 405ms
+2025-11-20T19:13:11.947680377Z 7:13:11 PM [express] GET /api/transfers 500 in 580ms
+2025-11-20T19:13:12.071760695Z 7:13:12 PM [express] GET /api/notifications/unread-count 304 in 469ms
+2025-11-20T19:13:14.795343152Z 7:13:14 PM [express] GET /api/notifications 304 in 15ms
+2025-11-20T19:14:46.482515104Z 7:14:46 PM [express] GET /api/csrf-token 200 in 6ms
+2025-11-20T19:15:14.968835733Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T19:15:14.968900814Z [ERROR] Message: Not allowed by CORS
+2025-11-20T19:15:14.968990486Z [ERROR] Origin: https://nouveaudepart-9r843179t-githuniversgmailcoms-projects.vercel.app
+2025-11-20T19:15:14.968997016Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T19:15:14.969001796Z     at origin (file:///opt/render/project/src/dist/index.js:9859:16)
+2025-11-20T19:15:14.969006596Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T19:15:14.970650791Z Error: Not allowed by CORS
+2025-11-20T19:15:14.970661921Z     at origin (file:///opt/render/project/src/dist/index.js:9859:16)
+2025-11-20T19:15:14.970664941Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T19:15:14.970668241Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T19:15:14.970670961Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T19:15:14.970674401Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T19:15:14.970677091Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T19:15:14.970679742Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T19:15:14.970682762Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T19:15:14.970685911Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T19:15:14.970690452Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T19:15:15.021045964Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T19:15:15.021069745Z [ERROR] Message: Not allowed by CORS
+2025-11-20T19:15:15.021074115Z [ERROR] Origin: https://nouveaudepart-9r843179t-githuniversgmailcoms-projects.vercel.app
+2025-11-20T19:15:15.021144326Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T19:15:15.021152596Z     at origin (file:///opt/render/project/src/dist/index.js:9859:16)
+2025-11-20T19:15:15.021157227Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T19:15:15.021844761Z Error: Not allowed by CORS
+2025-11-20T19:15:15.021859341Z     at origin (file:///opt/render/project/src/dist/index.js:9859:16)
+2025-11-20T19:15:15.021864271Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T19:15:15.021869271Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T19:15:15.021873442Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T19:15:15.021878462Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T19:15:15.021889602Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T19:15:15.021892462Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T19:15:15.021895202Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T19:15:15.021897992Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T19:15:15.021913023Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T19:15:27.182126989Z Verification email sent to xiqc46ih@no.vsmailpro.com in fr
+2025-11-20T19:15:27.190962925Z 7:15:27 PM [express] POST /api/auth/signup 201 in 2941ms
+2025-11-20T19:15:41.951744653Z Welcome email sent to xiqc46ih@no.vsmailpro.com in fr
+2025-11-20T19:15:41.976533095Z [EMAIL VERIFY SUCCESS] Email verified and user auto-logged in
+2025-11-20T19:15:41.976551396Z [EMAIL VERIFY SUCCESS] Session created and will be sent as cookie
+2025-11-20T19:15:41.976555386Z [EMAIL VERIFY SUCCESS] Cookie domain: .altusfinancesgroup.com
+2025-11-20T19:15:41.981636643Z 7:15:41 PM [express] GET /api/auth/verify/7afa7a53-ecf8-4371-8f2f-b59b30d2440b 200 in 812ms
+2025-11-20T19:15:44.342779297Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:15:44.342799878Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:15:44.342805168Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:15:44.342809738Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:15:44.342814048Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:15:44.342818048Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:15:44.342822098Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:15:44.342826398Z   length: 116,
+2025-11-20T19:15:44.342831268Z   severity: 'ERROR',
+2025-11-20T19:15:44.342835358Z   code: '42703',
+2025-11-20T19:15:44.342839209Z   detail: undefined,
+2025-11-20T19:15:44.342843329Z   hint: undefined,
+2025-11-20T19:15:44.342847209Z   position: '14',
+2025-11-20T19:15:44.342852119Z   internalPosition: undefined,
+2025-11-20T19:15:44.342855999Z   internalQuery: undefined,
+2025-11-20T19:15:44.342860369Z   where: undefined,
+2025-11-20T19:15:44.342864109Z   schema: undefined,
+2025-11-20T19:15:44.342867979Z   table: undefined,
+2025-11-20T19:15:44.342871919Z   column: undefined,
+2025-11-20T19:15:44.342875999Z   dataType: undefined,
+2025-11-20T19:15:44.342880219Z   constraint: undefined,
+2025-11-20T19:15:44.342884119Z   file: 'parse_relation.c',
+2025-11-20T19:15:44.34288793Z   line: '3716',
+2025-11-20T19:15:44.34289211Z   routine: 'errorMissingColumn'
+2025-11-20T19:15:44.34289623Z }
+2025-11-20T19:15:44.348687072Z 7:15:44 PM [express] GET /api/dashboard 500 in 39ms
+2025-11-20T19:15:44.816024661Z 7:15:44 PM [express] GET /api/notifications 200 in 500ms
+2025-11-20T19:15:44.970521451Z 7:15:44 PM [express] GET /api/user 200 in 611ms
+2025-11-20T19:15:45.177007597Z 7:15:45 PM [express] GET /api/notifications/unread-count 200 in 812ms
+2025-11-20T19:15:45.182068304Z 7:15:45 PM [express] GET /api/loans 200 in 448ms
+2025-11-20T19:15:45.372666855Z 7:15:45 PM [express] GET /api/charts/upcoming-repayments 200 in 85ms
+2025-11-20T19:15:45.617628703Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:15:45.617650414Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:15:45.617656284Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:15:45.617662724Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:15:45.617667354Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:15:45.617671414Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:15:45.617684825Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:15:45.617687845Z   length: 116,
+2025-11-20T19:15:45.617691155Z   severity: 'ERROR',
+2025-11-20T19:15:45.617693735Z   code: '42703',
+2025-11-20T19:15:45.617696105Z   detail: undefined,
+2025-11-20T19:15:45.617698525Z   hint: undefined,
+2025-11-20T19:15:45.617701205Z   position: '14',
+2025-11-20T19:15:45.617750626Z   internalPosition: undefined,
+2025-11-20T19:15:45.617753226Z   internalQuery: undefined,
+2025-11-20T19:15:45.617755706Z   where: undefined,
+2025-11-20T19:15:45.617758436Z   schema: undefined,
+2025-11-20T19:15:45.617760956Z   table: undefined,
+2025-11-20T19:15:45.617763426Z   column: undefined,
+2025-11-20T19:15:45.617766436Z   dataType: undefined,
+2025-11-20T19:15:45.617769086Z   constraint: undefined,
+2025-11-20T19:15:45.617771376Z   file: 'parse_relation.c',
+2025-11-20T19:15:45.617774216Z   line: '3716',
+2025-11-20T19:15:45.617776676Z   routine: 'errorMissingColumn'
+2025-11-20T19:15:45.617779327Z }
+2025-11-20T19:15:45.62174382Z 7:15:45 PM [express] GET /api/dashboard 500 in 19ms
+2025-11-20T19:15:45.965533793Z 7:15:45 PM [express] GET /api/transfers 500 in 1304ms
+2025-11-20T19:15:47.285328668Z 7:15:47 PM [express] GET /api/transfers 500 in 32ms
+2025-11-20T19:15:47.961063924Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:15:47.961086124Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:15:47.961090464Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:15:47.961094174Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:15:47.961097084Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:15:47.961099674Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:15:47.961102514Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:15:47.961105194Z   length: 116,
+2025-11-20T19:15:47.961108305Z   severity: 'ERROR',
+2025-11-20T19:15:47.961110835Z   code: '42703',
+2025-11-20T19:15:47.961113255Z   detail: undefined,
+2025-11-20T19:15:47.961115795Z   hint: undefined,
+2025-11-20T19:15:47.961118245Z   position: '14',
+2025-11-20T19:15:47.961121175Z   internalPosition: undefined,
+2025-11-20T19:15:47.961123845Z   internalQuery: undefined,
+2025-11-20T19:15:47.961126515Z   where: undefined,
+2025-11-20T19:15:47.961129155Z   schema: undefined,
+2025-11-20T19:15:47.961131725Z   table: undefined,
+2025-11-20T19:15:47.961134085Z   column: undefined,
+2025-11-20T19:15:47.961136485Z   dataType: undefined,
+2025-11-20T19:15:47.961138805Z   constraint: undefined,
+2025-11-20T19:15:47.961141525Z   file: 'parse_relation.c',
+2025-11-20T19:15:47.961144215Z   line: '3716',
+2025-11-20T19:15:47.961146575Z   routine: 'errorMissingColumn'
+2025-11-20T19:15:47.961149035Z }
+2025-11-20T19:15:47.965412396Z 7:15:47 PM [express] GET /api/dashboard 500 in 15ms
+2025-11-20T19:15:49.568266511Z 7:15:49 PM [express] GET /api/transfers 500 in 14ms
+2025-11-20T19:15:50.567324839Z 7:15:50 PM [express] GET /api/notifications 200 in 433ms
+2025-11-20T19:15:50.866502331Z 7:15:50 PM [express] GET /api/notifications/unread-count 304 in 401ms
+2025-11-20T19:15:52.244103504Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:15:52.244129475Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:15:52.244147515Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:15:52.244150765Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:15:52.244152845Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:15:52.244154935Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:15:52.244156985Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:15:52.244159955Z   length: 116,
+2025-11-20T19:15:52.244163946Z   severity: 'ERROR',
+2025-11-20T19:15:52.244167606Z   code: '42703',
+2025-11-20T19:15:52.244170946Z   detail: undefined,
+2025-11-20T19:15:52.244174346Z   hint: undefined,
+2025-11-20T19:15:52.244177666Z   position: '14',
+2025-11-20T19:15:52.244182046Z   internalPosition: undefined,
+2025-11-20T19:15:52.244185826Z   internalQuery: undefined,
+2025-11-20T19:15:52.244189086Z   where: undefined,
+2025-11-20T19:15:52.244192776Z   schema: undefined,
+2025-11-20T19:15:52.244195606Z   table: undefined,
+2025-11-20T19:15:52.244197996Z   column: undefined,
+2025-11-20T19:15:52.244200106Z   dataType: undefined,
+2025-11-20T19:15:52.244202446Z   constraint: undefined,
+2025-11-20T19:15:52.244204486Z   file: 'parse_relation.c',
+2025-11-20T19:15:52.244206627Z   line: '3716',
+2025-11-20T19:15:52.244208696Z   routine: 'errorMissingColumn'
+2025-11-20T19:15:52.244210747Z }
+2025-11-20T19:15:52.248965357Z 7:15:52 PM [express] GET /api/dashboard 500 in 17ms
+2025-11-20T19:15:53.879334783Z 7:15:53 PM [express] GET /api/transfers 500 in 10ms
+2025-11-20T19:15:56.267985377Z 7:15:56 PM [express] GET /api/notifications 304 in 387ms
+2025-11-20T19:15:56.563190815Z 7:15:56 PM [express] GET /api/notifications/unread-count 304 in 373ms
+2025-11-20T19:17:05.665662713Z 7:17:05 PM [express] GET /api/notifications 304 in 325ms
+2025-11-20T19:17:06.175602841Z 7:17:06 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T19:17:07.307409836Z 7:17:07 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T19:17:07.541385632Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:17:07.541407943Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:17:07.541413713Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:17:07.541418363Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:17:07.541422203Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:17:07.541426093Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:17:07.541429933Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:17:07.541433753Z   length: 116,
+2025-11-20T19:17:07.541438084Z   severity: 'ERROR',
+2025-11-20T19:17:07.541442313Z   code: '42703',
+2025-11-20T19:17:07.541445974Z   detail: undefined,
+2025-11-20T19:17:07.541449484Z   hint: undefined,
+2025-11-20T19:17:07.541453374Z   position: '14',
+2025-11-20T19:17:07.541457754Z   internalPosition: undefined,
+2025-11-20T19:17:07.541461414Z   internalQuery: undefined,
+2025-11-20T19:17:07.541465144Z   where: undefined,
+2025-11-20T19:17:07.541468934Z   schema: undefined,
+2025-11-20T19:17:07.541472584Z   table: undefined,
+2025-11-20T19:17:07.541476294Z   column: undefined,
+2025-11-20T19:17:07.541479804Z   dataType: undefined,
+2025-11-20T19:17:07.541492645Z   constraint: undefined,
+2025-11-20T19:17:07.541494985Z   file: 'parse_relation.c',
+2025-11-20T19:17:07.541497155Z   line: '3716',
+2025-11-20T19:17:07.541499375Z   routine: 'errorMissingColumn'
+2025-11-20T19:17:07.541501545Z }
+2025-11-20T19:17:07.546865948Z 7:17:07 PM [express] GET /api/dashboard 500 in 65ms
+2025-11-20T19:17:08.562040614Z 7:17:08 PM [express] GET /api/loans 304 in 1267ms
+2025-11-20T19:17:08.761834018Z 7:17:08 PM [express] GET /api/charts/upcoming-repayments 304 in 97ms
+2025-11-20T19:17:08.776760563Z 7:17:08 PM [express] GET /api/user 304 in 14ms
+2025-11-20T19:17:08.872998203Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:17:08.873015564Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:17:08.873019744Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:17:08.873023224Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:17:08.873026214Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:17:08.873028834Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:17:08.873031314Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:17:08.873033994Z   length: 116,
+2025-11-20T19:17:08.873037184Z   severity: 'ERROR',
+2025-11-20T19:17:08.873039854Z   code: '42703',
+2025-11-20T19:17:08.873042224Z   detail: undefined,
+2025-11-20T19:17:08.873044684Z   hint: undefined,
+2025-11-20T19:17:08.873047254Z   position: '14',
+2025-11-20T19:17:08.873050344Z   internalPosition: undefined,
+2025-11-20T19:17:08.873052875Z   internalQuery: undefined,
+2025-11-20T19:17:08.873055355Z   where: undefined,
+2025-11-20T19:17:08.873057824Z   schema: undefined,
+2025-11-20T19:17:08.873060285Z   table: undefined,
+2025-11-20T19:17:08.873062945Z   column: undefined,
+2025-11-20T19:17:08.873065445Z   dataType: undefined,
+2025-11-20T19:17:08.873068065Z   constraint: undefined,
+2025-11-20T19:17:08.873070465Z   file: 'parse_relation.c',
+2025-11-20T19:17:08.873072985Z   line: '3716',
+2025-11-20T19:17:08.873075495Z   routine: 'errorMissingColumn'
+2025-11-20T19:17:08.873077985Z }
+2025-11-20T19:17:08.875497176Z 7:17:08 PM [express] GET /api/notifications/unread-count 304 in 1393ms
+2025-11-20T19:17:08.878011809Z 7:17:08 PM [express] GET /api/dashboard 500 in 15ms
+2025-11-20T19:17:09.065537925Z 7:17:09 PM [express] GET /api/transfers 500 in 593ms
+2025-11-20T19:17:18.398110148Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:17:18.398135349Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:17:18.398141349Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:17:18.398146249Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:17:18.398150319Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:17:18.398154939Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:17:18.398159089Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:17:18.398163199Z   length: 116,
+2025-11-20T19:17:18.398167549Z   severity: 'ERROR',
+2025-11-20T19:17:18.398171479Z   code: '42703',
+2025-11-20T19:17:18.398175299Z   detail: undefined,
+2025-11-20T19:17:18.398179399Z   hint: undefined,
+2025-11-20T19:17:18.39819305Z   position: '14',
+2025-11-20T19:17:18.3981965Z   internalPosition: undefined,
+2025-11-20T19:17:18.3981993Z   internalQuery: undefined,
+2025-11-20T19:17:18.39820186Z   where: undefined,
+2025-11-20T19:17:18.3982044Z   schema: undefined,
+2025-11-20T19:17:18.39820691Z   table: undefined,
+2025-11-20T19:17:18.39820982Z   column: undefined,
+2025-11-20T19:17:18.39821244Z   dataType: undefined,
+2025-11-20T19:17:18.39821488Z   constraint: undefined,
+2025-11-20T19:17:18.3982174Z   file: 'parse_relation.c',
+2025-11-20T19:17:18.39822024Z   line: '3716',
+2025-11-20T19:17:18.39822294Z   routine: 'errorMissingColumn'
+2025-11-20T19:17:18.398225391Z }
+2025-11-20T19:17:18.404618215Z 7:17:18 PM [express] GET /api/dashboard 500 in 18ms
+2025-11-20T19:17:18.862114836Z 7:17:18 PM [express] GET /api/transfers 500 in 428ms
+2025-11-20T19:17:19.563242777Z 7:17:19 PM [express] GET /api/notifications/unread-count 304 in 411ms
+2025-11-20T19:17:21.194143041Z 7:17:21 PM [express] GET /api/transfers 500 in 10ms
+2025-11-20T19:17:22.877299267Z 7:17:22 PM [express] GET /api/notifications 304 in 318ms
+2025-11-20T19:17:22.998093005Z Dashboard error: error: column "reference_number" does not exist
+2025-11-20T19:17:22.998128096Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-20T19:17:22.998136036Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-20T19:17:22.998141536Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-20T19:17:22.998144976Z     at async DatabaseStorage.getUserTransfers (file:///opt/render/project/src/dist/index.js:798:16)
+2025-11-20T19:17:22.998148316Z     at async DatabaseStorage.getDashboardData (file:///opt/render/project/src/dist/index.js:848:31)
+2025-11-20T19:17:22.998156007Z     at async file:///opt/render/project/src/dist/index.js:7193:20 {
+2025-11-20T19:17:22.998159437Z   length: 116,
+2025-11-20T19:17:22.998163627Z   severity: 'ERROR',
+2025-11-20T19:17:22.998166947Z   code: '42703',
+2025-11-20T19:17:22.998170277Z   detail: undefined,
+2025-11-20T19:17:22.998173617Z   hint: undefined,
+2025-11-20T19:17:22.998176897Z   position: '14',
+2025-11-20T19:17:22.998181027Z   internalPosition: undefined,
+2025-11-20T19:17:22.998184337Z   internalQuery: undefined,
+2025-11-20T19:17:22.998187597Z   where: undefined,
+2025-11-20T19:17:22.998190877Z   schema: undefined,
+2025-11-20T19:17:22.998194168Z   table: undefined,
+2025-11-20T19:17:22.998197477Z   column: undefined,
+2025-11-20T19:17:22.998200777Z   dataType: undefined,
+2025-11-20T19:17:22.998204048Z   constraint: undefined,
+2025-11-20T19:17:22.998207338Z   file: 'parse_relation.c',
+2025-11-20T19:17:22.998210638Z   line: '3716',
+2025-11-20T19:17:22.998213888Z   routine: 'errorMissingColumn'
+2025-11-20T19:17:22.998217188Z }
+2025-11-20T19:17:23.066335795Z 7:17:23 PM [express] GET /api/dashboard 500 in 391ms
+2025-11-20T19:17:24.927146009Z 7:17:24 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T19:17:25.516943841Z 7:17:25 PM [express] GET /api/transfers 500 in 13ms
+2025-11-20T19:17:28.492207514Z 7:17:28 PM [express] GET /api/notifications 304 in 341ms
+2025-11-20T19:17:30.271908746Z 7:17:30 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T19:17:33.81985122Z 7:17:33 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T19:17:45.274422386Z ==> Detected service running on port 10000
+2025-11-20T19:17:45.719634321Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding

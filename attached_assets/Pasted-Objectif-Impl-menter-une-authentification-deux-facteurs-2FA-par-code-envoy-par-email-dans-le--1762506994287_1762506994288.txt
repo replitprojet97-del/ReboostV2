@@ -1,0 +1,172 @@
+Objectif :
+Implémenter une authentification à deux facteurs (2FA) par code envoyé par email dans le projet existant,
+en environnement cross-domain :
+
+Frontend : https://altusfinancegroup.com (Vercel)
+
+Backend : https://api.altusfinancegroup.com (Render)
+
+Base de données : PostgreSQL (Drizzle ORM)
+
+⚙️ Tâches à effectuer :
+
+1️⃣ Mettre à jour le CORS du backend
+
+Dans le fichier principal du serveur Express (ex. src/index.ts ou server.ts),
+ajouter ou ajuster :
+
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: ["https://altusfinancegroup.com"], // domaine du frontend
+    credentials: true,
+  })
+);
+
+2️⃣ Ajouter une table user_otps dans Drizzle
+
+Dans le schéma partagé (@shared/schema ou /db/schema.ts) :
+
+import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+
+export const userOtps = pgTable("user_otps", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  userId: text("user_id").notNull(),
+  otpCode: text("otp_code").notNull(),
+  expiresAt: timestamp("expires_at").notNull(),
+  used: text("used").default("false"),
+});
+
+3️⃣ Créer un service generateAndSendOTP
+
+Fichier : src/services/otp.ts
+
+import crypto from "crypto";
+import { db } from "../db";
+import { userOtps } from "@shared/schema";
+import { sendEmail } from "../email";
+
+export async function generateAndSendOTP(userId: string, email: string) {
+  const code = crypto.randomInt(100000, 999999).toString();
+  const expires = new Date(Date.now() + 5 * 60 * 1000); // 5 min
+
+  await db.insert(userOtps).values({
+    userId,
+    otpCode: code,
+    expiresAt: expires,
+  });
+
+  await sendEmail({
+    to: email,
+    subject: "Votre code de vérification - Altus Finance Group",
+    text: `Bonjour,\n\nVotre code de sécurité est : ${code}\nCe code expirera dans 5 minutes.\n\nAltus Finance Group.`,
+  });
+}
+
+4️⃣ Modifier la route /api/auth/login
+
+Dans le contrôleur de login :
+
+import { generateAndSendOTP } from "../services/otp";
+
+// Après validation du mot de passe :
+await generateAndSendOTP(user.id, user.email);
+
+return res.status(200).json({
+  message: "Un code de vérification vous a été envoyé par email.",
+  userId: user.id,
+});
+
+5️⃣ Créer une route /api/auth/verify-otp
+import { db } from "../db";
+import { eq, and } from "drizzle-orm";
+import { userOtps } from "@shared/schema";
+
+app.post("/api/auth/verify-otp", async (req, res) => {
+  const { userId, code } = req.body;
+
+  const record = await db.query.userOtps.findFirst({
+    where: and(eq(userOtps.userId, userId), eq(userOtps.otpCode, code)),
+  });
+
+  if (!record || record.used === "true" || record.expiresAt < new Date()) {
+    return res.status(400).json({ message: "Code invalide ou expiré" });
+  }
+
+  await db
+    .update(userOtps)
+    .set({ used: "true" })
+    .where(eq(userOtps.id, record.id));
+
+  // Authentification validée
+  return res.status(200).json({ success: true });
+});
+
+6️⃣ Côté frontend (Vercel)
+
+Créer une page /verify-otp :
+
+import { useState } from "react";
+
+export default function VerifyOTP() {
+  const [code, setCode] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleVerify = async () => {
+    const res = await fetch("https://api.altusfinancegroup.com/api/auth/verify-otp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: localStorage.getItem("userId"),
+        code,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      window.location.href = "/dashboard";
+    } else {
+      setMessage(data.message);
+    }
+  };
+
+  return (
+    <div className="p-6 max-w-sm mx-auto">
+      <h2 className="text-xl font-semibold mb-4 text-center">
+        Vérification du code
+      </h2>
+      <input
+        type="text"
+        value={code}
+        onChange={(e) => setCode(e.target.value)}
+        className="border p-2 rounded w-full text-center tracking-widest text-lg"
+        placeholder="••••••"
+      />
+      <button
+        onClick={handleVerify}
+        className="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full"
+      >
+        Vérifier le code
+      </button>
+      {message && <p className="text-red-500 mt-2 text-center">{message}</p>}
+    </div>
+  );
+}
+
+✅ Comportement attendu :
+
+L’utilisateur se connecte → mot de passe vérifié → un code 2FA lui est envoyé.
+
+Il est redirigé vers /verify-otp.
+
+Il entre le code → si valide, il accède à son dashboard.
+
+Le code expire après 5 minutes et n’est utilisable qu’une fois.
+
+💡 Bonus (à préparer plus tard)
+
+Option “Renvoyer le code”
+
+Activer un 2FA via application mobile (Google Authenticator) en utilisant speakeasy
+
+Interface dans l’espace “Sécurité du compte” pour activer/désactiver le 2FA.

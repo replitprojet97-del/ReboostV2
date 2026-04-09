@@ -1,0 +1,21 @@
+Flux entre espace utilisateur et l'admin (Verifie que la logique est bien suivi)
+
+
+
+1- L'utilisateur fait sa demande et envoie les document nécessaire qui varie en fonction qu'il soit particulier ou professionnel, cela est obligatoire
+2- La demande est mis en attente dans son Dashboard avec message qu'il est en cours de traitement.
+3- L'admin reçoit la demande avec les documents, le nom de l'utilisateur, son email, son numero de tel ( l'ensemble de ses donnés). Apres analyse l'admin peut valider sa demande, ou la rejeter avec motif qui apparaitra dans le Dashboard de l'utilisateur au niveau des notification. Si plus d'infos ou des demandes particulières sont nécessaires, l'admin notifie l'utilisateur depuis l'espace administrateurs et la notification apparait dans l'espace utilisateur. 
+
+4- Si la demande est approuvé, Le contrat est généré de façon automatique dans le dashboard utilisateur avec notification immediate. L'utilisateur pourra le telecharger, le signer numériquement ou manuellement, et l'envoyer via son Dashboard. 
+
+5- Ensuite si le contrat est verifié par l'admin et confirmé valide, le système s'automatise pour programmer les codes 5 codes nécessaires pour la validation du transfert coté client et le pourcentage à laquelle le transfert devra se mettre en pause, et qu'une petite case apparaitra pour demander le code associé à un paiement/ motif precis). 
+
+
+6- Si le client entre un code valide, le code est confirmé valide avec notification et le transfert progresse jusqu'au prochain code et ainsi de suite. Si le code n'est pas valide, pop up de notification le confirme
+
+A la fin du transfert complete, un message avec recapitulatif doit s'afficher pour confirmation avec instructions. 
+
+A noter que chaque code utilisé ne doit plus etre réutiliser pour un autre transfert. Les codes doivent etre generé aléatoirement. 
+
+''''''''''''''''''''***
+Precision: Le systeme ne genere pas les codes et notifie l'utilisateur automatiquement. Le systeme genere les codes pour le compte de l'admin concernant le transfert en question. C'est quand l'utilisateur initie son transfert apres disponibilité des fonds dans son espace utilisateur et que le transfert se met en pause à un pourcentage donné, qu'une petite case apparait requerant un code dont le motif est précisé avec notification à l'utilisateur. L'utilisateur contacte alors l'admin pour demander ce code lié à un paiement. Si paiement effectué, le code lui est envoyé et il valide sa transaction et continue. Et ainsi de suite pour tout les 5 codes.

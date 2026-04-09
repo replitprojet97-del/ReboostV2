@@ -1,0 +1,503 @@
+2025-11-20T21:05:37.717373122Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:05:37.717376092Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T21:05:37.717377852Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T21:05:37.717382082Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T21:05:37.717383853Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T21:05:37.717385473Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T21:05:37.717387233Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T21:05:37.717388963Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T21:05:37.717390783Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T21:05:38.048673017Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T21:05:38.048703829Z [ERROR] Message: Not allowed by CORS
+2025-11-20T21:05:38.048708309Z [ERROR] Origin: https://nouveaudepart-qc5b3qovf-githuniversgmailcoms-projects.vercel.app
+2025-11-20T21:05:38.04871786Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T21:05:38.0487213Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T21:05:38.048724181Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:05:38.049319787Z Error: Not allowed by CORS
+2025-11-20T21:05:38.049329258Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T21:05:38.049331308Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:05:38.049333438Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T21:05:38.049335128Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T21:05:38.049338088Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T21:05:38.049340399Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T21:05:38.049342119Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T21:05:38.049343899Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T21:05:38.049345599Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T21:05:38.049347939Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T21:06:13.658856086Z ==> Deploying...
+2025-11-20T21:06:39.485217651Z ==> Running 'npm start'
+2025-11-20T21:06:40.587361325Z 
+2025-11-20T21:06:40.587407377Z > rest-express@1.0.0 start
+2025-11-20T21:06:40.587412146Z > NODE_ENV=production node dist/index.js
+2025-11-20T21:06:40.587414397Z 
+2025-11-20T21:06:52.377725123Z ✅ Cloudinary configured successfully
+2025-11-20T21:06:52.378594713Z ============================================================
+2025-11-20T21:06:52.378666885Z [CONFIG] Environment: production
+2025-11-20T21:06:52.378680825Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-20T21:06:52.378700546Z [CONFIG] Cookie SameSite: none
+2025-11-20T21:06:52.378756197Z [CONFIG] Cookie Secure: true
+2025-11-20T21:06:52.378784257Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-20T21:06:52.37889026Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-20T21:06:52.378971522Z [CONFIG] Trust Proxy: enabled
+2025-11-20T21:06:52.379170687Z ============================================================
+2025-11-20T21:06:52.67961831Z 9:06:52 PM [express] ✅ Backend API server listening on port 10000
+2025-11-20T21:06:52.679808324Z 9:06:52 PM [express] 🌍 Environment: production
+2025-11-20T21:06:52.679955348Z 9:06:52 PM [express] 🗄️ Database: Connected
+2025-11-20T21:06:52.679964298Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-20T21:06:52.679970018Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-20T21:06:52.679977959Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-20T21:06:52.679981919Z [CONFIG] Session Cookie Secure: true
+2025-11-20T21:06:52.679999739Z [CONFIG] Session Cookie SameSite: none
+2025-11-20T21:06:56.786249909Z ==> Your service is live 🎉
+2025-11-20T21:06:57.006407149Z ==> 
+2025-11-20T21:06:57.174208236Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T21:06:57.357336831Z ==> 
+2025-11-20T21:06:57.536220416Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-20T21:06:57.744323347Z ==> 
+2025-11-20T21:06:57.951215098Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T21:07:58.114266525Z 9:07:58 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:08:02.929925426Z 9:08:02 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:08:03.427132797Z 9:08:03 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:08:55.244807798Z 9:08:55 PM [express] GET /api/notifications/unread-count 304 in 374ms
+2025-11-20T21:08:55.330476556Z 9:08:55 PM [express] GET /api/notifications 304 in 359ms
+2025-11-20T21:09:00.560653168Z 9:09:00 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:09:00.640422917Z 9:09:00 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:09:05.890208172Z 9:09:05 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:09:05.962574605Z 9:09:05 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:09:11.217992714Z 9:09:11 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:09:11.296648896Z 9:09:11 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:12:01.689212715Z ==> Detected service running on port 10000
+2025-11-20T21:12:02.166208014Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-20T21:18:10.865598645Z 9:18:10 PM [express] GET /api/user 200 in 497ms
+2025-11-20T21:18:10.866473986Z 9:18:10 PM [express] GET /api/notifications/unread-count 304 in 496ms
+2025-11-20T21:18:10.990028681Z 9:18:10 PM [express] GET /api/notifications 304 in 485ms
+2025-11-20T21:18:16.204114623Z 9:18:16 PM [express] GET /api/notifications/unread-count 304 in 16ms
+2025-11-20T21:18:16.272460641Z 9:18:16 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:18:21.533209057Z 9:18:21 PM [express] GET /api/notifications/unread-count 304 in 13ms
+2025-11-20T21:18:21.570963831Z 9:18:21 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:18:26.852347336Z 9:18:26 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:18:27.463569733Z 9:18:27 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:18:32.144980497Z 9:18:32 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:18:32.787909254Z 9:18:32 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:18:37.503953408Z 9:18:37 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:18:38.057061009Z 9:18:38 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:18:42.82540573Z 9:18:42 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:18:43.371812843Z 9:18:43 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:18:48.141820773Z 9:18:48 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:18:48.654338194Z 9:18:48 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:18:53.54754599Z 9:18:53 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:18:53.939765223Z 9:18:53 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:27:39.464483327Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T21:27:39.464516618Z [ERROR] Message: Not allowed by CORS
+2025-11-20T21:27:39.464521438Z [ERROR] Origin: https://nouveaudepart-5f1btazqk-githuniversgmailcoms-projects.vercel.app
+2025-11-20T21:27:39.464652871Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T21:27:39.464662971Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T21:27:39.464665861Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:27:39.466018413Z Error: Not allowed by CORS
+2025-11-20T21:27:39.466032063Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T21:27:39.466034763Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:27:39.466037483Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T21:27:39.466039534Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T21:27:39.466042804Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T21:27:39.466044914Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T21:27:39.466047244Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T21:27:39.466049554Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T21:27:39.466052054Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T21:27:39.466054284Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T21:27:39.817583436Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T21:27:39.817609316Z [ERROR] Message: Not allowed by CORS
+2025-11-20T21:27:39.817736149Z [ERROR] Origin: https://nouveaudepart-5f1btazqk-githuniversgmailcoms-projects.vercel.app
+2025-11-20T21:27:39.81774513Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T21:27:39.81774887Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T21:27:39.81775164Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:27:39.818443216Z Error: Not allowed by CORS
+2025-11-20T21:27:39.818455656Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T21:27:39.818459026Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T21:27:39.818478997Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T21:27:39.818482307Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T21:27:39.818485497Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T21:27:39.818488257Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T21:27:39.818491087Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T21:27:39.818493737Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T21:27:39.818496307Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T21:27:39.818499237Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T21:29:15.424107426Z 9:29:15 PM [express] GET /api/notifications/unread-count 304 in 353ms
+2025-11-20T21:29:15.671654759Z 9:29:15 PM [express] GET /api/notifications 304 in 499ms
+2025-11-20T21:29:15.763914121Z 9:29:15 PM [express] GET /api/user 304 in 638ms
+2025-11-20T21:29:37.768130048Z ==> Deploying...
+2025-11-20T21:30:00.291630025Z ==> Running 'npm start'
+2025-11-20T21:30:01.295459038Z 
+2025-11-20T21:30:01.29548099Z > rest-express@1.0.0 start
+2025-11-20T21:30:01.29548606Z > NODE_ENV=production node dist/index.js
+2025-11-20T21:30:01.29548885Z 
+2025-11-20T21:30:12.789455842Z ✅ Cloudinary configured successfully
+2025-11-20T21:30:12.790677915Z ============================================================
+2025-11-20T21:30:12.790838798Z [CONFIG] Environment: production
+2025-11-20T21:30:12.790849618Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-20T21:30:12.790852239Z [CONFIG] Cookie SameSite: none
+2025-11-20T21:30:12.790854469Z [CONFIG] Cookie Secure: true
+2025-11-20T21:30:12.790856669Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-20T21:30:12.791198605Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-20T21:30:12.791211116Z [CONFIG] Trust Proxy: enabled
+2025-11-20T21:30:12.791214266Z ============================================================
+2025-11-20T21:30:13.093037294Z 9:30:12 PM [express] ✅ Backend API server listening on port 10000
+2025-11-20T21:30:13.093258021Z 9:30:13 PM [express] 🌍 Environment: production
+2025-11-20T21:30:13.093416123Z 9:30:13 PM [express] 🗄️ Database: Connected
+2025-11-20T21:30:13.093428064Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-20T21:30:13.093474908Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-20T21:30:13.093571575Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-20T21:30:13.093578436Z [CONFIG] Session Cookie Secure: true
+2025-11-20T21:30:13.093581386Z [CONFIG] Session Cookie SameSite: none
+2025-11-20T21:30:18.100498303Z Expired OTPs cleaned up
+2025-11-20T21:30:20.578092261Z ==> Your service is live 🎉
+2025-11-20T21:30:22.000839811Z ==> 
+2025-11-20T21:30:22.351208482Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T21:30:22.533153006Z ==> 
+2025-11-20T21:30:22.706418902Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-20T21:30:22.877725218Z ==> 
+2025-11-20T21:30:23.050751434Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T21:32:56.563821204Z 9:32:56 PM [express] GET /api/notifications/unread-count 304 in 430ms
+2025-11-20T21:32:56.66858289Z 9:32:56 PM [express] GET /api/notifications 304 in 82ms
+2025-11-20T21:33:11.402848186Z 9:33:11 PM [express] GET /api/notifications 304 in 337ms
+2025-11-20T21:33:11.695539981Z 9:33:11 PM [express] GET /api/notifications/unread-count 304 in 18ms
+2025-11-20T21:33:12.065178066Z 9:33:12 PM [express] GET /api/loans 304 in 993ms
+2025-11-20T21:33:12.358690864Z 9:33:12 PM [express] GET /api/charts/upcoming-repayments 304 in 1492ms
+2025-11-20T21:33:12.480201813Z 9:33:12 PM [express] GET /api/dashboard 200 in 47ms
+2025-11-20T21:33:12.587369411Z 9:33:12 PM [express] GET /api/transfers 304 in 1277ms
+2025-11-20T21:33:12.674365536Z 9:33:12 PM [express] GET /api/user 304 in 1802ms
+2025-11-20T21:33:16.682911996Z 9:33:16 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:33:16.984366997Z 9:33:16 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:33:21.95514303Z 9:33:21 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:33:22.310410823Z 9:33:22 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:33:27.289797141Z 9:33:27 PM [express] GET /api/notifications 304 in 16ms
+2025-11-20T21:33:27.635291721Z 9:33:27 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:33:32.625714148Z 9:33:32 PM [express] GET /api/notifications 304 in 18ms
+2025-11-20T21:33:32.940141026Z 9:33:32 PM [express] GET /api/notifications/unread-count 304 in 13ms
+2025-11-20T21:33:38.279234106Z 9:33:38 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:33:38.663706949Z 9:33:38 PM [express] GET /api/notifications 304 in 179ms
+2025-11-20T21:33:43.601061573Z 9:33:43 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:33:43.954396588Z 9:33:43 PM [express] GET /api/notifications 304 in 19ms
+2025-11-20T21:33:48.932944065Z 9:33:48 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:33:49.243228618Z 9:33:49 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:33:54.32654878Z 9:33:54 PM [express] GET /api/notifications/unread-count 304 in 91ms
+2025-11-20T21:33:54.773534737Z 9:33:54 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:33:59.637946255Z 9:33:59 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:34:00.072515428Z 9:34:00 PM [express] GET /api/notifications 304 in 36ms
+2025-11-20T21:34:04.973604526Z 9:34:04 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:34:05.38215437Z 9:34:05 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:34:10.303936891Z 9:34:10 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:34:10.715979432Z 9:34:10 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:34:12.95700837Z 9:34:12 PM [express] GET /api/user 304 in 10ms
+2025-11-20T21:34:15.60891917Z 9:34:15 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:34:16.033494703Z 9:34:16 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:34:20.947763374Z 9:34:20 PM [express] GET /api/notifications/unread-count 304 in 13ms
+2025-11-20T21:34:21.29820184Z 9:34:21 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:34:26.463032313Z 9:34:26 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:34:26.602237487Z 9:34:26 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:34:31.799268879Z 9:34:31 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:34:31.934905232Z 9:34:31 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:34:37.117043142Z 9:34:37 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:34:37.251211443Z 9:34:37 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:35:19.621177237Z ==> Detected service running on port 10000
+2025-11-20T21:35:20.095444179Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-20T21:36:18.798107018Z 9:36:18 PM [express] GET /api/notifications/unread-count 304 in 15ms
+2025-11-20T21:36:19.189068306Z 9:36:19 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:36:24.087191577Z 9:36:24 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:36:24.54266272Z 9:36:24 PM [express] GET /api/notifications 304 in 13ms
+2025-11-20T21:37:55.533237525Z 9:37:55 PM [express] GET /api/notifications 304 in 366ms
+2025-11-20T21:37:55.656036013Z 9:37:55 PM [express] GET /api/notifications/unread-count 304 in 322ms
+2025-11-20T21:38:00.828440837Z 9:38:00 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:38:00.967657323Z 9:38:00 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:38:06.147157246Z 9:38:06 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:38:06.298011667Z 9:38:06 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:38:11.4761701Z 9:38:11 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:38:11.616182226Z 9:38:11 PM [express] GET /api/notifications/unread-count 304 in 17ms
+2025-11-20T21:38:13.546064512Z 9:38:13 PM [express] GET /api/user 304 in 18ms
+2025-11-20T21:38:16.824068509Z 9:38:16 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T21:38:16.947499765Z 9:38:16 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:38:22.135141128Z 9:38:22 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:38:22.232189848Z 9:38:22 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:38:27.464175404Z 9:38:27 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T21:38:27.528311092Z 9:38:27 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:38:32.785854081Z 9:38:32 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:38:32.849142434Z 9:38:32 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:38:38.129631459Z 9:38:38 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:38:38.778721575Z 9:38:38 PM [express] GET /api/notifications/unread-count 304 in 114ms
+2025-11-20T21:38:43.930875602Z 9:38:43 PM [express] GET /api/notifications 304 in 25ms
+2025-11-20T21:40:47.064509115Z 9:40:47 PM [express] GET /api/notifications/unread-count 304 in 396ms
+2025-11-20T21:40:47.186205823Z 9:40:47 PM [express] GET /api/notifications 304 in 460ms
+2025-11-20T21:44:52.462583844Z 9:44:52 PM [express] GET /api/notifications 304 in 679ms
+2025-11-20T21:44:52.570899627Z 9:44:52 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:44:57.738015337Z 9:44:57 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:44:57.870801427Z 9:44:57 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:45:03.104738301Z 9:45:03 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:45:03.195409544Z 9:45:03 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:45:08.390964014Z 9:45:08 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:45:08.521305229Z 9:45:08 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:45:13.707717616Z 9:45:13 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:45:13.857041002Z 9:45:13 PM [express] GET /api/notifications/unread-count 304 in 15ms
+2025-11-20T21:45:14.264931517Z 9:45:14 PM [express] GET /api/user 304 in 44ms
+2025-11-20T21:48:50.701580715Z 9:48:50 PM [express] GET /api/notifications 304 in 332ms
+2025-11-20T21:48:50.871248226Z 9:48:50 PM [express] GET /api/notifications/unread-count 304 in 492ms
+2025-11-20T21:48:56.020608962Z 9:48:56 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:48:56.204182799Z 9:48:56 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:49:01.333696058Z 9:49:01 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:49:01.568099244Z 9:49:01 PM [express] GET /api/notifications/unread-count 304 in 32ms
+2025-11-20T21:49:06.696326976Z 9:49:06 PM [express] GET /api/notifications 304 in 13ms
+2025-11-20T21:49:06.852749152Z 9:49:06 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:49:12.044897457Z 9:49:12 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:49:12.134660463Z 9:49:12 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:49:14.576183817Z 9:49:14 PM [express] GET /api/user 304 in 11ms
+2025-11-20T21:49:17.365582953Z 9:49:17 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:49:17.457983018Z 9:49:17 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:49:22.644099917Z 9:49:22 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:49:22.765253255Z 9:49:22 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:49:27.983231944Z 9:49:27 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:49:28.088190223Z 9:49:28 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:49:33.287008609Z 9:49:33 PM [express] GET /api/notifications 304 in 17ms
+2025-11-20T21:49:33.408375613Z 9:49:33 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:49:34.816995998Z 9:49:34 PM [express] GET /api/external-accounts 304 in 9ms
+2025-11-20T21:49:38.603790611Z 9:49:38 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:49:38.770812431Z 9:49:38 PM [express] GET /api/notifications/unread-count 304 in 61ms
+2025-11-20T21:49:43.897067609Z 9:49:43 PM [express] GET /api/notifications 304 in 22ms
+2025-11-20T21:49:44.048992683Z 9:49:44 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:49:49.168136252Z 9:49:49 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:49:49.38952817Z 9:49:49 PM [express] GET /api/notifications/unread-count 304 in 19ms
+2025-11-20T21:49:54.663175809Z 9:49:54 PM [express] GET /api/notifications 304 in 100ms
+2025-11-20T21:49:54.77171059Z 9:49:54 PM [express] GET /api/notifications/unread-count 304 in 90ms
+2025-11-20T21:50:00.096302598Z 9:50:00 PM [express] GET /api/notifications 304 in 133ms
+2025-11-20T21:50:01.727150796Z 9:50:01 PM [express] GET /api/notifications/unread-count 304 in 32ms
+2025-11-20T21:50:05.40896621Z 9:50:05 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:50:07.053312374Z 9:50:07 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:50:10.785605091Z 9:50:10 PM [express] GET /api/notifications 304 in 31ms
+2025-11-20T21:50:12.378458336Z 9:50:12 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:50:14.848320555Z 9:50:14 PM [express] GET /api/user 304 in 8ms
+2025-11-20T21:50:16.086577068Z 9:50:16 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:50:17.717124204Z 9:50:17 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:50:21.407033755Z 9:50:21 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T21:50:22.994687525Z 9:50:22 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:50:26.724804839Z 9:50:26 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:50:28.291611577Z 9:50:28 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:50:32.055857562Z 9:50:32 PM [express] GET /api/notifications 304 in 18ms
+2025-11-20T21:50:33.609431045Z 9:50:33 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:50:37.318276425Z 9:50:37 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:50:38.971648955Z 9:50:38 PM [express] GET /api/notifications/unread-count 304 in 44ms
+2025-11-20T21:50:42.617101332Z 9:50:42 PM [express] GET /api/notifications 304 in 18ms
+2025-11-20T21:50:44.288429966Z 9:50:44 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:50:47.965151188Z 9:50:47 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:50:49.639913203Z 9:50:49 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:50:53.285930734Z 9:50:53 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:50:55.413956403Z 9:50:55 PM [express] GET /api/notifications/unread-count 304 in 20ms
+2025-11-20T21:50:58.609806776Z 9:50:58 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:51:00.723578353Z 9:51:00 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:51:03.906541838Z 9:51:03 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:51:06.041867381Z 9:51:06 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:51:09.253043518Z 9:51:09 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:51:11.370475893Z 9:51:11 PM [express] GET /api/notifications/unread-count 304 in 17ms
+2025-11-20T21:51:14.607157278Z 9:51:14 PM [express] GET /api/notifications 304 in 37ms
+2025-11-20T21:51:15.161191473Z 9:51:15 PM [express] GET /api/user 304 in 9ms
+2025-11-20T21:51:16.649840328Z 9:51:16 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:51:20.064342444Z 9:51:20 PM [express] GET /api/notifications 304 in 183ms
+2025-11-20T21:51:21.94140736Z 9:51:21 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:51:25.367698741Z 9:51:25 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:51:27.280806594Z 9:51:27 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:51:30.654261644Z 9:51:30 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:51:32.610779813Z 9:51:32 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:51:35.92873608Z 9:51:35 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:51:37.883825971Z 9:51:37 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:51:41.27714675Z 9:51:41 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:51:43.205117322Z 9:51:43 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:51:46.598031462Z 9:51:46 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T21:51:48.551156543Z 9:51:48 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:51:51.881316528Z 9:51:51 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:51:53.840241171Z 9:51:53 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:51:57.168961967Z 9:51:57 PM [express] GET /api/notifications 304 in 11ms
+2025-11-20T21:51:59.159698585Z 9:51:59 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:52:02.489953068Z 9:52:02 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:52:04.494708641Z 9:52:04 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:52:07.814644381Z 9:52:07 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:52:09.810732827Z 9:52:09 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:52:13.157536356Z 9:52:13 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:52:15.082196989Z 9:52:15 PM [express] GET /api/notifications/unread-count 304 in 13ms
+2025-11-20T21:52:15.7599698Z 9:52:15 PM [express] GET /api/user 304 in 9ms
+2025-11-20T21:52:18.492531253Z 9:52:18 PM [express] GET /api/notifications 304 in 13ms
+2025-11-20T21:52:20.368870157Z 9:52:20 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:52:23.804315218Z 9:52:23 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:52:25.718782447Z 9:52:25 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:52:29.105465596Z 9:52:29 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:52:31.06002443Z 9:52:31 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:52:34.440849225Z 9:52:34 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:52:36.36949121Z 9:52:36 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:52:39.794580187Z 9:52:39 PM [express] GET /api/notifications 304 in 23ms
+2025-11-20T21:52:41.643936173Z 9:52:41 PM [express] GET /api/notifications/unread-count 304 in 16ms
+2025-11-20T21:52:45.089073102Z 9:52:45 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:52:46.910327705Z 9:52:46 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:52:50.401648331Z 9:52:50 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:52:52.22666751Z 9:52:52 PM [express] GET /api/notifications/unread-count 304 in 26ms
+2025-11-20T21:52:56.01213319Z 9:52:56 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:52:57.530745024Z 9:52:57 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:53:01.355055974Z 9:53:01 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:53:02.83996248Z 9:53:02 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:53:06.685820906Z 9:53:06 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:53:08.287279031Z 9:53:08 PM [express] GET /api/notifications/unread-count 304 in 166ms
+2025-11-20T21:53:11.972693136Z 9:53:11 PM [express] GET /api/notifications 304 in 13ms
+2025-11-20T21:53:13.565136147Z 9:53:13 PM [express] GET /api/notifications/unread-count 304 in 15ms
+2025-11-20T21:53:16.043721551Z 9:53:16 PM [express] GET /api/user 304 in 10ms
+2025-11-20T21:53:17.247635841Z 9:53:17 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T21:53:18.888637619Z 9:53:18 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:53:22.568852301Z 9:53:22 PM [express] GET /api/notifications 304 in 16ms
+2025-11-20T21:53:24.209382533Z 9:53:24 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:53:27.917659395Z 9:53:27 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:53:29.483441542Z 9:53:29 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:53:33.234753923Z 9:53:33 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:53:34.810803109Z 9:53:34 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:53:38.575164671Z 9:53:38 PM [express] GET /api/notifications 304 in 28ms
+2025-11-20T21:53:40.123613872Z 9:53:40 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:53:43.880937531Z 9:53:43 PM [express] GET /api/notifications 304 in 15ms
+2025-11-20T21:53:45.455341642Z 9:53:45 PM [express] GET /api/notifications/unread-count 304 in 15ms
+2025-11-20T21:53:49.198966311Z 9:53:49 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:53:50.769004422Z 9:53:50 PM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-20T21:53:54.565378456Z 9:53:54 PM [express] GET /api/notifications 304 in 89ms
+2025-11-20T21:53:56.046652107Z 9:53:56 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:54:00.955030025Z 9:54:00 PM [express] GET /api/notifications 304 in 19ms
+2025-11-20T21:54:01.320881464Z 9:54:01 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:54:06.238912025Z 9:54:06 PM [express] GET /api/notifications 304 in 19ms
+2025-11-20T21:54:06.677458623Z 9:54:06 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T21:54:11.529335823Z 9:54:11 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:54:12.001212452Z 9:54:12 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:54:16.332811477Z 9:54:16 PM [express] GET /api/user 304 in 15ms
+2025-11-20T21:54:16.82910069Z 9:54:16 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T21:54:17.331432392Z 9:54:17 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T21:54:22.124342695Z 9:54:22 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:54:22.696228288Z 9:54:22 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:54:27.433898017Z 9:54:27 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:54:28.001806368Z 9:54:28 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:54:32.749306845Z 9:54:32 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T21:54:33.287197986Z 9:54:33 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:54:38.200427437Z 9:54:38 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:54:38.777362934Z 9:54:38 PM [express] GET /api/notifications/unread-count 304 in 113ms
+2025-11-20T21:54:43.544139855Z 9:54:43 PM [express] GET /api/notifications 304 in 14ms
+2025-11-20T21:54:44.097207029Z 9:54:44 PM [express] GET /api/notifications/unread-count 304 in 17ms
+2025-11-20T21:54:48.884695384Z 9:54:48 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:54:49.357168089Z 9:54:49 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:57:50.571475953Z 9:57:50 PM [express] GET /api/notifications 304 in 405ms
+2025-11-20T21:57:50.675931035Z 9:57:50 PM [express] GET /api/notifications/unread-count 304 in 453ms
+2025-11-20T21:57:55.846698975Z 9:57:55 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:57:56.063914359Z 9:57:56 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T21:58:01.13671452Z 9:58:01 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:58:01.471849369Z 9:58:01 PM [express] GET /api/notifications/unread-count 304 in 37ms
+2025-11-20T21:58:06.458981036Z 9:58:06 PM [express] GET /api/notifications 304 in 13ms
+2025-11-20T21:58:06.773835224Z 9:58:06 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T21:58:11.756838778Z 9:58:11 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T21:58:12.095869292Z 9:58:12 PM [express] GET /api/notifications/unread-count 304 in 14ms
+2025-11-20T21:58:16.685117967Z 9:58:16 PM [express] GET /api/user 304 in 8ms
+2025-11-20T21:58:17.092370102Z 9:58:17 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T21:58:17.418990384Z 9:58:17 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-20T22:00:08.928461274Z 10:00:08 PM [express] GET /api/notifications 304 in 713ms
+2025-11-20T22:00:08.937278523Z 10:00:08 PM [express] GET /api/notifications/unread-count 304 in 389ms
+2025-11-20T22:04:49.157207094Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T22:04:49.157238316Z [ERROR] Message: Not allowed by CORS
+2025-11-20T22:04:49.157244467Z [ERROR] Origin: https://nouveaudepart-pm0omdpja-githuniversgmailcoms-projects.vercel.app
+2025-11-20T22:04:49.157322173Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T22:04:49.157339164Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T22:04:49.157344534Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T22:04:49.158411535Z Error: Not allowed by CORS
+2025-11-20T22:04:49.158424406Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T22:04:49.158429107Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T22:04:49.158434057Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T22:04:49.158438908Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T22:04:49.158443578Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T22:04:49.158446488Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T22:04:49.158449348Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T22:04:49.158452398Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T22:04:49.15846647Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T22:04:49.15846837Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T22:04:49.40668893Z [ERROR] OPTIONS /api/detect-language - Status: 500
+2025-11-20T22:04:49.406706292Z [ERROR] Message: Not allowed by CORS
+2025-11-20T22:04:49.406716223Z [ERROR] Origin: https://nouveaudepart-pm0omdpja-githuniversgmailcoms-projects.vercel.app
+2025-11-20T22:04:49.406793938Z [ERROR] Stack: Error: Not allowed by CORS
+2025-11-20T22:04:49.406799269Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T22:04:49.406802749Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T22:04:49.407499722Z Error: Not allowed by CORS
+2025-11-20T22:04:49.407514683Z     at origin (file:///opt/render/project/src/dist/index.js:9992:16)
+2025-11-20T22:04:49.407517113Z     at /opt/render/project/src/node_modules/cors/lib/index.js:219:13
+2025-11-20T22:04:49.407519404Z     at optionsCallback (/opt/render/project/src/node_modules/cors/lib/index.js:199:9)
+2025-11-20T22:04:49.407521184Z     at corsMiddleware (/opt/render/project/src/node_modules/cors/lib/index.js:204:7)
+2025-11-20T22:04:49.407523574Z     at Layer.handle [as handle_request] (/opt/render/project/src/node_modules/express/lib/router/layer.js:95:5)
+2025-11-20T22:04:49.407525314Z     at trim_prefix (/opt/render/project/src/node_modules/express/lib/router/index.js:328:13)
+2025-11-20T22:04:49.407527164Z     at /opt/render/project/src/node_modules/express/lib/router/index.js:286:9
+2025-11-20T22:04:49.407528884Z     at Function.process_params (/opt/render/project/src/node_modules/express/lib/router/index.js:346:12)
+2025-11-20T22:04:49.407530534Z     at next (/opt/render/project/src/node_modules/express/lib/router/index.js:280:10)
+2025-11-20T22:04:49.407532205Z     at expressInit (/opt/render/project/src/node_modules/express/lib/middleware/init.js:40:5)
+2025-11-20T22:05:33.835738569Z ==> Deploying...
+2025-11-20T22:05:58.006531091Z ==> Running 'npm start'
+2025-11-20T22:05:59.318651864Z 
+2025-11-20T22:05:59.318684815Z > rest-express@1.0.0 start
+2025-11-20T22:05:59.318691875Z > NODE_ENV=production node dist/index.js
+2025-11-20T22:05:59.318696385Z 
+2025-11-20T22:06:10.796924443Z ✅ Cloudinary configured successfully
+2025-11-20T22:06:10.797738832Z ============================================================
+2025-11-20T22:06:10.797805164Z [CONFIG] Environment: production
+2025-11-20T22:06:10.797861945Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-20T22:06:10.797868805Z [CONFIG] Cookie SameSite: none
+2025-11-20T22:06:10.797922786Z [CONFIG] Cookie Secure: true
+2025-11-20T22:06:10.797935967Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-20T22:06:10.798047129Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-20T22:06:10.798131351Z [CONFIG] Trust Proxy: enabled
+2025-11-20T22:06:10.798375737Z ============================================================
+2025-11-20T22:06:11.120995563Z 10:06:10 PM [express] ✅ Backend API server listening on port 10000
+2025-11-20T22:06:11.121206538Z 10:06:11 PM [express] 🌍 Environment: production
+2025-11-20T22:06:11.121332511Z 10:06:11 PM [express] 🗄️ Database: Connected
+2025-11-20T22:06:11.121340241Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-20T22:06:11.121355251Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-20T22:06:11.121362472Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-20T22:06:11.121373182Z [CONFIG] Session Cookie Secure: true
+2025-11-20T22:06:11.121377702Z [CONFIG] Session Cookie SameSite: none
+2025-11-20T22:06:15.130400683Z ==> Your service is live 🎉
+2025-11-20T22:06:15.388054089Z ==> 
+2025-11-20T22:06:15.556010005Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T22:06:15.744624968Z ==> 
+2025-11-20T22:06:15.927973411Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-20T22:06:16.104507305Z ==> 
+2025-11-20T22:06:16.127559065Z Expired OTPs cleaned up
+2025-11-20T22:06:16.332268405Z ==> ///////////////////////////////////////////////////////////
+2025-11-20T22:07:25.384461318Z 10:07:25 PM [express] GET /api/charts/upcoming-repayments 304 in 453ms
+2025-11-20T22:07:25.705797764Z 10:07:25 PM [express] GET /api/user 304 in 331ms
+2025-11-20T22:07:26.288821714Z 10:07:26 PM [express] GET /api/notifications/unread-count 304 in 23ms
+2025-11-20T22:07:26.298169219Z 10:07:26 PM [express] GET /api/notifications 304 in 31ms
+2025-11-20T22:07:26.600490948Z 10:07:26 PM [express] GET /api/dashboard 304 in 331ms
+2025-11-20T22:07:34.05753995Z 10:07:34 PM [express] GET /api/loans 304 in 10ms
+2025-11-20T22:07:34.062704529Z 10:07:34 PM [express] GET /api/notifications 304 in 12ms
+2025-11-20T22:07:34.095944725Z 10:07:34 PM [express] GET /api/transfers 304 in 35ms
+2025-11-20T22:07:34.104354698Z 10:07:34 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-20T22:07:34.109326893Z 10:07:34 PM [express] GET /api/charts/upcoming-repayments 304 in 10ms
+2025-11-20T22:07:34.110465349Z 10:07:34 PM [express] GET /api/dashboard 304 in 49ms
+2025-11-20T22:07:34.207546713Z 10:07:34 PM [express] GET /api/user 304 in 93ms
+2025-11-20T22:07:39.418936606Z 10:07:39 PM [express] GET /api/notifications/unread-count 304 in 36ms
+2025-11-20T22:07:39.427842451Z 10:07:39 PM [express] GET /api/notifications 304 in 16ms
+2025-11-20T22:07:44.736471802Z 10:07:44 PM [express] GET /api/notifications 304 in 16ms
+2025-11-20T22:07:45.11652144Z 10:07:45 PM [express] GET /api/notifications/unread-count 304 in 390ms
+2025-11-20T22:07:50.102071064Z 10:07:50 PM [express] GET /api/notifications 304 in 39ms
+2025-11-20T22:07:50.410912833Z 10:07:50 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-20T22:07:55.40490403Z 10:07:55 PM [express] GET /api/notifications 304 in 10ms
+2025-11-20T22:07:55.964683045Z 10:07:55 PM [express] GET /api/notifications/unread-count 304 in 202ms
+2025-11-20T22:07:58.643132165Z 10:07:58 PM [express] GET /api/loans 304 in 9ms
+2025-11-20T22:07:58.730949826Z 10:07:58 PM [express] GET /api/user 304 in 14ms
+2025-11-20T22:07:59.423559039Z 10:07:59 PM [express] GET /api/charts/upcoming-repayments 304 in 9ms
+2025-11-20T22:08:00.202865626Z 10:08:00 PM [express] GET /api/notifications 304 in 113ms
+2025-11-20T22:08:00.270972984Z 10:08:00 PM [express] GET /api/transfers 304 in 1634ms
+2025-11-20T22:08:00.289454289Z 10:08:00 PM [express] GET /api/notifications/unread-count 304 in 88ms
+2025-11-20T22:08:00.478653674Z 10:08:00 PM [express] GET /api/dashboard 304 in 172ms
+2025-11-20T22:08:05.54991611Z 10:08:05 PM [express] GET /api/notifications 304 in 8ms
+2025-11-20T22:08:05.611002506Z 10:08:05 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-20T22:08:10.824759552Z 10:08:10 PM [express] GET /api/notifications 304 in 9ms
+2025-11-20T22:08:10.934880007Z 10:08:10 PM [express] GET /api/notifications/unread-count 304 in 18ms
+2025-11-20T22:09:56.582475376Z 10:09:56 PM [express] GET /api/notifications 304 in 320ms
+2025-11-20T22:09:56.685443046Z 10:09:56 PM [express] GET /api/notifications/unread-count 304 in 418ms
+2025-11-20T22:11:22.571212065Z ==> Detected service running on port 10000
+2025-11-20T22:11:23.068175102Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-20T22:13:28.062206777Z 10:13:28 PM [express] GET /api/notifications 304 in 329ms
+2025-11-20T22:13:28.163216532Z 10:13:28 PM [express] GET /api/notifications/unread-count 304 in 367ms
+2025-11-20T22:28:05.280893776Z 10:28:05 PM [express] GET /api/user 304 in 449ms
+2025-11-20T22:28:05.596127449Z 10:28:05 PM [express] GET /api/notifications 304 in 563ms
+2025-11-20T22:28:05.69699888Z 10:28:05 PM [express] GET /api/notifications/unread-count 304 in 531ms

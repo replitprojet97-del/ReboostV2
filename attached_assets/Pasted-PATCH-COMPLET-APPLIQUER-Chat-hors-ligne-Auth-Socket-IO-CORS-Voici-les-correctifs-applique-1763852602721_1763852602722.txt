@@ -1,0 +1,222 @@
+PATCH COMPLET À APPLIQUER – Chat hors-ligne + Auth Socket.IO + CORS
+
+Voici les correctifs à appliquer dans le backend ET dans le frontend pour que le chat fonctionne, que le statut “online/offline” soit correct et que l’auth Socket.IO utilise réellement la session.
+
+🧩 1. Backend — Corriger CORS Socket.IO (très important)
+
+Dans server/socket.ts
+(mettre exactement ceci dans la config Socket.IO) :
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: [
+      "https://altusfinancesgroup.com",
+      "https://www.altusfinancesgroup.com"
+    ],
+    credentials: true,
+  },
+});
+
+
+⚠️ Très important : il faut le même CORS que celui d’Express.
+
+🧩 2. Backend — Injecter le cookie dans la session Socket.IO
+
+Dans io.use(...), remplacer par :
+
+io.use((socket, next) => {
+  const cookieHeader = socket.request.headers.cookie;
+  
+  if (!cookieHeader) {
+    console.log("[SESSION] Cookie missing in socket handshake");
+    return next(); // socket connecté mais pas authentifié
+  }
+
+  // Récupérer la session Express
+  expressSessionMiddleware(socket.request as any, {} as any, () => {
+    if (!socket.request.session || !socket.request.session.userId) {
+      console.log("[SESSION] Socket not authenticated");
+      return next();
+    }
+
+    (socket as any).userId = socket.request.session.userId;
+    next();
+  });
+});
+
+
+👉 Sans cette partie, Socket.IO NE peut PAS lire la session = utilisateur toujours “offline”.
+
+🧩 3. Frontend — Envoyer les cookies dans la connexion WebSocket
+
+Dans client/src/hooks/useChat.ts
+Remplacer :
+
+const socket = io(socketUrl, {
+  transports: ["websocket", "polling"],
+  withCredentials: true
+});
+
+
+Par :
+
+const socket = io(socketUrl, {
+  transports: ["websocket", "polling"],
+  withCredentials: true,
+  extraHeaders: {
+    Cookie: document.cookie
+  }
+});
+
+
+⚠️ C’EST LA PARTIE CRITIQUE
+→ sans extraHeaders.Cookie, Render ne reçoit PAS la session → backend ne voit jamais l’utilisateur.
+
+🧩 4. Frontend — Corriger le problème des messages qui disparaissent trop vite
+
+Dans client/src/pages/Messages.tsx, remplacer :
+
+if (!message.isRead) {
+  markAsReadMutation.mutate(messageId);
+}
+
+
+Par :
+
+if (!message.isRead) {
+  setTimeout(() => {
+    markAsReadMutation.mutate(messageId);
+  }, 30000); // 30 seconds
+}
+
+🧩 5. Backend — Notifications auto multilingues
+
+Dans server/notification-helper.ts,
+Laisser :
+
+title: "",
+message: "",
+
+
+Le frontend utilisera automatiquement :
+
+t.notifications[type]
+
+
+Ne pas remplir les title/message dans le backend.
+
+🧩 6. Test rapide après patch
+
+Replit doit tester :
+
+Se connecter à un compte utilisateur
+
+Ouvrir la console Dev dans le navigateur
+
+Vérifier :
+
+[CHAT] Connected to Socket.IO
+[PRESENCE] Partner <id> initial state: true/false
+
+
+Sur Render, dans les logs, vérifier :
+
+[SESSION] Cookie Header: PRESENT
+[SESSION] Authenticated: YES
+[PRESENCE] User <id> is now online
+
+
+Si ces trois lignes apparaissent → le chat fonctionne.
+
+🎯 Résultat après correctifs
+
+Le chat fonctionne pour l'admin et les utilisateurs
+
+Le statut en ligne / hors ligne devient précis
+
+Le backend reçoit enfin la session WebSocket
+
+Les notifications auto deviennent multilingues
+
+Les messages “non lus” ne disparaissent plus en 2 secondes
+
+🔥 Voici ton message EXACT à envoyer à Replit :
+
+Je veux que tu appliques les correctifs suivants :
+
+(copie-colle tout ce bloc)
+
+Merci d'appliquer les correctifs suivants pour réparer définitivement :
+- l'auth Socket.IO
+- le statut "offline"
+- le chat utilisateur
+- CORS web + websocket
+- disparition trop rapide des notifications
+
+1) PATCH SOCKET.IO BACKEND
+-----------------------------------
+
+Mettre la config CORS suivante :
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: [
+      "https://altusfinancesgroup.com",
+      "https://www.altusfinancesgroup.com"
+    ],
+    credentials: true,
+  },
+});
+
+Ajouter un middleware pour récupérer le cookie
+(important pour l’auth session) :
+
+io.use((socket, next) => {
+  const cookieHeader = socket.request.headers.cookie;
+  
+  if (!cookieHeader) {
+    console.log("[SESSION] Cookie missing");
+    return next();
+  }
+
+  expressSessionMiddleware(socket.request, {}, () => {
+    if (!socket.request.session?.userId) {
+      console.log("[SESSION] Not authenticated");
+      return next();
+    }
+
+    socket.userId = socket.request.session.userId;
+    next();
+  });
+});
+
+2) PATCH FRONTEND USECHAT
+-----------------------------------
+
+Dans client/src/hooks/useChat.ts remplacer la connexion par :
+
+const socket = io(socketUrl, {
+  transports: ["websocket", "polling"],
+  withCredentials: true,
+  extraHeaders: {
+    Cookie: document.cookie
+  }
+});
+
+3) PATCH MESSAGES.TSX (retard lecture 30s)
+------------------------------------------
+
+Remplacer :
+markAsReadMutation.mutate(messageId)
+
+Par :
+setTimeout(() => {
+  markAsReadMutation.mutate(messageId);
+}, 30000);
+
+4) Notifications auto multilingues :
+------------------------------------------
+Laisser title: "" et message: "" dans notification-helper.ts
+Le frontend utilisera t.notifications[type]
+
+Merci de faire les modifications exactes dans le code.

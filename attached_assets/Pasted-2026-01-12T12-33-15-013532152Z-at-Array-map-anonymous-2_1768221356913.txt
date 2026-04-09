@@ -1,0 +1,300 @@
+2026-01-12T12:33:15.013532152Z     at Array.map (<anonymous>)
+2026-01-12T12:33:15.013534763Z     at loanRequestAdminNotification (file:///opt/render/project/src/dist/index.js:6071:22)
+2026-01-12T12:33:15.013550903Z     at file:///opt/render/project/src/dist/index.js:9823:15
+2026-01-12T12:33:15.013553943Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T12:33:15.013651555Z [Notification] Failed to process document for secure view: ReferenceError: path is not defined
+2026-01-12T12:33:15.013658925Z     at file:///opt/render/project/src/dist/index.js:6076:27
+2026-01-12T12:33:15.013662035Z     at Array.map (<anonymous>)
+2026-01-12T12:33:15.013664595Z     at loanRequestAdminNotification (file:///opt/render/project/src/dist/index.js:6071:22)
+2026-01-12T12:33:15.013667335Z     at file:///opt/render/project/src/dist/index.js:9823:15
+2026-01-12T12:33:15.013669995Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T12:33:15.013750567Z [Notification] Failed to process document for secure view: ReferenceError: path is not defined
+2026-01-12T12:33:15.013759727Z     at file:///opt/render/project/src/dist/index.js:6076:27
+2026-01-12T12:33:15.013763207Z     at Array.map (<anonymous>)
+2026-01-12T12:33:15.013765807Z     at loanRequestAdminNotification (file:///opt/render/project/src/dist/index.js:6071:22)
+2026-01-12T12:33:15.013768307Z     at file:///opt/render/project/src/dist/index.js:9823:15
+2026-01-12T12:33:15.013770997Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T12:33:15.013867649Z [Notification] Failed to process document for secure view: ReferenceError: path is not defined
+2026-01-12T12:33:15.013876069Z     at file:///opt/render/project/src/dist/index.js:6076:27
+2026-01-12T12:33:15.01387965Z     at Array.map (<anonymous>)
+2026-01-12T12:33:15.01388259Z     at loanRequestAdminNotification (file:///opt/render/project/src/dist/index.js:6071:22)
+2026-01-12T12:33:15.01388501Z     at file:///opt/render/project/src/dist/index.js:9823:15
+2026-01-12T12:33:15.01388838Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T12:33:15.014025472Z [Notification] Failed to process document for secure view: ReferenceError: path is not defined
+2026-01-12T12:33:15.014031113Z     at file:///opt/render/project/src/dist/index.js:6076:27
+2026-01-12T12:33:15.014033802Z     at Array.map (<anonymous>)
+2026-01-12T12:33:15.014036273Z     at loanRequestAdminNotification (file:///opt/render/project/src/dist/index.js:6071:22)
+2026-01-12T12:33:15.014038923Z     at file:///opt/render/project/src/dist/index.js:9823:15
+2026-01-12T12:33:15.014041483Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T12:33:15.014597004Z [Email] Preparing loan request admin email. To: admin@solventisgroup.org, User: gitunivers@gmail.com
+2026-01-12T12:33:15.016966781Z [Email] Sending loan request admin email with 5 secure links
+2026-01-12T12:33:16.645941283Z 12:33:16 PM [express] GET /api/admin/loans 200 in 654ms
+2026-01-12T12:33:18.887160277Z 12:33:18 PM [express] GET /api/notifications 304 in 282ms
+2026-01-12T12:33:18.898726439Z 12:33:18 PM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T12:33:20.142231957Z 12:33:20 PM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T12:33:20.253657733Z 12:33:20 PM [express] GET /api/dashboard 200 in 653ms
+2026-01-12T12:33:20.587834441Z 12:33:20 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:33:24.567357231Z 12:33:24 PM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T12:33:24.573228669Z 12:33:24 PM [express] GET /api/notifications 304 in 280ms
+2026-01-12T12:33:25.987481749Z 12:33:25 PM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T12:33:26.265871462Z 12:33:26 PM [express] GET /api/admin/loans 304 in 677ms
+2026-01-12T12:33:26.70367869Z 12:33:26 PM [express] GET /api/dashboard 304 in 919ms
+2026-01-12T12:33:29.590501116Z 12:33:29 PM [express] GET /api/admin/loans 304 in 658ms
+2026-01-12T12:33:31.089137432Z 12:33:31 PM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T12:33:31.09954746Z 12:33:31 PM [express] GET /api/notifications 304 in 280ms
+2026-01-12T12:33:31.73311177Z 12:33:31 PM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T12:33:32.752028541Z 12:33:32 PM [express] GET /api/dashboard 200 in 653ms
+2026-01-12T12:33:33.673477333Z 12:33:33 PM [express] GET /api/admin/loans 304 in 657ms
+2026-01-12T12:33:37.654288Z 12:33:37 PM [express] GET /api/admin/loans 304 in 660ms
+2026-01-12T12:33:38.311260957Z 12:33:38 PM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T12:33:39.619624782Z 12:33:39 PM [express] GET /api/dashboard 304 in 654ms
+2026-01-12T12:34:16.145001608Z       _currentUrl: 'https://api.sendpulse.com/smtp/emails',
+2026-01-12T12:34:16.145003738Z       _timeout: null,
+2026-01-12T12:34:16.145008988Z       [Symbol(shapeMode)]: true,
+2026-01-12T12:34:16.145011408Z       [Symbol(kCapture)]: false
+2026-01-12T12:34:16.145013588Z     },
+2026-01-12T12:34:16.145015808Z     [Symbol(shapeMode)]: false,
+2026-01-12T12:34:16.145021128Z     [Symbol(kCapture)]: false,
+2026-01-12T12:34:16.145023518Z     [Symbol(kBytesWritten)]: 0,
+2026-01-12T12:34:16.145025688Z     [Symbol(kNeedDrain)]: false,
+2026-01-12T12:34:16.145027868Z     [Symbol(corked)]: 0,
+2026-01-12T12:34:16.145032988Z     [Symbol(kChunkedBuffer)]: [],
+2026-01-12T12:34:16.145035319Z     [Symbol(kChunkedLength)]: 0,
+2026-01-12T12:34:16.145037448Z     [Symbol(kSocket)]: TLSSocket {
+2026-01-12T12:34:16.145039599Z       _tlsOptions: [Object],
+2026-01-12T12:34:16.145044789Z       _secureEstablished: true,
+2026-01-12T12:34:16.145047469Z       _securePending: false,
+2026-01-12T12:34:16.145049769Z       _newSessionPending: false,
+2026-01-12T12:34:16.145051979Z       _controlReleased: true,
+2026-01-12T12:34:16.145057219Z       secureConnecting: false,
+2026-01-12T12:34:16.145059429Z       _SNICallback: null,
+2026-01-12T12:34:16.145068979Z       servername: 'api.sendpulse.com',
+2026-01-12T12:34:16.145071319Z       alpnProtocol: false,
+2026-01-12T12:34:16.145073569Z       authorized: true,
+2026-01-12T12:34:16.145075699Z       authorizationError: null,
+2026-01-12T12:34:16.145077919Z       encrypted: true,
+2026-01-12T12:34:16.145083049Z       _events: [Object: null prototype],
+2026-01-12T12:34:16.1450853Z       _eventsCount: 9,
+2026-01-12T12:34:16.145087549Z       connecting: false,
+2026-01-12T12:34:16.14508968Z       _hadError: false,
+2026-01-12T12:34:16.145095Z       _parent: null,
+2026-01-12T12:34:16.14509733Z       _host: 'api.sendpulse.com',
+2026-01-12T12:34:16.14509949Z       _closeAfterHandlingError: false,
+2026-01-12T12:34:16.14510166Z       _readableState: [ReadableState],
+2026-01-12T12:34:16.14510713Z       _writableState: [WritableState],
+2026-01-12T12:34:16.14510948Z       allowHalfOpen: false,
+2026-01-12T12:34:16.14511162Z       _maxListeners: undefined,
+2026-01-12T12:34:16.14511386Z       _sockname: null,
+2026-01-12T12:34:16.14511897Z       _pendingData: null,
+2026-01-12T12:34:16.1451214Z       _pendingEncoding: '',
+2026-01-12T12:34:16.14512362Z       server: undefined,
+2026-01-12T12:34:16.1451258Z       _server: null,
+2026-01-12T12:34:16.145131041Z       ssl: [TLSWrap],
+2026-01-12T12:34:16.145133321Z       _requestCert: true,
+2026-01-12T12:34:16.145135501Z       _rejectUnauthorized: true,
+2026-01-12T12:34:16.14513765Z       timeout: 5000,
+2026-01-12T12:34:16.145139821Z       parser: null,
+2026-01-12T12:34:16.145145461Z       _httpMessage: null,
+2026-01-12T12:34:16.145147741Z       [Symbol(alpncallback)]: null,
+2026-01-12T12:34:16.145149831Z       [Symbol(res)]: [TLSWrap],
+2026-01-12T12:34:16.145151981Z       [Symbol(verified)]: true,
+2026-01-12T12:34:16.145157181Z       [Symbol(pendingSession)]: null,
+2026-01-12T12:34:16.145159491Z       [Symbol(async_id_symbol)]: -1,
+2026-01-12T12:34:16.145161711Z       [Symbol(kHandle)]: [TLSWrap],
+2026-01-12T12:34:16.145170001Z       [Symbol(lastWriteQueueSize)]: 0,
+2026-01-12T12:34:16.145176081Z       [Symbol(timeout)]: Timeout {
+2026-01-12T12:34:16.145181811Z         _idleTimeout: 5000,
+2026-01-12T12:34:16.145184202Z         _idlePrev: [TimersList],
+2026-01-12T12:34:16.145186411Z         _idleNext: [TimersList],
+2026-01-12T12:34:16.145188572Z         _idleStart: 235578,
+2026-01-12T12:34:16.145190772Z         _onTimeout: [Function: bound ],
+2026-01-12T12:34:16.145192982Z         _timerArgs: undefined,
+2026-01-12T12:34:16.145198352Z         _repeat: null,
+2026-01-12T12:34:16.145200542Z         _destroyed: false,
+2026-01-12T12:34:16.145202672Z         [Symbol(refed)]: false,
+2026-01-12T12:34:16.145204882Z         [Symbol(kHasPrimitive)]: false,
+2026-01-12T12:34:16.145209982Z         [Symbol(asyncId)]: 19237,
+2026-01-12T12:34:16.145212292Z         [Symbol(triggerId)]: 19235,
+2026-01-12T12:34:16.145214452Z         [Symbol(kAsyncContextFrame)]: undefined
+2026-01-12T12:34:16.145216612Z       },
+2026-01-12T12:34:16.145221882Z       [Symbol(kBuffer)]: null,
+2026-01-12T12:34:16.145224092Z       [Symbol(kBufferCb)]: null,
+2026-01-12T12:34:16.145226322Z       [Symbol(kBufferGen)]: null,
+2026-01-12T12:34:16.145228543Z       [Symbol(shapeMode)]: true,
+2026-01-12T12:34:16.145234183Z       [Symbol(kCapture)]: false,
+2026-01-12T12:34:16.145236343Z       [Symbol(kSetNoDelay)]: false,
+2026-01-12T12:34:16.145238423Z       [Symbol(kSetKeepAlive)]: true,
+2026-01-12T12:34:16.145240573Z       [Symbol(kSetKeepAliveInitialDelay)]: 1,
+2026-01-12T12:34:16.145245643Z       [Symbol(kBytesRead)]: 0,
+2026-01-12T12:34:16.145247893Z       [Symbol(kBytesWritten)]: 0,
+2026-01-12T12:34:16.145250093Z       [Symbol(connect-options)]: [Object]
+2026-01-12T12:34:16.145252303Z     },
+2026-01-12T12:34:16.145257523Z     [Symbol(kOutHeaders)]: [Object: null prototype] {
+2026-01-12T12:34:16.145259803Z       accept: [Array],
+2026-01-12T12:34:16.145261943Z       'content-type': [Array],
+2026-01-12T12:34:16.145264163Z       authorization: [Array],
+2026-01-12T12:34:16.145269473Z       'user-agent': [Array],
+2026-01-12T12:34:16.145271723Z       'content-length': [Array],
+2026-01-12T12:34:16.145273893Z       'accept-encoding': [Array],
+2026-01-12T12:34:16.145276073Z       host: [Array]
+2026-01-12T12:34:16.145281233Z     },
+2026-01-12T12:34:16.145283493Z     [Symbol(errored)]: null,
+2026-01-12T12:34:16.145285664Z     [Symbol(kHighWaterMark)]: 65536,
+2026-01-12T12:34:16.145287914Z     [Symbol(kRejectNonStandardBodyWrites)]: false,
+2026-01-12T12:34:16.145293164Z     [Symbol(kUniqueHeaders)]: null
+2026-01-12T12:34:16.145295354Z   },
+2026-01-12T12:34:16.145297594Z   response: {
+2026-01-12T12:34:16.145302614Z     status: 502,
+2026-01-12T12:34:16.145304914Z     statusText: 'Bad Gateway',
+2026-01-12T12:34:16.145307044Z     headers: Object [AxiosHeaders] {
+2026-01-12T12:34:16.145309244Z       server: 'nginx',
+2026-01-12T12:34:16.145314534Z       date: 'Mon, 12 Jan 2026 12:34:16 GMT',
+2026-01-12T12:34:16.145316834Z       'content-type': 'text/html',
+2026-01-12T12:34:16.145319044Z       'content-length': '166',
+2026-01-12T12:34:16.145321174Z       connection: 'keep-alive',
+2026-01-12T12:34:16.145323314Z       'x-sp-api': 'sp-api-2',
+2026-01-12T12:34:16.145350335Z       'x-sp-pr': 'lpr-06'
+2026-01-12T12:34:16.145355885Z     },
+2026-01-12T12:34:16.145358165Z     config: {
+2026-01-12T12:34:16.145360355Z       transitional: [Object],
+2026-01-12T12:34:16.145362525Z       adapter: [Array],
+2026-01-12T12:34:16.145367915Z       transformRequest: [Array],
+2026-01-12T12:34:16.145370265Z       transformResponse: [Array],
+2026-01-12T12:34:16.145377025Z       timeout: 0,
+2026-01-12T12:34:16.145382606Z       xsrfCookieName: 'XSRF-TOKEN',
+2026-01-12T12:34:16.145384826Z       xsrfHeaderName: 'X-XSRF-TOKEN',
+2026-01-12T12:34:16.145391566Z       maxContentLength: -1,
+2026-01-12T12:34:16.145393826Z       maxBodyLength: -1,
+2026-01-12T12:34:16.145399596Z       env: [Object],
+2026-01-12T12:34:16.145401936Z       validateStatus: [Function: validateStatus],
+2026-01-12T12:34:16.145404216Z       headers: [Object [AxiosHeaders]],
+2026-01-12T12:34:16.145406496Z       method: 'post',
+2026-01-12T12:34:16.145413606Z       url: 'https://api.sendpulse.com/smtp/emails',
+2026-01-12T12:34:16.145435427Z       data: '{"email":{"subject":"Nouvelle demande de prêt - SOLVENTIS GROUP","html":"CjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJmciI+CjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT1lZGdlIj4KICA8dGl0bGU+U09MVkVOVElTIEdST1VQPC90aXRsZT4KICA8IS0tW2lmIG1zb10+CiAgPG5vc2NyaXB0PgogICAgPHhtbD4KICAgICAgPG86T2ZmaWNlRG9jdW1lbnRTZXR0aW5ncz4KICAgICAgICA8bzpQaXhlbHNQZXJJbmNoPjk2PC9vOlBpeGVsc1BlckluY2g+CiAgICAgIDwvbzpPZmZpY2VEb2N1bWVudFNldHRpbmdzPgogICAgPC94bWw+CiAgPC9ub3NjcmlwdD4KICA8IVtlbmRpZl0tLT4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgogICAgLyogUmVzZXQgc3R5bGVzICovCiAgICBib2R5LCB0YWJsZSwgdGQsIHAsIGEsIGxpLCBibG9ja3F1b3RlIHsKICAgICAgLXdlYmtpdC10ZXh0LXNpemUtYWRqdXN0OiAxMDAlOwogICAgICAtbXMtdGV4dC1zaXplLWFkanVzdDogMTAwJTsKICAgIH0KICAgIHRhYmxlLCB0ZCB7CiAgICAgIG1zby10YWJsZS1sc3BhY2U6IDBwdDsKICAgICAgbXNvLXRhYmxlLXJzcGFjZTogMHB0OwogICAgfQogICAgaW1nIHsKICAgICAgLW1zLWludGVycG9sYXRpb24tbW9kZTogYmljdWJpYzsKICAgICAgYm9yZGVyOiAwOwogICAgICBoZWlnaHQ6IGF1dG87CiAgICAgIGxpbmUtaGVpZ2h0OiAxMDAlOwogICAgICBvdXRsaW5lOiBub25lOwogICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7CiAgICB9CiAgICBib2R5IHsKICAgICAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7CiAgICAgIHBhZGRpbmc6IDAgIWltcG9ydGFudDsKICAgICAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsKICAgIH0KICAgIC8qIFJlc3BvbnNpdmUgc3R5bGVzICovCiAgICBAbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYwMHB4KSB7CiAgICAgIC5lbWFpbC1jb250YWluZXIgewogICAgICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7CiAgICAgICAgbWF4LXdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7CiAgICAgIH0KICAgICAgLmNvbnRlbnQtcGFkZGluZyB7CiAgICAgICAgcGFkZGluZzogMjBweCAxNXB4ICFpbXBvcnRhbnQ7CiAgICAgIH0KICAgICAgLm1vYmlsZS1jZW50ZXIgewogICAgICAgIHRleHQtYWxpZ246IGNlbnRlciAhaW1wb3J0YW50OwogICAgICB9CiAgICAgIC5tb2JpbGUtZnVsbC13aWR0aCB7CiAgICAgICAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsKICAgICAgICBkaXNwbGF5OiBibG9jayAhaW1wb3J0YW50OwogICAgICB9CiAgICB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keSBzdHlsZT0ibWFyZ2luOiAwOyBwYWRkaW5nOiAwOyBiYWNrZ3JvdW5kLWNvbG9yOiAjZjRmNGY0OyBmb250LWZhbWlseTogQXJpYWwsICdIZWx2ZXRpY2EgTmV1ZScsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPgogIDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmNGY0ZjQ7Ij4KICAgIDx0cj4KICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWRkaW5nOiAyMHB4IDEwcHg7Ij4KICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjYwMCIgY2xhc3M9ImVtYWlsLWNvbnRhaW5lciIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IGJvcmRlci1yYWRpdXM6IDhweDsgb3ZlcmZsb3c6IGhpZGRlbjsgYm94LXNoYWRvdzogMCA0cHggNnB4IHJnYmEoMCwgMCwgMCwgMC4xKTsiPgogICAgICAgICAgCiAgICAKICAgIDx0cj4KICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMWUzYTVmIDAlLCAjZjU5ZTBiIDUwJSwgI2M5YTIyNyAxMDAlKTsgcGFkZGluZzogMzBweCAyMHB4OyI+CiAgICAgICAgPHRhYmxlIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSI+CiAgICAgICAgICAKICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWRkaW5nLWJvdHRvbTogMTVweDsiPgogICAgICAgICAgICAgIDxpbWcgc3JjPSJodHRwczovL3NvbHZlbnRpc2dyb3VwLm9yZy9hdHRhY2hlZF9hc3NldHMvZ2VuZXJhdGVkX2ltYWdlcy9taW5pbWFsaXN0X3Byb2Zlc3Npb25hbF9ibHVlX2xvZ29fZm9yX3NvbHZlbnRpc2dyb3VwX2VtYWlscy5wbmciIGFsdD0iU29sdmVudGlzR3JvdXAiIHdpZHRoPSIxODAiIHN0eWxlPSJkaXNwbGF5OiBibG9jazsgd2lkdGg6IDE4MHB4OyBtYXgtd2lkdGg6IDEwMCU7IGJvcmRlcjogMDsgb3V0bGluZTogbm9uZTsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyI+CiAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgCiAgICAgICAgICAKICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIGFsaWduPSJjZW50ZXIiPgogICAgICAgICAgICAgIDxoMSBzdHlsZT0ibWFyZ2luOiAwOyBmb250LXNpemU6IDI0cHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogI2ZmZmZmZjsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyI+8J+TiyBOb3V2ZWxsZSBkZW1hbmRlIGRlIHByw6p0PC9oMT4KICAgICAgICAgICAgPC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICAKICAgICAgICAgIAogICAgICAgIDwvdGFibGU+CiAgICAgIDwvdGQ+CiAgICA8L3RyPgogIAogICAgPHRyPgogICAgICA8dGQgY2xhc3M9ImNvbnRlbnQtcGFkZGluZyIgc3R5bGU9InBhZGRpbmc6IDQwcHggMzBweDsiPgogICAgICAgIDxwIHN0eWxlPSJjb2xvcjogIzM3NDE1MTsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMS42OyBtYXJnaW46IDAgMCAyNXB4IDA7Ij5VbmUgbm91dmVsbGUgZGVtYW5kZSBkZSBwcsOqdCBhIMOpdMOpIHNvdW1pc2UgZXQgbsOpY2Vzc2l0ZSB2b3RyZSBhdHRlbnRpb24uPC9wPgogICAgICAgIAogICAgICAgIDx0YWJsZSBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiIHN0eWxlPSJiYWNrZ3JvdW5kOiAjZmZmZmZmOyBib3JkZXItcmFkaXVzOiA4cHg7IGJvcmRlcjogMXB4IHNvbGlkICNlNWU3ZWI7IG1hcmdpbi1ib3R0b206IDI1cHg7Ij4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsiPjxzdHJvbmcgc3R5bGU9ImNvbG9yOiAjNmI3MjgwOyI+RGVtYW5kZXVyOjwvc3Ryb25nPjwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMTVweDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNWU3ZWI7IGNvbG9yOiAjMWYyOTM3OyI+R2lsIFZlZ2E8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsiPjxzdHJvbmcgc3R5bGU9ImNvbG9yOiAjNmI3MjgwOyI+RW1haWw6PC9zdHJvbmc+PC90ZD4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsgY29sb3I6ICMxZjI5Mzc7Ij5naXR1bml2ZXJzQGdtYWlsLmNvbTwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgPHRyPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyI+PHN0cm9uZyBzdHlsZT0iY29sb3I6ICM2YjcyODA7Ij5Uw6lsw6lwaG9uZTo8L3N0cm9uZz48L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyBjb2xvcjogIzFmMjkzNzsiPis0NDk2NDk1OTM1NTk8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsiPjxzdHJvbmcgc3R5bGU9ImNvbG9yOiAjNmI3MjgwOyI+VHlwZSBkZSBjb21wdGU6PC9zdHJvbmc+PC90ZD4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsgY29sb3I6ICMxZjI5Mzc7Ij5wYXJ0aWN1bGllcjwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgPHRyPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyI+PHN0cm9uZyBzdHlsZT0iY29sb3I6ICM2YjcyODA7Ij5Nb250YW50IGRlbWFuZMOpOjwvc3Ryb25nPjwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMTVweDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNWU3ZWI7IGNvbG9yOiAjMWYyOTM3OyI+NTUwMDAgRVVSPC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMTVweDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNWU3ZWI7Ij48c3Ryb25nIHN0eWxlPSJjb2xvcjogIzZiNzI4MDsiPkR1csOpZTo8L3N0cm9uZz48L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyBjb2xvcjogIzFmMjkzNzsiPjQxIG1vaXM8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsiPjxzdHJvbmcgc3R5bGU9ImNvbG9yOiAjNmI3MjgwOyI+VHlwZSBkZSBwcsOqdDo8L3N0cm9uZz48L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyBjb2xvcjogIzFmMjkzNzsiPmF1dG8tbG9hbjwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgPHRyPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyI+PHN0cm9uZyBzdHlsZT0iY29sb3I6ICM2YjcyODA7Ij5Sw6lmw6lyZW5jZTo8L3N0cm9uZz48L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyBjb2xvcjogIzFmMjkzNzsiPkFMVC1DLTIwMjYtMzAyMjc8L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxNXB4OyI+PHN0cm9uZyBzdHlsZT0iY29sb3I6ICM2YjcyODA7Ij5JRCB1dGlsaXNhdGV1cjo8L3N0cm9uZz48L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDE1cHg7IGNvbG9yOiAjMWYyOTM3OyI+NWZhMzZiZmMtM2QyZi00YTFmLWJiNTctM2UyMTA1MmE5OTJmPC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgPC90YWJsZT4KCiAgICAgICAgPGgzIHN0eWxlPSJtYXJnaW46IDAgMCAxNXB4IDA7IGNvbG9yOiAjMWYyOTM3OyBmb250LXNpemU6IDE2cHg7Ij7wn5OEIERvY3VtZW50cyB1cGxvYWTDqXM8L2gzPgogICAgICAgIDx0YWJsZSBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiIHN0eWxlPSJiYWNrZ3JvdW5kOiAjZmZmZmZmOyBib3JkZXItcmFkaXVzOiA4cHg7IG92ZXJmbG93OiBoaWRkZW47IGJvcmRlcjogMXB4IHNvbGlkICNlNWU3ZWI7IG1hcmdpbi1ib3R0b206IDI1cHg7Ij4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRoIHN0eWxlPSJiYWNrZ3JvdW5kOiAjZjU5ZTBiOyBjb2xvcjogd2hpdGU7IHBhZGRpbmc6IDEycHg7IHRleHQtYWxpZ246IGxlZnQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+VHlwZSBkZSBkb2N1bWVudDwvdGg+CiAgICAgICAgICAgIDx0aCBzdHlsZT0iYmFja2dyb3VuZDogI2Y1OWUwYjsgY29sb3I6IHdoaXRlOyBwYWRkaW5nOiAxMnB4OyB0ZXh0LWFsaWduOiBsZWZ0OyBmb250LXdlaWdodDogYm9sZDsiPlTDqWzDqWNoYXJnZXI8L3RoPgogICAgICAgICAgPC90cj4KICAgICAgICAgIAogICAgICA8dHI+CiAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMnB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsgY29sb3I6ICMzNzQxNTE7Ij5Eb2N1bWVudCBkZSBkZW1hbmRlPC90ZD4KICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDEycHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyI+CiAgICAgICAgICA8YSBocmVmPSIiIHN0eWxlPSJjb2xvcjogI2Y1OWUwYjsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBmb250LXdlaWdodDogNTAwOyI+VMOpbMOpY2hhcmdlcjwvYT4KICAgICAgICA8L3RkPgogICAgICA8L3RyPgogICAgCiAgICAgIDx0cj4KICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDEycHg7IGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTVlN2ViOyBjb2xvcjogIzM3NDE1MTsiPkRvY3VtZW50IGRlIGRlbWFuZGU8L3RkPgogICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMTJweDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNWU3ZWI7Ij4KICAgICAgICAgIDxhIGhyZWY9IiIgc3R5bGU9ImNvbG9yOiAjZjU5ZTBiOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGZvbnQtd2VpZ2h0OiA1MDA7Ij5Uw6lsw6ljaGFyZ2VyPC9hPgogICAgICAgIDwvdGQ+CiAgICAgIDwvdHI+CiAgICAKICAgICAgPHRyPgogICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogMTJweDsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNWU3ZWI7IGNvbG9yOiAjMzc0MTUxOyI+RG9jdW1lbnQgZGUgZGVtYW5kZTwvdGQ+CiAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMnB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsiPgogICAgICAgICAgPGEgaHJlZj0iIiBzdHlsZT0iY29sb3I6ICNmNTllMGI7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgZm9udC13ZWlnaHQ6IDUwMDsiPlTDqWzDqWNoYXJnZXI8L2E+CiAgICAgICAgPC90ZD4KICAgICAgPC90cj4KICAgIAogICAgICA8dHI+CiAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiAxMnB4OyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U1ZTdlYjsgY29sb3I6ICMzNzQxNTE7Ij5Eb2N1bWVudCBkZSBkZW1hbmRlPC90ZD4KICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDEycHg7IGJvcmRlci1'... 3538 more characters,
+2026-01-12T12:34:16.145445827Z       allowAbsoluteUrls: true
+2026-01-12T12:34:16.145448267Z     },
+2026-01-12T12:34:16.145450557Z     request: <ref *1> ClientRequest {
+2026-01-12T12:34:16.145452817Z       _events: [Object: null prototype],
+2026-01-12T12:34:16.145454957Z       _eventsCount: 7,
+2026-01-12T12:34:16.145457437Z       _maxListeners: undefined,
+2026-01-12T12:34:16.145459567Z       outputData: [],
+2026-01-12T12:34:16.145461787Z       outputSize: 0,
+2026-01-12T12:34:16.145463917Z       writable: true,
+2026-01-12T12:34:16.145466117Z       destroyed: true,
+2026-01-12T12:34:16.145468267Z       _last: false,
+2026-01-12T12:34:16.145470467Z       chunkedEncoding: false,
+2026-01-12T12:34:16.145472637Z       shouldKeepAlive: true,
+2026-01-12T12:34:16.145479457Z       maxRequestsOnConnectionReached: false,
+2026-01-12T12:34:16.145481577Z       _defaultKeepAlive: true,
+2026-01-12T12:34:16.145483748Z       useChunkedEncodingByDefault: true,
+2026-01-12T12:34:16.145485897Z       sendDate: false,
+2026-01-12T12:34:16.145488158Z       _removedConnection: false,
+2026-01-12T12:34:16.145490418Z       _removedContLen: false,
+2026-01-12T12:34:16.145492648Z       _removedTE: false,
+2026-01-12T12:34:16.145494868Z       strictContentLength: false,
+2026-01-12T12:34:16.145497098Z       _contentLength: 13556,
+2026-01-12T12:34:16.145502388Z       _hasBody: true,
+2026-01-12T12:34:16.145504688Z       _trailer: '',
+2026-01-12T12:34:16.145506788Z       finished: true,
+2026-01-12T12:34:16.145508988Z       _headerSent: true,
+2026-01-12T12:34:16.145511258Z       _closed: true,
+2026-01-12T12:34:16.145513488Z       _header: 'POST /smtp/emails HTTP/1.1\r\n' +
+2026-01-12T12:34:16.145515998Z         'Accept: application/json, text/plain, */*\r\n' +
+2026-01-12T12:34:16.145518138Z         'Content-Type: application/json\r\n' +
+2026-01-12T12:34:16.145523908Z         'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImE0MThiOWJkMDc0MWYxYzhmNDlmZTBiNDQwM2NiODEwOGFiMTQxMTM2YzgyZTU2NTIwYTQ1YTNjYWQxZDJjZWYzNTlkNzUwNDlhZjVkZTc0In0.eyJhdWQiOiJkODlhYzc0MmExOTM5MDAyMWJlZjljMzgwZjBkNTcyNyIsImp0aSI6ImE0MThiOWJkMDc0MWYxYzhmNDlmZTBiNDQwM2NiODEwOGFiMTQxMTM2YzgyZTU2NTIwYTQ1YTNjYWQxZDJjZWYzNTlkNzUwNDlhZjVkZTc0IiwiaWF0IjoxNzY4MjIxMTk1LCJuYmYiOjE3NjgyMjExOTUsImV4cCI6MTc2ODIyNDc5NSwic3ViIjoiIiwic2NvcGVzIjpbXSwidXNlciI6eyJpZCI6OTMxODQ1MSwiZ3JvdXBfaWQiOm51bGwsInBhcmVudF9pZCI6bnVsbCwiY29udGV4dCI6eyJhY2NsaW0iOiIwIn0sImFyZWEiOiJyZXN0IiwiYXBwX2lkIjpudWxsfX0.lg9CGVbfLNgNIFOg9nuYYQGwYV9UN_6ITfuc2-hsNu3xUsK6Hb9NPzsfpCL--xgkUUGvIQtuF0xEdld7ogkdNbuNW9E4U0FDv0YwY49IQzNpYtOQtgqXS4ku4wQQu7oEh9AldJk_FREQBhdHVOSEgULLaJcO1P0d5fDIRO6P8tT_6LDQeQDYuCb2rYv5VG7awossx037uKj_1B0awkTLtJZ83w6NqHoYEFAwa3PZfN5X4WDu3FRzj2nbc4VQktKlkReh_9PF-rbJDnn5SS4ODsSaNA1oZetyOz-LhbOIG2iSf2JyCx7lhgOyFV1bjC9hKMMBnO583QiDEozRaWX_Fg\r\n' +
+2026-01-12T12:34:16.145526318Z         'User-Agent: axios/1.13.2\r\n' +
+2026-01-12T12:34:16.145528538Z         'Content-Length: 13556\r\n' +
+2026-01-12T12:34:16.145530749Z         'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+2026-01-12T12:34:16.145532998Z         'Host: api.sendpulse.com\r\n' +
+2026-01-12T12:34:16.145535169Z         'Connection: keep-alive\r\n' +
+2026-01-12T12:34:16.145537358Z         '\r\n',
+2026-01-12T12:34:16.145539639Z       _keepAliveTimeout: 0,
+2026-01-12T12:34:16.145542009Z       _onPendingData: [Function: nop],
+2026-01-12T12:34:16.145544189Z       agent: [Agent],
+2026-01-12T12:34:16.145546339Z       socketPath: undefined,
+2026-01-12T12:34:16.145548489Z       method: 'POST',
+2026-01-12T12:34:16.145550669Z       maxHeaderSize: undefined,
+2026-01-12T12:34:16.145552909Z       insecureHTTPParser: undefined,
+2026-01-12T12:34:16.145555059Z       joinDuplicateHeaders: undefined,
+2026-01-12T12:34:16.145557239Z       path: '/smtp/emails',
+2026-01-12T12:34:16.145559499Z       _ended: true,
+2026-01-12T12:34:16.145561699Z       res: [IncomingMessage],
+2026-01-12T12:34:16.145563849Z       aborted: false,
+2026-01-12T12:34:16.145566029Z       timeoutCb: null,
+2026-01-12T12:34:16.145568279Z       upgradeOrConnect: false,
+2026-01-12T12:34:16.145570429Z       parser: null,
+2026-01-12T12:34:16.145572549Z       maxHeadersCount: null,
+2026-01-12T12:34:16.145574649Z       reusedSocket: true,
+2026-01-12T12:34:16.145576769Z       host: 'api.sendpulse.com',
+2026-01-12T12:34:16.145578909Z       protocol: 'https:',
+2026-01-12T12:34:16.145581059Z       _redirectable: [Writable],
+2026-01-12T12:34:16.14558327Z       [Symbol(shapeMode)]: false,
+2026-01-12T12:34:16.145585519Z       [Symbol(kCapture)]: false,
+2026-01-12T12:34:16.14558771Z       [Symbol(kBytesWritten)]: 0,
+2026-01-12T12:34:16.1455899Z       [Symbol(kNeedDrain)]: false,
+2026-01-12T12:34:16.14559214Z       [Symbol(corked)]: 0,
+2026-01-12T12:34:16.14559432Z       [Symbol(kChunkedBuffer)]: [],
+2026-01-12T12:34:16.1455965Z       [Symbol(kChunkedLength)]: 0,
+2026-01-12T12:34:16.14559864Z       [Symbol(kSocket)]: [TLSSocket],
+2026-01-12T12:34:16.14560085Z       [Symbol(kOutHeaders)]: [Object: null prototype],
+2026-01-12T12:34:16.14560627Z       [Symbol(errored)]: null,
+2026-01-12T12:34:16.14560854Z       [Symbol(kHighWaterMark)]: 65536,
+2026-01-12T12:34:16.14561076Z       [Symbol(kRejectNonStandardBodyWrites)]: false,
+2026-01-12T12:34:16.14561291Z       [Symbol(kUniqueHeaders)]: null
+2026-01-12T12:34:16.14561509Z     },
+2026-01-12T12:34:16.14561733Z     data: '<html>\r\n' +
+2026-01-12T12:34:16.14561954Z       '<head><title>502 Bad Gateway</title></head>\r\n' +
+2026-01-12T12:34:16.14562171Z       '<body bgcolor="white">\r\n' +
+2026-01-12T12:34:16.14562401Z       '<center><h1>502 Bad Gateway</h1></center>\r\n' +
+2026-01-12T12:34:16.14562625Z       '<hr><center>nginx</center>\r\n' +
+2026-01-12T12:34:16.14562843Z       '</body>\r\n' +
+2026-01-12T12:34:16.14563056Z       '</html>\r\n'
+2026-01-12T12:34:16.145632791Z   },
+2026-01-12T12:34:16.145635031Z   status: 502
+2026-01-12T12:34:16.145637211Z }
+2026-01-12T12:34:16.429538264Z 12:34:16 PM [express] POST /api/loans 201 in 62573ms
+2026-01-12T12:34:16.724422506Z 12:34:16 PM [express] GET /api/admin/loans 304 in 652ms
+2026-01-12T12:34:17.526977613Z 12:34:17 PM [express] GET /api/dashboard 304 in 653ms
+2026-01-12T12:34:17.577939901Z 12:34:17 PM [express] GET /api/user/stats 304 in 428ms
+2026-01-12T12:34:17.731609282Z 12:34:17 PM [express] GET /api/loans 200 in 281ms
+2026-01-12T12:34:20.691749543Z 12:34:20 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:34:23.489839376Z 12:34:23 PM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T12:34:23.734868912Z 12:34:23 PM [express] GET /api/dashboard 304 in 654ms
+2026-01-12T12:34:24.585628012Z 12:34:24 PM [express] GET /api/admin/loans 304 in 656ms
+2026-01-12T12:34:27.823526244Z 12:34:27 PM [express] GET /api/admin/loans 304 in 669ms
+2026-01-12T12:34:29.175062771Z 12:34:29 PM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T12:34:29.709959669Z 12:34:29 PM [express] GET /api/dashboard 304 in 665ms
+2026-01-12T12:34:31.775704658Z 12:34:31 PM [express] GET /api/admin/loans 304 in 659ms
+2026-01-12T12:34:36.347118647Z 12:34:36 PM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T12:34:36.551565852Z 12:34:36 PM [express] GET /api/admin/loans 304 in 1231ms
+2026-01-12T12:34:37.202156872Z 12:34:37 PM [express] GET /api/dashboard 200 in 652ms
+2026-01-12T12:34:40.761912275Z 12:34:40 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:34:42.373394007Z 12:34:42 PM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T12:34:43.16975924Z 12:34:43 PM [express] GET /api/dashboard 304 in 655ms
+2026-01-12T12:34:44.595363787Z 12:34:44 PM [express] GET /api/admin/loans 304 in 654ms
+2026-01-12T12:34:49.492851671Z 12:34:49 PM [express] GET /api/admin/loans 304 in 727ms
+2026-01-12T12:34:49.707096172Z 12:34:49 PM [express] GET /api/user/stats 304 in 372ms
+2026-01-12T12:34:49.790594781Z 12:34:49 PM [express] GET /api/dashboard 304 in 856ms
+2026-01-12T12:34:52.596365077Z 12:34:52 PM [express] GET /api/admin/loans 304 in 652ms
+2026-01-12T12:34:56.328086145Z 12:34:56 PM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T12:34:56.631157942Z 12:34:56 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:34:57.202962898Z 12:34:57 PM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T12:35:00.60153489Z 12:35:00 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:35:04.207412434Z 12:35:04 PM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T12:35:04.529358838Z 12:35:04 PM [express] GET /api/admin/loans 304 in 654ms
+2026-01-12T12:35:04.805548097Z 12:35:04 PM [express] GET /api/dashboard 304 in 935ms
+2026-01-12T12:35:07.69321327Z 12:35:07 PM [express] GET /api/admin/loans 304 in 657ms
+2026-01-12T12:35:10.305204424Z 12:35:10 PM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T12:35:11.850904901Z 12:35:11 PM [express] GET /api/dashboard 304 in 886ms
+2026-01-12T12:35:12.6600588Z 12:35:12 PM [express] GET /api/admin/loans 304 in 657ms
+2026-01-12T12:35:16.29974755Z 12:35:16 PM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T12:35:17.167520041Z 12:35:17 PM [express] GET /api/admin/loans 304 in 657ms
+2026-01-12T12:35:19.820012804Z 12:35:19 PM [express] GET /api/dashboard 304 in 654ms
+2026-01-12T12:35:20.624628503Z 12:35:20 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:35:22.348324966Z 12:35:22 PM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T12:35:25.248918308Z 12:35:25 PM [express] GET /api/admin/loans 304 in 655ms
+2026-01-12T12:35:26.593975425Z 12:35:26 PM [express] GET /api/dashboard 304 in 653ms
+2026-01-12T12:35:28.60593515Z 12:35:28 PM [express] GET /api/admin/loans 304 in 675ms
+2026-01-12T12:35:30.479048789Z 12:35:30 PM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T12:35:32.641317017Z 12:35:32 PM [express] GET /api/dashboard 304 in 652ms
+2026-01-12T12:35:33.619251929Z 12:35:33 PM [express] GET /api/admin/loans 304 in 654ms

@@ -1,0 +1,253 @@
+SOUS-TITRES – TEXTE OFFICIEL (PRÊT À L’EMPLOI)
+
+👉 Le texte est découpé logiquement pour un affichage lisible, compatible SRT / VTT / players web.
+
+🇪🇸 ESPAGNOL (ES – original)
+
+Bienvenida.
+
+Mi nombre es Isabelle Moreno Diaz
+y soy directora administrativa en Altus Finances Group.
+
+En Altus, trabajamos cada día
+para simplificar el acceso al crédito
+y convertir cada proyecto
+en una experiencia clara y segura.
+
+Acompañamos tanto a particulares como a profesionales
+con soluciones pensadas para ser eficientes, responsables
+y adaptadas a cada situación.
+
+Nuestra forma de trabajar se basa
+en la transparencia, la seriedad
+y una relación de confianza a largo plazo.
+
+Estamos a su lado
+para ofrecerle un apoyo sólido,
+alineado con sus objetivos
+y sus expectativas.
+
+Gracias por elegir Altus Finances Group.
+Gracias por su confianza.
+
+🇫🇷 FRANÇAIS (FR)
+
+Bienvenue.
+
+Je m’appelle Isabelle Moreno Diaz
+et je suis directrice administrative
+chez Altus Finances Group.
+
+Chez Altus, nous travaillons chaque jour
+pour simplifier l’accès au crédit
+et transformer chaque projet
+en une expérience claire et sécurisée.
+
+Nous accompagnons particuliers et professionnels
+avec des solutions efficaces, responsables
+et adaptées à chaque situation.
+
+Notre approche repose
+sur la transparence, le sérieux
+et une relation de confiance durable.
+
+Nous sommes à vos côtés
+pour vous offrir un accompagnement solide,
+aligné sur vos objectifs
+et vos attentes.
+
+Merci d’avoir choisi Altus Finances Group.
+Merci pour votre confiance.
+
+🇬🇧 ENGLISH (EN)
+
+Welcome.
+
+My name is Isabelle Moreno Diaz,
+and I am Administrative Director
+at Altus Finances Group.
+
+At Altus, we work every day
+to simplify access to credit
+and turn each project
+into a clear and secure experience.
+
+We support both individuals and professionals
+with solutions designed to be efficient, responsible,
+and adapted to every situation.
+
+Our way of working is based
+on transparency, professionalism,
+and long-term trust.
+
+You can count on us
+to provide solid support,
+aligned with your goals
+and expectations.
+
+Thank you for choosing Altus Finances Group.
+Thank you for your trust.
+
+🇵🇹 PORTUGAIS (PT)
+
+Bem-vindo.
+
+O meu nome é Isabelle Moreno Diaz
+e sou diretora administrativa
+do Altus Finances Group.
+
+No Altus, trabalhamos todos os dias
+para simplificar o acesso ao crédito
+e transformar cada projeto
+numa experiência clara e segura.
+
+Apoiamos particulares e profissionais
+com soluções eficientes, responsáveis
+e adaptadas a cada situação.
+
+A nossa abordagem baseia-se
+na transparência, no rigor
+e numa relação de confiança duradoura.
+
+Estamos ao seu lado
+para oferecer um apoio sólido,
+alinhado com os seus objetivos
+e expectativas.
+
+Obrigado por escolher o Altus Finances Group.
+Obrigado pela sua confiança.
+
+🇳🇱 NÉERLANDAIS (NL)
+
+Welkom.
+
+Mijn naam is Isabelle Moreno Diaz
+en ik ben administratief directeur
+bij Altus Finances Group.
+
+Bij Altus werken wij elke dag
+aan het vereenvoudigen van toegang tot krediet
+en het omzetten van elk project
+in een duidelijke en veilige ervaring.
+
+Wij begeleiden zowel particulieren als professionals
+met efficiënte, verantwoorde oplossingen
+die zijn afgestemd op elke situatie.
+
+Onze werkwijze is gebaseerd
+op transparantie, professionaliteit
+en langdurig vertrouwen.
+
+U kunt op ons rekenen
+voor solide ondersteuning,
+afgestemd op uw doelstellingen
+en verwachtingen.
+
+Dank u voor het kiezen van Altus Finances Group.
+Dank u voor uw vertrouwen.
+
+🇮🇹 ITALIEN (IT)
+
+Benvenuti.
+
+Mi chiamo Isabelle Moreno Diaz
+e sono direttrice amministrativa
+di Altus Finances Group.
+
+In Altus lavoriamo ogni giorno
+per semplificare l’accesso al credito
+e trasformare ogni progetto
+in un’esperienza chiara e sicura.
+
+Supportiamo privati e professionisti
+con soluzioni efficienti, responsabili
+e adattate a ogni situazione.
+
+Il nostro metodo di lavoro si basa
+su trasparenza, serietà
+e un rapporto di fiducia duraturo.
+
+Siamo al vostro fianco
+per offrirvi un supporto solido,
+in linea con i vostri obiettivi
+e le vostre aspettative.
+
+Grazie per aver scelto Altus Finances Group.
+Grazie per la vostra fiducia.
+
+🇩🇪 ALLEMAND (DE)
+
+Willkommen.
+
+Mein Name ist Isabelle Moreno Diaz
+und ich bin Verwaltungsdirektorin
+bei der Altus Finances Group.
+
+Bei Altus arbeiten wir jeden Tag daran,
+den Zugang zu Krediten zu vereinfachen
+und jedes Projekt
+zu einer klaren und sicheren Erfahrung zu machen.
+
+Wir begleiten Privatpersonen und Unternehmen
+mit effizienten, verantwortungsvollen Lösungen,
+die auf jede Situation zugeschnitten sind.
+
+Unsere Arbeitsweise basiert
+auf Transparenz, Professionalität
+und langfristigem Vertrauen.
+
+Wir stehen Ihnen zur Seite,
+um Ihnen eine solide Unterstützung zu bieten,
+abgestimmt auf Ihre Ziele
+und Erwartungen.
+
+Vielen Dank, dass Sie sich
+für die Altus Finances Group entschieden haben.
+Vielen Dank für Ihr Vertrauen.
+
+2️⃣ PROMPT À ENVOYER À REPLIT (INTÉGRATION SITE)
+
+👉 À copier-coller tel quel dans Replit / Agent IA / Dev.
+
+🧠 PROMPT REPLIT – VIDÉO + SOUS-TITRES MULTILINGUES
+
+I have an existing corporate website with a homepage video that needs to be replaced.
+
+I want to integrate a new MP4 video (already generated) and add multilingual subtitles in the following languages:
+FR, EN, PT, ES, NL, IT, DE.
+
+Requirements:
+
+The video must replace the current homepage video
+
+Subtitles must be selectable by the user (language selector)
+
+Default subtitle language: English
+
+Use standard subtitle formats (SRT or VTT)
+
+Clean, professional, corporate integration
+
+Compatible with modern browsers (desktop & mobile)
+
+Please:
+
+Structure the subtitle files properly (one file per language)
+
+Implement the HTML5 <video> player with <track> elements
+
+Ensure accessibility and responsive behavior
+
+Keep performance optimized (lazy loading if needed)
+
+The video content is institutional and must display subtitles clearly without covering the speaker’s face.
+
+✅ RÉSULTAT FINAL
+
+Vidéo institutionnelle unique sur le site
+
+Sous-titres multilingues professionnels
+
+Expérience utilisateur premium
+
+Conforme finance / corporate / international

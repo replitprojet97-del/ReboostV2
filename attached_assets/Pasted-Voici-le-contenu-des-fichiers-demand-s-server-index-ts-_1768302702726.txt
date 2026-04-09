@@ -1,0 +1,168 @@
+Voici le contenu des fichiers demandés.
+
+server/index.ts
+import express, { type Request, Response, NextFunction } from "express";
+import session from "express-session";
+import helmet from "helmet";
+import cors from "cors";
+import { registerRoutes } from "./routes";
+import ConnectPgSimple from "connect-pg-simple";
+import pkg from "pg";
+const { Pool } = pkg;
+import * as Sentry from "@sentry/node";
+// ... (log function)
+const app = express();
+app.set("trust proxy", 1);
+// ... (types declarations)
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const IS_REPLIT = !IS_PRODUCTION && (
+  process.env.REPL_ID !== undefined || 
+  process.env.REPLIT_DEPLOYMENT !== undefined ||
+  process.env.REPL_SLUG !== undefined
+);
+const COOKIE_DOMAIN = IS_PRODUCTION ? '.altusfinancesgroup.com' : undefined;
+const SAME_SITE_POLICY = IS_PRODUCTION ? 'none' : (IS_REPLIT ? 'none' : 'lax');
+const COOKIE_SECURE = IS_PRODUCTION || IS_REPLIT;
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? [
+      'https://altusfinancesgroup.com',
+      'https://www.altusfinancesgroup.com',
+    ]
+  : ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:3000'];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (process.env.NODE_ENV !== 'production') {
+      callback(null, true);
+    } else if (!origin) {
+      callback(null, true);
+    } else if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'X-CSRF-Token', 'Authorization'],
+  exposedHeaders: ['Set-Cookie'],
+}));
+// Helmet configuration
+app.use((req, res, next) => {
+  if ((req as any).skipHelmet) return next();
+  
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: process.env.NODE_ENV === 'production' 
+          ? ["'self'"]
+          : ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        connectSrc: process.env.NODE_ENV === 'production'
+          ? ["'self'", "https://api.altusfinancesgroup.com", ...allowedOrigins.filter((origin): origin is string => origin !== undefined)]
+          : ["'self'", "https://*.replit.dev"],
+        // ... (other directives)
+      },
+    },
+    // ...
+  })(req, res, next);
+});
+// Session configuration
+const sessionMiddleware = session({
+  store: sessionStore,
+  secret: process.env.SESSION_SECRET || 'altusfinances-group-secret-key-dev-only',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: COOKIE_SECURE,
+    httpOnly: true,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    sameSite: SAME_SITE_POLICY,
+    domain: COOKIE_DOMAIN,
+    signed: true,
+  },
+  name: 'sessionId',
+});
+app.use(sessionMiddleware);
+server/routes.ts (extrait CSRF)
+  app.get("/api/csrf-token", (req, res) => {
+    if (!req.session.csrfToken) {
+      req.session.csrfToken = generateCSRFToken();
+    }
+    res.json({ csrfToken: req.session.csrfToken });
+  });
+  const requireCSRF = (req: any, res: any, next: any) => {
+    if (req.method === 'GET' || req.method === 'HEAD' || req.method === 'OPTIONS') {
+      return next();
+    }
+    if (!req.session || !req.session.csrfToken) {
+      return res.status(403).json({ 
+        error: 'Session invalide. Veuillez vous reconnecter.',
+        code: 'SESSION_INVALID'
+      });
+    }
+    const token = req.headers['x-csrf-token'] || req.body._csrf;
+    if (!token || token !== req.session.csrfToken) {
+      return res.status(403).json({ 
+        error: 'Session expirée. Veuillez recharger la page et réessayer.',
+        code: 'CSRF_INVALID'
+      });
+    }
+    next();
+  };
+client/src/lib/queryClient.ts
+const API_BASE_URL = 
+  typeof window !== 'undefined' && (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.includes('replit.dev')
+  )
+    ? '' 
+    : 'https://api.altusfinancesgroup.com';
+export function getApiUrl(path: string): string {
+  if (!path.startsWith('/')) path = '/' + path;
+  return `${API_BASE_URL}${path}`;
+}
+export async function apiRequest(
+  method: string,
+  url: string,
+  data?: unknown | undefined,
+): Promise<Response> {
+  const headers: Record<string, string> = {};
+  if (data && !(data instanceof FormData)) {
+    headers["Content-Type"] = "application/json";
+  }
+  if (method !== 'GET' && method !== 'HEAD') {
+    const token = await getCsrfToken();
+    if (token) headers['X-CSRF-Token'] = token;
+  }
+  const res = await fetch(getApiUrl(url), {
+    method,
+    headers,
+    body: data ? (data instanceof FormData ? data : JSON.stringify(data)) : undefined,
+    credentials: "include",
+  });
+  await throwIfResNotOk(res);
+  return res;
+}
+vercel.json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

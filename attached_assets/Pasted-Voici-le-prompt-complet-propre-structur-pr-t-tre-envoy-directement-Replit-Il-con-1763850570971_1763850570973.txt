@@ -1,0 +1,155 @@
+Voici **le prompt complet, propre, structuré**, prêt à être envoyé **directement à Replit**.
+Il contient **toutes les corrections nécessaires**, aucune ambiguïté, et entièrement actionnable.
+
+---
+
+# ✅ **PROMPT FINAL À ENVOYER À REPLIT**
+
+Corrige tout ce qui suit dans mon projet. Voici les instructions techniques exactes à appliquer :
+
+---
+
+# 1️⃣ **CORRECTION — Messages.tsx (notifications qui disparaissent trop vite)**
+
+Dans le fichier :
+`client/src/pages/Messages.tsx`
+
+Trouve le code suivant dans `handleToggleExpand` :
+
+```ts
+if (!message.isRead) {
+  markAsReadMutation.mutate(messageId);
+}
+```
+
+Remplace-le par :
+
+```ts
+if (!message.isRead) {
+  // Retarde la lecture de 30 secondes
+  setTimeout(() => {
+    markAsReadMutation.mutate(messageId);
+  }, 30000);
+}
+```
+
+🎯 Objectif :
+Les notifications restent visibles **30 secondes** avant d'être marquées comme lues.
+
+---
+
+# 2️⃣ **CORRECTION — useChat.ts (statut en ligne ne fonctionne pas)**
+
+Dans le fichier
+`client/src/hooks/useChat.ts`
+
+Ajoute la ligne suivante juste après :
+
+```ts
+socket.on("connect", () => {
+```
+
+👇 Ajouter :
+
+```ts
+socket.emit("auth", { userId });
+```
+
+Le bloc complet doit devenir :
+
+```ts
+socket.on("connect", () => {
+  console.log("[CHAT] Connected to Socket.IO");
+  setIsSelfConnected(true);
+
+  // Identifie l’utilisateur auprès du backend
+  socket.emit("auth", { userId });
+
+  socket.emit("join_room", room);
+  socket.emit("join_room", `user_${userId}`);
+
+  if (partnerId) {
+    socket.emit("get_presence_state", [partnerId]);
+  }
+});
+```
+
+🎯 Objectif :
+Le backend doit savoir **quel utilisateur est connecté**, ce qui active le système de présence en ligne / hors-ligne.
+
+---
+
+# 3️⃣ **CORRECTION BACKEND — socket.ts (nécessaire pour gérer la présence)**
+
+Dans le fichier :
+`server/socket.ts`
+
+Ajoute cet event si ce n'est pas encore présent :
+
+```ts
+io.on("connection", (socket) => {
+  socket.on("auth", ({ userId }) => {
+    socket.userId = userId;
+    presenceManager.addSocket(userId, socket.id);
+
+    io.emit("user_presence", { userId, isOnline: true });
+    console.log(`[PRESENCE] Authenticated user ${userId} is online`);
+  });
+});
+```
+
+🎯 Objectif :
+Quand le frontend envoie `socket.emit("auth", { userId })`, le backend :
+
+* enregistre le userId
+* active la présence en ligne
+* broadcast l’état online/offline
+
+---
+
+# 4️⃣ **Correction des messages automatiques multilingues**
+
+Dans :
+`server/notification-helper.ts`
+
+Les notifications ont :
+
+```ts
+title: '',
+message: '',
+```
+
+➡️ **Laisse-les vides.**
+Ne remplis rien.
+C’est normal.
+Le frontend utilise automatiquement :
+`t.notifications[type].title`
+`t.notifications[type].message`
+
+🎯 Objectif :
+Le multilingue est généré dans le frontend via i18n.
+
+---
+
+# 5️⃣ **Assure-toi que toutes les mutations `markAsRead` sont bien expliquées**
+
+Aucun autre changement n’est nécessaire.
+
+---
+
+# ✔️ Résultat attendu après corrections
+
+* Les notifications ne disparaissent plus instantanément → **30 secondes avant lecture**
+* Les notifications automatiques deviennent **multilingues**
+* Le chat affiche enfin correctement **En ligne / Hors ligne**
+* La présence en temps réel fonctionne
+* L’utilisateur peut envoyer et recevoir des messages normalement
+* Le backend reconnaît correctement l’utilisateur via Socket.IO
+
+---
+
+👉 **Exécute exactement ces modifications et confirme quand c’est appliqué.**
+
+---
+
+Fin du prompt.

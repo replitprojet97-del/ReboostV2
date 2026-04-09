@@ -1,0 +1,114 @@
+Voici le **prompt EXACT**, **complet**, **professionnel**, **direct**, que tu vas copier-coller dans Replit.
+Il décrit parfaitement ton problème, exige une correction, et force Replit à reconstruire correctement ton backend.
+
+⚠️ **Ne modifie rien.**
+⚠️ **Colle-le tel quel.**
+⚠️ **C’est le prompt optimal pour que Replit/Pepeeter corrige la config.**
+
+---
+
+# ⭐ **PROMPT À ENVOYER À REPLIT (COPIE-COLLE TEL QUEL)**
+
+Corrige la configuration de mon backend Node.js en TypeScript.
+Actuellement, Replit/Pepeeter bloque ou échoue lors du build parce que le projet démarre du TypeScript directement (`tsx server/index.ts`) et non la version compilée. Je veux une configuration propre, standard, fonctionnelle en production, compatible avec Replit, Render et n'importe quelle plateforme CI/CD.
+
+Voici les exigences obligatoires :
+
+---
+
+## 🔥 **1 — Corriger les scripts npm**
+
+### ➤ Build (obligatoire)
+
+Créer ou corriger le script :
+
+```
+npm run build:backend
+```
+
+Il doit compiler **server/index.ts** avec **esbuild** vers un dossier **dist**, en bundlant tout correctement pour Node :
+
+```
+npx esbuild server/index.ts --platform=node --bundle --format=esm --outdir=dist
+```
+
+Pepeeter doit pouvoir détecter et utiliser `dist/index.js`.
+
+### ➤ Start (obligatoire)
+
+Corriger le script start pour qu’il démarre **uniquement le code compilé**, jamais le .ts :
+
+```
+npm start → NODE_ENV=production node dist/index.js
+```
+
+Ne plus utiliser `tsx`, `ts-node`, ni aucun exécuteur TypeScript côté production.
+
+---
+
+## 🔥 **2 — Vérifier les dépendances essentielles**
+
+Dans `dependencies`, pas dans devDependencies, je dois obligatoirement avoir :
+
+* `express`
+* toute autre dépendance serveur utilisée dans `server/index.ts`
+
+Si `express` manque ou est dans devDependencies, l’installer correctement :
+
+```
+npm install express
+```
+
+Ensuite, regénérer `package-lock.json`.
+
+---
+
+## 🔥 **3 — Nettoyage du projet**
+
+Replit doit automatiquement :
+
+* supprimer tout démarrage TS côté prod
+* supprimer ou ignorer d’anciens dossiers `.cache`
+* s’assurer qu’aucun fichier `.ts` n’est exécuté au runtime
+* s’assurer que seul `dist/index.js` est exécuté en production
+* vérifier que `dist/` existe après build
+
+---
+
+## 🔥 **4 — Configuration Replit / Pepeeter**
+
+Forcer Replit à comprendre :
+
+* Build command : `npm run build:backend`
+* Start command : `npm start`
+* Le backend doit tourner depuis `dist/index.js`
+
+Replit doit faire un build propre, sans loop, sans attente de 45 minutes.
+
+---
+
+## 🔥 **5 — Objectif final**
+
+Après cette correction, je veux :
+
+* un build Replit 100% fonctionnel
+* un backend Render fonctionnant immédiatement avec `npm start`
+* une structure standard professionnelle Node.js/TS
+* plus aucune erreur “Cannot find package express”
+* plus aucun lancement TS
+* un démarrage rapide et stable
+
+Fais toutes les modifications nécessaires dans les fichiers du projet :
+`package.json`, scripts npm, répertoires, éventuels fichiers Replit (`replit.nix`, `.replit`, etc).
+
+---
+
+**Corrige tout automatiquement maintenant.**
+
+---
+
+# ✅ Voilà.
+
+C’est le **prompt parfait** : strict, précis, structuré, complet.
+
+Tu peux le coller *mot pour mot* dans Replit → il va appliquer les corrections dans ton repo.

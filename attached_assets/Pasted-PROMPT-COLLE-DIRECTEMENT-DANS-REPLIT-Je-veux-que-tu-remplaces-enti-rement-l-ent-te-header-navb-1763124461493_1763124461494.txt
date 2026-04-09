@@ -1,0 +1,165 @@
+PROMPT (COLLE DIRECTEMENT DANS REPLIT)
+
+Je veux que tu remplaces entièrement l’entête (header / navbar) de mon site par un design premium "Financial Group 2025". Voici les instructions et tout le code à utiliser.
+
+🎯 Objectif du nouveau HEADER 2025
+
+Style institutionnel bancaire
+
+Fond blanc pur (#FFFFFF)
+
+Navigation ultra moderne
+
+Effets d’interaction premium
+
+Sélecteur de langue avec drapeaux 🇫🇷 🇬🇧 🇳🇱
+
+Bouton “Mon espace” en style Fintech
+
+Animation underline au hover (ligne glisse de 0% à 100%)
+
+Glass Blur discret
+
+Compatible avec React + Tailwind
+
+📁 Code complet du HEADER
+
+👉 À placer dans components/Header.tsx ou remplacer ton composant actuel.
+
+import { useState } from "react";
+
+export default function Header2025() {
+  const [lang, setLang] = useState("fr");
+
+  const languages = [
+    { code: "fr", label: "Français", flag: "🇫🇷" },
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+  ];
+
+  const navItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Nos Prêts", href: "/loans" },
+    { label: "Comment ça marche", href: "/how" },
+    { label: "FAQ", href: "/faq" },
+    { label: "À propos", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
+
+  return (
+    <header className="
+      fixed top-0 left-0 w-full z-50
+      bg-white/90 backdrop-blur-xl
+      border-b border-gray-200 shadow-sm
+    ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6">
+
+        {/* LOGO */}
+        <div className="flex items-center gap-2">
+          <img src="/logo.png" className="w-12" />
+          <span className="text-xl font-bold text-gray-900 tracking-tight">
+            Altus Finance Group
+          </span>
+        </div>
+
+        {/* NAVIGATION */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a 
+              key={item.href}
+              href={item.href}
+              className="
+                text-gray-700 font-medium relative
+                after:content-['']
+                after:absolute after:-bottom-1 after:left-0
+                after:w-0 after:h-[2px]
+                after:bg-blue-600
+                after:transition-all after:duration-300
+                hover:after:w-full
+              "
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* RIGHT AREA */}
+        <div className="flex items-center gap-4">
+
+          {/* PHONE */}
+          <a 
+            href="tel:+352406348" 
+            className="text-blue-600 font-semibold tracking-wide hover:opacity-80"
+          >
+            +352 40 63 48
+          </a>
+
+          {/* LANGUAGE SELECTOR */}
+          <select
+            value={lang}
+            onChange={(e) => setLang(e.target.value)}
+            className="
+              bg-white border border-gray-300 rounded-lg px-3 py-1 text-sm shadow-sm
+              hover:border-blue-500 focus:border-blue-600 focus:ring-0
+            "
+          >
+            {languages.map((l) => (
+              <option key={l.code} value={l.code}>
+                {l.flag} {l.label}
+              </option>
+            ))}
+          </select>
+
+          {/* CTA BUTTON */}
+          <a
+            href="/login"
+            className="
+              px-5 py-2 rounded-xl text-white font-semibold
+              bg-blue-600 relative overflow-hidden shadow-md
+              hover:bg-blue-700 transition
+            "
+          >
+            <span className="relative z-10">Mon espace</span>
+            <span className="
+              absolute top-0 left-0 w-full h-full
+              bg-gradient-to-r from-white/30 to-transparent
+              translate-x-[-100%] 
+              animate-shine
+            "/>
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+📁 Ajoute l’animation Shine dans tailwind.config.js
+extend: {
+  keyframes: {
+    shine: {
+      "0%": { transform: "translateX(-100%)" },
+      "100%": { transform: "translateX(200%)" },
+    }
+  },
+  animation: {
+    shine: "shine 2s infinite",
+  }
+}
+
+📁 Ajoute ce style global (facultatif mais sublime)
+
+👉 Dans globals.css
+
+html, body {
+  background: #fff;
+  scroll-behavior: smooth;
+}
+
+🎨 Résultat :
+✔ Header institutionnel ultra-premium
+✔ Style digne d'une banque internationale 2025 (UBS, HSBC, BNP, Revolut Business…)
+✔ Épuré, moderne, très professionnel
+✔ Navigation hautement qualitative
+✔ Bouton avec effet glossy
+✔ Sélecteur de langue élégant
+✔ Mobile-friendly

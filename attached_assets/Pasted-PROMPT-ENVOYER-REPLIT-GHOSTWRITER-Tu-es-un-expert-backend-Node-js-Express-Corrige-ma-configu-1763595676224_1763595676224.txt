@@ -1,0 +1,127 @@
+PROMPT À ENVOYER À REPLIT (GHOSTWRITER)
+
+Tu es un expert backend Node.js/Express. Corrige ma configuration E2E afin que le front (Vercel) et le backend (Render) fonctionnent parfaitement ensemble avec cookies, sessions et CSRF en cross-domain.
+
+🎯 Objectif
+
+Faire fonctionner les requêtes front → backend depuis le domaine :
+
+Frontend : https://altusfinancesgroup.com
+
+Backend : https://api.altusfinancesgroup.com
+
+Sans erreur :
+
+❌ “Votre session a expiré”
+
+❌ Cookies non envoyés
+
+❌ CSRF token invalide
+
+❌ Requêtes vers le mauvais domaine (altusfinancesgroup.com/api/...)
+
+🔧 I. Voici ce que tu dois corriger :
+1. CORS
+
+Ajouter dans connectSrc, scriptSrc, imgSrc, defaultSrc, etc. → https://altusfinancesgroup.com
+ ET https://api.altusfinancesgroup.com
+
+Remplacer dans CSP :
+
+connectSrc: ["'self'", "https://altusfinancesgroup.com", "https://api.altusfinancesgroup.com"],
+
+2. Cookies de session
+
+Dans la config session, appliquer exactement :
+
+cookie: {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  domain: ".altusfinancesgroup.com",
+  maxAge: 1000 * 60 * 60 * 24 * 7
+}
+
+
+⚠️ Le domaine doit être .altusfinancesgroup.com (avec le point).
+
+3. CSRF
+
+Dans l’endpoint /api/csrf-token, vérifier que :
+
+le cookie CSRF est envoyé avec sameSite:none, secure:true
+
+la réponse inclut bien le header :
+
+Access-Control-Allow-Credentials: true
+
+
+Et dans CORS :
+
+credentials: true
+
+4. Header connect-src (CSP)
+
+Il doit autoriser le backend depuis le front :
+
+connectSrc: [
+  "'self'",
+  "https://altusfinancesgroup.com",
+  "https://api.altusfinancesgroup.com"
+],
+
+5. IMPORTANT : Injection de variable d'environnement
+
+Dans le frontend, remplacer l’URL :
+
+❌ Mauvais :
+window.location.origin + '/api/...
+→ En production cela donne : https://altusfinancesgroup.com/api/...
+
+✅ Corriger pour qu'il utilise :
+https://api.altusfinancesgroup.com/api/...
+
+Ghostwriter doit :
+
+vérifier l’utilisation de VITE_API_BASE_URL ou équivalent
+
+si absent → ajouter un fichier .env.production dans le front :
+
+VITE_API_BASE_URL=https://api.altusfinancesgroup.com
+
+
+vérifier que les appels utilisent :
+
+const api = import.meta.env.VITE_API_BASE_URL;
+
+🧪 6. Test à effectuer automatiquement
+
+Ghostwriter doit valider :
+
+GET https://api.altusfinancesgroup.com/api/csrf-token
+→ Cookie + header OK
+
+GET https://api.altusfinancesgroup.com/api/unread-count
+→ Cookie transmis
+
+POST /api/transfers/initiate
+→ NE DOIT PLUS renvoyer “votre session a expiré”
+
+📌 Résumé clair pour toi :
+
+Corrige :
+
+CSP
+
+CORS
+
+Cookies session
+
+Cookie CSRF
+
+Domaine des requêtes API
+
+Injection environnement Vercel
+
+Fais toutes ces corrections dans les fichiers backend (Express) ET frontend si nécessaire.
+Ensuite, montre-moi dans la console ce qui a été changé.

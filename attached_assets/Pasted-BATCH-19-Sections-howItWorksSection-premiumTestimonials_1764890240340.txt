@@ -1,0 +1,135 @@
+BATCH 19 — Sections howItWorksSection, premiumTestimonials, bankingSecurity
+
+BATCH 19 - Fichier: client/src/lib/i18n.ts
+Sections: howItWorksSection, premiumTestimonials, bankingSecurity (44 clés)
+
+INSTRUCTIONS:
+- Réécrire toutes les valeurs FR des 3 sections
+- Processus clair et simple
+- Témoignages crédibles
+- Sécurité rassurante
+- Aucune phrase identique à l'original
+
+BATCH 20 — Section finalCTA
+
+BATCH 20 - Fichier: client/src/lib/i18n.ts
+Section: finalCTA (52 clés)
+
+INSTRUCTIONS:
+- Réécrire toutes les valeurs FR de la section "finalCTA"
+- Appels à l'action percutants
+- Messages de conversion optimisés
+- Aucune phrase identique à l'original
+
+BATCH 21 — Section premium
+
+BATCH 21 - Fichier: client/src/lib/i18n.ts
+Section: premium (84 clés)
+
+INSTRUCTIONS:
+- Réécrire toutes les valeurs FR de la section "premium"
+- Vocabulaire haut de gamme
+- Avantages premium mis en valeur
+- Aucune phrase identique à l'original
+
+BATCH 22 — loan-pages.ts (partie 1)
+
+BATCH 22 - Fichier: client/src/lib/loan-pages.ts
+Sections: personal-credit, loan-refinancing (FR uniquement, ~170 clés)
+
+INSTRUCTIONS:
+- Réécrire les valeurs FR pour les 2 types de prêts
+- Hero, benefits, process, FAQ, CTA
+- Conserver structure exacte
+- Aucune phrase identique à l'original
+
+BATCH 23 — loan-pages.ts (partie 2)
+
+BATCH 23 - Fichier: client/src/lib/loan-pages.ts
+Sections: lease-refinancing, credit-card-refinancing (FR uniquement, ~170 clés)
+
+INSTRUCTIONS:
+- Réécrire les valeurs FR pour les 2 types de prêts
+- Hero, benefits, process, FAQ, CTA
+- Conserver structure exacte
+- Aucune phrase identique à l'original
+
+BATCH 24 — seo-keywords.ts
+
+BATCH 24 - Fichier: client/src/lib/seo-keywords.ts
+Sections: toutes les langues (61 clés)
+
+INSTRUCTIONS:
+- Réécrire les mots-clés SEO FR
+- Optimiser pour le référencement
+- Termes de recherche pertinents
+- Aucun mot-clé identique à l'original
+
+BATCH 25 — translateBackendMessage.ts
+
+BATCH 25 - Fichier: client/src/lib/translateBackendMessage.ts
+Sections: messageMapping (19 mappings)
+
+INSTRUCTIONS:
+- Réécrire les messages FR du backend
+- Conserver les clés de mapping exactes
+- Messages d'erreur/succès clairs
+- Aucune phrase identique à l'original
+
+BATCH 26 — seo-data.ts
+
+BATCH 26 - Fichier: client/src/lib/seo-data.ts
+Sections: organizationSchema, websiteSchema (40 clés)
+
+INSTRUCTIONS:
+- Réécrire les descriptions SEO
+- Optimiser pour schema.org
+- Descriptions professionnelles
+- Aucune phrase identique à l'original
+
+BATCH 27 — seo-config.ts
+
+BATCH 27 - Fichier: client/src/lib/seo-config.ts
+Sections: configuration SEO globale (15 clés)
+
+INSTRUCTIONS:
+- Réécrire defaultTitle, defaultDescription, defaultKeywords
+- SEO optimisé
+- Aucune phrase identique à l'original
+
+BATCH 28 — transfer-types.ts
+
+BATCH 28 - Fichier: client/src/data/transfer-types.ts
+Sections: descriptions de transferts (140 clés)
+
+INSTRUCTIONS:
+- Réécrire les descriptions de types de transferts
+- Terminologie bancaire précise
+- Informations claires sur les frais/délais
+- Aucune phrase identique à l'original
+
+TEMPLATE D'EXÉCUTION UNIVERSEL
+
+Pour chaque batch, utilisez ce template :
+
+EXÉCUTER BATCH {{BATCH_ID}}:
+
+1. EXTRAIRE le contenu actuel:
+   sed -n '/^    {{SECTION}}:/,/^    [a-zA-Z]*:/p' client/src/lib/i18n.ts | head -100
+
+2. RÉÉCRIRE les valeurs (JSON):
+   {
+     "{{section}}.{{key1}}": "Nouvelle valeur...",
+     "{{section}}.{{key2}}": "Nouvelle valeur..."
+   }
+
+3. APPLIQUER avec sed ou node:
+   sed -i "s/ancienne valeur/nouvelle valeur/g" client/src/lib/i18n.ts
+
+4. VÉRIFIER:
+   sed -n '{{LIGNES}}p' client/src/lib/i18n.ts
+
+5. REDÉMARRER le workflow et tester
+
+Total : 28 batches | ~2081 clés | 7 fichiers
+

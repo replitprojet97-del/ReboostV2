@@ -1,0 +1,83 @@
+APPLIQUE UNIQUEMENT LES MODIFICATIONS CI-DESSOUS.
+NE MODIFIE AUCUN AUTRE COMPORTEMENT.
+NE REFACTORE PAS.
+NE SIMPLIFIE PAS.
+NE TOUCHE PAS AUX LOGIQUES DE SÉCURITÉ EXISTANTES.
+
+CONTEXTE :
+- Le projet utilise déjà Cloudinary (config OK dans server/config/cloudinary.ts).
+- Cloudinary est actuellement utilisé uniquement pour les photos de profil.
+- Les documents KYC sont uploadés et validés dans app.post("/api/loans", ...) dans server/routes.ts.
+- SendPulse doit rester inchangé (email = notification uniquement).
+- Les pièces jointes email sont volontairement supprimées.
+
+OBJECTIF :
+- Après validation des documents KYC existante,
+  uploader CHAQUE document vers Cloudinary
+  en tant que document (resource_type: "raw").
+- Conserver le workflow utilisateur et la logique anti-hack EXACTEMENT IDENTIQUES.
+- Permettre le téléchargement fiable des documents depuis l’espace admin.
+
+MODIFICATIONS À FAIRE :
+
+1) DANS server/routes.ts
+   DANS la route app.post("/api/loans", ...),
+   IMMÉDIATEMENT APRÈS la validation des documents existante
+   et AVANT l’envoi de l’email admin :
+
+   POUR CHAQUE document validé :
+
+   - Uploader le fichier vers Cloudinary avec :
+     - resource_type: "raw"
+     - folder: "loan-documents"
+     - public_id: "<userId>/<documentType>_<timestamp>"
+
+   - NE PAS supprimer l’enregistrement local existant
+     (le code actuel doit continuer à fonctionner).
+
+   - Ajouter dans l’objet uploadedDocuments :
+     {
+       cloudinaryPublicId: result.public_id,
+       cloudinarySecureUrl: result.secure_url
+     }
+
+2) NE MODIFIE PAS :
+   - la configuration Multer
+   - les filtres de type MIME
+   - les limites de taille
+   - la logique de vérification anti-hack
+   - la structure existante de uploadedDocuments
+     (ajouter uniquement les champs Cloudinary)
+
+3) NE MODIFIE PAS :
+   - SendPulse
+   - les templates email
+   - les routes email
+   - les autres routes API
+   - l’espace utilisateur
+
+4) AJOUTE UNE FONCTION UTILITAIRE SIMPLE
+   (dans server/routes.ts ou un util existant, sans refactor) :
+
+   function generateSignedCloudinaryDownloadUrl(publicId, extension) {
+     return cloudinary.utils.private_download_url(
+       publicId,
+       extension,
+       { expires_at: Math.floor(Date.now() / 1000) + 300 }
+     );
+   }
+
+   (Cette fonction ne doit PAS être appelée automatiquement.)
+
+CONTRAINTES ABSOLUES :
+- NE PAS utiliser fs pour lire les fichiers pour l’email.
+- NE PAS envoyer de pièces jointes par email.
+- NE PAS exposer de lien Cloudinary public permanent.
+- NE PAS modifier la logique existante de sécurité.
+
+UNE FOIS LE PATCH APPLIQUÉ :
+- Les emails admin doivent continuer à arriver.
+- Les documents doivent être téléchargeables depuis l’espace admin.
+- Aucun lien cassé ne doit apparaître dans les emails.
+
+APPLIQUE CES MODIFICATIONS EXACTEMENT.

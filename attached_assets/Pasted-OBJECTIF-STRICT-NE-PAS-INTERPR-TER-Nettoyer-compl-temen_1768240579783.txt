@@ -1,0 +1,114 @@
+OBJECTIF STRICT (NE PAS INTERPRÉTER)
+
+Nettoyer complètement le backend pour supprimer toute logique liée au stockage temporaire des documents de demande de prêt sur Render (filesystem), puis intégrer Resend uniquement pour l’envoi des emails ADMIN avec pièces jointes lors d’une demande de prêt.
+
+⚠️ RÈGLES ABSOLUES :
+- NE PAS modifier SendPulse
+- NE PAS remplacer SendPulse
+- SendPulse doit continuer à gérer TOUS les autres emails
+- Resend est utilisé UNIQUEMENT pour l’email admin de demande de prêt
+- AUCUNE autre fonctionnalité ne doit être impactée
+
+--------------------------------------------------
+ÉTAPE 1 — NETTOYAGE COMPLET DU STOCKAGE DE FICHIERS
+--------------------------------------------------
+
+Supprimer intégralement :
+- toute utilisation de fs, path, os.tmpdir(), uploads/, tmp/
+- toute écriture disque liée aux documents de prêt
+- toute logique de stockage temporaire Render
+- toute logique de compression des fichiers
+- toute référence à "store files on render", "temporary storage", "save locally"
+
+Les documents doivent uniquement exister :
+- en mémoire (Buffer)
+- via Multer memoryStorage
+
+--------------------------------------------------
+ÉTAPE 2 — VÉRIFIER MULTER
+--------------------------------------------------
+
+S’assurer que Multer utilise exclusivement :
+
+- memoryStorage
+- req.files contient bien :
+  - buffer
+  - originalname
+  - mimetype
+
+Aucun fallback disque ne doit exister.
+
+--------------------------------------------------
+ÉTAPE 3 — SUPPRIMER LES ATTACHEMENTS SENDPULSE
+--------------------------------------------------
+
+Dans tout le projet :
+
+- Supprimer toute tentative d’attacher des documents via SendPulse
+- SendPulse ne doit JAMAIS recevoir de fichiers en pièces jointes
+- Les emails SendPulse restent TEXT/HTML uniquement
+
+--------------------------------------------------
+ÉTAPE 4 — INTÉGRATION DE RESEND (CIBLÉE)
+--------------------------------------------------
+
+Ajouter Resend via API Key (process.env.RESEND_API_KEY).
+
+Créer une fonction dédiée (exemple) :
+- sendLoanRequestAdminEmailWithResend()
+
+Cette fonction :
+- est appelée UNIQUEMENT lors de la création d’une demande de prêt
+- envoie un email à l’admin
+- contient les pièces jointes reçues via Multer
+- utilise Buffer → base64 pour Resend
+- ne remplace aucun service existant
+
+--------------------------------------------------
+ÉTAPE 5 — ROUTE /api/loans
+--------------------------------------------------
+
+Dans la route POST /api/loans :
+
+- Récupérer les fichiers depuis req.files
+- Mapper les fichiers en format Resend attachments
+- Appeler sendLoanRequestAdminEmailWithResend()
+- Laisser SendPulse gérer les autres notifications éventuelles
+
+--------------------------------------------------
+ÉTAPE 6 — LOGS OBLIGATOIRES
+--------------------------------------------------
+
+Ajouter des logs clairs et lisibles :
+
+- Nombre de fichiers reçus
+- Taille totale des fichiers
+- Envoi Resend → succès / erreur explicite
+
+Aucun log inutile ou ambigu.
+
+--------------------------------------------------
+ÉTAPE 7 — INTERDICTIONS
+--------------------------------------------------
+
+INTERDIT :
+- Cloudinary
+- Supabase
+- Stockage externe
+- Lien de téléchargement
+- Modification du frontend
+- Refactor global
+- Changement d’architecture existante
+
+--------------------------------------------------
+RÉSULTAT ATTENDU
+--------------------------------------------------
+
+À la fin :
+- Les demandes de prêt envoient les documents par email admin via Resend
+- SendPulse fonctionne toujours normalement pour le reste
+- Aucun fichier n’est stocké sur Render
+- Aucun email n’est envoyé sans documents
+- Le système est stable et prévisible
+
+Exécuter uniquement ces changements.

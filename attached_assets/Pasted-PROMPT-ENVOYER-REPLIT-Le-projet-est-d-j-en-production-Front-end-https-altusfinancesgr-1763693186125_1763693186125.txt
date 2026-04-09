@@ -1,0 +1,77 @@
+PROMPT À ENVOYER À REPLIT :
+
+Le projet est déjà en production :
+
+Front-end : https://altusfinancesgroup.com
+ (Vercel)
+
+Back-end : https://api.altusfinancesgroup.com
+ (Render)
+
+Base de données : PostgreSQL
+Les clés Postgres sont dans les secrets. Redémarrer le service pour appliquer les nouvelles valeurs, puis effectuer les corrections suivantes :
+
+1. Problème de numéros de référence (prêts & transferts)
+
+Dans le Menu Mes Prêts, les références affichent correctement le format :
+ALT-C-2025-XXXX
+
+Mais dans le Dashboard, section Prêt Actif, la référence affichée n’est pas la bonne.
+➡️ Corriger en synchronisant toutes les sources de données.
+
+Exigences :
+
+Le numéro de référence des demandes de prêts doit être identique et cohérent partout (Dashboard, Mes Prêts, détails, modales, historique…).
+
+Le numéro de référence des transferts doit lui aussi être affiché partout où c’est nécessaire.
+
+Vérifier les endpoints utilisés, harmoniser la logique et corriger toutes les incohérences.
+
+2. Mise en conformité globale des espaces “Particulier” et “Professionnel”
+
+Toutes les corrections suivantes doivent être appliquées dans les deux espaces utilisateurs :
+
+design
+
+affichage
+
+sélecteur de langue
+
+modales
+
+textes et traductions
+
+tous les composants
+Exception : appliquer les spécifications propres à l’espace PRO uniquement lorsqu’elles sont explicitement différentes.
+
+3. Espace Admin
+
+Ajouter :
+
+a) Suppression d’un prêt
+
+Ajouter un bouton “Supprimer” dans la liste des prêts
+
+Ajout d’une confirmation avant suppression
+
+Suppression propre côté back-end (prêts + éléments liés)
+
+b) Suppression du sélecteur de langue
+
+Dans l’espace admin uniquement, retirer complètement l’option de changement de langue
+
+L’admin doit rester exclusivement en français
+
+c) Système de notifications admin → utilisateur
+
+Ajouter une fonction permettant à l’admin d’envoyer un message à un utilisateur spécifique
+
+Dans le dashboard utilisateur, afficher ces messages dans un bloc dédié, bien visible, mais propre et discret
+
+Supporter plusieurs notifications, avec statut lu/non-lu et date d’envoi
+
+API sécurisée et stockage en base
+
+Exigence générale
+
+Toutes les modifications doivent être intégrées proprement, sécurisées, testées et déployées sans casser la production.

@@ -1,0 +1,91 @@
+Après une analyse approfondie du code backend, voici la liste des failles de sécurité identifiées :
+
+🔴 FAILLES CRITIQUES
+1. Stockage de mots de passe avec bcrypt rounds insuffisants
+Fichier: server/routes.ts:472
+Problème: bcrypt.hash(password, 10) utilise seulement 10 rounds
+Risque: Vulnérable aux attaques par force brute avec GPU modernes
+Recommandation: Augmenter à minimum 12 rounds (idéalement 14)
+2. Pas de protection contre le timing attack lors de la vérification OTP
+Fichier: server/services/otp.ts:89
+Problème: record.otpCode === code est vulnérable au timing attack
+Risque: Un attaquant peut deviner le code OTP caractère par caractère en mesurant le temps de réponse
+Recommandation: Utiliser crypto.timingSafeEqual() pour la comparaison
+3. Validation 2FA avec fenêtre trop large
+Fichier: server/services/twoFactor.ts:32
+Problème: window: 2 permet 5 codes valides simultanément
+Risque: Augmente significativement les chances de brute force
+Recommandation: Réduire à window: 1
+4. Pas de rotation automatique des secrets 2FA
+Fichier: server/services/twoFactor.ts
+Problème: Les secrets 2FA ne sont jamais renouvelés
+Risque: Si compromis, le secret reste valide indéfiniment
+Recommandation: Implémenter une rotation périodique (tous les 90 jours)
+5. OTP codes prévisibles
+Fichier: server/services/otp.ts:29
+Problème: crypto.randomInt(100000, 999999) génère des codes à 6 chiffres uniquement
+Risque: 1 million de combinaisons possibles - brute force faisable
+Recommandation: Augmenter à 8 chiffres OU ajouter des lettres
+🟠 FAILLES MOYENNES
+6. Nettoyage des OTP expirés non automatique
+Fichier: server/services/otp.ts:110-118
+Problème: La fonction cleanupExpiredOTPs() existe mais n'est jamais appelée automatiquement
+Risque: Accumulation de données sensibles en base
+Recommandation: Implémenter un cron job pour nettoyer toutes les heures
+7. Limite d'essais OTP par utilisateur insuffisante
+Fichier: server/services/otp.ts:63
+Problème: MAX_OTP_ATTEMPTS = 3 mais pas de blocage temporaire après échec
+Risque: Un attaquant peut générer de nouveaux OTP infiniment
+Recommandation: Ajouter un délai exponentiel après échecs multiples
+8. Pas de validation de l'origine des requêtes sensibles
+Fichier: Multiple routes
+Problème: Pas de vérification de header Origin ou Referer pour opérations sensibles
+Risque: Possible CSRF malgré le token (si le token est volé)
+Recommandation: Ajouter validation supplémentaire pour transferts/prêts
+9. Session fixation possible
+Fichier: server/routes.ts:548-560
+Problème: req.session.regenerate() appelé mais pas systématiquement après changement de privilèges
+Risque: Session fixation attack
+Recommandation: Régénérer l'ID de session à chaque élévation de privilège
+10. Pas de signature des cookies de session
+Fichier: server/index.ts:138-151
+Problème: Pas de signature explicite des cookies (juste httpOnly)
+Risque: Possible manipulation de cookies
+Recommandation: Ajouter signed: true dans les options de cookie
+🟡 FAILLES MINEURES / AMÉLIORATIONS
+11. Rate limiting insuffisant pour certains endpoints
+Fichier: server/routes.ts:111-117
+Problème: generalApiLimiter permet 100 requêtes/15min - trop permissif
+Risque: DoS possible sur certains endpoints
+Recommandation: Réduire à 50 requêtes/15min
+12. Logs de production trop verbeux
+Fichier: server/index.ts:73-74, 276-281
+Problème: Logs de configuration en production exposent des détails
+Risque: Information disclosure
+Recommandation: Réduire les logs en production
+13. Pas de Content Security Policy stricte
+Fichier: server/index.ts:90-106
+Problème: CSP permet unsafe-inline et unsafe-eval en dev (risque si code passe en prod)
+Risque: XSS possible
+Recommandation: Séparer complètement dev/prod CSP
+14. Validation des fichiers uploadés insuffisante
+Fichier: server/routes.ts:389-420
+Problème: Validation basée uniquement sur extension et MIME type
+Risque: Upload de fichiers malveillants déguisés
+Recommandation: Analyser le contenu réel du fichier (magic bytes)
+15. Pas de détection d'anomalies de connexion
+Fichier: Manquant
+Problème: Pas de détection de connexions depuis nouvelles localisations/devices
+Risque: Comptes compromis non détectés
+Recommandation: Implémenter fingerprinting + alertes
+16. Tokens de réinitialisation de mot de passe valides trop longtemps
+Fichier: Pas visible dans le code fourni
+Problème: Si > 1 heure, c'est trop
+Recommandation: Limiter à 15-30 minutes maximum
+17. Pas de limite sur le nombre de sessions actives
+Fichier: server/routes.ts:276-282
+Problème: Vérifie seulement activeSessionId mais pas de limite globale
+Risque: Un attaquant peut créer de nombreuses sessions
+Recommandation: Limiter à 3-5 sessions actives max par utilisateur
+
+Corrige tout les failles

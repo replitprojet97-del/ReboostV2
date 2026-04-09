@@ -1,0 +1,154 @@
+Corrige et implémente les points suivants sur le projet Altus Finance Group (front : Vercel / back : Render / DB : PostgreSQL).
+Merci de suivre strictement chaque instruction.
+
+1. Correction des limites d’emprunt
+Particulier
+
+Le dashboard affiche actuellement :
+
+Crédit disponible : 500 000 € — OK
+
+Capacité d’emprunt : 50 000 € — ❌ Incorrect
+➡️ Corriger la capacité d’emprunt pour qu’elle reflète aussi le plafond réel de 500 000 € pour les particuliers.
+
+Professionnel
+
+Harmoniser la même logique dans l’espace PRO en utilisant les plafonds prévus côté back.
+
+2. Statut des prêts : synchronisation Dashboard ↔ Mes Prêts
+
+Problème actuel :
+
+Le tableau de bord affiche 2 prêts en attente
+
+La section Mes prêts affiche 0 en attente
+
+➡️ Corriger l’incohérence.
+Toutes les sections doivent se baser sur la même requête et la même source de vérité :
+
+select * from loans where user_id = ?;
+
+
+Et filtrer correctement :
+
+en_attente
+
+approuvé
+
+rejeté
+
+débloqué
+
+en_remboursement
+
+terminé
+
+3. Remboursements à venir
+
+Pour chaque prêt finalisé, ajouter automatiquement dans le dashboard :
+
+La liste des mensualités à venir (montant, date, statut payé / non payé)
+
+Source : table amortization_schedule (si inexistante → la créer)
+
+Format :
+
+date_echeance
+montant
+principal
+interet
+statut
+
+
+➡️ Ajouter un bouton / lien "Voir le plan d'amortissement"
+Ce lien ouvre une page détaillée :
+
+Montant emprunté
+
+Durée
+
+Taux
+
+Mensualité
+
+Tableau complet mois par mois
+
+⚠️ Cette page n’est accessible que si le prêt est approuvé ET signé ou si le transfert initial a été effectué.
+
+4. Numéro de prêt : remplacer l’UUID trop long
+
+Actuellement :
+
+Prêt #d1f0a9ef-3df9-4aba-86c5-d08738415154
+
+
+➡️ Ajouter une fonction génératrice d’ID propre :
+
+Format attendu (pro & clean) :
+
+ALT-P-2025-00147
+ALT-I-2025-00893
+
+
+Règles :
+
+Prefix ALT
+
+P = Pro / I = Immo / C = Conso
+
+Année en cours
+
+Compteur auto incrémenté
+
+Créer une colonne loan_reference dans la table si inexistante.
+
+5. Fiabiliser les endpoints API côté backend
+
+Vérifier et corriger si nécessaire :
+
+/loans/user/:id
+
+/loans/status-count/:id
+
+/loans/amortization/:loanId
+
+/dashboard/stats/:userId
+
+Tous doivent renvoyer :
+
+{
+  success: true,
+  data: ...
+}
+
+6. Rafraîchir le dashboard après mise à jour
+
+Après un changement de statut de prêt :
+
+forcer le front à re-fetch via SWR ou React Query
+
+éviter les données périmées en cache
+
+7. Vérification finale
+
+Tout doit fonctionner en production sur :
+
+Front : https://altusfinancesgroup.com
+
+API : https://api.altusfinancesgroup.com
+
+🎯 Objectif général
+
+Avoir un dashboard propre, cohérent et réellement FinTech :
+
+Statuts 100% synchronisés
+
+Capacité d’emprunt correcte
+
+Références de prêts professionnelles
+
+Remboursements à venir visibles et liés au plan d’amortissement
+
+API harmonisée
+
+Merci d’appliquer toutes ces corrections proprement et d’envoyer les patchs correspondants.

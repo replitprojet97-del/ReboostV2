@@ -1,0 +1,113 @@
+Je te donne maintenant la version propre, cohérente, institutionnelle, prête à coller dans tes fichiers i18n.
+
+🇫🇷 FR (RÉFÉRENCE — OK)
+Secure Finance
+Access Your Accounts
+
+Votre partenaire de confiance pour le financement
+
+Chiffrement de niveau bancaire
+
+Authentification vérifiée
+
+2FA disponible pour plus de sécurité
+
+Conforme aux normes
+
+Certifications financières internationales
+
+🇬🇧 EN (OK, juste polissage léger)
+Secure Finance
+Access Your Accounts
+
+Your trusted partner for financing
+
+Bank-level encryption
+
+Verified authentication
+
+2FA available for enhanced security
+
+Compliant with industry standards
+
+International financial certifications
+
+🇩🇪 DE (CORRECT, 100% ALLEMAND)
+Sichere Finanzlösungen
+Zugriff auf Ihre Konten
+
+Ihr vertrauenswürdiger Partner für Finanzierungen
+
+Verschlüsselung auf Bankniveau
+
+Verifizierte Authentifizierung
+
+2FA für zusätzliche Sicherheit verfügbar
+
+Konform mit geltenden Standards
+
+Internationale Finanzzertifizierungen
+
+🇪🇸 ES (CORRECT)
+Finanzas Seguras
+Accede a tus cuentas
+
+Su socio de confianza para financiación
+
+Cifrado de nivel bancario
+
+Autenticación verificada
+
+2FA disponible para mayor seguridad
+
+Cumple con los estándares
+
+Certificaciones financieras internacionales
+
+🇳🇱 NL (CORRECT, VRAI NÉERLANDAIS)
+Veilige Financiering
+Toegang tot uw accounts
+
+Uw betrouwbare partner voor financiering
+
+Versleuteling op bankniveau
+
+Geverifieerde authenticatie
+
+2FA beschikbaar voor extra veiligheid
+
+Conform industriële normen
+
+Internationale financiële certificeringen
+
+🇮🇹 IT (CORRECT)
+Finanza Sicura
+Accedi ai tuoi account
+
+Il tuo partner di fiducia per il finanziamento
+
+Crittografia a livello bancario
+
+Autenticazione verificata
+
+2FA disponibile per una maggiore sicurezza
+
+Conforme agli standard
+
+Certificazioni finanziarie internazionali
+
+🇵🇹 PT (CORRECT, PORTUGAIS)
+Finanças Seguras
+Acesse suas contas
+
+Seu parceiro de confiança para financiamento
+
+Criptografia de nível bancário
+
+Autenticação verificada
+
+2FA disponível para maior segurança
+
+Em conformidade com os padrões
+
+Certificações financeiras internacionais

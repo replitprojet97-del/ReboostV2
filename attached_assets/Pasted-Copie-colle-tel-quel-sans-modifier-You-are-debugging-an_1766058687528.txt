@@ -1,0 +1,81 @@
+Copie-colle tel quel, sans modifier
+
+You are debugging and cleaning an existing GSAP Hero animation.
+This is NOT a redesign task — this is a timeline logic and visibility fix.
+
+Current problems:
+- Text appears alone without images
+- Sometimes 1 image appears, sometimes 2
+- Timeline desync causes black screen at the end
+- Slides are not orchestrated as a unit
+- Final state leaves nothing visible
+
+GOAL:
+Create a clean, cinematic, SEQUENTIAL hero animation with NO visual glitches.
+
+REQUIRED BEHAVIOR (STRICT):
+
+For EACH slide (1 → 2 → 3):
+
+1) Slide becomes visible (opacity: 1)
+2) BOTH images animate in together (left + right)
+3) AFTER images are in place, the text fades in
+4) Text stays visible briefly
+5) Text fades out
+6) Images split and exit (left up, right down)
+7) Slide is hidden again (opacity: 0)
+8) Next slide starts
+
+FINAL STATE:
+- After slide 3 finishes:
+  - Either keep slide 3 text visible
+  - OR keep one final static image
+- NEVER leave the hero empty or black
+
+TECHNICAL RULES (VERY IMPORTANT):
+
+- Use ONE GSAP timeline only
+- NO infinite loops
+- NO overlapping slides visible at the same time
+- Explicitly control opacity/visibility for each slide
+- Each slide animation must be wrapped in its own timeline segment
+- Reset clip-path and transforms BETWEEN slides
+- Avoid relying on default CSS visibility
+
+STRUCTURE REQUIREMENTS:
+
+- slides[] array with exactly 3 entries
+- Each slide contains:
+  - leftImage
+  - rightImage
+  - title
+  - subtitle
+
+HERO LAYOUT:
+- Height: ~70vh (not fullscreen)
+- Background: solid black
+- Centered text
+
+DOMAIN CONTEXT:
+- Financial / Loan website
+- Target: Individuals & Professionals
+- Visuals must feel trustworthy, clean, professional
+
+DELIVERABLES:
+- Clean, corrected HeroSection.tsx
+- Clean, corrected CSS
+- Clearly commented GSAP timeline explaining each phase
+- NO additional features
+- NO visual glitches
+- Production-ready code only
+
+🔥 PHRASE BONUS (si Replit déraille encore)
+
+Si après ça il refait n’importe quoi, envoie juste ceci :
+
+Treat each slide as an atomic scene.
+Never animate text or images outside their slide container.
+If a slide is not active, it must be fully invisible.
+
+
+Cette phrase corrige 90 % des bugs GSAP IA.

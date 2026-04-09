@@ -1,0 +1,109 @@
+You are performing a GLOBAL UI/UX CLEANUP and PROFESSIONALIZATION of an existing full-stack web application.
+
+This is NOT a prototype. The goal is a production-ready, professional financial website.
+
+GLOBAL CONTEXT:
+- Website type: Financial LOAN platform
+- Target: Individuals & Professionals
+- Tone: Professional, trustworthy, clean, serious
+- Frontend: Next.js (App Router)
+- Existing codebase must be improved, not broken
+
+────────────────────────────────────
+1) HERO SECTION SIZE (IMPORTANT)
+────────────────────────────────────
+
+- The Hero section is currently TOO SMALL.
+- Increase its height to a size appropriate for a financial website.
+- It must feel impactful but not overwhelming.
+- Keep it responsive on all screen sizes.
+- Do NOT change the Hero content or animation logic.
+- Only adjust sizing, spacing, and layout balance.
+
+────────────────────────────────────
+2) TRANSLATIONS / LANGUAGES
+────────────────────────────────────
+
+- If the website supports multiple languages:
+  - Ensure ALL texts in the Hero section are translated properly.
+  - No hardcoded language strings.
+  - All Hero texts must use the existing i18n / translation system.
+- No missing or untranslated content is acceptable.
+
+────────────────────────────────────
+3) GLOBAL COLORS & DESIGN SYSTEM (VERY IMPORTANT)
+────────────────────────────────────
+
+- Redefine the global color palette for the ENTIRE SITE.
+- Apply it consistently across:
+  - Pages
+  - Sections
+  - Cards
+  - Texts
+  - Buttons
+  - Forms
+  - Backgrounds
+- NO page or component should be left unstyled or inconsistent.
+
+DESIGN GOAL:
+- Cleaner
+- More professional
+- Financial-industry appropriate
+- Visually coherent
+
+STRUCTURE REQUIRED:
+- Define primary / secondary colors
+- Define neutral colors (backgrounds, borders, text)
+- Respect contrast and accessibility
+- Avoid flashy or tech-startup styles
+
+────────────────────────────────────
+4) HOMEPAGE REORGANIZATION (EXCLUDING HERO)
+────────────────────────────────────
+
+- Reorganize the homepage content for better UX flow.
+- Do NOT touch the Hero section.
+- Content must be restructured logically:
+  - Clear hierarchy
+  - Better spacing
+  - Improved readability
+  - Smooth user journey from top to bottom
+
+YOU MAY:
+- Reorganize sections
+- Modify or redesign cards
+- Improve layout structure
+
+YOU MUST NOT:
+- Modify the appearance
+- Modify the content
+- Modify the animation
+of the user reviews / testimonials carousel.
+
+────────────────────────────────────
+5) LOGIN / SIGNUP PAGE REDESIGN
+────────────────────────────────────
+
+- Improve OR fully redesign the Login and Signup pages.
+- Visual style must match the financial nature of the site.
+- Look professional, secure, and trustworthy.
+- Improve spacing, typography, and form clarity.
+- Avoid generic or cheap UI patterns.
+
+────────────────────────────────────
+FINAL EXPECTATION (CRITICAL)
+────────────────────────────────────
+
+The final result must be:
+- Clean
+- Professional
+- Cohesive
+- Well-structured
+- Ready for real users
+- Suitable for a financial loan platform
+
+Do NOT introduce experimental designs.
+Do NOT add unnecessary features.
+Do NOT break existing functionality.
+
+Output only production-ready improvements.

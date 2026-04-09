@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Disallow admin pages from indexing
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /settings/
+Disallow: /history/
+Disallow: /accounts/
+Disallow: /transfers/
+Disallow: /transfer/
+Disallow: /loans/
+Disallow: /login
+Disallow: /signup
+Disallow: /verify/
+
+# Allow public pages
+Allow: /
+Allow: /about
+Allow: /how-it-works
+Allow: /products
+Allow: /contact
+Allow: /resources
+Allow: /terms
+Allow: /privacy
+
+# Sitemap location  
+# Update VITE_SITE_URL in production environment
+Sitemap: /sitemap.xml
+
+# Crawl-delay to be respectful
+Crawl-delay: 1

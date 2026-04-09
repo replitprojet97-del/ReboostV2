@@ -1,0 +1,125 @@
+🧠 Objectif
+
+Permettre à l’utilisateur de téléverser son contrat signé (PDF, image, etc.) depuis son tableau de bord, afin qu’il soit transmis par email à l’administrateur, sans Cloudinary, de manière sécurisée et lisible.
+
+⚙️ Fonctionnement complet
+1. Côté utilisateur (frontend)
+
+Un bouton 📄 Envoyer le contrat signé s’affiche quand loan.status === "awaiting_signed_contract".
+
+L’utilisateur choisit un fichier (PDF, JPG, PNG).
+
+Un formulaire multipart/form-data est envoyé au backend via /api/loans/:loanId/upload-signed-contract.
+
+2. Côté backend (Node.js + Express + Multer + SendGrid)
+
+Le serveur :
+
+Vérifie l’authentification de l’utilisateur.
+
+Vérifie que le prêt correspond bien à cet utilisateur.
+
+Stocke temporairement le fichier.
+
+L’envoie en pièce jointe lisible à l’administrateur via SendGrid.
+
+Met à jour le statut du prêt → "awaiting_admin_verification".
+
+Supprime le fichier local après envoi ✅
+
+💻 Prompt complet (à envoyer à Replit)
+
+🧩 Prompt à exécuter :
+
+Crée un endpoint sécurisé pour que l’utilisateur puisse téléverser son contrat signé et l’envoyer automatiquement à l’administrateur.
+
+📂 Fichier : uploadSignedContract.ts
+import express from "express";
+import multer from "multer";
+import fs from "fs";
+import sendgrid from "@sendgrid/mail";
+import dotenv from "dotenv";
+import { verifyUserSession } from "../middleware/auth"; // Middleware d’authentification
+import Loan from "../models/Loan"; // Modèle du prêt (ORM ou Prisma)
+
+dotenv.config();
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
+const router = express.Router();
+const upload = multer({ dest: "uploads/signed_contracts/" });
+
+router.post(
+  "/:loanId/upload-signed-contract",
+  verifyUserSession,
+  upload.single("signedContract"),
+  async (req, res) => {
+    try {
+      const { loanId } = req.params;
+      const userId = req.user.id;
+
+      // Vérification du prêt
+      const loan = await Loan.findUnique({ where: { id: loanId } });
+      if (!loan || loan.userId !== userId)
+        return res.status(403).json({ message: "Accès non autorisé" });
+
+      // Lecture du fichier
+      const file = req.file;
+      const attachment = {
+        content: fs.readFileSync(file.path).toString("base64"),
+        filename: file.originalname,
+        type: file.mimetype,
+        disposition: "attachment",
+      };
+
+      // Email HTML
+      const htmlContent = `
+        <div style="font-family: Arial; padding: 20px;">
+          <h3>Contrat signé reçu</h3>
+          <p><strong>Utilisateur :</strong> ${req.user.name}</p>
+          <p><strong>Email :</strong> ${req.user.email}</p>
+          <p><strong>ID du prêt :</strong> ${loanId}</p>
+          <p>Le contrat signé est joint à cet email.</p>
+        </div>
+      `;
+
+      // Envoi par email
+      await sendgrid.send({
+        to: "admin@altusfinancegroup.com",
+        from: "no-reply@altusfinancegroup.com",
+        subject: `Contrat signé reçu - Prêt #${loanId}`,
+        html: htmlContent,
+        attachments: [attachment],
+      });
+
+      // Mise à jour du statut
+      await Loan.update({
+        where: { id: loanId },
+        data: { status: "awaiting_admin_verification" },
+      });
+
+      // Nettoyage du fichier
+      fs.unlinkSync(file.path);
+
+      res.status(200).json({
+        success: true,
+        message: "Contrat signé envoyé avec succès ✅",
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({
+        success: false,
+        message: "Erreur lors de l'envoi du contrat signé ❌",
+      });
+    }
+  }
+);
+
+export default router;
+
+🔒 Avantages de cette méthode :
+
+✅ Authentification vérifiée (personne d’autre ne peut envoyer à sa place).
+✅ Fichiers lisibles et transmis directement à l’admin.
+✅ Aucun stockage externe.
+✅ Suppression automatique après envoi.
+✅ Peut être relié à ton système de notification admin existant.

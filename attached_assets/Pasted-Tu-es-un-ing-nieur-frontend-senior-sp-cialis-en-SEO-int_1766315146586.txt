@@ -1,0 +1,126 @@
+Tu es un ingénieur frontend senior spécialisé en SEO international et plateformes de financement digital.
+
+Objectif : intégrer parfaitement les assets SEO de Solventis Group et mettre en place un SEO multilingue automatique, professionnel et sans erreur, équivalent aux meilleures plateformes de financement en ligne pour particuliers et entreprises.
+
+Contexte :
+- Projet : Solventis Group
+- Activité : plateforme de financement digital
+- Cible : particuliers, entrepreneurs, entreprises
+- Processus : 100 % en ligne, automatisé et rapide
+- Inscription et demande en quelques minutes
+- Réponse reçue rapidement (entre 15 minutes et 24h maximum)
+- Mise à disposition des fonds dans des délais optimisés
+- Langues : FR / EN / ES / PT / IT / DE / NL
+- Un fichier ZIP nommé "Solventis_Group_SEO_Image_Pack.zip" est présent dans le projet
+- Stack : web moderne (Next.js / React ou équivalent, à adapter intelligemment)
+
+TÂCHES OBLIGATOIRES :
+
+1️⃣ ASSETS & STRUCTURE
+- Extraire le fichier ZIP
+- Placer tous les fichiers images SEO dans le dossier public approprié (/public ou équivalent)
+- Vérifier que tous les assets sont accessibles publiquement sans erreur
+
+2️⃣ FAVICON & ICÔNES
+Configurer correctement :
+- favicon 32x32
+- favicon 64x64
+- apple-touch-icon
+- icon 512 (PWA / manifest si applicable)
+
+3️⃣ SEO GLOBAL (HEAD / META)
+Mettre en place :
+- title dynamique
+- meta description dynamique
+- Open Graph complet (og:title, og:description, og:image)
+- Twitter Card
+- hreflang pour toutes les langues
+- attribut lang HTML dynamique
+- structure SEO propre, centralisée et maintenable
+
+4️⃣ DÉTECTION AUTOMATIQUE DE LA LANGUE (CRITIQUE)
+Déterminer automatiquement la langue à partir :
+- de la localisation (IP ou headers)
+- du navigateur (fallback)
+- avec possibilité de changement manuel
+
+Langues supportées obligatoirement :
+FR, EN, ES, PT, IT, DE, NL
+
+5️⃣ CONTENUS SEO PAR LANGUE
+Utiliser exactement les textes suivants :
+
+FR
+Title:
+Solventis Group – Financement en ligne rapide pour particuliers et entreprises
+
+Description:
+Solventis Group propose des solutions de financement entièrement en ligne pour particuliers et entreprises. Demande simplifiée en quelques minutes, réponse rapide et mise à disposition des fonds dans des délais optimisés.
+
+EN
+Title:
+Solventis Group – Fast online financing for individuals and businesses
+
+Description:
+Solventis Group provides fully online financing solutions for individuals and businesses. Simple application process, fast response and quick access to funds.
+
+ES
+Title:
+Solventis Group – Financiación online rápida para particulares y empresas
+
+Description:
+Solventis Group ofrece soluciones de financiación 100 % online para particulares y empresas. Solicitud sencilla, respuesta rápida y acceso ágil a los fondos.
+
+PT
+Title:
+Solventis Group – Financiamento online rápido para particulares e empresas
+
+Description:
+A Solventis Group disponibiliza soluções de financiamento totalmente online para particulares e empresas, com pedido simplificado, resposta rápida e liberação eficiente dos fundos.
+
+IT
+Title:
+Solventis Group – Finanziamenti online rapidi per privati e imprese
+
+Description:
+Solventis Group offre soluzioni di finanziamento completamente online per privati e imprese, con richiesta semplificata, risposta rapida e rapida erogazione dei fondi.
+
+DE
+Title:
+Solventis Group – Schnelle Online-Finanzierung für Privat- und Geschäftskunden
+
+Description:
+Solventis Group bietet vollständig digitale Finanzierungslösungen für Privatpersonen und Unternehmen mit einfacher Antragstellung, schneller Entscheidung und zügiger Auszahlung.
+
+NL
+Title:
+Solventis Group – Snelle online financiering voor particulieren en bedrijven
+
+Description:
+Solventis Group biedt volledig online financieringsoplossingen voor particulieren en bedrijven, met een eenvoudig aanvraagproces, snelle beslissing en vlotte uitbetaling.
+
+6️⃣ OPEN GRAPH IMAGE
+- Utiliser /og_image.png pour toutes les langues
+- Dimensions conformes (1200x630)
+- Accessible publiquement et correctement référencée
+
+7️⃣ BONNES PRATIQUES & QUALITÉ
+- Aucun hardcode inutile
+- Métadonnées centralisées
+- Zéro warning SEO
+- Compatible Google, Bing, LinkedIn, Facebook, WhatsApp, X
+- Code propre, lisible et maintenable
+
+8️⃣ VALIDATION FINALE
+- Vérifier que le titre et la description changent selon la langue et la localisation
+- Vérifier l’indexabilité par Google pour chaque version linguistique
+- Vérifier l’affichage correct des favicons et previews sociales
+
+Livrer :
+- Code final entièrement intégré
+- Aucun TODO
+- Aucun placeholder
+- Aucun commentaire superflu
+
+Objectif final :
+Lorsqu’un utilisateur recherche Solventis Group depuis n’importe quel pays, Google doit afficher automatiquement un titre et une description adaptés à sa langue, mettant en avant un financement digital, rapide et professionnel.

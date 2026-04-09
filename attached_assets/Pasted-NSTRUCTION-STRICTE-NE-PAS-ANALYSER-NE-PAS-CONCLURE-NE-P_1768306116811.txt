@@ -1,0 +1,108 @@
+NSTRUCTION STRICTE – NE PAS ANALYSER, NE PAS CONCLURE, NE PAS OPTIMISER
+
+Tu dois UNIQUEMENT appliquer les modifications ci-dessous, exactement comme décrites.
+
+❌ Ne pas proposer d’alternative
+❌ Ne pas expliquer
+❌ Ne pas modifier d’autres fichiers
+❌ Ne pas changer la logique métier
+
+CONTEXTE
+
+Le bug en production vient d’un parsing JSON non sécurisé dans la gestion CSRF et des erreurs API.
+Certaines routes (/api/csrf-token, erreurs 401/403) renvoient du HTML en production.
+Le frontend tente de parser ce HTML avec res.json() ce qui provoque :
+
+Unexpected token < in JSON at position 0
+
+FICHIER À MODIFIER
+
+client/src/lib/queryClient.ts
+
+MODIFICATION 1 — Sécuriser le parsing JSON dans getCsrfToken()
+🔴 CODE ACTUEL (À REMPLACER)
+if (res.ok) {
+  const contentType = res.headers.get("content-type");
+  if (contentType && contentType.includes("application/json")) {
+    const data = await res.json();
+    csrfToken = data.csrfToken;
+    console.log('[CSRF] Token acquired successfully');
+    return csrfToken!;
+  } else {
+    console.error('[CSRF] Received non-JSON response:', contentType);
+    const text = await res.text();
+    console.error('[CSRF] Response preview:', text.substring(0, 100));
+  }
+}
+
+✅ NOUVEAU CODE (REMPLACEMENT EXACT)
+if (res.ok) {
+  const contentType = res.headers.get("content-type");
+  if (contentType && contentType.includes("application/json")) {
+    const data = await res.json();
+    csrfToken = data.csrfToken;
+    return csrfToken!;
+  } else {
+    const text = await res.text();
+    console.error('[CSRF] Non-JSON response:', text.substring(0, 200));
+    return '';
+  }
+}
+
+MODIFICATION 2 — Ne pas ajouter le header CSRF si le token est vide
+🔴 CODE ACTUEL
+const token = await getCsrfToken();
+if (token) {
+  headers['X-CSRF-Token'] = token;
+}
+
+
+⚠️ Si ce code existe déjà sous cette forme, ne rien changer.
+
+❌ Ne jamais forcer X-CSRF-Token si token === ''
+
+MODIFICATION 3 — Sécuriser le parsing JSON dans throwIfResNotOk()
+🔴 CODE ACTUEL (PARTIE ERREUR)
+errorData = await res.json();
+
+✅ REMPLACER PAR
+const contentType = res.headers.get("content-type");
+if (contentType && contentType.includes("application/json")) {
+  errorData = await res.json();
+} else {
+  errorData = {};
+}
+
+RÈGLES STRICTES
+
+Ne pas modifier les routes backend
+
+Ne pas modifier SendPulse
+
+Ne pas modifier Resend
+
+Ne pas changer la logique métier
+
+Ne pas refactorer
+
+Ne pas ajouter de nouvelles fonctionnalités
+
+OBJECTIF
+
+Empêcher toute tentative de res.json() sur une réponse HTML
+
+Éliminer définitivement l’erreur Unexpected token <
+
+Permettre à la requête POST /api/loans d’atteindre Render en production
+
+SORTIE ATTENDUE
+
+Appliquer les modifications
+
+Sauvegarder le fichier
+
+Ne pas commenter
+
+Ne pas expliquer
+
+FIN DE L’INSTRUCTION

@@ -1,0 +1,112 @@
+Le problème expliqué
+
+Actuellement :
+
+Tu as un message contenant un fichier (PDF, image, etc.)
+
+Chaque fichier affiche un timestamp (heure d’envoi) probablement en position absolue ou flottante sur le bas du conteneur
+
+Quand tu envoies un nouveau fichier, il s’affiche juste sous le précédent, et le timestamp du précédent se retrouve masqué par ce nouveau conteneur.
+
+C’est classique dans les chats où :
+
+le timestamp est positionné à l’intérieur du message
+
+le container n’a pas de margin/padding suffisant
+
+2️⃣ La solution : espace + positionnement
+a) Espace vertical (margin ou gap)
+
+Chaque message ou chaque bloc de fichier doit avoir suffisamment de marge pour que le timestamp de l’élément précédent soit visible.
+
+Règle pratique : la marge verticale ≥ hauteur du timestamp + un petit padding.
+
+Exemple pratique :
+
+Hauteur du timestamp : ~14–16px
+
+Padding/buffer : 4–8px
+
+Donc marge verticale minimum entre fichiers/messages : ~20px
+
+En Tailwind :
+
+mb-5 /* ≈ 1.25rem ≈ 20px */
+
+b) Positionnement du timestamp
+
+Éviter position: absolute à l’intérieur du conteneur → ça cause le recouvrement
+
+Mettre le timestamp en bas du message mais en flow normal :
+
+<div class="chat-message flex flex-col">
+  <div class="file-container">
+    <!-- PDF / Image / Text -->
+  </div>
+  <span class="timestamp text-xs text-gray-500 mt-1">
+    15:32
+  </span>
+</div>
+
+
+Ici mt-1 ajoute un petit espace entre le fichier et le timestamp
+
+Le timestamp reste dans le flux du document, donc le fichier suivant ne le cache jamais
+
+3️⃣ Gestion dans un chat multimédia
+
+Tous les types de messages (texte, image, PDF, vidéo) doivent suivre le même pattern :
+
+<div class="chat-message flex flex-col mb-5"> 
+  <div class="message-content">
+    <!-- texte / image / PDF / vidéo -->
+  </div>
+  <span class="timestamp text-xs text-gray-500 mt-1">
+    15:32
+  </span>
+</div>
+
+
+mb-5 → espace entre ce message et le suivant
+
+mt-1 → espace entre le contenu et le timestamp
+
+Ainsi : timestamp visible → contenu suivant ne le recouvre jamais
+
+4️⃣ Proportions / distances recommandées
+Élément	Taille / espacement
+Timestamp (text-xs)	~12–14px hauteur
+Padding entre contenu et timestamp	4–6px
+Espacement vertical entre messages/fichiers	20px minimum (1.25rem = mb-5 Tailwind)
+
+Astuce : tu peux adapter pour mobile (mb-4) et desktop (mb-6) pour un rendu optimal.
+
+5️⃣ Bonus : design pro
+
+Tu peux mettre le timestamp flottant à droite du contenu, mais toujours en inline-block ou flex justify-end pour ne pas recouvrir le prochain fichier.
+
+Exemple :
+
+<div class="chat-message flex flex-col mb-5">
+  <div class="file-container relative">
+    <embed src={pdfUrl} width="100%" height="300px" />
+    <span class="timestamp absolute bottom-1 right-1 text-xs text-gray-500">
+      15:32
+    </span>
+  </div>
+</div>
+
+
+⚠ Attention : si tu utilises absolute, il faut que le conteneur parent ait un padding-bottom suffisant pour que le prochain fichier ne recouvre pas le timestamp. Sinon mieux vaut le laisser en flow normal.
+
+✅ Résumé pratique
+
+Ne jamais positionner timestamp en absolute sans padding suffisant
+
+Mettre timestamp dans le flux (flex-col + mt-1)
+
+Ajouter marge verticale entre messages/fichiers (mb-5 ≈ 20px)
+
+Même pattern pour texte, image, PDF → cohérence UI
+
+Sur mobile : réduire un peu (mb-4), sur desktop : augmenter (mb-6)

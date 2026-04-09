@@ -1,0 +1,134 @@
+PROMPT À ENVOYER À REPLIT (VERSION PARFAITE)
+
+Corrige mon code en appliquant strictement les instructions suivantes.
+Voici le workflow actuel de mon application Espace utilisateur — Espace admin :
+
+L’utilisateur soumet une demande.
+
+La demande et les documents arrivent à l’admin via SendGrid.
+
+L’admin approuve la demande dans l’espace admin.
+
+Le système génère automatiquement le contrat dans l’espace utilisateur + notification email.
+
+L’utilisateur signe le contrat et le renvoie via l’espace utilisateur → email admin via SendGrid.
+
+L’admin ouvre l’espace admin, clique sur CONFIRMER LE CONTRAT.
+
+Dès que le contrat est confirmé :
+
+Les fonds deviennent disponibles dans l’espace utilisateur.
+
+Les 6 codes du transfert sont générés automatiquement côté serveur et envoyés UNE SEULE FOIS à l’admin par email.
+
+🎯 Problèmes critiques à corriger
+(1) Mauvaise numérotation des codes
+
+Dans l’email reçu par l’admin, j’obtiens :
+
+1/5
+2/5
+3/5
+4/5
+5/5
+6/5
+
+
+→ ERREUR.
+
+Le système doit générer EXACTEMENT :
+
+1/6
+2/6
+3/6
+4/6
+5/6
+6/6
+
+
+Corrige la logique de génération des codes.
+La valeur "totalCodes" doit être fixée à 6, et chaque élément doit être formaté comme :
+
+${index}/${totalCodes}
+
+(2) Mauvaise répartition ou incohérence des pourcentages
+
+Les pourcentages envoyés à l’admin par email ne correspondent pas à ceux affichés dans l’espace utilisateur.
+
+→ Corriger la logique :
+
+Les pourcentages doivent être générés une seule fois côté serveur.
+
+Ils doivent être stockés en base.
+
+Les mêmes valeurs doivent être utilisées :
+
+pour générer l’email admin
+
+pour l’affichage dans l’espace utilisateur
+
+pour la progression lors du transfert
+Aucune génération aléatoire côté client.
+
+(3) ENVOI DUPLIQUÉ des codes lors de l’initiation du transfert
+
+Quand l’utilisateur démarre le transfert, les codes sont à nouveau renvoyés à l’admin.
+→ C’EST UNE ERREUR.
+
+Le système doit fonctionner ainsi :
+
+Les codes sont générés et envoyés uniquement au moment où l’admin confirme le contrat.
+
+Quand l’utilisateur lance le transfert :
+
+il utilise les codes déjà générés
+
+aucun email ne doit être renvoyé
+
+aucune régénération de code ne doit avoir lieu.
+
+Supprimer complètement toute logique de "regénération" ou "réenvoi" lors de l’action initier transfert.
+
+(4) Simulation de progression incorrecte
+
+Quand l’utilisateur initie le transfert :
+
+La barre de progression ne simule rien
+
+Elle passe directement à 10%
+
+Et les codes deviennent invalides
+
+Corriger la logique :
+
+La progression doit être calculée en utilisant les pourcentages stockés côté serveur
+
+L’utilisateur doit pouvoir entrer les codes dans l’ordre
+
+Le système doit valider chaque code selon l’ordre 1/6 → 6/6
+
+Aucun code ne doit être rejeté si la génération initiale était correcte
+
+🎯 Objectif final pour toi (Replit)
+
+➡️ Corriger mon code en assurant que :
+
+Les codes sont générés UNE SEULE FOIS lors de la confirmation du contrat.
+
+La numérotation est correcte : 1/6 → 6/6.
+
+Les pourcentages sont cohérents, stockés côté serveur, non régénérés côté client.
+
+La progression du transfert utilise ces données stockées.
+
+AUCUN renvoi supplémentaire des codes ne doit se produire lors du transfert.
+
+Les codes doivent être valides au moment où l’utilisateur les saisit.
+
+Renvoie-moi uniquement :
+
+Le code corrigé
+
+Les fichiers modifiés
+
+Les détails techniques précis des corrections effectuées

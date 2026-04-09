@@ -1,0 +1,87 @@
+Prompt à envoyer à Replit :
+
+⚙️ Contexte :
+Mon projet utilise un frontend hébergé sur Vercel (https://altusfinancegroup.com) et un backend Express/Node.js hébergé sur Render (https://api.altusfinancegroup.com), avec PostgreSQL.
+
+L’authentification fonctionne jusqu’à la validation de l’email :
+le code est accepté, mais l’utilisateur n’est pas redirigé vers son tableau de bord et n’est pas authentifié (aucune session ou cookie actif).
+
+Je veux que tu corriges tout ce qui empêche la connexion automatique après validation de l’email, en respectant les bonnes pratiques de sécurité (CSRF, cookies HTTP-only, CORS sécurisé, etc.).
+
+🛠️ Objectif précis :
+
+Après que l’utilisateur entre son code de vérification reçu par email,
+→ le backend doit valider le code,
+→ créer une session sécurisée (cookie HTTP-only) ou un JWT,
+→ puis renvoyer une réponse claire au frontend indiquant que l’utilisateur est connecté.
+
+Le frontend doit automatiquement rediriger vers le tableau de bord (/dashboard) après validation réussie.
+
+Le cookie/session doit fonctionner entre :
+
+https://altusfinancegroup.com (frontend)
+
+https://api.altusfinancegroup.com (backend)
+
+🔒 Spécifications techniques à appliquer :
+🔧 1. Configuration CORS (backend)
+import cors from "cors";
+
+app.use(cors({
+  origin: ["https://altusfinancegroup.com"],
+  credentials: true,
+}));
+
+🍪 2. Cookie de session (backend)
+
+Quand tu crées la session :
+
+res.cookie("session", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  domain: ".altusfinancegroup.com", // essentiel pour le cross-domain
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 jours
+});
+
+🔐 3. Route de vérification de code (/api/auth/verify-email ou similaire)
+
+Vérifie le code dans la base de données.
+
+Si correct :
+
+mets emailVerified = true
+
+crée une session JWT ou cookie
+
+renvoie une réponse JSON :
+
+{ "success": true, "message": "Email vérifié", "redirect": "/dashboard" }
+
+🌐 4. Frontend (React / Next.js)
+
+Dans le composant qui gère la validation du code :
+
+const handleVerify = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/verify-email`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ code }),
+  });
+
+  const data = await res.json();
+  if (data.success) {
+    window.location.href = data.redirect || "/dashboard";
+  } else {
+    toast.error(data.message || "Échec de la vérification");
+  }
+};
+
+⚠️ Vérifications à faire après correction
+
+Le cookie session doit apparaître dans les DevTools > Application > Cookies > api.altusfinancegroup.com.
+
+Après validation, tu dois être redirigé automatiquement vers /dashboard.
+
+Si tu actualises la page, tu restes connecté (le cookie est valide).

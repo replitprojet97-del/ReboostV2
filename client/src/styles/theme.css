@@ -1,0 +1,37 @@
+:root {
+  --solventis-indigo: #1e40af;
+  --solventis-royal: #3b82f6;
+  --solventis-slate: #1e293b;
+  --solventis-ink: #0f172a;
+  --solventis-muted: #64748b;
+  --solventis-bg: #ffffff;
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-border: rgba(255,255,255,0.5);
+  --soft-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+
+body {
+  background: var(--solventis-bg);
+  color: var(--solventis-ink);
+}
+
+/* Premium Component Animations */
+@keyframes info-fade {
+  0% { opacity: 0; transform: translateY(4px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes progress-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(160%); }
+}
+
+.animate-info-fade {
+  animation: info-fade 3.5s linear;
+}
+
+.animate-progress-slide {
+  animation: progress-slide 1.8s linear infinite;
+}

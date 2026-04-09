@@ -1,0 +1,52 @@
+Prompt à envoyer à Replit :
+
+Contexte du projet :
+
+Frontend hébergé sur Vercel : https://altusfinancegroup.com
+
+Backend hébergé sur Render : https://api.altusfinancegroup.com
+
+Base de données : PostgreSQL via Drizzle ORM
+
+Authentification fonctionnelle, mais le téléversement de photo de profil ne s’affiche pas correctement.
+
+Problème :
+Lorsqu’un utilisateur charge une photo de profil depuis l’espace utilisateur, une notification indique que la photo a bien été téléchargée, mais rien ne change visuellement : les initiales restent affichées, même après actualisation. Pourtant, la requête API de téléchargement retourne un succès.
+
+Objectif :
+Corriger ce comportement pour que :
+
+La photo soit bien enregistrée côté backend avec une URL complète et accessible publiquement (https://api.altusfinancegroup.com/uploads/...), stockée dans la base de données (champ profile_image ou équivalent).
+
+Le backend serve correctement les images via un dossier statique :
+
+app.use("/uploads", express.static("uploads"));
+
+
+Le frontend mette à jour automatiquement l’affichage de l’image après un upload réussi (rechargement du contexte utilisateur ou nouvel appel à /api/user/me).
+
+Le frontend gère le cache navigateur pour forcer l’affichage de la nouvelle image :
+
+<img src={`${user?.profileImage}?v=${Date.now()}`} alt="Avatar" />
+
+
+En cas d’absence d’image, le composant affiche les initiales de l’utilisateur par défaut.
+
+À vérifier et corriger côté code :
+
+Endpoint backend d’upload (/api/user/upload ou similaire) :
+
+S’assurer qu’il renvoie une URL publique complète vers l’image.
+
+Mettre à jour le champ profile_image en base de données.
+
+Composant frontend (avatar ou profil utilisateur) :
+
+Recharger l’état utilisateur (refreshUser() ou re-fetch du contexte).
+
+Afficher dynamiquement l’image mise à jour.
+
+Vérifier que CORS autorise bien altusfinancegroup.com à charger les images depuis api.altusfinancegroup.com/uploads.
+
+But final :
+Quand un utilisateur charge une photo de profil, elle s’affiche instantanément à la place des initiales, persiste après actualisation et reste visible sur toutes les pages où l’avatar apparaît.

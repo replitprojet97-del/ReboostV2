@@ -1,0 +1,147 @@
+PROMPT À ENVOYER À REPLIT (VERSION COPIER–COLLER)
+
+OBJECTIF :
+Implémenter dans le menu Comptes Bancaires → modal Ajouter un compte
+un système professionnel permettant à l’utilisateur de trouver sa banque en tapant quelques lettres, avec une base de banques mondiale propre et optimisée (Europe, USA, Canada, Asie, Amérique Latine, Océanie, Moyen-Orient — hors Afrique).
+Chaque banque doit fournir nom + BIC et permettre la saisie d’un IBAN validé par pays.
+
+🚀 À IMPLÉMENTER
+1️⃣ Base de données banques mondiales (hors Afrique)
+
+Créer un fichier :
+
+client/src/data/banks.ts
+
+
+Contenant une structure :
+
+export interface Bank {
+  id: string;
+  name: string;
+  country: string;
+  bic: string;
+  ibanFormat: string;  // regex ou pattern exemple "FRkk XXXX XXXX XXXX XXXX XXXX XXX"
+}
+
+export const BANKS: Bank[] = [
+  // Europe (exemples)
+  { id: "fr-bnp", name: "BNP Paribas", country: "FR", bic: "BNPAFRPP", ibanFormat: "FR\\d{2}\\d{10}\\d{11}\\d{2}" },
+  { id: "fr-socgen", name: "Société Générale", country: "FR", bic: "SOGEFRPP", ibanFormat: "FR\\d{25}" },
+
+  // USA (exemples)
+  { id: "us-chase", name: "JP Morgan Chase", country: "US", bic: "CHASUS33", ibanFormat: "" },
+
+  // Canada
+  { id: "ca-rbc", name: "Royal Bank of Canada", country: "CA", bic: "ROYCCAT2", ibanFormat: "" },
+
+  // Asie
+  { id: "jp-mizuho", name: "Mizuho Bank", country: "JP", bic: "MHCBJPJT", ibanFormat: "" },
+
+  // Amérique du Sud, Océanie, Moyen-Orient, etc.
+  
+  // …
+];
+
+
+👉 NOTE IMPORTANTE :
+Tu dois compléter automatiquement cette liste avec les ~500 banques principales mondiales via une source publique (SWIFT/BIC registry).
+Ne pas inclure les banques africaines.
+
+2️⃣ Recherche intelligente (auto-complete)
+
+Dans le modal “Ajouter un compte bancaire”, remplacer le champ Banque par :
+
+🔍 Champ de recherche avec filtrage dynamique
+
+Debounce 150ms
+
+Normalisation accents + minuscules
+
+Suggestion instantanée
+
+Max 8 résultats
+
+Sélection avec click ou clavier
+
+Exemple de logique :
+
+function searchBanks(query: string): Bank[] {
+  const q = query.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return BANKS.filter(b => 
+    b.name.toLowerCase().includes(q) ||
+    b.country.toLowerCase().includes(q)
+  ).slice(0, 8);
+}
+
+3️⃣ Sélection d’une banque → auto-remplissage BIC
+
+Une fois qu’un utilisateur clique sur une banque :
+
+setSelectedBank(bank);
+setValue("bic", bank.bic);
+
+
+Le champ BIC devient verrouillé (readOnly) car défini par la banque.
+
+4️⃣ Formatage & Validation de l’IBAN
+
+Utiliser la propriété ibanFormat de chaque banque.
+
+🔧 Implémentation :
+
+function validateIban(iban: string, bank: Bank) {
+  const regex = new RegExp("^" + bank.ibanFormat + "$");
+  return regex.test(iban.replace(/\s+/g, "").toUpperCase());
+}
+
+
+Si invalide → message d’erreur immédiat
+
+Espacement automatique : FR76 1234 1234 1234 1234 1234 123
+
+5️⃣ UI dans le modal
+✅ Propositions UI (simples et fintech, pas extravagantes)
+
+Champ de recherche en haut
+
+Liste des suggestions sous forme de dropdown
+
+Ligne de séparation fine
+
+Logo générique banque (icône Bank) devant chaque résultat
+
+Quand sélectionné → badge “Banque sélectionnée : BNP Paribas (FR)”
+
+6️⃣ Sauvegarde en base
+
+Dans la requête API POST /banks/add :
+
+Envoyer :
+
+{
+  "bankName": "BNP Paribas",
+  "bankCountry": "FR",
+  "iban": "FR761234....",
+  "bic": "BNPAFRPP"
+}
+
+📌 J’attends de toi :
+
+Générer automatiquement un fichier banks.ts complet avec les banques mondiales (hors Afrique).
+
+Implémenter le champ de recherche intelligent dans le modal “Ajouter un compte”.
+
+Auto-remplir BIC + validation IBAN.
+
+UI propre et fintech.
+
+Vérifier que tout fonctionne sur Vercel (altusfinancesgroup.com) et le backend Render (api.altusfinancesgroup.com).
+
+🎯 Résultat final attendu
+
+✓ L’utilisateur commence à taper “So… → Société Générale apparaît”
+✓ Il clique → BIC auto-rempli
+✓ Il saisit un IBAN → Validation auto en temps réel
+✓ Sauvegarde propre → Banque apparaît dans Comptes Bancaires
+
+✔️ FIN DU PROMPT À ENVOYER À REPLIT

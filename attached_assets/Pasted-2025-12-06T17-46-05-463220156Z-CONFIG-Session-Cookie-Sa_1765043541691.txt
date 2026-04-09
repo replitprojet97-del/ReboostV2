@@ -1,0 +1,50 @@
+2025-12-06T17:46:05.463220156Z [CONFIG] Session Cookie SameSite: none
+2025-12-06T17:46:06.069604582Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-12-06T17:46:06.069622672Z     Error.captureStackTrace(err)
+2025-12-06T17:46:06.069627512Z           ^
+2025-12-06T17:46:06.069631332Z 
+2025-12-06T17:46:06.069636242Z Error: Connection terminated unexpectedly
+2025-12-06T17:46:06.069640742Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-12-06T17:46:06.069645953Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-06T17:46:06.069650843Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-12-06T17:46:06.069656713Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:6081:27)
+2025-12-06T17:46:06.069660883Z 
+2025-12-06T17:46:06.069664483Z Node.js v22.16.0
+2025-12-06T17:46:26.993768498Z ==> Running 'npm start'
+2025-12-06T17:46:28.111768882Z 
+2025-12-06T17:46:28.111792723Z > rest-express@1.0.0 start
+2025-12-06T17:46:28.111798323Z > NODE_ENV=production node dist/index.js
+2025-12-06T17:46:28.111800863Z 
+2025-12-06T17:46:57.09030556Z ✅ Cloudinary configured successfully
+2025-12-06T17:46:57.094010967Z [SENTRY] ⚠️ SENTRY_DSN not set in production. Centralized logging disabled.
+2025-12-06T17:46:57.095055521Z ============================================================
+2025-12-06T17:46:57.095070082Z [CONFIG] Environment: production
+2025-12-06T17:46:57.095136903Z [CONFIG] Is Replit: false
+2025-12-06T17:46:57.095164534Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-12-06T17:46:57.095186615Z [CONFIG] Cookie SameSite: none
+2025-12-06T17:46:57.095327258Z [CONFIG] Cookie Secure: true
+2025-12-06T17:46:57.0958222Z [CONFIG] CORS Allowed Origins: production domains
+2025-12-06T17:46:57.0958309Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-12-06T17:46:57.09583559Z [CONFIG] Trust Proxy: enabled
+2025-12-06T17:46:57.09583953Z ============================================================
+2025-12-06T17:46:57.392208391Z [DATA WS] Socket instance configured for real-time data updates
+2025-12-06T17:46:57.600804472Z 5:46:57 PM [express] ✅ Backend API server listening on port 10000
+2025-12-06T17:46:57.601067678Z 5:46:57 PM [express] 🌍 Environment: production
+2025-12-06T17:46:57.601286434Z 5:46:57 PM [express] 🗄️ Database: Connected
+2025-12-06T17:46:57.601304934Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-12-06T17:46:57.601319444Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-12-06T17:46:57.601337685Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-12-06T17:46:57.601343175Z [CONFIG] Session Cookie Secure: true
+2025-12-06T17:46:57.601350695Z [CONFIG] Session Cookie SameSite: none
+2025-12-06T17:46:58.993699781Z 5:46:58 PM [express] GET /api/csrf-token 200 in 383ms
+2025-12-06T17:46:58.996801224Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-12-06T17:46:58.996825655Z     Error.captureStackTrace(err)
+2025-12-06T17:46:58.996829695Z           ^
+2025-12-06T17:46:58.996833065Z 
+2025-12-06T17:46:58.996837285Z Error: Connection terminated unexpectedly
+2025-12-06T17:46:58.996841945Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-12-06T17:46:58.996846955Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-06T17:46:58.996851665Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-12-06T17:46:58.996857336Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:6081:27)
+2025-12-06T17:46:58.996860726Z 
+2025-12-06T17:46:58.996863996Z Node.js v22.16.0

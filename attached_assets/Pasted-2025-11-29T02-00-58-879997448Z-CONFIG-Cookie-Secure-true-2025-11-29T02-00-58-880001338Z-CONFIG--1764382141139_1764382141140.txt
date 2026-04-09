@@ -1,0 +1,186 @@
+2025-11-29T02:00:58.879997448Z [CONFIG] Cookie Secure: true
+2025-11-29T02:00:58.880001338Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-29T02:00:58.88008749Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-29T02:00:58.88009456Z [CONFIG] Trust Proxy: enabled
+2025-11-29T02:00:58.88009869Z ============================================================
+2025-11-29T02:00:59.173136521Z [DATA WS] Socket instance configured for real-time data updates
+2025-11-29T02:00:59.274853376Z 2:00:59 AM [express] ✅ Backend API server listening on port 10000
+2025-11-29T02:00:59.275051801Z 2:00:59 AM [express] 🌍 Environment: production
+2025-11-29T02:00:59.275181693Z 2:00:59 AM [express] 🗄️ Database: Connected
+2025-11-29T02:00:59.275195754Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-29T02:00:59.275205364Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-29T02:00:59.275210594Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:00:59.275253005Z [CONFIG] Session Cookie Secure: true
+2025-11-29T02:00:59.275266426Z [CONFIG] Session Cookie SameSite: none
+2025-11-29T02:01:00.172709193Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-11-29T02:01:00.172739713Z     Error.captureStackTrace(err)
+2025-11-29T02:01:00.172745894Z           ^
+2025-11-29T02:01:00.172750894Z 
+2025-11-29T02:01:00.172757774Z error: column "verification_tier" does not exist
+2025-11-29T02:01:00.172764094Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T02:01:00.172769804Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T02:01:00.172775534Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T02:01:00.172782945Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:5990:27) {
+2025-11-29T02:01:00.172786865Z   length: 189,
+2025-11-29T02:01:00.172792815Z   severity: 'ERROR',
+2025-11-29T02:01:00.172798365Z   code: '42703',
+2025-11-29T02:01:00.172803535Z   detail: undefined,
+2025-11-29T02:01:00.172812635Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T02:01:00.172817905Z   position: '676',
+2025-11-29T02:01:00.172822515Z   internalPosition: undefined,
+2025-11-29T02:01:00.172827856Z   internalQuery: undefined,
+2025-11-29T02:01:00.172832806Z   where: undefined,
+2025-11-29T02:01:00.172837346Z   schema: undefined,
+2025-11-29T02:01:00.172841996Z   table: undefined,
+2025-11-29T02:01:00.172846696Z   column: undefined,
+2025-11-29T02:01:00.172851826Z   dataType: undefined,
+2025-11-29T02:01:00.172856446Z   constraint: undefined,
+2025-11-29T02:01:00.172861396Z   file: 'parse_relation.c',
+2025-11-29T02:01:00.172866156Z   line: '3723',
+2025-11-29T02:01:00.172871087Z   routine: 'errorMissingColumn'
+2025-11-29T02:01:00.172891987Z }
+2025-11-29T02:01:00.172895317Z 
+2025-11-29T02:01:00.172898367Z Node.js v22.16.0
+2025-11-29T02:01:28.380343134Z ==> Running 'npm start'
+2025-11-29T02:01:29.18462299Z 
+2025-11-29T02:01:29.18464798Z > rest-express@1.0.0 start
+2025-11-29T02:01:29.184655601Z > NODE_ENV=production node dist/index.js
+2025-11-29T02:01:29.184657741Z 
+2025-11-29T02:01:54.173382729Z ✅ Cloudinary configured successfully
+2025-11-29T02:01:54.17692903Z [SENTRY] ⚠️ SENTRY_DSN not set in production. Centralized logging disabled.
+2025-11-29T02:01:54.177908512Z ============================================================
+2025-11-29T02:01:54.177930282Z [CONFIG] Environment: production
+2025-11-29T02:01:54.177939893Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:01:54.178039075Z [CONFIG] Cookie SameSite: none
+2025-11-29T02:01:54.178050035Z [CONFIG] Cookie Secure: true
+2025-11-29T02:01:54.178140137Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-29T02:01:54.178243669Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-29T02:01:54.178529536Z [CONFIG] Trust Proxy: enabled
+2025-11-29T02:01:54.178538656Z ============================================================
+2025-11-29T02:01:54.38303284Z [DATA WS] Socket instance configured for real-time data updates
+2025-11-29T02:01:54.575530903Z 2:01:54 AM [express] ✅ Backend API server listening on port 10000
+2025-11-29T02:01:54.575760998Z 2:01:54 AM [express] 🌍 Environment: production
+2025-11-29T02:01:54.575914191Z 2:01:54 AM [express] 🗄️ Database: Connected
+2025-11-29T02:01:54.575923901Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-29T02:01:54.575996023Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-29T02:01:54.576032114Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:01:54.576040514Z [CONFIG] Session Cookie Secure: true
+2025-11-29T02:01:54.576045024Z [CONFIG] Session Cookie SameSite: none
+2025-11-29T02:01:55.970930815Z ❌ Erreur lors de l'initialisation de l'administrateur: error: column "verification_tier" does not exist
+2025-11-29T02:01:55.970952775Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T02:01:55.970958415Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T02:01:55.970963116Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T02:01:55.970966696Z     at async DatabaseStorage.initializeAdmin (file:///opt/render/project/src/dist/index.js:5956:29) {
+2025-11-29T02:01:55.970970686Z   length: 189,
+2025-11-29T02:01:55.970975026Z   severity: 'ERROR',
+2025-11-29T02:01:55.970978966Z   code: '42703',
+2025-11-29T02:01:55.970982786Z   detail: undefined,
+2025-11-29T02:01:55.970988126Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T02:01:55.970992376Z   position: '676',
+2025-11-29T02:01:55.970996847Z   internalPosition: undefined,
+2025-11-29T02:01:55.971001196Z   internalQuery: undefined,
+2025-11-29T02:01:55.971025227Z   where: undefined,
+2025-11-29T02:01:55.971032227Z   schema: undefined,
+2025-11-29T02:01:55.971036837Z   table: undefined,
+2025-11-29T02:01:55.971041308Z   column: undefined,
+2025-11-29T02:01:55.971045228Z   dataType: undefined,
+2025-11-29T02:01:55.971049228Z   constraint: undefined,
+2025-11-29T02:01:55.971053158Z   file: 'parse_relation.c',
+2025-11-29T02:01:55.971057218Z   line: '3723',
+2025-11-29T02:01:55.971061148Z   routine: 'errorMissingColumn'
+2025-11-29T02:01:55.971065128Z }
+2025-11-29T02:01:55.973276248Z /opt/render/project/src/node_modules/pg-pool/index.js:45
+2025-11-29T02:01:55.973288178Z     Error.captureStackTrace(err)
+2025-11-29T02:01:55.973299559Z           ^
+2025-11-29T02:01:55.973301359Z 
+2025-11-29T02:01:55.973303529Z error: column "verification_tier" does not exist
+2025-11-29T02:01:55.973306789Z     at /opt/render/project/src/node_modules/pg-pool/index.js:45:11
+2025-11-29T02:01:55.973310489Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-29T02:01:55.973313819Z     at async file:///opt/render/project/src/node_modules/drizzle-orm/node-postgres/session.js:83:22
+2025-11-29T02:01:55.973316369Z     at async DatabaseStorage.seedData (file:///opt/render/project/src/dist/index.js:5990:27) {
+2025-11-29T02:01:55.973319039Z   length: 189,
+2025-11-29T02:01:55.973321979Z   severity: 'ERROR',
+2025-11-29T02:01:55.973324419Z   code: '42703',
+2025-11-29T02:01:55.973326909Z   detail: undefined,
+2025-11-29T02:01:55.973329239Z   hint: 'Perhaps you meant to reference the column "users.verification_token".',
+2025-11-29T02:01:55.973331679Z   position: '676',
+2025-11-29T02:01:55.973334399Z   internalPosition: undefined,
+2025-11-29T02:01:55.973336989Z   internalQuery: undefined,
+2025-11-29T02:01:55.97333958Z   where: undefined,
+2025-11-29T02:01:55.97334214Z   schema: undefined,
+2025-11-29T02:01:55.97334462Z   table: undefined,
+2025-11-29T02:01:55.97334756Z   column: undefined,
+2025-11-29T02:01:55.97335039Z   dataType: undefined,
+2025-11-29T02:01:55.97335327Z   constraint: undefined,
+2025-11-29T02:01:55.97335591Z   file: 'parse_relation.c',
+2025-11-29T02:01:55.97335866Z   line: '3723',
+2025-11-29T02:01:55.97336126Z   routine: 'errorMissingColumn'
+2025-11-29T02:01:55.97336397Z }
+2025-11-29T02:01:55.97336641Z 
+2025-11-29T02:01:55.97336915Z Node.js v22.16.0
+2025-11-29T02:02:45.609126794Z ==> Running 'npm start'
+2025-11-29T02:02:46.516727492Z 
+2025-11-29T02:02:46.516748453Z > rest-express@1.0.0 start
+2025-11-29T02:02:46.516752213Z > NODE_ENV=production node dist/index.js
+2025-11-29T02:02:46.516753973Z 
+2025-11-29T02:03:17.801127655Z ✅ Cloudinary configured successfully
+2025-11-29T02:03:17.80574557Z [SENTRY] ⚠️ SENTRY_DSN not set in production. Centralized logging disabled.
+2025-11-29T02:03:17.806565928Z ============================================================
+2025-11-29T02:03:17.806610739Z [CONFIG] Environment: production
+2025-11-29T02:03:17.806616159Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:03:17.806693741Z [CONFIG] Cookie SameSite: none
+2025-11-29T02:03:17.806704921Z [CONFIG] Cookie Secure: true
+2025-11-29T02:03:17.806800763Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-29T02:03:17.806926116Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-29T02:03:17.807192152Z [CONFIG] Trust Proxy: enabled
+2025-11-29T02:03:17.807233573Z ============================================================
+2025-11-29T02:03:18.106652689Z [DATA WS] Socket instance configured for real-time data updates
+2025-11-29T02:03:18.211655768Z 2:03:18 AM [express] ✅ Backend API server listening on port 10000
+2025-11-29T02:03:18.211803882Z 2:03:18 AM [express] 🌍 Environment: production
+2025-11-29T02:03:18.21349138Z 2:03:18 AM [express] 🗄️ Database: Connected
+2025-11-29T02:03:18.21350499Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-29T02:03:18.213512871Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-29T02:03:18.213519361Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:03:18.213523581Z [CONFIG] Session Cookie Secure: true
+2025-11-29T02:03:18.213527811Z [CONFIG] Session Cookie SameSite: none
+2025-11-29T02:03:18.87360317Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-29T02:03:23.221138565Z Expired OTPs cleaned up
+2025-11-29T02:04:43.481228135Z ==> Detected service running on port 10000
+2025-11-29T02:04:43.918072954Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-29T02:08:03.477502536Z ==> Deploying...
+2025-11-29T02:08:57.49415471Z ==> Running 'npm start'
+2025-11-29T02:08:58.496452904Z 
+2025-11-29T02:08:58.496483826Z > rest-express@1.0.0 start
+2025-11-29T02:08:58.496489207Z > NODE_ENV=production node dist/index.js
+2025-11-29T02:08:58.496492047Z 
+2025-11-29T02:09:18.77539182Z ==> No open ports detected, continuing to scan...
+2025-11-29T02:09:19.21962515Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-29T02:09:24.394631811Z ✅ Cloudinary configured successfully
+2025-11-29T02:09:24.398705749Z [SENTRY] ⚠️ SENTRY_DSN not set in production. Centralized logging disabled.
+2025-11-29T02:09:24.399684051Z ============================================================
+2025-11-29T02:09:24.399698412Z [CONFIG] Environment: production
+2025-11-29T02:09:24.399709282Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:09:24.399784928Z [CONFIG] Cookie SameSite: none
+2025-11-29T02:09:24.399793739Z [CONFIG] Cookie Secure: true
+2025-11-29T02:09:24.399920508Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-29T02:09:24.400004944Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-29T02:09:24.400271103Z [CONFIG] Trust Proxy: enabled
+2025-11-29T02:09:24.400281434Z ============================================================
+2025-11-29T02:09:24.907403403Z [DATA WS] Socket instance configured for real-time data updates
+2025-11-29T02:09:25.098827948Z 2:09:24 AM [express] ✅ Backend API server listening on port 10000
+2025-11-29T02:09:25.099095007Z 2:09:25 AM [express] 🌍 Environment: production
+2025-11-29T02:09:25.09926648Z 2:09:25 AM [express] 🗄️ Database: Connected
+2025-11-29T02:09:25.09927931Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-29T02:09:25.099287481Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com"]
+2025-11-29T02:09:25.099341775Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-29T02:09:25.099348766Z [CONFIG] Session Cookie Secure: true
+2025-11-29T02:09:25.099353206Z [CONFIG] Session Cookie SameSite: none
+2025-11-29T02:09:26.539051025Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-29T02:09:30.107218602Z Expired OTPs cleaned up
+2025-11-29T02:09:34.013383526Z ==> Your service is live 🎉
+2025-11-29T02:09:34.224090274Z ==> 
+2025-11-29T02:09:34.382172817Z ==> ///////////////////////////////////////////////////////////
+2025-11-29T02:09:34.540370511Z ==> 
+2025-11-29T02:09:34.696736875Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-29T02:09:34.853727328Z ==> 
+2025-11-29T02:09:35.009767351Z ==> ///////////////////////////////////////////////////////////

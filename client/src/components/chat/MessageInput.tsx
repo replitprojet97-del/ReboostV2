@@ -1,0 +1,225 @@
+import { useState, useRef, useEffect } from "react";
+import { Paperclip, Send, Image as ImageIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
+
+interface MessageInputProps {
+  onSend: (content: string, file?: File) => void;
+  onTyping?: () => void;
+  disabled?: boolean;
+  maxLength?: number;
+  placeholder?: string;
+  sendHint?: string;
+  allowFileUpload?: boolean;
+  charLimit?: number;
+}
+
+export function MessageInput({
+  onSend,
+  onTyping,
+  disabled = false,
+  maxLength = 500,
+  placeholder = "Type your message...",
+  sendHint = "Press Ctrl+Enter to send",
+  allowFileUpload = false,
+}: MessageInputProps) {
+  const [content, setContent] = useState("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null);
+  const typingTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+
+  useEffect(() => {
+    return () => {
+      if (typingTimeoutRef.current) {
+        clearTimeout(typingTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const adjustTextareaHeight = () => {
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`;
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newContent = e.target.value;
+    if (newContent.length <= maxLength) {
+      setContent(newContent);
+      adjustTextareaHeight();
+
+      if (onTyping) {
+        if (typingTimeoutRef.current) {
+          clearTimeout(typingTimeoutRef.current);
+        }
+        onTyping();
+        typingTimeoutRef.current = setTimeout(() => {
+          // Stop typing indicator after 3 seconds of inactivity
+        }, 3000);
+      }
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
+  const handleSubmit = () => {
+    const trimmedContent = content.trim();
+    if (trimmedContent || selectedFile) {
+      onSend(trimmedContent, selectedFile || undefined);
+      setContent("");
+      setSelectedFile(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+      setTimeout(() => {
+        if (textareaRef.current) {
+          textareaRef.current.style.height = "auto";
+          textareaRef.current.focus();
+        }
+      }, 0);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSelectedFile(file);
+    }
+  };
+
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && file.type.startsWith('image/')) {
+      setSelectedFile(file);
+    }
+  };
+
+  const removeFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const charactersRemaining = maxLength - content.length;
+  const showCharacterCount = charactersRemaining < 100;
+
+  return (
+    <div className="border-t bg-background p-4">
+      <div className="max-w-3xl mx-auto">
+        {selectedFile && (
+          <div className="mb-3 flex items-center gap-2 bg-muted rounded-md p-3 overflow-hidden">
+            <Paperclip className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+            <span className="text-sm flex-1 truncate max-w-[300px]" title={selectedFile.name} data-testid="text-selected-file">
+              {selectedFile.name}
+            </span>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={removeFile}
+              data-testid="button-remove-file"
+            >
+              Remove
+            </Button>
+          </div>
+        )}
+
+        <div className="flex gap-2">
+          <div className="flex-1 relative">
+            <Textarea
+              ref={textareaRef}
+              value={content}
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+              placeholder={placeholder}
+              disabled={disabled}
+              className="min-h-[60px] max-h-[200px] resize-none whitespace-pre-wrap break-words"
+              style={{ overflow: 'hidden' }}
+              data-testid="input-message"
+            />
+
+            {showCharacterCount && (
+              <div
+                className={cn(
+                  "absolute bottom-2 right-2 text-xs",
+                  charactersRemaining < 50
+                    ? "text-destructive"
+                    : "text-muted-foreground"
+                )}
+                data-testid="text-character-count"
+              >
+                {charactersRemaining}
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-2">
+            {allowFileUpload && (
+              <>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".pdf,application/pdf"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                  data-testid="input-file"
+                />
+                <input
+                  ref={imageInputRef}
+                  type="file"
+                  accept=".jpg,.jpeg,image/jpeg"
+                  onChange={handleImageSelect}
+                  className="hidden"
+                  data-testid="input-image"
+                />
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={disabled}
+                  data-testid="button-attach-file"
+                  title="Attach document"
+                >
+                  <Paperclip className="h-4 w-4" />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  onClick={() => imageInputRef.current?.click()}
+                  disabled={disabled}
+                  data-testid="button-attach-image"
+                  title="Send photo"
+                >
+                  <ImageIcon className="h-4 w-4" />
+                </Button>
+              </>
+            )}
+
+            <Button
+              size="icon"
+              onClick={handleSubmit}
+              disabled={disabled || (!content.trim() && !selectedFile)}
+              data-testid="button-send-message"
+            >
+              <Send className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-2 text-xs text-muted-foreground">
+          {sendHint}
+        </div>
+      </div>
+    </div>
+  );
+}

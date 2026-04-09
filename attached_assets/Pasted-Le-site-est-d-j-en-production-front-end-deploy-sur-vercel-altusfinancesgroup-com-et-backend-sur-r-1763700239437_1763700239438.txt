@@ -1,0 +1,53 @@
+Le site est déjà en production front-end deployé sur vercel: altusfinancesgroup.com et backend sur render: api.altusfinancesgroup.com, base de donné PostgreSQL. 
+La database est connecté dans les secret replit. Redemarre pour qu'il soit pris en charge. 
+
+ 
+
+Corriger un problème de langue dans le dashboard utilisateur.
+Actuellement, la traduction espagnole a disparu : lorsqu’un utilisateur sélectionne l’espagnol, c’est le français qui s’affiche.
+
+Tâches à exécuter :
+
+Réactiver la traduction espagnole :
+
+Identifier pourquoi l’espagnol ne s’affiche plus.
+
+Restaurer la traduction correcte.
+
+Vérifier le système multilingue et rétablir l’association des clés de traduction.
+
+Multilingue complet :
+
+Rechercher tous les textes codés en dur en français dans tout le dashboard utilisateur.
+
+Remplacer ces textes par leurs équivalents multilingues.
+
+Générer automatiquement les traductions dans toutes les langues du site (en traduisant la version FR ou via un processus plus efficace si possible).
+
+S’assurer que toutes les pages et modales sont cohérentes dans toutes les langues.
+
+Gestion propre des notifications dans l’espace admin :
+
+Au-dessus du solde admin, les notifications s'affichent en cascade de manière désordonnée.
+
+Déplacer toutes les notifications dans la page Messages.
+
+Ajouter un indicateur numérique (ex : « 1 », « 2 », « 3 ») devant la page Messages pour signaler la présence de notifications.
+
+Objectif : aucune notification en cascade dans le dashboard, sauf dans la cloche dédiée.
+
+Traduction automatique des messages :
+
+Dans la page Messages, tous les messages/notifications sont actuellement en français.
+
+Appliquer la traduction automatique à tous les messages génériques déclenchés par des actions utilisateurs.
+
+Bug d’affichage dans certaines langues :
+
+Dans la page Messages, certaines langues provoquent une page blanche.
+
+Analyser le problème en profondeur.
+
+Le corriger définitivement pour garantir le fonctionnement multilingue stable de la page.
+
+Enfin, Au lieu du Logo dans le Dashboard utilisateur, opte pour une approche plus professionnel et adaptée.

@@ -1,0 +1,62 @@
+2025-11-22T16:41:27.982480954Z 4:41:27 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-22T16:41:32.424839324Z 4:41:32 PM [express] GET /api/notifications 304 in 29ms
+2025-11-22T16:41:33.278879343Z 4:41:33 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-22T16:41:37.672150546Z 4:41:37 PM [express] GET /api/notifications 304 in 8ms
+2025-11-22T16:41:38.546324583Z 4:41:38 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:41:42.950374388Z 4:41:42 PM [express] GET /api/notifications 304 in 10ms
+2025-11-22T16:41:43.82074466Z 4:41:43 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-22T16:41:48.198682971Z 4:41:48 PM [express] GET /api/notifications 304 in 11ms
+2025-11-22T16:41:49.142957269Z 4:41:49 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-22T16:41:53.461715954Z 4:41:53 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:41:54.570178067Z 4:41:54 PM [express] GET /api/notifications/unread-count 304 in 107ms
+2025-11-22T16:41:58.812832903Z 4:41:58 PM [express] GET /api/notifications 304 in 27ms
+2025-11-22T16:41:59.83372461Z 4:41:59 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-22T16:42:04.084512726Z 4:42:04 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:42:05.128344026Z 4:42:05 PM [express] GET /api/notifications/unread-count 304 in 15ms
+2025-11-22T16:42:09.430135647Z 4:42:09 PM [express] GET /api/notifications 304 in 13ms
+2025-11-22T16:42:10.446320812Z 4:42:10 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:42:14.709978712Z 4:42:14 PM [express] GET /api/notifications 304 in 11ms
+2025-11-22T16:42:19.115944467Z 4:42:19 PM [express] GET /api/notifications/unread-count 304 in 19ms
+2025-11-22T16:42:23.134020157Z 4:42:23 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:42:23.705652142Z 4:42:23 PM [express] GET /api/user 304 in 6ms
+2025-11-22T16:42:24.436407712Z 4:42:24 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-22T16:42:28.394039612Z 4:42:28 PM [express] GET /api/notifications 304 in 8ms
+2025-11-22T16:42:29.746561895Z 4:42:29 PM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-22T16:42:33.672739805Z 4:42:33 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:42:38.285922134Z 4:42:38 PM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-22T16:42:38.975784168Z 4:42:38 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:42:43.539977192Z 4:42:43 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:42:44.259604163Z 4:42:44 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:42:48.813801599Z 4:42:48 PM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-22T16:42:49.564245148Z 4:42:49 PM [express] GET /api/notifications 304 in 13ms
+2025-11-22T16:42:54.873931643Z 4:42:54 PM [express] GET /api/notifications 304 in 10ms
+2025-11-22T16:42:55.218087365Z 4:42:55 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:43:00.138802284Z 4:43:00 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:43:00.47300585Z 4:43:00 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:43:05.410336237Z 4:43:05 PM [express] GET /api/notifications 304 in 10ms
+2025-11-22T16:43:07.982381953Z 4:43:07 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:43:10.729702003Z 4:43:10 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:43:13.236639276Z 4:43:13 PM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-22T16:43:15.987779871Z 4:43:15 PM [express] GET /api/notifications 304 in 9ms
+2025-11-22T16:43:28.681679845Z 4:43:28 PM [express] GET /api/admin/transfers 304 in 404ms
+2025-11-22T16:43:28.833735651Z 4:43:28 PM [express] GET /api/admin/users 200 in 453ms
+2025-11-22T16:43:28.966826754Z Error fetching admin notifications count: TypeError: storage.getAllMessages is not a function
+2025-11-22T16:43:28.966854625Z     at file:///opt/render/project/src/dist/index.js:10247:41
+2025-11-22T16:43:28.966860595Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-22T16:43:28.974214779Z 4:43:28 PM [express] GET /api/admin/notifications-count 500 in 588ms
+2025-11-22T16:43:29.387057195Z 4:43:29 PM [express] GET /api/admin/notifications 304 in 96ms
+2025-11-22T16:43:29.400215775Z 4:43:29 PM [express] GET /api/user 304 in 25ms
+2025-11-22T16:43:29.468193424Z 4:43:29 PM [express] GET /api/loans 304 in 95ms
+2025-11-22T16:43:29.473339946Z 4:43:29 PM [express] GET /api/admin/stats 304 in 89ms
+2025-11-22T16:43:30.875843964Z Error fetching admin notifications count: TypeError: storage.getAllMessages is not a function
+2025-11-22T16:43:30.875874305Z     at file:///opt/render/project/src/dist/index.js:10247:41
+2025-11-22T16:43:30.875879855Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-22T16:43:30.881064417Z 4:43:30 PM [express] GET /api/admin/notifications-count 500 in 14ms
+2025-11-22T16:43:33.163561837Z Error fetching admin notifications count: TypeError: storage.getAllMessages is not a function
+2025-11-22T16:43:33.163587038Z     at file:///opt/render/project/src/dist/index.js:10247:41
+2025-11-22T16:43:33.163592898Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-22T16:43:33.168030736Z 4:43:33 PM [express] GET /api/admin/notifications-count 500 in 23ms
+2025-11-22T16:43:37.419301124Z Error fetching admin notifications count: TypeError: storage.getAllMessages is not a function
+2025-11-22T16:43:37.419328835Z     at file:///opt/render/project/src/dist/index.js:10247:41
+2025-11-22T16:43:37.419332444Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-22T16:43:37.423365784Z 4:43:37 PM [express] GET /api/admin/notifications-count 500 in 11ms

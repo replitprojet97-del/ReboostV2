@@ -1,0 +1,106 @@
+PROMPT REPLIT — Barre de progression Premium 2025 (Stripe Style)
+
+✨ À copier/coller tel quel dans Replit :
+
+PROMPT :
+
+Je veux remplacer la barre de progression actuelle des transferts par un composant premium 2025 de type Stripe, sans toucher à mon workflow existant.
+
+Voici les instructions exactes :
+
+1. Crée un composant React nommé CircularTransferProgress.jsx
+contenant le code suivant :
+
+import { motion } from "framer-motion";
+
+export default function CircularTransferProgress({ percent }) {
+  const r = 52;
+  const circumference = 2 * Math.PI * r;
+  const progress = (percent / 100) * circumference;
+
+  return (
+    <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-3xl shadow-xl border border-gray-100 w-full max-w-md mx-auto">
+      
+      {/* Cercle */}
+      <div className="relative">
+        <svg width="160" height="160" className="transform -rotate-90">
+          {/* Cercle gris */}
+          <circle
+            cx="80"
+            cy="80"
+            r={r}
+            stroke="#E5E7EB"
+            strokeWidth="10"
+            fill="none"
+          />
+
+          {/* Cercle animé */}
+          <motion.circle
+            cx="80"
+            cy="80"
+            r={r}
+            stroke="url(#gradient)"
+            strokeWidth="10"
+            strokeLinecap="round"
+            fill="none"
+            strokeDasharray={circumference}
+            initial={{ strokeDashoffset: circumference }}
+            animate={{ strokeDashoffset: circumference - progress }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+          />
+
+          {/* Dégradé premium */}
+          <defs>
+            <linearGradient id="gradient" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stopColor="#2563eb" />
+              <stop offset="100%" stopColor="#7c3aed" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {/* Pourcentage centré */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-3xl font-bold text-gray-800">{percent}%</span>
+        </div>
+      </div>
+
+      {/* Texte premium */}
+      <div className="text-center">
+        <h2 className="text-xl font-semibold text-gray-900">
+          Vérification du transfert
+        </h2>
+        <p className="text-sm text-gray-500 mt-1">
+          Votre opération est en cours de traitement sécurisé.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
+2. Ne modifie rien dans mon backend ni dans la logique métier.
+Le composant doit simplement remplacer l’affichage visuel actuel.
+
+3. Dans la page de transfert, là où la progression est affichée,
+remplace la barre existante par :
+
+<CircularTransferProgress percent={progress} />
+
+
+(où progress est la valeur déjà utilisée dans mon code, à ne pas modifier).
+
+4. Assure-toi que framer-motion est installé.
+Si non, installe-le :
+
+npm install framer-motion
+
+
+5. Le rendu final doit être :
+– design banque/fintech 2025
+– cercle animé professionnel
+– gradient bleu → violet
+– très clean, parfaitement centré
+– entièrement responsive
+
+N’ajoute rien d’autre. Ne modifie rien d’autre.
+Applique uniquement ce design premium sur la barre de progression.

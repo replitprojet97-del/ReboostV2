@@ -1,0 +1,126 @@
+PROMPT À ENVOYER À REPLIT — PAGE D’ACCUEIL FINTECH 2025 PREMIUM
+
+IMPORTANT :
+– Ne pas toucher à ma Hero section actuelle
+– Ne modifier aucune logique backend ou workflow
+– Seulement améliorer le design et la structure visuelle du front-end
+
+🎨 Refonte complète de la page d’accueil Altus Finance Group — Style Fintech 2025 Premium
+
+Refaire entièrement la page d’accueil (excepté la Hero section), dans un style moderne, épuré, premium, type Stripe, Revolut, Wise, Qonto.
+
+🔵 Règles obligatoires :
+
+Préserver strictement toute la structure React/Next existante
+
+Ne toucher à aucune route, aucun appel API, aucun state, aucun workflow
+
+Le code doit être totalement compatible avec le déploiement Vercel (front) et Render (backend)
+
+Design 100% responsive
+
+Style moderne 2025 (glassmorphism léger + ombres fines + polices épurées)
+
+🔵 Sections attendues (dans cet ordre) :
+1 — Section “Chiffres clés / Confiance”
+
+Un bloc premium affichant 3–4 statistiques :
+
+Clients accompagnés
+
+Montants financés
+
+Taux de satisfaction
+
+Zone géographique
+
+Design minimaliste + icônes fines.
+
+2 — Section immersive storytelling
+
+Grande section avec :
+
+une image professionnelle ou animation
+
+un paragraphe premium expliquant la mission d’Altus
+
+un bouton secondaire
+
+3 — Section “Nos expertises” moderne
+
+3–4 grands blocs
+
+icône contour minimaliste
+
+titre clair
+
+texte court
+
+bouton discret "Voir détails"
+
+Style Qonto/Revolut.
+
+4 — Timeline “Comment ça marche”
+
+Timeline horizontale animée :
+
+Soumission
+
+Analyse
+
+Signature
+
+Déblocage
+
+Transitions douces à l’entrée du viewport.
+
+5 — Section Avis clients (slider premium)
+
+slider horizontal automatisé
+
+photos rondes
+
+nom + rôle
+
+témoignage
+
+6 — Section Sécurité Bancaire (premium)
+
+Grand bandeau sur fond dégradé bleu foncé
+Avec 3–4 atouts : AES-256, Hébergement UE, KYC/AML, audits.
+
+7 — Grand CTA final
+
+Bloc clair :
+
+“Prêt à concrétiser vos projets ?”
+Deux boutons :
+
+Ouvrir mon dossier
+
+Parler à un conseiller
+
+8 — Footer premium
+
+En 3–4 colonnes
+Design très propre, espacé, élégant.
+
+💠 Style global exigé :
+
+blanc pur #ffffff
+
+bleu altus “royal” pour les accents
+
+utilisation de backdrop-filter
+
+coins arrondis XL
+
+ombres subtiles
+
+animations micro-interaction (hover, fade-in, scroll reveal)
+
+Génère le code complet de la page d’accueil avec ce nouveau design premium, en conservant toutes les fonctionnalités existantes et sans casser aucune partie du front-end ou du backend.
+
+🎉 Voilà.
+
+Ce prompt va te produire une vraie page d’accueil fintech 2025, digne d’une grande banque en ligne.

@@ -1,0 +1,53 @@
+2025-11-16T21:45:43.867658121Z ==> Cloning from https://github.com/gitunivers-web/Lepari1
+2025-11-16T21:45:46.924932917Z ==> Checking out commit 202ce526e347daaacd378bf5bdc42336708c2e27 in branch main
+2025-11-16T21:45:51.977189361Z ==> Using Node.js version 22.16.0 (default)
+2025-11-16T21:45:52.002515281Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2025-11-16T21:45:53.969808845Z ==> Running build command 'npm install'...
+2025-11-16T21:46:01.825328068Z 
+2025-11-16T21:46:01.825360739Z added 546 packages, and audited 547 packages in 8s
+2025-11-16T21:46:01.825374379Z 
+2025-11-16T21:46:01.82539511Z 72 packages are looking for funding
+2025-11-16T21:46:01.825439021Z   run `npm fund` for details
+2025-11-16T21:46:01.827468247Z 
+2025-11-16T21:46:01.827481358Z 3 low severity vulnerabilities
+2025-11-16T21:46:01.827485358Z 
+2025-11-16T21:46:01.827489428Z To address all issues, run:
+2025-11-16T21:46:01.827493018Z   npm audit fix
+2025-11-16T21:46:01.827496388Z 
+2025-11-16T21:46:01.827500038Z Run `npm audit` for details.
+2025-11-16T21:46:06.040631775Z ==> Uploading build...
+2025-11-16T21:46:17.376906764Z ==> Uploaded in 7.6s. Compression took 3.7s
+2025-11-16T21:46:17.43173719Z ==> Build successful 🎉
+2025-11-16T21:46:20.341559475Z ==> Deploying...
+2025-11-16T21:46:40.484393422Z ==> Running 'npm start'
+2025-11-16T21:46:41.389772424Z 
+2025-11-16T21:46:41.389795885Z > rest-express@1.0.0 start
+2025-11-16T21:46:41.389801085Z > NODE_ENV=production tsx server/index.ts
+2025-11-16T21:46:41.389803315Z 
+2025-11-16T21:47:00.19202201Z ✅ Cloudinary configured successfully
+2025-11-16T21:47:01.283026042Z 
+2025-11-16T21:47:01.283046092Z node:internal/process/promises:394
+2025-11-16T21:47:01.283053872Z     triggerUncaughtException(err, true /* fromPromise */);
+2025-11-16T21:47:01.283058822Z     ^
+2025-11-16T21:47:01.283498575Z Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /opt/render/project/src/server/vite.ts
+2025-11-16T21:47:01.283512685Z     at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+2025-11-16T21:47:01.283517995Z     at packageResolve (node:internal/modules/esm/resolve:768:81)
+2025-11-16T21:47:01.283522405Z     at moduleResolve (node:internal/modules/esm/resolve:854:18)
+2025-11-16T21:47:01.283526516Z     at defaultResolve (node:internal/modules/esm/resolve:984:11)
+2025-11-16T21:47:01.283530756Z     at nextResolve (node:internal/modules/esm/hooks:748:28)
+2025-11-16T21:47:01.283535116Z     at resolveBase (file:///opt/render/project/src/node_modules/tsx/dist/esm/index.mjs?1763329603082:2:3744)
+2025-11-16T21:47:01.283539536Z     at resolveDirectory (file:///opt/render/project/src/node_modules/tsx/dist/esm/index.mjs?1763329603082:2:4243)
+2025-11-16T21:47:01.283543416Z     at resolveTsPaths (file:///opt/render/project/src/node_modules/tsx/dist/esm/index.mjs?1763329603082:2:4984)
+2025-11-16T21:47:01.283547416Z     at async resolve (file:///opt/render/project/src/node_modules/tsx/dist/esm/index.mjs?1763329603082:2:5355)
+2025-11-16T21:47:01.283551386Z     at async nextResolve (node:internal/modules/esm/hooks:748:22) {
+2025-11-16T21:47:01.283556746Z   code: 'ERR_MODULE_NOT_FOUND'
+2025-11-16T21:47:01.283561037Z }
+2025-11-16T21:47:01.283565346Z 
+2025-11-16T21:47:01.283569797Z Node.js v22.16.0
+2025-11-16T21:47:02.576925653Z ==> Exited with status 1
+2025-11-16T21:47:02.723141786Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+2025-11-16T21:47:07.322000183Z ==> Running 'npm start'
+2025-11-16T21:47:08.329544831Z 
+2025-11-16T21:47:08.329595742Z > rest-express@1.0.0 start
+2025-11-16T21:47:08.329603863Z > NODE_ENV=production tsx server/index.ts
+2025-11-16T21:47:08.329606523Z 

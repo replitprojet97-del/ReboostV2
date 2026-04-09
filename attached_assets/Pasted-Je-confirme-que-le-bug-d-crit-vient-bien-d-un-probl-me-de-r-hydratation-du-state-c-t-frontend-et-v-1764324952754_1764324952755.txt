@@ -1,0 +1,78 @@
+Je confirme que le bug décrit vient bien d’un problème de réhydratation du state côté frontend, et voici les détails observés qui valident complètement ce diagnostic :
+
+🔍 Comportement réel observé
+
+Lors du transfert :
+
+Le premier code est validé → progression à 10%.
+
+Le système continue normalement jusqu’à 35%.
+
+Je quitte la page puis je reviens via le menu TRANSFERT → transfert en cours → page de progression.
+
+À ce moment-là :
+
+La progression retombe à 10%, comme si le code n’avait jamais été validé.
+
+La progression ne reprend pas à 35% alors que c’est la valeur réelle enregistrée par le backend.
+
+Le champ de code ne s’affiche plus, alors qu’un code doit être demandé à cette étape.
+
+Dans le menu, le transfert apparaît en statut "en attente".
+
+🧠 Ce que cela confirme techniquement
+
+Cela correspond exactement à un problème de synchronisation du state local :
+
+Les données du backend (35%, code validé, status in_progress) sont correctes.
+
+Mais le composant React réinitialise ses variables internes à :
+
+simulatedProgress = 0
+lastValidatedSequence = 0
+currentCodeSequence = 1
+isPausedForCode = false
+
+
+Comme lastValidatedSequence < codesValidated du backend, l’UI relance l’animation sur la base d’un palier par défaut (≈10%), au lieu d’utiliser le progressPercent réel (35%).
+
+Le composant ne récupère pas correctement :
+
+progressPercent
+
+codesValidated
+
+isPausedForCode
+
+pausePercent
+
+Ce décalage crée ensuite :
+
+une progression bloquée à 10%
+
+aucune demande de code
+
+un transfert mis en pending dans le menu
+
+👉 Tout cela confirme que la logique du frontend écrase les données du backend lors du retour sur la page.
+
+🎯 Ce qu’il faut corriger
+1. Éviter d’initialiser le state local à des valeurs par défaut
+
+Le state (simulatedProgress, lastValidatedSequence, isPausedForCode…) doit être entièrement reconstruit à partir des données backend, pas réinitialisé.
+
+2. Synchroniser correctement l’étape en cours
+
+codesValidated
+
+progressPercent
+
+l’étape correspondante
+doivent être importés tels quels au moment du chargement du composant.
+
+3. Réactiver la bonne logique d’arrêt ou de demande de code
+
+Pour éviter que l’UI ne “saute” une étape.
+
+Merci d’implémenter une réhydratation fiable du state afin que la progression d’un transfert interrompu reprenne correctement à l’étape exacte enregistrée côté backend (ex. 35%).
+Si vous avez besoin de logs ou de captures, je peux les fournir.

@@ -1,0 +1,185 @@
+Merci — tu as envoyé tout le nécessaire. Je vois précisément d’où vient le bug et comment le corriger. Je te fournis ci-dessous une correction claire, sûre et prête à coller dans client/src/pages/TransferFlow.tsx (et un petit ajustement pour la mutation validateMutation si besoin). Après application, le flux reprendra exactement au pourcentage stocké côté backend (ex. 35%) et affichera le champ de code si un code est attendu.
+
+Je te donne :
+
+Diagnostic résumé (très court).
+
+Le patch à appliquer (blocs de code à remplacer / ajouter).
+
+Un plan de test rapide pour valider la correction.
+
+1) Diagnostic (résumé)
+
+Le composant initialise des states locaux par défaut (0 / false / 1) puis écrase ou ne réhydrate pas correctement ses states depuis transferData quand on revient via la liste. Résultat : lastValidatedSequence = 0 alors que DB dit 2 → la logique d’animation recalcule/invalide la progression et n’affiche pas le champ de code → transfert bloqué.
+
+Solution : Hydrater l’état local depuis la réponse backend dès le premier rendu (ou au changement d’ID) et ne jamais réinitialiser les valeurs critiques par défaut après hydratation. Ne lancer d’animation automatique que si le backend ne fournit pas de progressPercent.
+
+2) Patch (colles / remplaces les sections indiquées)
+
+Remplace les déclarations d’état initial (actuelles) et ajoute l’useEffect d’hydratation ci-dessous. Tu n’as pas besoin de modifier le backend. Les modifications sont front only.
+
+A — Remplacer les initial states (dans le haut du fichier TransferFlow.tsx)
+
+Trouve et remplace ces lignes (actuellement) :
+
+const [simulatedProgress, setSimulatedProgress] = useState(0);
+const [isPausedForCode, setIsPausedForCode] = useState(false);
+const [currentCodeSequence, setCurrentCodeSequence] = useState(1);
+const [lastValidatedSequence, setLastValidatedSequence] = useState(0);
+const [nextCode, setNextCode] = useState<TransferCodeMetadata | null>(null);
+
+
+par ceci (noter null / undefined pour détecter l'hydratation) :
+
+const [simulatedProgress, setSimulatedProgress] = useState<number | null>(null);
+const [isPausedForCode, setIsPausedForCode] = useState<boolean | null>(null);
+const [currentCodeSequence, setCurrentCodeSequence] = useState<number | null>(null);
+const [lastValidatedSequence, setLastValidatedSequence] = useState<number | null>(null);
+const [nextCode, setNextCode] = useState<TransferCodeMetadata | null>(null);
+
+B — Ajouter cet useEffect d’hydratation (juste après la query transferData et après les refs initiales)
+
+Ajoute ce bloc (ou remplace l’actuel useEffect d’hydratation si tu en as un) :
+
+// HYDRATATION : reconstituer l'état du composant depuis le backend au chargement / changement d'ID
+useEffect(() => {
+  // si pas de transferData ou encore en cours de chargement -> rien
+  if (!transferData || !transferData.transfer) return;
+
+  const server = transferData.transfer;
+  const codes = transferData.codes || [];
+  const nextSeqFromServer = transferData.nextSequence ?? (server.codesValidated + 1);
+
+  // si on a déjà hydraté le même transferId, ne pas réhydrater/écraser à chaque poll
+  if (lastHydratedTransferIdRef.current === server.id && initialHydrationDoneRef.current) {
+    // mettre à jour seulement si le backend a changé réellement (événements)
+    // Eviter d'écraser les animations en cours si l'utilisateur vient d'interagir (justValidatedRef)
+    return;
+  }
+
+  // marquer l'hydratation faite pour cet id
+  lastHydratedTransferIdRef.current = server.id;
+  initialHydrationDoneRef.current = true;
+
+  // Hydrater les valeurs clés depuis le backend (SOURCE OF TRUTH)
+  setSimulatedProgress(server.progressPercent ?? 0);
+  setLastValidatedSequence(server.codesValidated ?? 0);
+  setCurrentCodeSequence(nextSeqFromServer ?? (server.codesValidated + 1));
+  setIsPausedForCode(!!server.isPaused);
+
+  // déterminer nextCode metadata si existant (non consommé)
+  const nextCodeMeta = codes.find(c => c.sequence === nextSeqFromServer) ?? null;
+  setNextCode(nextCodeMeta);
+
+  // Set step to progress if transfer in-progress/completed
+  if (server.status === 'in-progress' || server.status === 'pending' || server.status === 'completed') {
+    setStep('progress');
+  }
+
+  // reset helpers refs
+  prevCodesValidatedRef.current = server.codesValidated ?? 0;
+  justValidatedRef.current = false;
+  lastAnimatedToTargetSequenceRef.current = server.codesValidated ?? null;
+
+  // If the transfer is paused on a pausePercent, ensure the progress reflects exact pausePercent
+  if (server.isPaused && server.pausePercent != null) {
+    setSimulatedProgress(server.pausePercent);
+  }
+}, [transferData]);
+
+
+Explication rapide :
+
+on hydrate une seule fois par transfer.id (évite écrasement à chaque poll), sauf si l’ID change.
+
+on force simulatedProgress à la valeur sauvegardée en base (progressPercent / pausePercent) — c’est la source de vérité.
+
+on calcule currentCodeSequence depuis nextSequence ou codesValidated+1.
+
+on set isPausedForCode true si isPaused côté serveur.
+
+C — Ajuster la logique après la validation du code
+
+Dans ta validateMutation.onSuccess, tu fais déjà refetchTransfer() et modifies localement. Ajoute (ou ajuste) pour aligner le front immédiatement sur la réponse backend renvoyée par la mutation (si elle renvoie progress / pausePercent). Remplace la partie onSuccess par :
+
+onSuccess: (data: any) => {
+  setValidationCode('');
+  toast({ title: data.isComplete ? t.transferFlow.progress.statusCompleted : t.transferFlow.toast.codeValidated });
+
+  justValidatedRef.current = true;
+
+  // Si le serveur retourne le nouveau progress / pausePercent, appliquer directement
+  if (typeof data.progress === 'number') {
+    setSimulatedProgress(data.progress);
+  }
+  if (data.isPaused === true && typeof data.pausePercent === 'number') {
+    setIsPausedForCode(true);
+    setSimulatedProgress(data.pausePercent);
+  } else {
+    setIsPausedForCode(false);
+  }
+
+  // Mettre à jour les séquences localement pour réactivité immédiate
+  const newLast = (lastValidatedSequence ?? 0) + 1;
+  setLastValidatedSequence(newLast);
+  setCurrentCodeSequence(prev => (prev ? prev + 1 : (newLast + 1)));
+
+  setNextCode(null);
+  // Recharger serveur pour garantir la source de vérité
+  refetchTransfer();
+},
+
+D — Guarder l’animation (CircularTransferProgress)
+
+Tu as CircularTransferProgress qui anime de displayedPercent vers percent. Vu que simulatedProgress peut maintenant être null initialement, modifie l’appel pour fournir 0 si null :
+
+<CircularTransferProgress percent={simulatedProgress ?? 0} />
+
+
+ou dans l’endroit où tu affiches le Progress bar : style={{ width: ${simulatedProgress ?? transferData?.transfer.progressPercent ?? 0}%}}.
+
+E — Empêcher la réinitialisation ailleurs
+
+Cherche dans le fichier les endroits qui réassignent setSimulatedProgress(0) ou setLastValidatedSequence(0) sur mount ou en useEffect sans guard, et remplace par des conditions du type :
+
+if (initialHydrationDoneRef.current) {
+  // ne pas écraser
+  return;
+}
+
+
+ou entourer par :
+
+if (transferData && !initialHydrationDoneRef.current) {
+  // hydrater
+}
+
+3) Plan de tests (rapide) — à exécuter après patch
+
+Scenario A (reproduire original)
+
+Initier transfert, valider code #1 (10%), laisser progresser à 35% (code #2).
+
+Quitter page (naviguer / back).
+
+Retour via /transfers -> cliquer sur transfert.
+
+Attendu : affichage à 35% (ou pausePercent) ; champ code #3 visible si isPaused true for that sequence.
+
+Scenario B (validation immédiate)
+
+Valider un code via UI -> response shows progress and isPaused -> UI must update instantly to returned progress (no flicker to 10%).
+
+Scenario C (polling)
+
+Laisser open page avec polling active (3s) and ensure that when server updates progress, UI updates but does not re-hydrate/reset animation incorrectly.
+
+Edge : navigate away and back multiple times quickly — UI must remain consistent and stable.
+
+4) Notes additionnelles / recommandations
+
+Ne pas utiliser localStorage: c’est bien; continue d’utiliser le backend comme SOU RCE OF TRUTH.
+
+La logique lastHydratedTransferIdRef est importante : évite que le polling (refetch every 3s) écrase l’état pendant qu’une animation est en cours. Si tu veux gérer updates serveur pendant animation, compare transferData.transfer.updatedAt avec locally tracked timestamp pour décider d’une réhydratation forcée.
+
+Si tu souhaites une transition plus douce : si le backend change le progressPercent, tu peux déclencher une animation partielle, mais ne jamais rebaser lastValidatedSequence ou isPausedForCode sur des defaults.

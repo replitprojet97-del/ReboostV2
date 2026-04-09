@@ -1,0 +1,108 @@
+PROMPT À ENVOYER À REPLIT (VERSION PREMIUM 2025)
+
+Je veux que tu refasses entièrement le header du site pour obtenir un design 2025 propre, ordonné et haut de gamme, adapté à une fintech.
+Voici les directives à suivre à la lettre :
+
+🎨 1. Nouveau header – structure propre
+
+Le header doit afficher uniquement les pages principales :
+
+Accueil
+
+Nos Prêts
+
+Comment ça marche
+
+Contact
+
+Ensuite, ajoute un bouton Plus ▾ contenant :
+
+FAQ
+
+À propos
+
+Mentions légales
+
+Politique de confidentialité
+
+Le header doit rester parfaitement lisible sans chevauchement, avec un espacement maîtrisé et des polices modernes.
+
+🌍 2. Sélecteur de langue moderne
+
+Le sélecteur de langue doit afficher les drapeaux directement dans le header, façon :
+
+🇫🇷 FR | 🇬🇧 EN | 🇩🇪 DE | 🇪🇸 ES | 🇳🇱 NL | 🇮🇹 IT | 🇵🇹 PT
+
+Format compact, avec un menu déroulant très propre.
+
+🔐 3. Bouton "Mon espace"
+
+Toujours visible à droite, sous forme de bouton premium :
+
+Bleu #005DFF ou #0044FF
+
+Coins arrondis 12px
+
+Texte blanc bold
+
+Hover sombre élégant
+
+📱 4. Version mobile – hamburger
+
+Sur mobile :
+
+Masquer toutes les pages du header
+
+Afficher uniquement le logo + hamburger
+
+Le hamburger ouvre un panneau latéral premium, déjà créé précédemment
+
+Le panneau doit contenir toutes les pages + langues + Mon espace
+
+Le panneau ne doit pas dépasser 350px de large
+
+Fond semi-transparent derrière (backdrop-blur)
+
+🧭 5. Style visuel général
+
+Fond du header : blanc pur (#FFFFFF)
+
+Effet translucide : backdrop-blur-md
+
+Ombre fine : shadow-sm
+
+Hauteur : 72px
+
+Logo à gauche + espacement uniforme
+
+Police : Inter / SF Pro / Poppins (selon ce qui est utilisé)
+
+Icônes ultrafines (Lucide icons)
+
+🧩 6. Animation premium
+
+Le bouton “Plus ▾” doit afficher son menu avec un fade + slide-down
+
+Le hamburger ouvre un panneau latéral slide-right
+
+Transitions douces : duration-300 ease-out
+
+🧱 7. Code à mettre à jour
+
+Met à jour intégralement le fichier du header (souvent Header.tsx ou Navbar.tsx) avec une structure React + Tailwind parfaitement organisée.
+
+📌 Résultat attendu
+
+Header compact, parfait, sans chevauchement
+
+Pages importantes visibles
+
+Pages secondaires rangées proprement
+
+Sélecteur de langue professionnel
+
+Bouton Mon espace premium
+
+Menu mobile parfaitement UX
+
+Design fintech 2025

@@ -1,0 +1,50 @@
+2025-11-05T21:45:42.626512348Z         [Symbol(kIsForOnEventAttribute)]: false,
+2025-11-05T21:45:42.626516719Z         [Symbol(kListener)]: [Function (anonymous)]
+2025-11-05T21:45:42.626521319Z       },
+2025-11-05T21:45:42.626525679Z       close: [Function: onClose] {
+2025-11-05T21:45:42.626529789Z         [Symbol(kIsForOnEventAttribute)]: false,
+2025-11-05T21:45:42.626533719Z         [Symbol(kListener)]: [Function (anonymous)]
+2025-11-05T21:45:42.626537799Z       },
+2025-11-05T21:45:42.626541779Z       open: [Function: onOpen] {
+2025-11-05T21:45:42.626545829Z         [Symbol(kIsForOnEventAttribute)]: false,
+2025-11-05T21:45:42.626550079Z         [Symbol(kListener)]: [Function: handleWebSocketOpen]
+2025-11-05T21:45:42.626553619Z       }
+2025-11-05T21:45:42.626558189Z     },
+2025-11-05T21:45:42.62656327Z     _eventsCount: 4,
+2025-11-05T21:45:42.62656762Z     _maxListeners: undefined,
+2025-11-05T21:45:42.62657169Z     _binaryType: 'arraybuffer',
+2025-11-05T21:45:42.62657572Z     _closeCode: 1006,
+2025-11-05T21:45:42.6265797Z     _closeFrameReceived: false,
+2025-11-05T21:45:42.62658377Z     _closeFrameSent: false,
+2025-11-05T21:45:42.62658828Z     _closeMessage: Buffer(0) [Uint8Array] [],
+2025-11-05T21:45:42.62659222Z     _closeTimer: null,
+2025-11-05T21:45:42.62659631Z     _errorEmitted: true,
+2025-11-05T21:45:42.626601021Z     _extensions: {},
+2025-11-05T21:45:42.626605161Z     _paused: false,
+2025-11-05T21:45:42.626609751Z     _protocol: '',
+2025-11-05T21:45:42.626614241Z     _readyState: 3,
+2025-11-05T21:45:42.626618371Z     _receiver: null,
+2025-11-05T21:45:42.626622601Z     _sender: null,
+2025-11-05T21:45:42.626626951Z     _socket: null,
+2025-11-05T21:45:42.626631021Z     _bufferedAmount: 0,
+2025-11-05T21:45:42.626634891Z     _isServer: false,
+2025-11-05T21:45:42.626638751Z     _redirects: 0,
+2025-11-05T21:45:42.626642602Z     _autoPong: true,
+2025-11-05T21:45:42.626647442Z     _url: 'wss://dpg-d45p2aumcj7s7395tg3g-a.frankfurt-postgres.render.com/v2',
+2025-11-05T21:45:42.626651422Z     _req: null,
+2025-11-05T21:45:42.626671142Z     [Symbol(shapeMode)]: false,
+2025-11-05T21:45:42.626676072Z     [Symbol(kCapture)]: false
+2025-11-05T21:45:42.626680083Z   },
+2025-11-05T21:45:42.626699033Z   [Symbol(kType)]: 'error',
+2025-11-05T21:45:42.626701933Z   [Symbol(kError)]: Error: connect ETIMEDOUT 3.65.142.85:443
+2025-11-05T21:45:42.626704513Z       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+2025-11-05T21:45:42.626707073Z     errno: -110,
+2025-11-05T21:45:42.626710383Z     code: 'ETIMEDOUT',
+2025-11-05T21:45:42.626712733Z     syscall: 'connect',
+2025-11-05T21:45:42.626715153Z     address: '3.65.142.85',
+2025-11-05T21:45:42.626718033Z     port: 443
+2025-11-05T21:45:42.626720853Z   },
+2025-11-05T21:45:42.626723713Z   [Symbol(kMessage)]: 'connect ETIMEDOUT 3.65.142.85:443'
+2025-11-05T21:45:42.626726133Z }
+2025-11-05T21:45:42.626728744Z 
+2025-11-05T21:45:42.626731424Z Node.js v22.16.0

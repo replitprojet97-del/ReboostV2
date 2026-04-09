@@ -1,0 +1,163 @@
+PROMPT REPLIT — Formulaire d’authentification Fintech Premium (Login + Signup)
+
+👉 À coller tel quel dans Replit
+
+Je veux que tu me génères un composant d’authentification Fintech Premium Professionnel pour un projet React + TypeScript + Tailwind, correspondant exactement aux exigences suivantes :
+
+🎨 Objectif général
+
+Créer une interface d’authentification haut de gamme, style fintech/bancaire, comprenant :
+
+un fond blanc pur avec effets d’animations propres et premium (dégradés subtils flottants, pas de bruit visuel),
+
+une carte centrale en glassmorphism léger, très propre,
+
+un système Connexion / Inscription dans la même UI,
+
+un sélecteur de langue avec drapeaux (emoji ou SVG, au choix du modèle),
+
+des champs stylés premium, avec icônes et focus animé,
+
+un bouton CTA avec un effet de shine (lumière traversante),
+
+un design professionnel cohérent avec une banque / institution financière,
+
+un style impeccable, moderne, qualitatif.
+
+📌 Structure exacte demandée
+1. Fond
+
+blanc pur #FFFFFF
+
+2 grands panneaux flous animés (dégradés mauve → bleu → blanc), très soft
+
+animation lente verticale ou diagonale (18s ease-in-out infinite)
+
+pas de carrousel gauche/droite dans la page login, juste une ambiance premium
+
+2. Carte centrale
+
+largeur max : max-w-2xl
+
+coin arrondis rounded-2xl
+
+effet verre : bg-white/95 + backdrop-blur-md
+
+bordure fine border-gray-100
+
+ombre douce shadow-2xl
+
+3. En-tête de la carte
+
+logo ALTUS (triangle bleu/noir ou placeholder SVG)
+
+texte :
+
+ALTUS FINANCE GROUP
+
+“Votre partenaire de confiance pour le financement”
+
+à droite : un sélecteur de langue professionnel
+→ drapeau (emoji OU SVG), code langue (FR, EN, NL), icône globe
+
+4. Onglets
+
+"Connexion"
+
+"Inscription"
+Style premium :
+
+actif = fond bleu/mauve léger + couleur principale
+
+inactif = gris clair + hover
+
+5. Formulaire
+Login :
+
+email
+
+mot de passe
+
+oubli de mot de passe (lien simple)
+
+bouton CTA bleu (avec shine animé)
+
+Signup :
+
+type de compte :
+
+Particulier (mauve)
+
+Professionnel (bleu)
+
+nom complet
+
+téléphone
+
+email
+
+mot de passe
+
+6. CTA premium
+
+bouton bg-altus-blue
+
+texte blanc font-semibold
+
+effet shine animé (span absolue)
+
+7. Responsive
+
+mobile parfait
+
+desktop élégant
+
+espacement constant, taille lisible
+
+📦 Technos demandées
+
+React + TypeScript
+
+Tailwind CSS
+
+Icônes : react-icons (FaEnvelope, FaLock, FaUser, FaGlobe, etc.)
+
+Aucune dépendance supplémentaire obligatoire.
+
+📁 Livrables attendus
+
+Un composant complet AuthCard.tsx
+
+Une page d’exemple auth.tsx (Next.js) utilisant ce composant
+
+Code parfaitement fonctionnel
+
+Structure organisée, facile à intégrer
+
+Styles professionnels à 100% (qualité banque / assurance / fintech)
+
+🧠 Note importante
+
+Tu peux améliorer la micro-interaction, les animations, la typographie et la cohérence UX/UI tant que le style reste :
+
+institutionnel
+
+haut de gamme
+
+neutre
+
+confiant
+
+premium
+
+🚀 Génère maintenant le code complet :
+
+AuthCard.tsx avec toute la logique d’état
+
+animations Tailwind intégrées (dans tailwind.config.js)
+
+page d’exemple auth.tsx
+
+🔥 Fin du prompt
+
+Génère le meilleur résultat possible.

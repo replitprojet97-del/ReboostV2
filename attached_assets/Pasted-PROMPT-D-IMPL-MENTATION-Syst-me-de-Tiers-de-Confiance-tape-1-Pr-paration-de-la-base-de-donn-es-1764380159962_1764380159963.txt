@@ -1,0 +1,32 @@
+PROMPT D'IMPLÉMENTATION - Système de Tiers de Confiance
+Étape 1 : Préparation de la base de données
+Ajouter colonne verificationTier sur table users (enum: 'bronze' | 'silver' | 'gold', défaut: 'bronze')
+Ajouter colonne completedLoansCount sur table users (integer, défaut: 0)
+Ajouter colonne defaultedLoansCount sur table users (integer, défaut: 0)
+Exécuter npm run db:push pour synchroniser
+Vérifier que les données existantes restent intactes
+Étape 2 : Backend - Logique de validation
+Modifier endpoint POST /api/loans : remplacer la vérification "1 prêt actif max" par vérification du tier
+Ajouter fonction getMaxActiveLoans(tier: string): number retournant 1, 2, ou 3
+Modifier getLoansAvailableForTransfer() : permettre N prêts actifs (limite par tier)
+Bloquer les fonds : capacité d'emprunt = maxBorrow - (somme des prêts actifs) - (transfert actif)
+Créer endpoint GET /api/user/stats retournant {tier, completedLoans, activeLoans, maxActiveLoans}
+Étape 3 : Logique de progression
+Créer fonction checkAndUpgradeTier(userId) :
+Si 2-3 prêts complétés + 0 défaut → upgrade en silver
+Si 5+ prêts complétés + 0 défaut → upgrade en gold
+Appeler cette fonction après chaque prêt complété
+Tracker les prêts complétés quand status = 'completed' et transferCompleted = true
+Étape 4 : Frontend - Interface utilisateur
+Afficher tier badge sur le dashboard (bronze/silver/gold)
+Afficher compteur : "X/Y prêts actifs" avec barre de progression
+Afficher liste des prêts actifs + liste des prêts en attente de transfert (séparées)
+Désactiver bouton "Nouveau prêt" si limite atteinte + message explicatif
+Message informatif : "Complétez 2 prêts pour débloquer le tier Silver"
+Étape 5 : Tests et validation
+Tester avec user nouveau (bronze) : vérifier max 1 prêt actif
+Tester upgrade tier : créer 3 prêts complétés, vérifier passage en silver
+Tester blocage de fonds : créer 2 prêts de 10k chacun, vérifier capacité réduite
+Tester régle de transfert : vérifier que 2 transferts actifs = bloqué
+Vérifier qu'aucun prêt existant n'est cassé
+Total estimé : 4-6 heures | Points clés : Tier = permission, Fonds bloqués = sécurité, Progression = récompense

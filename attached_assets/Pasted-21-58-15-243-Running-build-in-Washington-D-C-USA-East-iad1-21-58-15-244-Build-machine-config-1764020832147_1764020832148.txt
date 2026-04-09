@@ -1,0 +1,56 @@
+21:58:15.243 Running build in Washington, D.C., USA (East) – iad1
+21:58:15.244 Build machine configuration: 2 cores, 8 GB
+21:58:15.598 Cloning github.com/gitunivers-web/Lepari1 (Branch: main, Commit: 442a65d)
+21:58:21.030 Cloning completed: 5.432s
+21:58:21.251 Restored build cache from previous deployment (EMAP9Ux6rtwF7zu24aHqb8Q52XaY)
+21:58:22.079 Running "vercel build"
+21:58:22.519 Vercel CLI 48.10.5
+21:58:23.300 Running "install" command: `npm install`...
+21:58:25.777 
+21:58:25.777 up to date, audited 701 packages in 2s
+21:58:25.778 
+21:58:25.778 93 packages are looking for funding
+21:58:25.778   run `npm fund` for details
+21:58:25.802 
+21:58:25.802 5 moderate severity vulnerabilities
+21:58:25.803 
+21:58:25.803 To address all issues (including breaking changes), run:
+21:58:25.803   npm audit fix --force
+21:58:25.803 
+21:58:25.804 Run `npm audit` for details.
+21:58:26.165 
+21:58:26.165 > rest-express@1.0.0 build:frontend
+21:58:26.165 > vite build
+21:58:26.165 
+21:58:26.480 [36mvite v5.4.21 [32mbuilding for production...[36m[39m
+21:58:26.536 transforming...
+21:58:28.657 
+21:58:28.658 [1m[33mwarn[39m[22m - The class `duration-[2000ms]` is ambiguous and matches multiple utilities.
+21:58:28.658 [1m[33mwarn[39m[22m - If this is content and not a class, replace it with `duration-&lsqb;2000ms&rsqb;` to silence this warning.
+21:58:28.659 
+21:58:28.659 [1m[33mwarn[39m[22m - The class `duration-[600ms]` is ambiguous and matches multiple utilities.
+21:58:28.659 [1m[33mwarn[39m[22m - If this is content and not a class, replace it with `duration-&lsqb;600ms&rsqb;` to silence this warning.
+21:58:29.138 
+21:58:29.138 A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+21:58:38.311 [32m✓[39m 4061 modules transformed.
+21:58:40.456 rendering chunks...
+21:58:40.565 computing gzip size...
+21:58:40.647 [2m../dist/public/[22m[32mindex.html                                                              [39m[1m[2m    2.63 kB[22m[1m[22m[2m │ gzip:   0.97 kB[22m
+21:58:40.648 [2m../dist/public/[22m[2massets/[22m[32mLuxury_banking_office_interior_c438e2ad-DkTtt4M7.png             [39m[1m[2m1,434.47 kB[22m[1m[22m
+21:58:40.656 [2m../dist/public/[22m[2massets/[22m[32mExecutive_boardroom_financial_institution_69d8133b-Cb4ngxKJ.png  [39m[1m[2m1,570.40 kB[22m[1m[22m
+21:58:40.656 [2m../dist/public/[22m[2massets/[22m[32mFinancial_district_skyline_premium_61766895-rNU26yRc.png         [39m[1m[2m1,604.66 kB[22m[1m[22m
+21:58:40.656 [2m../dist/public/[22m[2massets/[22m[35mindex-D1qEvTPW.css                                               [39m[1m[2m  189.91 kB[22m[1m[22m[2m │ gzip:  27.46 kB[22m
+21:58:40.657 [2m../dist/public/[22m[2massets/[22m[36mindex-Bin8iDpa.js                                                [39m[1m[33m3,392.51 kB[39m[22m[2m │ gzip: 890.29 kB[22m
+21:58:40.657 [32m✓ built in 14.14s[39m
+21:58:40.657 [33m
+21:58:40.657 (!) Some chunks are larger than 500 kB after minification. Consider:
+21:58:40.658 - Using dynamic import() to code-split the application
+21:58:40.658 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+21:58:40.658 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+21:58:40.819 Build Completed in /vercel/output [18s]
+21:58:40.921 Deploying outputs...
+21:58:43.677 Deployment completed
+21:58:44.290 Creating build cache...
+21:59:03.676 Created build cache: 19.375s
+21:59:03.676 Uploading build cache [169.25 MB]
+21:59:06.428 Build cache uploaded: 2.761s

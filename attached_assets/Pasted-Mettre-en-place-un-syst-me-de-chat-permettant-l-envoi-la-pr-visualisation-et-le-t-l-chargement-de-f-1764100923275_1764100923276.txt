@@ -1,0 +1,245 @@
+Mettre en place un système de chat permettant l’envoi, la prévisualisation et le téléchargement de fichiers PDF, avec un frontend sur Vercel, un backend sur Render, et une base PostgreSQL. Le stockage de fichiers doit être externalisé (S3 ou équivalent) avec presigned URLs.
+
+🔧 1. Exigences fondamentales
+
+L’IA doit respecter :
+
+1.1 — Aucune donnée binaire ne doit transiter par Vercel
+
+Le frontend ne doit jamais transférer un fichier PDF via un endpoint d’API hébergé sur Vercel.
+
+Tous les uploads doivent aller directement vers le storage cloud, via des URLs signées générées par le backend.
+
+1.2 — Render ne doit pas stocker de fichiers
+
+Render dispose d’un filesystem temporaire.
+
+Le backend doit uniquement générer des presigned URLs.
+
+Les fichiers doivent être stockés dans S3/Spaces/Supabase Storage.
+
+1.3 — Les URLs retournées au frontend doivent toujours être temporaires
+
+Upload → presigned URL PUT
+
+Download / preview → presigned URL GET
+
+🏗 2. Architecture recommandée
+
+Décomposer en 4 modules bien séparés :
+
+Module A — Frontend (Vercel)
+
+Fonctions requises :
+
+Composant d’upload → appelle /upload/request
+
+Upload direct vers S3 via PUT
+
+Demande d’URL signée de lecture → /file/{id}/presign
+
+Affichage PDF natif via <embed> ou React-PDF
+
+Aucune logique de sécurité.
+
+Module B — Backend (Render)
+
+Responsabilités :
+
+Authentification (JWT, cookie)
+
+Définition du stockage (S3 SDK)
+
+Création des tables dans PostgreSQL
+
+Génération des presigned URLs
+
+Emission d’événements WebSocket pour les nouveaux messages
+
+Module C — Storage externe
+
+Exemples :
+
+AWS S3
+
+DigitalOcean Spaces
+
+Supabase Storage
+
+Cloudflare R2
+
+Vercel Blob (si souhaité)
+
+Configuration minimale :
+
+bucket privé
+
+policy permettant l’usage de presigned URLs
+
+Module D — Base PostgreSQL (Render)
+
+Tables essentielles :
+
+files
+
+messages
+
+users
+
+channels
+
+📁 3. Logique obligatoire pour l’upload
+3.1 — Étape 1 : Le frontend demande une URL PUT
+
+POST /upload/request
+Données :
+
+filename
+
+mime
+
+size
+
+3.2 — Le backend :
+
+vérifie l’authentification
+
+génère un UUID de fichier
+
+prépare un storage path propre
+
+génère une presigned PUT URL valable 5 minutes
+
+crée un record dans la table files (status = “pending”)
+
+renvoie :
+
+{
+  "fileId": "...",
+  "uploadUrl": "..."
+}
+
+3.3 — Étape 2 : Le frontend upload le PDF
+
+Envoi direct via :
+
+PUT <uploadUrl>
+Content-Type: application/pdf
+Body: <binary>
+
+3.4 — Étape 3 : Le frontend confirme l’upload
+
+POST /upload/confirm
+Données : { fileId }
+
+Le backend passe :
+
+files.status = "uploaded"
+
+📄 4. Logique obligatoire pour la prévisualisation
+4.1 — Le frontend reçoit un message avec un fileId
+4.2 — Le frontend demande une URL GET
+
+GET /file/{fileId}/presign
+
+4.3 — Le backend :
+
+vérifie que l’utilisateur a accès au salon/message
+
+génère une presigned URL GET
+
+durée 10 minutes
+
+renvoie :
+
+{
+  "url": "..."
+}
+
+4.4 — Le frontend affiche le PDF
+
+Utiliser :
+
+<embed src={url} type="application/pdf" />
+
+
+ou
+React-PDF si rendu précis requis.
+
+🔐 5. Sécurité impérative
+
+L’IA doit impérativement implémenter :
+
+Bucket privé (aucun fichier accessible publiquement)
+
+Toutes les URLs doivent être presigned
+
+Toutes les URLs doivent être temporaires
+
+Les presigned URLs PUT ne doivent autoriser que le type MIME demandé
+
+Le backend doit valider que le fileId appartient à l’utilisateur/salon avant de générer une URL GET
+
+🧪 6. Tests indispensables
+
+Avant de déployer, tester :
+
+6.1 — upload complet
+
+Frontend → request → presigned PUT → upload → confirm → message créé
+
+6.2 — prévisualisation
+
+Un utilisateur autorisé obtient l’URL GET
+
+Un utilisateur non autorisé doit être refusé
+
+6.3 — expiration des URLs
+
+Les URLs signées doivent devenir invalides après expiration.
+
+🚀 7. Recommandations pour une IA exécutante (comme Replit)
+
+Voici la version la plus “machine-friendly” :
+
+🔊 Instructions à suivre à la lettre :
+
+Ne jamais transférer de fichiers via Render ou Vercel.
+
+Toujours stocker les PDF dans un bucket privé.
+
+Toujours utiliser des presigned URLs PUT (upload) et GET (preview/download).
+
+Toujours enregistrer les fichiers dans PostgreSQL avant la génération d’URL.
+
+Toujours vérifier les permissions avant de générer une presigned GET URL.
+
+Toujours renvoyer des URLs temporaires (5min PUT, 10min GET).
+
+Le frontend doit :
+
+d’abord demander la presigned PUT
+
+ensuite uploader directement
+
+ensuite confirmer au backend
+
+ensuite envoyer un message contenant fileId
+
+Le backend doit :
+
+gérer l’auth
+
+générer presigned URL
+
+gérer la DB
+
+émettre l’événement message
+
+Le frontend doit afficher le PDF via un <embed> ou React-PDF.
+
+Aucune URL publique permanente ne doit être créée.
+
+🎯 Courte phrase récapitulative (parfaite pour une IA) :
+
+“Stockage = presigned URLs. Backend = auth + permissions + DB. Frontend = orchestration + preview. Aucun fichier ne passe par Render/Vercel.”

@@ -1,0 +1,149 @@
+DÉCOUPAGE TIMESTAMP (63 secondes)
+
+J’ai découpé ton texte en blocs logiques naturels :
+➡️ ~4 secondes par phrase / bloc
+➡️ 15 sous-titres en moyenne (idéal UX)
+
+✅ 1. FICHIER FR – fr.vtt
+WEBVTT
+
+00:00:00.000 --> 00:00:04.200
+Bonjour, je m’appelle [Prénom], et je tenais à partager mon expérience avec Altus Finance Group.
+
+00:00:04.200 --> 00:00:08.000
+Comme beaucoup, j’étais au début un peu hésitant à faire une demande de financement en ligne.
+
+00:00:08.000 --> 00:00:12.200
+Mais dès le départ, Altus m’a vraiment rassuré.
+
+00:00:12.200 --> 00:00:16.000
+L’inscription est simple, la plateforme est propre et intuitive.
+
+00:00:16.000 --> 00:00:20.000
+Et le dossier se remplit en quelques minutes.
+
+00:00:20.000 --> 00:00:24.000
+Ensuite, tout est allé très vite :
+
+00:00:24.000 --> 00:00:27.000
+— Analyse claire,
+
+00:00:27.000 --> 00:00:30.000
+— Conseiller disponible,
+
+00:00:30.000 --> 00:00:33.000
+— Signature électronique sécurisée,
+
+00:00:33.000 --> 00:00:37.000
+— Et surtout, mise à disposition des fonds dans les délais annoncés.
+
+00:00:37.000 --> 00:00:41.500
+Honnêtement, j’ai rarement vu un service aussi professionnel destiné au particulier.
+
+00:00:41.500 --> 00:00:46.000
+Tout est transparent, rapide, et on se sent vraiment accompagné.
+
+00:00:46.000 --> 00:00:50.000
+Grâce à Altus, j’ai pu concrétiser mon projet beaucoup plus rapidement que prévu.
+
+00:00:50.000 --> 00:00:56.000
+Je recommande à 100 %. Pour moi, Altus est vraiment un partenaire de confiance.
+
+00:00:56.000 --> 00:01:03.000
+Merci Altus Finance Group.
+
+✅ 2. EN – en.vtt (anglais premium, naturel)
+WEBVTT
+
+00:00:00.000 --> 00:00:04.200
+Hello, my name is [First Name], and I wanted to share my experience with Altus Finance Group.
+
+00:00:04.200 --> 00:00:08.000
+Like many people, I was initially a bit hesitant about applying for financing online.
+
+00:00:08.000 --> 00:00:12.200
+But from the very beginning, Altus really reassured me.
+
+00:00:12.200 --> 00:00:16.000
+The registration is simple, the platform is clean and intuitive.
+
+00:00:16.000 --> 00:00:20.000
+And the application is completed in just a few minutes.
+
+00:00:20.000 --> 00:00:24.000
+Then everything moved very quickly:
+
+00:00:24.000 --> 00:00:27.000
+— Clear analysis,
+
+00:00:27.000 --> 00:00:30.000
+— Available advisor,
+
+00:00:30.000 --> 00:00:33.000
+— Secure electronic signature,
+
+00:00:33.000 --> 00:00:37.000
+— And above all, funds released within the announced timeframe.
+
+00:00:37.000 --> 00:00:41.500
+Honestly, I’ve rarely seen such a professional service for individuals.
+
+00:00:41.500 --> 00:01:46.000
+Everything is transparent, fast, and you truly feel supported.
+
+00:00:46.000 --> 00:00:50.000
+Thanks to Altus, I was able to complete my project much faster than expected.
+
+00:00:50.000 --> 00:00:56.000
+I recommend them 100%. For me, Altus is truly a trusted partner.
+
+00:00:56.000 --> 00:01:03.000
+Thank you, Altus Finance Group.
+
+✅ 3. ES – es.vtt (espagnol professionnel)
+WEBVTT
+
+00:00:00.000 --> 00:00:04.200
+Hola, me llamo [Nombre] y quería compartir mi experiencia con Altus Finance Group.
+
+00:00:04.200 --> 00:00:08.000
+Como muchos, al principio dudaba en solicitar financiación en línea.
+
+00:00:08.000 --> 00:00:12.200
+Pero desde el inicio, Altus realmente me tranquilizó.
+
+00:00:12.200 --> 00:00:16.000
+El registro es sencillo, la plataforma es limpia e intuitiva.
+
+00:00:16.000 --> 00:00:20.000
+Y el expediente se completa en solo unos minutos.
+
+00:00:20.000 --> 00:00:24.000
+Luego, todo avanzó muy rápido:
+
+00:00:24.000 --> 00:00:27.000
+— Análisis claro,
+
+00:00:27.000 --> 00:00:30.000
+— Asesor disponible,
+
+00:30:00.000 --> 00:00:33.000
+— Firma electrónica segura,
+
+00:00:33.000 --> 00:00:37.000
+— Y sobre todo, fondos disponibles en los plazos anunciados.
+
+00:00:37.000 --> 00:00:41.500
+Honestamente, rara vez he visto un servicio tan profesional para particulares.
+
+00:00:41.500 --> 00:00:46.000
+Todo es transparente, rápido, y realmente te sientes acompañado.
+
+00:00:46.000 --> 00:00:50.000
+Gracias a Altus, pude realizar mi proyecto mucho más rápido de lo previsto.
+
+00:00:50.000 --> 00:00:56.000
+Lo recomiendo al 100%. Para mí, Altus es realmente un socio de confianza.
+
+00:00:56.000 --> 00:01:03.000
+Gracias, Altus Finance Group.

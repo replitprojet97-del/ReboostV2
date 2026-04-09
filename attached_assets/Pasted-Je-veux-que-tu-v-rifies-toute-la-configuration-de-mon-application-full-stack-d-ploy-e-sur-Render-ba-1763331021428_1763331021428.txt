@@ -1,0 +1,47 @@
+Je veux que tu vérifies toute la configuration de mon application full-stack déployée sur Render (backend) et Vercel (frontend). Voici les points à valider entièrement :
+
+### 1. DNS et Domaine (Vercel)
+- Mon domaine principal : altusfinancesgroup.com
+- Je veux vérifier si la configuration DNS Vercel est correcte.
+- Vérifier : ALIAS, CNAME, propagation, et qu’on n’a pas besoin de modification côté Render.
+
+### 2. Variables d'environnement Render (backend API)
+Voici mes variables actuelles :
+- DATABASE_URL (présente)
+- FRONTEND_URL = https://altusfinancesgroup.com
+- NODE_ENV = production
+- SENDGRID_API_KEY
+- SENDGRID_FROM_EMAIL
+- SESSION_SECRET
+- COOKIE_DOMAIN = .altusfinancesgroup.com (vérifier si je dois la supprimer)
+
+Je veux que tu vérifies :
+- Quelles variables doivent rester ?
+- Lesquelles doivent être supprimées ou modifiées ?
+- Si COOKIE_DOMAIN doit être retirée dans mon cas (backend Render → domaine différent du frontend).
+
+### 3. Variables d'environnement Vercel (frontend)
+- NEXT_PUBLIC_API_URL = https://lepar1is.onrender.com
+
+Je veux que tu vérifies si c’est correct, ou si je dois pointer vers un sous-domaine type api.altusfinancesgroup.com.
+
+### 4. CORS (backend Render)
+Vérifie si la config CORS correcte doit être :
+- origin: https://altusfinancesgroup.com
+- credentials: true
+- Et tout ce qui est nécessaire pour que les sessions / cookies fonctionnent.
+
+### 5. Cookies et Sessions
+Vérifie :
+- Les paramètres nécessaires (SameSite, Secure, HttpOnly)
+- Si un backend sur onrender.com peut envoyer des cookies au frontend altusfinancesgroup.com
+- Si un COOKIE_DOMAIN est possible ou interdit
+- Comment le backend doit envoyer les cookies pour que l’auth fonctionne.
+
+### 6. Test final
+Je veux que tu me génères :
+- Un checklist complet
+- Les endroits exacts où corriger si quelque chose ne va pas
+- Les valeurs finales correctes pour chaque variable d’environnement
+- La configuration CORS correcte
+- La configuration cookie/session correcte

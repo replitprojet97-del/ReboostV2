@@ -1,0 +1,77 @@
+✅ PROMPT POUR REPLIT – Corrections essentielles du site
+
+Je veux que tu appliques les modifications suivantes à mon projet sans rien casser dans la logique existante :
+
+1. Affichage par défaut : la page d’accueil doit toujours apparaître
+
+Actuellement, lorsque l’utilisateur n’est pas connecté, le site affiche la page de connexion (Auth.tsx) au lieu de la page d’accueil (Home.tsx).
+
+➡️ Je veux absolument que la page d’accueil soit affichée par défaut, toujours.
+
+À corriger :
+
+Ne plus rediriger automatiquement vers /login ou Auth.tsx lorsqu’on arrive sur /
+
+La page Home.tsx doit être visible même si l’utilisateur n’est pas connecté
+
+Les redirections vers Auth.tsx ne doivent se produire que lorsqu’on tente d’accéder à une page protégée (dashboard, comptes, prêts…)
+
+En bref :
+
+✅ / = toujours Home.tsx
+❌ / ≠ login automatique
+➡️ Ne rediriger vers login que pour les routes protégées.
+
+2. Amélioration du sélecteur de langue : ajouter les drapeaux
+
+Le sélecteur de langue actuel montre seulement le texte ("FR", "EN", etc.).
+
+Je veux qu’il soit transformé en sélecteur de langue premium avec des drapeaux, par exemple :
+
+🇫🇷 Français
+🇬🇧 English
+🇩🇪 Deutsch
+🇪🇸 Español
+
+➡️ Le switch doit afficher l’icône de drapeau + le nom de la langue
+➡️ Affichage cohérent en desktop et mobile
+➡️ Code propre, composant réutilisable
+
+Tu peux utiliser l’un des packages suivants :
+
+react-country-flag
+
+ou importer manuellement des SVG de drapeaux dans /assets/flags/
+
+3. Changer la couleur de fond du site en blanc pur
+
+Je veux un fond blanc professionnel (#FFFFFF) sur toutes les pages du site :
+
+Page d’accueil
+
+Dashboard utilisateur
+
+Dashboard admin
+
+Pages publiques
+
+Pages d’authentification
+
+➡️ Corriger tous les fichiers CSS/Tailwind/Theme qui utilisent un gris ou une couleur de fond par défaut
+➡️ S’assurer que le fond blanc est appliqué sur body, html, et tous les conteneurs principaux
+
+Exemple Tailwind global :
+
+html, body {
+  @apply bg-white text-gray-900;
+}
+
+Résumé du travail attendu
+
+Home.tsx doit redevenir la page par défaut (aucune redirection vers login).
+
+Ajouter un sélecteur de langue avec drapeaux (design premium).
+
+Changer la couleur de fond globale en blanc pur (#FFFFFF) pour un rendu bancaire professionnel.
+
+Merci d’appliquer les changements proprement et de m’envoyer les fichiers modifiés.

@@ -1,0 +1,90 @@
+OBJECTIF STRICT — NE RIEN MODIFIER D’AUTRE
+
+CONTEXTE :
+- Tous les emails HTML fonctionnent maintenant correctement (SendPulse OK).
+- Resend fonctionne et NE DOIT PAS être impacté.
+- Le problème restant est UNIQUEMENT le logo affiché dans les templates email.
+
+PROBLÈME À CORRIGER :
+1) Les templates email utilisent encore un ANCIEN logo (ALTUS / ancien projet).
+2) Le logo doit être remplacé par un NOUVEAU logo spécifique AUX EMAILS.
+3) Le logo doit s’afficher correctement dans Gmail, Outlook, etc.
+
+========================
+PARTIE 1 — SUPPRESSION DE L’ANCIEN LOGO
+========================
+
+TU DOIS :
+
+- Rechercher TOUTES les références à l’ancien logo dans :
+  - server/email.ts
+  - toutes les fonctions de templates email
+  - toutes les variables du type : logoUrl, logo, headerLogo, etc.
+
+- Supprimer TOUT lien vers :
+  - Altus
+  - ancien domaine
+  - ancien asset
+  - toute image non hébergée explicitement pour Solventis Group
+
+AUCUNE exception.
+
+========================
+PARTIE 2 — NOUVEAU LOGO EMAIL (OBLIGATOIRE)
+========================
+
+UTILISER CE LOGO UNIQUEMENT POUR LES EMAILS :
+
+Nom : Solventis Group  
+Fond : blanc  
+Usage : EMAIL UNIQUEMENT (pas frontend, pas admin panel)
+
+LOGO URL À UTILISER (OBLIGATOIRE) :
+➡️ Héberger le logo dans un endroit PUBLIC et STABLE
+(ex: /public/email/solventis-logo.png ou équivalent backend)
+
+EXIGENCES TECHNIQUES EMAIL :
+- URL ABSOLUE (https://...)
+- PAS de chemin relatif
+- PAS de base64 inline
+- <img> avec width fixe (max 160px)
+- alt="Solventis Group"
+
+EXEMPLE ATTENDU :
+<img src="https://api.solventisgroup.org/public/email/solventis-logo.png" width="160" alt="Solventis Group" />
+
+========================
+PARTIE 3 — PORTÉE DES MODIFICATIONS
+========================
+
+TU DOIS appliquer le nouveau logo dans :
+- emails d’inscription
+- validation email
+- reset password
+- emails KYC
+- emails contrat
+- TOUS les emails envoyés à l’utilisateur
+- emails admin SI et SEULEMENT SI ils utilisent le même template
+
+NE PAS :
+- modifier la logique d’envoi
+- modifier SendPulse config
+- modifier Resend
+- modifier les textes
+- modifier le HTML structurel
+- modifier le backend métier
+
+========================
+PARTIE 4 — LIVRABLE OBLIGATOIRE
+========================
+
+TU DOIS FOURNIR :
+
+1) DIFF AVANT / APRÈS de server/email.ts
+2) L’URL exacte du nouveau logo
+3) Confirmation écrite :
+   - “L’ancien logo est totalement supprimé”
+   - “Le nouveau logo Solventis Group est utilisé dans tous les emails”
+   - “Le logo s’affiche correctement dans Gmail”
+
+AUCUNE AUTRE MODIFICATION AUTORISÉE.

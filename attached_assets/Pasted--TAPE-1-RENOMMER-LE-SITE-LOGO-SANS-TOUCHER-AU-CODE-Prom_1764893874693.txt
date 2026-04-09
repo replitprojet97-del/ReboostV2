@@ -1,0 +1,267 @@
+ÉTAPE 1 — RENOMMER LE SITE + LOGO (SANS TOUCHER AU CODE)
+
+Prompt à envoyer à Replit :
+
+ÉTAPE 1 — RENOMMAGE DU SITE ET DU LOGO
+
+Tu vas appliquer les actions suivantes sans modifier le workflow, sans toucher aux scripts, sans renommer ou déplacer les fichiers critiques :
+
+🔁 1. Renommer le site
+
+Partout où le nom apparaît dans les fichiers textuels ou visuels uniquement :
+Remplacer “Altus Finances Group” par “Solventus Group”.
+
+⚠️ Ne pas toucher aux clés i18n, classes CSS utilisées par JS, scripts, imports, fonctions, endpoints.
+Seul le texte visible doit changer.
+
+🖼️ 2. Mettre à jour le logo
+
+Remplacer le logo affichant “Altus Finances Group” par un logo affichant “Solventus Group”.
+
+Si le logo est textuel → remplacer le texte uniquement.
+
+Si le logo est une image → remplacer l’image par une nouvelle image portant “Solventus Group”.
+
+⚠️ Ne pas changer le nom du fichier du logo s’il est utilisé dans le code.
+Juste remplacer l’image.
+
+🚫 Rappels stricts
+
+Ne pas modifier le backend
+
+Ne pas renommer les fichiers
+
+Ne pas toucher au fonctionnement
+
+Ne pas modifier les clés i18n
+
+Quand cette étape est terminée, je passerai à l’ÉTAPE 2.
+Envoie moi "ÉTAPE 1 TERMINÉE" pour continuer.
+
+
+
+✅ PROMPT 2.1 — Réécriture totale du contenu textuel (sans toucher aux clés i18n)
+
+À envoyer seul dans Replit :
+
+ÉTAPE 2.1 — RÉÉCRITURE TOTALE DU CONTENU TEXTUEL
+
+Tu vas réécrire 100 % du contenu textuel du site, uniquement dans les fichiers de traduction i18n, en respectant les règles suivantes :
+
+🔥 Ce que tu DOIS faire :
+
+Réécrire totalement tous les textes associés aux clés i18n.
+
+Produire un contenu professionnel, moderne, clair et optimisé SEO.
+
+Générer un texte entièrement nouveau et original, sans conserver une seule phrase ou formulation existante.
+
+Garder le même rôle et la même utilité pour chaque section.
+
+❌ Ce que tu NE DOIS JAMAIS faire :
+
+❗ Ne pas modifier, renommer ou supprimer les clés i18n.
+
+❗ Ne pas restructurer les fichiers de traduction.
+
+❗ Ne pas toucher aux scripts ou au backend.
+
+❗ Ne pas modifier les imports, endpoints ou logic.
+
+🎯 Objectif
+
+Obtenir un contenu textuel 100 % neuf, cohérent, professionnel, SEO-friendly, et totalement indépendant du contenu original.
+
+Quand cette étape est terminée, ne passe pas au design. Juste répondre :
+“ÉTAPE 2.1 TERMINÉE”
+
+
+
+✅ PROMPT 2.2 — Refonte visuelle : couleurs, typographie, layout
+
+À envoyer après finalisation de l’étape 2.1 :
+
+ÉTAPE 2.2 — NOUVELLE IDENTITÉ VISUELLE
+
+Tu vas maintenant refondre entièrement la partie visuelle du site.
+Aucun élément graphique ne doit ressembler à l’ancien site.
+
+🔧 Ce que tu dois créer :
+
+Une nouvelle palette de couleurs complète
+
+Une nouvelle typographie moderne
+
+Une nouvelle mise en page :
+
+nouveaux espacements
+
+nouveaux alignements
+
+nouvelles proportions
+
+nouveaux styles visuels pour toutes les sections
+
+Uniformité visuelle sur tout le site
+
+📌 Contraintes strictes :
+
+❗ Ne modifier que du CSS et du HTML non critique
+
+❗ Ne pas toucher aux classes utilisées dans les scripts JS
+
+❗ Ne pas modifier le backend
+
+❗ Ne pas modifier les clés i18n ou leur structure
+
+❗ Ne pas casser la logique de navigation ou d’interaction
+
+🎯 Objectif
+
+Implémenter une nouvelle identité visuelle moderne, élégante, cohérente, propre, et totalement différente du design original.
+
+Quand c’est fait, répondre :
+“ÉTAPE 2.2 TERMINÉE”
+
+
+
+✅ PROMPT 2.3 — Refonte complète des composants (boutons, formulaires, cartes, animations)
+
+À envoyer après finalisation de l’étape 2.2 :
+
+ÉTAPE 2.3 — REFAIRE TOUS LES COMPOSANTS DU SITE
+
+Tu vas maintenant moderniser et recréer entièrement :
+
+🔘 Composants à refondre complètement :
+
+Boutons
+
+Formulaires
+
+Sections / cartes
+
+Navigation / menu
+
+Footer
+
+Encadrés / blocs / containers
+
+Tous les éléments interactifs
+
+✨ Effets et animations à implémenter :
+
+nouveaux effets hover
+
+transitions fluides
+
+ombres modernes
+
+arrondis cohérents
+
+animations légères si pertinentes
+
+style responsive amélioré
+
+🔥 Style attendu :
+
+moderne
+
+minimaliste
+
+premium
+
+cohérent avec la nouvelle identité graphique
+
+responsive sur mobile, tablette, desktop
+
+⚠️ Contraintes à respecter absolument :
+
+❗ Ne pas toucher aux scripts JS fonctionnels
+
+❗ Ne pas modifier les classes utilisées dans la logique JS
+
+❗ Ne rien casser dans le backend
+
+❗ Ne pas modifier les clés i18n
+
+❗ N’altérer que le CSS + HTML visuel
+
+🎯 Objectif final de l’étape 2.3
+
+Une interface totalement moderne, élégante, professionnelle :
+un site complètement nouveau visuellement, mais fonctionnellement identique.
+
+Quand c’est terminé, répondre :
+“ÉTAPE 2 TERMINÉE”
+
+
+
+✅ ÉTAPE 3 — REMPLACEMENT DES IMAGES + FINALISATION + CONTRÔLES
+
+Prompt à envoyer après validation de l'étape 2 :
+
+ÉTAPE 3 — IMAGES, SEO, NETTOYAGE, VALIDATION FINALE
+
+Tu vas maintenant finaliser la refonte :
+
+🖼️ 1. Remplacer toutes les images
+
+Remplacer 100 % des images du site par de nouvelles images originales ou libres de droits.
+
+Elles doivent être cohérentes avec la nouvelle identité visuelle.
+
+Ne jamais réutiliser une image de l’ancien site.
+
+⚠️ Ne pas changer les noms des images si elles sont utilisées dans les scripts.
+Juste remplacer les fichiers.
+
+🔍 2. Vérification complète du système i18n
+
+Toutes les clés doivent rester strictement intactes.
+
+Tous les textes doivent être réécrits dans toutes les langues.
+
+Aucune clé ne doit manquer.
+
+Les fichiers de traduction ne doivent pas être restructurés.
+
+🛠️ 3. Vérifier le fonctionnement global
+
+Confirmer que :
+
+la logique du site est intacte
+
+le backend n’a pas été modifié
+
+les scripts fonctionnent sans erreur
+
+la navigation est identique en comportement
+
+le rendu est responsive
+
+le design est nouveau et cohérent
+
+🧼 4. Nettoyage final
+
+Supprimer toute trace de l’ancien design
+
+Vérifier l’absence de duplication de contenu
+
+S’assurer que tout est propre pour le SEO
+
+🎯 Résultat final attendu
+
+Un site :
+
+100 % nouveau visuellement
+
+100 % original textuellement
+
+100 % fonctionnel
+
+100 % compatible i18n
+
+100 % propre pour Google
+
+Quand c’est fini, répondre : “ÉTAPE 3 TERMINÉE”.

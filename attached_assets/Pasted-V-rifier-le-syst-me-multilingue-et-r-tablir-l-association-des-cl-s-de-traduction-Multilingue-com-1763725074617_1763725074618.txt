@@ -1,0 +1,37 @@
+Vérifier le système multilingue et rétablir l’association des clés de traduction.
+
+Multilingue complet :
+
+Rechercher tous les textes codés en dur en français dans tout le dashboard utilisateur.
+
+Remplacer ces textes par leurs équivalents multilingues.
+
+Générer automatiquement les traductions dans toutes les langues du dashboard (en traduisant la version FR ou via un processus plus efficace si possible). 
+
+S’assurer que toutes les pages du Dashboard Utilisateur et modales sont cohérentes dans toutes les langues. Qu'il n'y a pas de mélange de français et d'espagnol ou d'autre langue
+
+Gestion propre des notifications dans l’espace utilisateur :
+
+Au-dessus du solde utilisateur, les notifications s'affichent en cascade de manière désordonnée.
+
+Déplacer toutes les notifications dans la page Messages.
+
+Ajouter un indicateur numérique (ex : « 1 », « 2 », « 3 » ce qui est déjà fait), devant la page Messages et dans une couleur Rouge Sombre pour signaler la présence de notifications.
+
+Objectif : aucune notification en cascade dans le dashboard, sauf dans la cloche dédiée. Et améliorer la cloche pour une version plus récente. 
+
+Traduction automatique des messages :
+
+Dans la page Messages, tous les messages/notifications sont actuellement en français. 
+
+Appliquer la traduction automatique à tous les messages génériques déclenchés par des actions utilisateurs. Tu peux: A- Utiliser la langue d'inscription de l'utilisateur comme reference, ou B - Maintenir une traduction complete des notifications dans toute les langues, ou C- Adopter une solution plus efficace et professionnel. 
+
+Bug d’affichage dans certaines langues :
+
+Dans la page Messages, certaines langues provoquent une page blanche.
+
+Analyser le problème en profondeur. Verifier si le probleme a été corrigé. 
+
+Si non, Le corriger définitivement pour garantir le fonctionnement multilingue stable de la page.
+
+Enfin, Au lieu du Logo dans le Dashboard utilisateur, opte pour une approche plus professionnel et adaptée.

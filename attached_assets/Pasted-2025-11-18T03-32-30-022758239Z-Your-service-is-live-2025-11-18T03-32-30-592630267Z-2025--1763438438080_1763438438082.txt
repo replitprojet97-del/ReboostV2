@@ -1,0 +1,107 @@
+2025-11-18T03:32:30.022758239Z ==> Your service is live 🎉
+2025-11-18T03:32:30.592630267Z ==> 
+2025-11-18T03:32:30.757595462Z ==> ///////////////////////////////////////////////////////////
+2025-11-18T03:32:30.919376118Z ==> 
+2025-11-18T03:32:31.087326133Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-18T03:32:31.254728477Z ==> 
+2025-11-18T03:32:31.420565552Z ==> ///////////////////////////////////////////////////////////
+2025-11-18T03:33:55.733154904Z 3:33:55 AM [express] GET /api/admin/loans 304 in 2250ms
+2025-11-18T03:33:58.530230151Z 3:33:58 AM [express] GET /api/notifications 304 in 14ms
+2025-11-18T03:33:58.532877393Z 3:33:58 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:34:18.490095985Z [AUTH SUCCESS] User authenticated successfully
+2025-11-18T03:34:18.490127496Z [AUTH SUCCESS] Session created and will be sent as cookie
+2025-11-18T03:34:18.490142856Z [AUTH SUCCESS] Cookie domain: .altusfinancesgroup.com
+2025-11-18T03:34:18.494804858Z 3:34:18 AM [express] POST /api/auth/login 200 in 2697ms
+2025-11-18T03:34:18.950271817Z 3:34:18 AM [express] GET /api/loans 304 in 8ms
+2025-11-18T03:34:18.97618222Z 3:34:18 AM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-18T03:34:19.023731209Z 3:34:19 AM [express] GET /api/notifications 304 in 12ms
+2025-11-18T03:34:19.188324051Z 3:34:19 AM [express] GET /api/user 200 in 9ms
+2025-11-18T03:34:19.464055689Z 3:34:19 AM [express] GET /api/dashboard 304 in 86ms
+2025-11-18T03:34:20.183148488Z 3:34:20 AM [express] GET /api/transfers 304 in 8ms
+2025-11-18T03:34:20.270591476Z 3:34:20 AM [express] GET /api/charts/upcoming-repayments 304 in 9ms
+2025-11-18T03:34:24.477559531Z 3:34:24 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:34:24.485537079Z 3:34:24 AM [express] GET /api/notifications 304 in 9ms
+2025-11-18T03:34:29.741671175Z 3:34:29 AM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-18T03:34:29.764409594Z 3:34:29 AM [express] GET /api/notifications 304 in 11ms
+2025-11-18T03:37:34.481194211Z ==> Detected service running on port 10000
+2025-11-18T03:37:34.860580336Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-18T03:53:26.259240275Z ==> Deploying...
+2025-11-18T03:53:49.706399283Z ==> Running 'npm start'
+2025-11-18T03:53:50.609475318Z 
+2025-11-18T03:53:50.609508119Z > rest-express@1.0.0 start
+2025-11-18T03:53:50.609514929Z > NODE_ENV=production node dist/index.js
+2025-11-18T03:53:50.609517669Z 
+2025-11-18T03:54:00.506577021Z ✅ Cloudinary configured successfully
+2025-11-18T03:54:00.919207551Z 3:54:00 AM [express] ✅ Backend API server listening on port 10000
+2025-11-18T03:54:00.919402216Z 3:54:00 AM [express] 🌍 Environment: production
+2025-11-18T03:54:00.919589381Z 3:54:00 AM [express] 🗄️ Database: Connected
+2025-11-18T03:54:00.919739524Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-18T03:54:00.919744485Z [CONFIG] Allowed Origins: ["https://altusfinancegroup.com","https://www.altusfinancegroup.com","https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-18T03:54:00.919748355Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-18T03:54:00.919801636Z [CONFIG] Session Cookie Secure: true
+2025-11-18T03:54:01.005728163Z [CONFIG] Session Cookie SameSite: none
+2025-11-18T03:54:06.014823952Z Expired OTPs cleaned up
+2025-11-18T03:54:07.338098178Z ==> Your service is live 🎉
+2025-11-18T03:54:08.048681433Z ==> 
+2025-11-18T03:54:08.219323348Z ==> ///////////////////////////////////////////////////////////
+2025-11-18T03:54:08.385489002Z ==> 
+2025-11-18T03:54:08.549717478Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-18T03:54:08.74264132Z ==> 
+2025-11-18T03:54:08.921406554Z ==> ///////////////////////////////////////////////////////////
+2025-11-18T03:55:05.569589833Z 3:55:05 AM [express] GET /api/notifications 200 in 419ms
+2025-11-18T03:56:42.331452192Z 3:56:42 AM [express] GET /api/csrf-token 200 in 7ms
+2025-11-18T03:56:44.706563157Z [AUTH SUCCESS] User authenticated successfully
+2025-11-18T03:56:44.706584637Z [AUTH SUCCESS] Session created and will be sent as cookie
+2025-11-18T03:56:44.706594887Z [AUTH SUCCESS] Cookie domain: .altusfinancesgroup.com
+2025-11-18T03:56:44.711877198Z 3:56:44 AM [express] POST /api/auth/login 200 in 1942ms
+2025-11-18T03:56:45.405950229Z 3:56:45 AM [express] GET /api/notifications 200 in 61ms
+2025-11-18T03:56:45.449912429Z 3:56:45 AM [express] GET /api/user 200 in 20ms
+2025-11-18T03:56:45.631789139Z 3:56:45 AM [express] GET /api/loans 200 in 12ms
+2025-11-18T03:56:45.780907387Z 3:56:45 AM [express] GET /api/dashboard 200 in 520ms
+2025-11-18T03:56:46.473675065Z 3:56:46 AM [express] GET /api/transfers 200 in 11ms
+2025-11-18T03:56:46.665624935Z 3:56:46 AM [express] GET /api/notifications/unread-count 200 in 1356ms
+2025-11-18T03:56:46.672461834Z 3:56:46 AM [express] GET /api/charts/upcoming-repayments 200 in 43ms
+2025-11-18T03:56:50.686077789Z 3:56:50 AM [express] GET /api/notifications 304 in 15ms
+2025-11-18T03:56:51.942654798Z 3:56:51 AM [express] GET /api/transfers/new 404 in 11ms
+2025-11-18T03:56:52.006949682Z 3:56:52 AM [express] GET /api/external-accounts 304 in 64ms
+2025-11-18T03:56:52.019635337Z 3:56:52 AM [express] GET /api/loans/available-for-transfer 304 in 69ms
+2025-11-18T03:56:52.590890102Z 3:56:52 AM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-18T03:56:56.04206109Z 3:56:56 AM [express] GET /api/notifications 304 in 9ms
+2025-11-18T03:56:57.929005571Z 3:56:57 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:57:01.339695067Z 3:57:01 AM [express] GET /api/notifications 304 in 17ms
+2025-11-18T03:57:03.246417588Z 3:57:03 AM [express] GET /api/notifications/unread-count 304 in 9ms
+2025-11-18T03:57:06.600748837Z 3:57:06 AM [express] GET /api/notifications 304 in 10ms
+2025-11-18T03:57:08.556179257Z 3:57:08 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:58:07.899563199Z 3:58:07 AM [express] GET /api/notifications 304 in 326ms
+2025-11-18T03:58:08.890262579Z 3:58:08 AM [express] GET /api/notifications/unread-count 304 in 8ms
+2025-11-18T03:58:13.200999027Z 3:58:13 AM [express] GET /api/notifications 304 in 12ms
+2025-11-18T03:58:14.261484087Z 3:58:14 AM [express] GET /api/notifications/unread-count 304 in 28ms
+2025-11-18T03:58:18.473097668Z 3:58:18 AM [express] GET /api/notifications 304 in 9ms
+2025-11-18T03:58:19.592387557Z 3:58:19 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:58:23.737967872Z 3:58:23 AM [express] GET /api/notifications 304 in 10ms
+2025-11-18T03:58:24.954936594Z 3:58:24 AM [express] GET /api/notifications/unread-count 304 in 15ms
+2025-11-18T03:58:28.991857494Z 3:58:28 AM [express] GET /api/notifications 304 in 10ms
+2025-11-18T03:58:30.318977458Z 3:58:30 AM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-18T03:58:34.248235759Z 3:58:34 AM [express] GET /api/notifications 304 in 9ms
+2025-11-18T03:58:35.706816894Z 3:58:35 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:58:39.631964484Z 3:58:39 AM [express] GET /api/notifications 304 in 11ms
+2025-11-18T03:58:41.007234303Z 3:58:41 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:58:44.929122613Z 3:58:44 AM [express] GET /api/notifications 304 in 14ms
+2025-11-18T03:58:45.72086398Z 3:58:45 AM [express] GET /api/user 304 in 9ms
+2025-11-18T03:58:46.291346449Z 3:58:46 AM [express] GET /api/notifications/unread-count 304 in 37ms
+2025-11-18T03:58:50.30555802Z 3:58:50 AM [express] GET /api/notifications 304 in 10ms
+2025-11-18T03:58:51.549891622Z 3:58:51 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:58:55.681925246Z 3:58:55 AM [express] GET /api/notifications 304 in 9ms
+2025-11-18T03:58:56.856626561Z 3:58:56 AM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-18T03:59:00.972703081Z 3:59:00 AM [express] GET /api/notifications 304 in 10ms
+2025-11-18T03:59:02.145037668Z 3:59:02 AM [express] GET /api/notifications/unread-count 304 in 11ms
+2025-11-18T03:59:06.24305041Z 3:59:06 AM [express] GET /api/notifications 304 in 10ms
+2025-11-18T03:59:07.400125399Z 3:59:07 AM [express] GET /api/notifications/unread-count 304 in 10ms
+2025-11-18T03:59:08.67129199Z ==> Detected service running on port 10000
+2025-11-18T03:59:09.05468307Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-18T03:59:11.502574842Z 3:59:11 AM [express] GET /api/notifications 304 in 13ms
+2025-11-18T03:59:12.662130322Z 3:59:12 AM [express] GET /api/notifications/unread-count 304 in 12ms
+2025-11-18T04:00:03.169826609Z 4:00:03 AM [express] GET /api/notifications 304 in 904ms
+2025-11-18T04:00:03.689159302Z 4:00:03 AM [express] GET /api/notifications/unread-count 304 in 755ms
+2025-11-18T04:00:08.427029607Z 4:00:08 AM [express] GET /api/notifications 304 in 11ms
+2025-11-18T04:00:08.94075823Z 4:00:08 AM [express] GET /api/notifications/unread-count 304 in 8ms

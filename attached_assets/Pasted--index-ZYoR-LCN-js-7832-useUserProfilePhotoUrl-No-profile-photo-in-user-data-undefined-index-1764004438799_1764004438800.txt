@@ -1,0 +1,40 @@
+
+﻿
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: 
+{id: '1b9acdff-62b8-4f01-925e-1ae551ef7e81', username: 'gnqrg6jrfnjgk_ec238b72', email: 'gnqrg6jrfnjgk@no.vsmailpro.com', emailVerified: true, verificationTokenExpiry: null, …}
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: 
+{id: '1b9acdff-62b8-4f01-925e-1ae551ef7e81', username: 'gnqrg6jrfnjgk_ec238b72', email: 'gnqrg6jrfnjgk@no.vsmailpro.com', emailVerified: true, verificationTokenExpiry: null, …}
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81 404 (Not Found)
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: 
+{id: '1b9acdff-62b8-4f01-925e-1ae551ef7e81', username: 'gnqrg6jrfnjgk_ec238b72', email: 'gnqrg6jrfnjgk@no.vsmailpro.com', emailVerified: true, verificationTokenExpiry: null, …}
+index-ZYoR_LCN.js:7921 ✅ Socket connected: guzoCyY9pqGLl4uTAAAF
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations/a946571d-0993-449a-ad0f-df5fca0dad19/messages 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations/a946571d-0993-449a-ad0f-df5fca0dad19/messages 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations/a946571d-0993-449a-ad0f-df5fca0dad19/messages 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations 404 (Not Found)
+index-ZYoR_LCN.js:7921 
+ GET https://altusfinancesgroup.com/api/chat/conversations/a946571d-0993-449a-ad0f-df5fca0dad19/messages 404 (Not Found)

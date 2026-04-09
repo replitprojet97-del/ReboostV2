@@ -1,0 +1,77 @@
+2026-01-12T08:49:30.864352122Z [AUTH SUCCESS] Session created and will be sent as cookie
+2026-01-12T08:49:30.864356412Z [AUTH SUCCESS] Cookie domain: .solventisgroup.org
+2026-01-12T08:49:30.960596936Z 8:49:30 AM [express] POST /api/auth/login 200 in 1960ms
+2026-01-12T08:49:32.969133724Z 8:49:32 AM [express] GET /api/user 200 in 282ms
+2026-01-12T08:49:33.28829053Z 8:49:33 AM [express] GET /api/loans 304 in 849ms
+2026-01-12T08:49:34.898892598Z ==> Detected service running on port 10000
+2026-01-12T08:49:35.250495004Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2026-01-12T08:49:37.726937347Z 8:49:37 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T08:49:38.111449925Z 8:49:38 AM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T08:49:38.224021714Z 8:49:38 AM [express] GET /api/dashboard 200 in 651ms
+2026-01-12T08:49:38.324521397Z 8:49:38 AM [express] GET /api/notifications 304 in 848ms
+2026-01-12T08:49:44.15933006Z 8:49:44 AM [express] GET /api/notifications/unread-count 304 in 280ms
+2026-01-12T08:49:44.282819487Z 8:49:44 AM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T08:49:44.593731339Z 8:49:44 AM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T08:49:44.824944836Z 8:49:44 AM [express] GET /api/notifications 304 in 841ms
+2026-01-12T08:49:49.796028055Z 8:49:49 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:49:49.982345672Z 8:49:49 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:49:50.46037444Z 8:49:50 AM [express] GET /api/notifications 304 in 279ms
+2026-01-12T08:49:50.569823248Z 8:49:50 AM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T08:49:55.535685902Z 8:49:55 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T08:49:55.932958027Z 8:49:55 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:49:56.609612512Z 8:49:56 AM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T08:49:56.815462908Z 8:49:56 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:50:01.908812802Z 8:50:01 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T08:50:02.002160819Z 8:50:02 AM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T08:50:02.588834632Z 8:50:02 AM [express] GET /api/notifications 304 in 284ms
+2026-01-12T08:50:02.591418834Z 8:50:02 AM [express] GET /api/dashboard 304 in 649ms
+2026-01-12T08:50:07.593789639Z 8:50:07 AM [express] GET /api/notifications/unread-count 304 in 280ms
+2026-01-12T08:50:07.703108045Z 8:50:07 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:50:08.493681232Z 8:50:08 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:50:08.864212313Z 8:50:08 AM [express] GET /api/dashboard 304 in 651ms
+2026-01-12T08:50:14.006628604Z 8:50:14 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:50:14.166518562Z 8:50:14 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:50:14.279743202Z 8:50:14 AM [express] GET /api/notifications 304 in 281ms
+2026-01-12T08:50:14.845494495Z 8:50:14 AM [express] GET /api/dashboard 304 in 651ms
+2026-01-12T08:50:19.664374199Z 8:50:19 AM [express] GET /api/notifications/unread-count 304 in 278ms
+2026-01-12T08:50:19.847923702Z 8:50:19 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:50:19.916232902Z 8:50:19 AM [express] GET /api/notifications 304 in 279ms
+2026-01-12T08:50:20.954874419Z 8:50:20 AM [express] GET /api/dashboard 304 in 651ms
+2026-01-12T08:50:25.393575415Z 8:50:25 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:50:25.515605408Z 8:50:25 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:50:25.63078339Z 8:50:25 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:50:26.938610441Z 8:50:26 AM [express] GET /api/dashboard 304 in 655ms
+2026-01-12T08:50:32.173335722Z 8:50:32 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:50:32.940901654Z 8:50:32 AM [express] GET /api/dashboard 200 in 656ms
+2026-01-12T08:50:38.191553964Z 8:50:38 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:50:39.476381132Z 8:50:39 AM [express] GET /api/dashboard 304 in 663ms
+2026-01-12T08:50:44.179156139Z 8:50:44 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:50:47.793702592Z 8:50:47 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:50:50.206040231Z 8:50:50 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:50:54.460046725Z 8:50:54 AM [express] GET /api/dashboard 304 in 655ms
+2026-01-12T08:50:57.176319213Z 8:50:57 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:51:01.039027948Z 8:51:01 AM [express] GET /api/notifications/unread-count 304 in 288ms
+2026-01-12T08:51:01.173147028Z 8:51:01 AM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T08:51:01.801340195Z 8:51:01 AM [express] GET /api/notifications 304 in 886ms
+2026-01-12T08:51:02.859823215Z 8:51:02 AM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T08:51:03.016681384Z 8:51:03 AM [express] GET /api/csrf-token 200 in 95ms
+2026-01-12T08:51:07.087792696Z 8:51:07 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:51:07.438649517Z 8:51:07 AM [express] GET /api/dashboard 304 in 651ms
+2026-01-12T08:51:07.66221098Z 8:51:07 AM [express] GET /api/notifications 304 in 280ms
+2026-01-12T08:51:09.75832058Z 8:51:09 AM [express] GET /api/user/stats 304 in 373ms
+2026-01-12T08:51:14.474925329Z 8:51:14 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T08:51:15.187448147Z 8:51:15 AM [express] GET /api/dashboard 304 in 650ms
+2026-01-12T08:51:15.403387146Z 8:51:15 AM [express] GET /api/notifications 304 in 279ms
+2026-01-12T08:51:16.84553405Z 8:51:16 AM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T08:51:19.130192844Z [Notification] Triggering loanRequestAdminNotification for loan 03a6eb50-1a63-422f-a747-86e33e25850e
+2026-01-12T08:51:19.130653531Z [Email] Preparing loan request admin email. To: ${adminEmail}, From: ${fromEmail}, User: ${email}
+2026-01-12T08:51:19.132753125Z [Email] Number of documents to attach: 0
+2026-01-12T08:51:19.406978981Z [Email] SendPulse response: { result: true, id: 't8qtxj-1iyj68-8w' }
+2026-01-12T08:51:19.407017902Z [Email] Loan request admin email sent to admin@solventisgroup.org with 0 attachments, status: true
+2026-01-12T08:51:19.407055662Z [LoanRequest] Admin notification sent with 0 attachments extracted from user KYC
+2026-01-12T08:51:19.69001068Z 8:51:19 AM [express] POST /api/loans 201 in 1789ms
+2026-01-12T08:51:20.068846196Z 8:51:20 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:51:20.341406515Z 8:51:20 AM [express] GET /api/loans 200 in 282ms
+2026-01-12T08:51:20.716914236Z 8:51:20 AM [express] GET /api/dashboard 200 in 655ms
+2026-01-12T08:51:20.98300179Z 8:51:20 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:51:22.539324168Z 8:51:22 AM [express] GET /api/user/stats 304 in 376ms

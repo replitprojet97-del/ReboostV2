@@ -1,0 +1,131 @@
+You are redesigning and restructuring a SPECIFIC PART of a production website.
+
+IMPORTANT:
+- DO NOT touch the Hero section.
+- The Hero section is correct and must remain unchanged.
+- The task starts IMMEDIATELY AFTER the Hero section
+  and ends at the "Learn More" button.
+
+Website context:
+- Financial LOAN platform
+- Target: Individuals & Professionals
+- Brand tone: Trust, expertise, seriousness, premium finance
+- This is NOT a startup showcase or tech product
+
+────────────────────────────────────
+1) CURRENT PROBLEMS TO FIX
+────────────────────────────────────
+
+The section after the Hero currently:
+- Feels generic and template-like
+- Uses card layouts that are too playful and pastel
+- Lacks strong financial credibility
+- Has weak visual hierarchy
+- Does not guide the user clearly
+
+This MUST be fixed.
+
+────────────────────────────────────
+2) REQUIRED RESTRUCTURING
+────────────────────────────────────
+
+Rebuild the section into a CLEAR FINANCIAL NARRATIVE:
+
+A) EXPERTISE & POSITIONING
+- Introduce credibility first
+- Clearly explain what the company does
+- Reinforce trust and experience
+
+B) AREAS OF FINANCING (REORGANIZED)
+- Rework the "Our areas of expertise" section
+- Cards can be redesigned and repositioned
+- Layout must feel structured and professional
+- Clear separation between:
+  - Business financing
+  - Personal financing
+  - Debt consolidation
+  - Specialized / innovative solutions
+
+C) PROOF & CONFIDENCE
+- Present key figures (clients, amounts, satisfaction, countries)
+- Improve spacing and alignment
+- Make this section feel like institutional credibility, not marketing fluff
+
+────────────────────────────────────
+3) CARDS & LAYOUT RULES (VERY IMPORTANT)
+────────────────────────────────────
+
+Cards:
+- May be redesigned completely
+- Must look more BANKING / FINANCIAL
+- Avoid soft pastel-only backgrounds
+- Avoid playful rounded styles
+- Use:
+  - Subtle borders
+  - Neutral backgrounds
+  - Clear typography
+  - Strong titles
+
+Layout:
+- Use grids intentionally
+- Improve vertical rhythm
+- Avoid stacking everything the same way
+
+────────────────────────────────────
+4) COLORS & VISUAL IDENTITY
+────────────────────────────────────
+
+Rework colors for this entire section only:
+- More credible
+- More neutral
+- More premium
+
+Rules:
+- No flashy gradients
+- No “startup SaaS” look
+- Colors must work for a loan / finance website
+- Ensure accessibility and contrast
+
+────────────────────────────────────
+5) CONTENT ENRICHMENT (OPTIONAL BUT WELCOME)
+────────────────────────────────────
+
+You MAY:
+- Improve copy clarity
+- Add meaningful icons
+- Improve section titles
+- Add short explanatory text where relevant
+
+You MUST NOT:
+- Add fake testimonials
+- Modify the testimonials carousel appearance or content
+- Add unrealistic or invented numbers
+
+────────────────────────────────────
+6) UX GOAL
+────────────────────────────────────
+
+After the Hero, the user should immediately understand:
+- What the company finances
+- Who it is for (individuals & professionals)
+- Why it is trustworthy
+- Why they should continue (Learn More)
+
+The transition from Hero → Content → Learn More must feel smooth and logical.
+
+────────────────────────────────────
+FINAL EXPECTATION
+────────────────────────────────────
+
+The rebuilt section must be:
+- Clean
+- Professional
+- Financially credible
+- Better structured than before
+- Clearly superior to the current layout
+
+Do NOT overdesign.
+Do NOT introduce experimental UI.
+Do NOT touch the Hero section.
+
+Output only production-ready code and styles.

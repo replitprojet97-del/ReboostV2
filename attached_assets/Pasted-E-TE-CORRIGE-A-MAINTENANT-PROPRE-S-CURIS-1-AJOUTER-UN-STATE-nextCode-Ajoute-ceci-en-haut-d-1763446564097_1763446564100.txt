@@ -1,0 +1,102 @@
+E TE CORRIGE ÇA MAINTENANT (PROPRE + SÉCURISÉ)
+✅ 1) AJOUTER UN STATE nextCode
+
+Ajoute ceci en haut du composant (avec les autres useState):
+
+const [nextCode, setNextCode] = useState<TransferValidationCode | null>(null);
+
+✅ 2) DANS LE useEffect, REMPLACER :
+
+Tu as ceci :
+
+const nextCode = sortedCodes[validatedCount];
+
+
+➡️ Il faut le remplacer par :
+
+const computedNextCode = sortedCodes[validatedCount] || null;
+setNextCode(computedNextCode);
+
+❗ CODE COMPLET CORRIGÉ POUR CE BLOC
+
+Voici la version propre :
+
+useEffect(() => {
+  if (step === 'progress' && transferData?.transfer && transferData?.codes) {
+    const transfer = transferData.transfer;
+    const codes = transferData.codes as TransferValidationCode[];
+
+    if (transfer.status === 'completed') {
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+        progressIntervalRef.current = null;
+      }
+      setSimulatedProgress(100);
+      setStep('complete');
+      return;
+    }
+
+    const sortedCodes = [...codes].sort((a, b) => a.sequence - b.sequence);
+    const validatedCount = transfer.codesValidated || 0;
+
+    const computedNextCode = sortedCodes[validatedCount] || null;
+    setNextCode(computedNextCode);
+
+    if (!computedNextCode) {
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+        progressIntervalRef.current = null;
+      }
+      setSimulatedProgress(100);
+      return;
+    }
+
+    const targetPercent = computedNextCode.pausePercent || 90;
+    const justValidated = lastValidatedSequence === computedNextCode.sequence;
+
+    if (simulatedProgress < targetPercent && !isPausedForCode) {
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+      }
+
+      progressIntervalRef.current = setInterval(() => {
+        setSimulatedProgress(prev => {
+          const increment = 0.5;
+          const next = prev + increment;
+
+          if (next >= targetPercent) {
+            if (progressIntervalRef.current) {
+              clearInterval(progressIntervalRef.current);
+              progressIntervalRef.current = null;
+            }
+            setIsPausedForCode(true);
+            return targetPercent;
+          }
+
+          return next;
+        });
+      }, 200);
+    } 
+    else if (simulatedProgress >= targetPercent && !isPausedForCode && !justValidated) {
+      setIsPausedForCode(true);
+    }
+  }
+
+  return () => {
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+      progressIntervalRef.current = null;
+    }
+  };
+}, [step, transferData, simulatedProgress, isPausedForCode, lastValidatedSequence]);
+
+⭐ RÉSULTAT APRÈS MA CORRECTION
+🔥 Le front remet enfin nextCode dans React → OK
+🔥 La condition {isPausedForCode && nextCode && devient vraie → OK
+🔥 Le formulaire apparaît au moment du pausePercent → OK
+🔥 L’utilisateur saisit le code → OK
+🔥 POST /validate-code est déclenché → OK
+🔥 Le backend valide → OK
+🔥 Le transfert reprend → OK
+
+🎉 TON SYSTÈME DE PAUSE AUTOMATIQUE ET DE CODES FONCTIONNERA ENFIN COMME PRÉVU.

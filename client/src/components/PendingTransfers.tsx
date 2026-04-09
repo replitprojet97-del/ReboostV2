@@ -1,0 +1,115 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { useTranslations } from '@/lib/i18n';
+import { CheckCircle2, Clock, Send, Shield, Banknote } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
+
+interface Transfer {
+  id: string;
+  amount: number;
+  recipient: string;
+  status: 'pending' | 'in-progress' | 'approved' | 'rejected' | 'completed' | 'suspended';
+  currentStep: number;
+  updatedAt: string;
+}
+
+interface PendingTransfersProps {
+  transfers: Transfer[];
+}
+
+export default function PendingTransfers({ transfers }: PendingTransfersProps) {
+  const t = useTranslations();
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('fr-FR', {
+      style: 'currency',
+      currency: 'EUR',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(amount);
+  };
+
+  const getStatusInfo = (status: Transfer['status']) => {
+    switch (status) {
+      case 'completed':
+      case 'approved':
+        return { label: 'Transfert Terminé', variant: 'default' as const, icon: CheckCircle2 };
+      case 'in-progress':
+        return { label: 'Transfert en cours', variant: 'secondary' as const, icon: Shield };
+      case 'suspended':
+      case 'rejected':
+        return { label: t.transfer.suspended, variant: 'destructive' as const, icon: Clock };
+      default:
+        return { label: 'Transfert en cours', variant: 'secondary' as const, icon: Shield };
+    }
+  };
+
+  const getProgressPercentage = (transfer: Transfer) => {
+    if (transfer.status === 'completed' || transfer.status === 'approved') return 100;
+    if (transfer.status === 'in-progress') return 90;
+    if (transfer.status === 'suspended' || transfer.status === 'rejected') return 0;
+    return Math.min(transfer.currentStep * 30, 70);
+  };
+
+  const getStepLabel = (transfer: Transfer) => {
+    if (transfer.status === 'completed' || transfer.status === 'approved') return t.transfer.processingComplete;
+    if (transfer.status === 'in-progress') return t.transfer.processing;
+    if (transfer.status === 'suspended' || transfer.status === 'rejected') return t.transfer.suspended;
+    return `${t.transfer.validation} ${transfer.currentStep}`;
+  };
+
+  return (
+    <Card className="dashboard-card border-0">
+      <CardHeader className="pb-3">
+        <div className="inline-block bg-primary/10 px-3 py-1.5 rounded-full">
+          <CardTitle className="text-sm font-semibold text-primary">{t.dashboard.pendingTransfers}</CardTitle>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        {transfers.length === 0 ? (
+          <p className="text-sm text-muted-foreground py-4">{t.dashboard.noTransfers}</p>
+        ) : (
+          transfers
+            .filter(t => t.status === 'in-progress' || t.status === 'completed' || t.status === 'approved')
+            .slice(0, 2)
+            .map((transfer) => {
+            const statusInfo = getStatusInfo(transfer.status);
+            const StatusIcon = statusInfo.icon;
+            const progress = getProgressPercentage(transfer);
+            return (
+              <div
+                key={transfer.id}
+                className="p-2 rounded-md border space-y-1"
+                data-testid={`transfer-${transfer.id}`}
+              >
+                <div className="flex justify-between items-start">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">{formatCurrency(transfer.amount)}</p>
+                    <p className="text-xs text-muted-foreground">{transfer.recipient}</p>
+                  </div>
+                  <Badge variant={statusInfo.variant} className="text-xs flex items-center gap-1">
+                    <StatusIcon className="h-3 w-3" />
+                    {statusInfo.label}
+                  </Badge>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-muted-foreground">{getStepLabel(transfer)}</span>
+                    <span className="font-mono">{progress}%</span>
+                  </div>
+                  <Progress value={progress} className="h-1" />
+                </div>
+                <p className="text-xs text-muted-foreground">{transfer.updatedAt}</p>
+              </div>
+            );
+          })
+        )}
+        {transfers.filter(t => t.status === 'in-progress' || t.status === 'completed' || t.status === 'approved').length > 2 && (
+          <p className="text-xs text-muted-foreground pt-2">
+            +{transfers.filter(t => t.status === 'in-progress' || t.status === 'completed' || t.status === 'approved').length - 2} {t.dashboard.moreTransfers}
+          </p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}

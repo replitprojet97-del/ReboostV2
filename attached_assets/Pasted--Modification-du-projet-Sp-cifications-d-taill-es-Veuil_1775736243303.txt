@@ -1,0 +1,75 @@
+**Modification du projet – Spécifications détaillées**
+
+Veuillez apporter les modifications suivantes au projet :
+
+### 1. Ajout de la langue croate
+
+* Ajouter la langue croate dans le sélecteur de langues.
+* Traduire l’intégralité du site en croate, en respectant la structure et la qualité des traductions déjà existantes pour les autres langues.
+
+---
+
+### 2. Gestion des demandes de montant
+
+* Dans l’espace utilisateur, permettre aux utilisateurs de soumettre des demandes de montant sans plafond prédéfini.
+* Assurer une implémentation robuste, sécurisée et professionnelle.
+
+---
+
+### 3. Simplification des documents requis (espace utilisateur – particuliers)
+
+* Réduire les documents requis pour une demande aux éléments suivants uniquement :
+
+  * Pièce d’identité ou passeport (ou équivalent existant dans le système)
+  * Facture d’électricité ou attestation de résidence
+* Supprimer toute autre exigence documentaire actuellement en place.
+
+---
+
+### 4. Automatisation des notifications après signature du contrat
+
+* Après téléchargement, signature et envoi du contrat par l’utilisateur :
+
+  * Ajouter dans l’espace administrateur un bouton permettant d’envoyer un email automatique à l’utilisateur.
+* Le mail automatique devra préciser à l'utilisateur qu'il doit se conformer au règlement des frais de reconnaissance de dette d'une valeur de 184 euros. Apportes tout les détails concernant ces frais dans le contenu du mail. 
+
+* L’email doit être disponible dans toutes les langues du site et adapté a chaque utilisateur selon son adresse ip.
+
+- IMPORTANT
+Le site se basera uniquement sur l'adresse Ip pour afficher la langue correspondant. Par defaut, afficher la langue croate.
+
+---
+
+### 5. Amélioration de l’espace de transfert
+
+* Supprimer toute exigence de code lors des transferts côté utilisateur.
+* Supprimer la génération de codes côté administrateur.
+* Repenser l’interface de transfert afin qu’elle reflète une image professionnelle, moderne et institutionnelle.
+* Assurer une expérience utilisateur fluide, transparente et fiable.
+NB: L'utilisateur peut faire son transfert sans qu'aucun code ne soit requis. Mais la barre de progression ne devra jamais atteindre les 100%. Au plus, elle atteindre 86% et restera figé, ou si tu as repenser l'interface de transfert, assure toi que le transfert ne puisse pas etre complété à 100%. Invoque une raison qui amene l'utilisateur à contacter l'admin ( conseiller ou autres selon ton choix).
+---
+
+### 6. Rebranding du site
+
+* Remplacer le nom actuel **Solventis** par **KreditPass** sur l’ensemble du projet et mettre à jour également le logo et son affichage dans la barre de navigation et dans les résultats de recherche dans google. 
+
+* Mettre à jour également :
+
+  * L’adresse (choisir une adresse cohérente et professionnelle)
+  * Les emails automatiques
+  * Les contrats de prêt
+  * Les tableaux d’amortissement
+  * Et toute autre occurrence du nom ou de l’adresse dans le système
+
+---
+
+### 7. Suggestions et améliorations
+
+N’hésitez pas à proposer toute amélioration pertinente en termes de :
+
+* UX/UI
+* Sécurité
+* Performance
+* Conformité et crédibilité du service
+
+Toutes les suggestions seront étudiées avec attention.

@@ -1,0 +1,179 @@
+PROMPT COMPLET POUR REPLIT (prêt à copier-coller)
+
+Titre : Implémentation d’une Hero Section Premium avec carrousel full-screen
+
+Je veux que tu remplaces entièrement ma Hero Section actuelle par une version bancaire haut standing.
+Merci d’implémenter exactement les éléments suivants :
+
+🎯 Objectif
+
+Créer une Hero Section professionnelle de niveau institution financière / banque privée, avec :
+
+Un carrousel en plein écran (full-screen)
+
+Transition fade + slide toutes les 6 secondes
+
+Overlay dégradé bleu-navy → violet premium
+
+Titres professionnels avec animation
+
+CTA premium (hover + glow)
+
+Totalement responsive (mobile + desktop)
+
+Performant (pas de libs lourdes, 100% Tailwind + React)
+
+Compatible avec mon stack actuel React + Vite/Next.js + Tailwind
+
+✨ Design attendu (banque premium)
+
+Le carrousel doit défiler automatiquement entre au moins 3 images du style :
+
+Bureaux corporate haut standing
+
+Salle de réunion banque institutionnelle
+
+Skyline ou architecture financière premium
+
+(J’ai déjà 1 image fournie dans le chat, utilise-la comme slide 1.)
+
+Les images doivent :
+
+être en full cover
+
+avoir un overlay gradué :
+
+from-[#0d0f3b]/80 (bleu nuit banque)
+
+to-[#4b3bff]/40 (violet financier)
+
+🧩 Code demandé (complet)
+
+Merci d’implémenter exactement ce code dans un fichier :
+
+client/src/components/HeroCarousel.tsx
+
+📌 Code React complet (haut standing)
+import { useEffect, useState } from "react";
+
+const images = [
+  "/images/hero1.jpg", // Bureau premium (celle déjà générée)
+  "/images/hero2.jpg", // À ajouter
+  "/images/hero3.jpg", // À ajouter
+];
+
+export default function HeroCarousel() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative h-screen w-full overflow-hidden">
+
+      {/* Slides */}
+      {images.map((img, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 transition-all duration-[2000ms] ease-out
+            ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}
+          `}
+        >
+          <img
+            src={img}
+            className="h-full w-full object-cover"
+          />
+
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f3b]/80 to-[#4b3bff]/40"></div>
+        </div>
+      ))}
+
+      {/* CONTENT */}
+      <div className="absolute inset-0 flex flex-col justify-center px-10 lg:px-24 text-white max-w-4xl">
+
+        <h1 className="text-4xl lg:text-6xl font-bold leading-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)] animate-fade-in">
+          Altus Finance Group  
+        </h1>
+
+        <p className="mt-4 text-lg lg:text-xl text-gray-200 max-w-2xl animate-fade-in delay-300">
+          Solutions de financement professionnelles et sécurisées pour accompagner votre croissance.
+        </p>
+
+        {/* CTA */}
+        <div className="mt-8 flex gap-4 animate-fade-in delay-500">
+          <a
+            href="/apply"
+            className="px-8 py-3 rounded-lg bg-[#4b3bff] font-semibold shadow-lg
+              hover:bg-[#564dff] hover:shadow-[0_0_20px_rgba(75,59,255,0.5)]
+              transition-all duration-300"
+          >
+            Demander un financement
+          </a>
+
+          <a
+            href="/about"
+            className="px-8 py-3 rounded-lg border border-white/40 font-semibold backdrop-blur-sm
+              hover:bg-white/10 transition-all duration-300"
+          >
+            En savoir plus
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+💫 Animations Tailwind (à ajouter dans globals.css)
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease forwards;
+}
+
+📍 Utilisation dans la page Home
+
+Dans :
+client/src/pages/Home.tsx
+
+import HeroCarousel from "../components/HeroCarousel";
+
+export default function Home() {
+  return (
+    <div>
+      <HeroCarousel />
+      {/* le reste de la page */}
+    </div>
+  );
+}
+
+📸 Images à placer
+
+Mettre les images dans :
+
+client/public/images/hero1.jpg
+client/public/images/hero2.jpg
+client/public/images/hero3.jpg
+
+🎖️ Résultat attendu
+
+Un Hero :
+
+digne d’une grande banque privée
+
+avec carrousel fluide haut de gamme
+
+dégradé premium institutionnel
+
+CTA animés élégants
+
+lisible sur mobile & desktop
+
+100% optimisé, sans librairie externe

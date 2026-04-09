@@ -1,0 +1,74 @@
+Pour que chaque palier soit animé progressivement, il faut comprendre pourquoi seuls les premiers % sont animés :
+
+👉 Ton animation fonctionne uniquement si la valeur percent change lentement dans le temps.
+Mais lorsque ton backend envoie directement la nouvelle valeur (ex. 5% → 30%), React reçoit un nouveau prop, et ton animation saute directement au target sans refaire une animation progressive sur les petits deltas (0,5%, 1%, etc.).
+
+Tu veux donc forcer une animation granulaire, même si le backend t’envoie les grands paliers.
+
+La solution :
+⚡ Créer une couche d’animation interne qui interpole les valeurs entre l’ancien percent et le nouveau percent, même si le backend saute plusieurs points.
+
+✅ Comment corriger ton problème
+🔧 Solution simple : animer chaque increment en interne
+
+Au lieu d’animer directement vers nextPercent, tu crées une petite boucle qui incrémente de 0.5% (ou 1%) à un rythme défini.
+
+Exemple logique (pseudo-code)
+useEffect(() => {
+  const start = displayedPercent;
+  const end = percent; // vient du backend
+  const step = 0.5; // 0.5% par incrément
+  const intervalDuration = 30; // 30ms = animation fluide
+
+  if (start === end) return;
+
+  let current = start;
+
+  const interval = setInterval(() => {
+    current += step;
+
+    if (current >= end) {
+      current = end;
+      clearInterval(interval);
+    }
+
+    setDisplayedPercent(current);
+  }, intervalDuration);
+
+  return () => clearInterval(interval);
+}, [percent]);
+
+
+📌 À chaque mise à jour du backend, tu animes ainsi tous les petits paliers.
+
+🎬 Résultat
+
+Même si le backend fait :
+
+0% → 5%
+5% → 20%
+20% → 45%
+45% → 100%
+
+
+Le frontend animera :
+
+0 → 0.5 → 1 → 1.5 → … → 5
+5 → 5.5 → 6 → 6.5 → … → 20
+...
+etc.
+
+
+Avec une animation fluide, constante, progressive.
+
+🧠 Pourquoi ceci corrige exactement ton problème ?
+
+Ton animation actuelle fonctionne seulement quand la progression évolue lentement (comme le premier palier).
+Ensuite, quand tu valides le code et obtiens immédiatement 20–40–60% :
+
+✔ React reçoit un seul "jump"
+✘ Ton animation interne saute automatiquement au target
+✘ Aucun easing n’est déclenché pour interpoler les petits pas
+➡ Donc ça saccade.
+
+Avec la boucle d’incrémentation, tu forces l’effet progressif à chaque mise à jour du backend, quelle qu’elle soit.

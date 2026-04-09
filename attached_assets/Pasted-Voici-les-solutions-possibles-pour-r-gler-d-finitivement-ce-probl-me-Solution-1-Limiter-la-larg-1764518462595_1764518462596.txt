@@ -1,0 +1,113 @@
+Voici les solutions possibles pour régler définitivement ce problème :
+
+Solution 1 : Limiter la largeur des messages avec max-width et gérer les retours à la ligne
+
+Il semble que le problème vient du fait que les messages longs s’étendent trop en largeur, surtout lorsque le texte dépasse une certaine longueur. Nous allons limiter la largeur des messages et forcer un retour à la ligne automatique.
+
+CSS mis à jour :
+
+Assurons-nous que les messages ne s'étendent pas trop en largeur et forçons un retour propre des lignes.
+
+/* Conteneur principal du chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;  /* Affichage des messages les uns sous les autres */
+  padding: 10px;
+  overflow-y: auto;  /* Permet de faire défiler les messages */
+  max-height: 80vh;  /* Limite la hauteur du chat */
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour chaque message */
+.chat-message {
+  max-width: 80%;  /* Limite la largeur à 80% de l'écran pour éviter le débordement */
+  margin-bottom: 15px;  /* Espace entre chaque message */
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  word-wrap: break-word;  /* Permet de couper les mots longs à la fin de la ligne */
+  white-space: pre-wrap;  /* Respecte les retours à la ligne dans les messages */
+  background-color: #f0f0f0;
+  overflow-wrap: break-word;
+}
+
+/* Message de l'utilisateur */
+.chat-message.user {
+  background-color: #d1e7dd;
+  align-self: flex-end;  /* Aligner les messages de l'utilisateur à droite */
+  text-align: right;
+  border-radius: 15px 15px 0 15px; /* Forme arrondie à droite */
+}
+
+/* Message de l'admin */
+.chat-message.admin {
+  background-color: #fff3e0;
+  align-self: flex-start;  /* Aligner les messages de l'admin à gauche */
+  text-align: left;
+  border-radius: 15px 15px 15px 0; /* Forme arrondie à gauche */
+}
+
+Explication des ajustements :
+
+max-width: 80% : Cette propriété garantit que les messages ne s'étendent pas trop et restent dans une zone définie. Cela empêche les messages trop longs de déborder et de causer des chevauchements.
+
+word-wrap: break-word; et white-space: pre-wrap; : Ces deux propriétés assurent que les messages longs se coupent proprement et respectent les retours à la ligne.
+
+overflow-wrap: break-word; : Ajouté pour une meilleure gestion des mots longs, afin d’éviter les débordements horizontaux.
+
+Solution 2 : Utiliser un textarea ou une boîte de saisie adaptée pour les longs messages
+
+Si tu veux toujours accepter de longs messages, une autre option serait d’utiliser un textarea avec un retour à la ligne automatique, mais on limite aussi la longueur du message dans la zone de saisie (front-end).
+
+Exemple d’input modifié pour autoriser les retours à la ligne :
+
+<!-- Zone de saisie avec un textarea -->
+<textarea id="messageInput" maxlength="300" placeholder="Tapez votre message..." rows="3" cols="50"></textarea>
+
+Côté JavaScript, tu peux rajouter une vérification supplémentaire pour forcer le respect du maxlength et prévenir tout débordement :
+// Fonction pour envoyer un message
+function sendMessage() {
+  const messageInput = document.getElementById('messageInput');
+  const message = messageInput.value;
+
+  if (message.length > 300) {
+    alert("Le message ne peut pas dépasser 300 caractères.");
+    return;
+  }
+
+  const sender = 'user';  // 'user' ou 'admin', selon l'expéditeur
+  socket.emit('sendMessage', { sender, message });  // Envoi du message
+  messageInput.value = '';  // Efface le champ de saisie
+}
+
+3. Vérification côté serveur avec Socket.io
+
+Assurons-nous que le backend (Node.js + Socket.io) ne laisse pas passer de messages trop longs, afin d'éviter toute tentative de spam avec de très longs messages.
+
+Exemple côté serveur (Node.js) :
+io.on('connection', (socket) => {
+  console.log('Un utilisateur est connecté.');
+
+  socket.on('sendMessage', (data) => {
+    if (data.message.length > 300) {
+      console.log("Message trop long, rejeté.");
+      return;  // Refuser les messages trop longs
+    }
+    io.emit('newMessage', data);  // Envoi à tous les clients
+  });
+});
+
+
+Cela permet de limiter la longueur des messages même si un utilisateur essaie de contourner la validation côté frontend.
+
+Résumé des solutions proposées :
+
+Limitation de la largeur et gestion des retours à la ligne avec CSS pour éviter les chevauchements.
+
+Limitation de la longueur des messages via un textarea dans le HTML et validation via JavaScript.
+
+Validation côté serveur pour éviter les messages trop longs.
+
+Ces solutions devraient permettre de régler définitivement ton problème de chevauchement des messages, en assurant une interface propre et fonctionnelle, même avec des messages longs.

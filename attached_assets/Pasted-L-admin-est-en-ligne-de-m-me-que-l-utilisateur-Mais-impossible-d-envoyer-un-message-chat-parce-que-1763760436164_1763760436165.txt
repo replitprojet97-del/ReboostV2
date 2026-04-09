@@ -1,0 +1,31 @@
+L'admin est en ligne de même que l'utilisateur. Mais impossible d'envoyer un message chat, parce que soit disant le client n'est pas en ligne. Contact l'architecte pour avoir un plan d'action precis et infaillible. J'ai connecté la database dans le secret replit
+
+
+Le site est déjà en production front-end deployé sur vercel: altusfinancesgroup.com et backend sur render: api.altusfinancesgroup.com. Replit n'est que mon environnement de developpement. 
+
+Suite à des précédents push, mon deploiement sur render n'a pas fonctionné. Voici les logS. Corrige le probleme:
+
+
+2025-11-21T21:24:15.647101959Z ==> Cloning from https://github.com/gitunivers-web/Lepari1
+2025-11-21T21:24:19.193273624Z ==> Checking out commit ad29f0412f09a8293bad7fdd18bb7b9f14a589ca in branch main
+2025-11-21T21:24:20.692272382Z ==> Using Node.js version 22.16.0 (default)
+2025-11-21T21:24:20.716445177Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2025-11-21T21:24:22.678635484Z ==> Running build command 'npm install && npm run build'...
+2025-11-21T21:24:40.299435085Z 
+2025-11-21T21:24:40.299483716Z added 622 packages, and audited 623 packages in 18s
+2025-11-21T21:24:40.299505286Z 
+2025-11-21T21:24:40.299511596Z 84 packages are looking for funding
+2025-11-21T21:24:40.299516967Z   run `npm fund` for details
+2025-11-21T21:24:40.300487667Z 
+2025-11-21T21:24:40.300502368Z found 0 vulnerabilities
+2025-11-21T21:24:40.47707543Z 
+2025-11-21T21:24:40.47709874Z > rest-express@1.0.0 build
+2025-11-21T21:24:40.4771038Z > npm run build:frontend && npm run build:backend
+2025-11-21T21:24:40.47710732Z 
+2025-11-21T21:24:40.574448134Z 
+2025-11-21T21:24:40.574470935Z > rest-express@1.0.0 build:frontend
+2025-11-21T21:24:40.574476065Z > vite build
+2025-11-21T21:24:40.574479655Z 
+2025-11-21T21:24:40.578796737Z sh: 1: vite: not found
+2025-11-21T21:24:40.626195077Z ==> Build failed 😞
+2025-11-21T21:24:40.626212857Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys

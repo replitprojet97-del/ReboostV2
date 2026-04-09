@@ -1,0 +1,137 @@
+CONTEXTE IMPORTANT — À LIRE AVANT D’AGIR
+
+Le système est FONCTIONNEL et STABLE.
+
+La soumission de demande de prêt fonctionne
+
+Les documents sont envoyés
+
+Les emails sont bien envoyés
+
+Le bouton de soumission est désormais protégé contre le double clic
+
+Le modal se ferme correctement après succès
+
+Les notifications sont correctes
+
+👉 NE RIEN CASSER
+👉 NE RIEN OPTIMISER
+👉 NE RIEN REFACTORISER
+
+========================
+PARTIE 1 — CONFIRMATION (NE PAS TOUCHER)
+========================
+
+Le correctif UX suivant est DÉJÀ APPLIQUÉ ET VALIDÉ :
+
+état isSubmitting
+
+blocage du double clic
+
+bouton désactivé pendant la requête
+
+reset dans finally
+
+👉 INTERDICTION ABSOLUE de modifier à nouveau LoanRequestModal.tsx
+👉 Ce fichier est gelé.
+
+Tu dois simplement confirmer :
+
+“Aucune modification supplémentaire n’a été faite sur LoanRequestModal.tsx”
+
+========================
+PARTIE 2 — PROBLÈME À CORRIGER
+========================
+❌ PROBLÈME ACTUEL
+
+Les emails automatiques (ex: inscription utilisateur) arrivent en TEXTE BRUT,
+alors qu’ils utilisaient auparavant des templates HTML complets.
+
+➡️ Le design est perdu
+➡️ Le contenu HTML n’est plus interprété
+
+========================
+OBJECTIF STRICT
+========================
+
+Identifier POURQUOI les emails sont envoyés en texte brut
+
+Vérifier si le problème concerne :
+
+uniquement l’inscription
+
+ou plusieurs emails automatiques
+
+Corriger UNIQUEMENT la cause racine
+
+========================
+RÈGLES ABSOLUES
+========================
+
+❌ NE PAS :
+
+changer de provider email
+
+modifier la logique métier
+
+modifier les triggers d’envoi
+
+toucher au frontend
+
+toucher à apiRequest
+
+toucher au système d’auth
+
+toucher au système CSRF
+
+✅ AUTORISÉ :
+
+ajuster la configuration d’envoi email
+
+corriger html / text / content-type
+
+corriger l’appel Resend / SendPulse
+
+restaurer l’utilisation des templates existants
+
+========================
+POINTS TECHNIQUES À VÉRIFIER OBLIGATOIREMENT
+========================
+
+Tu dois vérifier et confirmer explicitement :
+
+si html: est bien envoyé (et non text: uniquement)
+
+si un templateId ou emailTemplate a été supprimé ou contourné
+
+si le Content-Type est bien text/html
+
+si Resend reçoit bien du HTML
+
+si un fallback texte brut est utilisé par erreur
+
+========================
+LIVRABLE OBLIGATOIRE
+========================
+
+Tu DOIS fournir :
+
+La liste exacte des fichiers backend modifiés
+
+Le DIFF AVANT / APRÈS pour chaque fichier
+
+Une confirmation claire pour chaque point :
+
+“Les emails sont à nouveau envoyés en HTML”
+
+“Le design des templates est restauré”
+
+“Aucune modification n’a été faite sur LoanRequestModal.tsx”
+
+“Un seul déploiement est nécessaire”
+
+⛔ TOUTE MODIFICATION NON DEMANDÉE = ERREUR
+
+Si une information manque :
+👉 TU DEMANDES
+👉 TU N’IMPROVISES PAS

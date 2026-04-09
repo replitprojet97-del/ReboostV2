@@ -1,0 +1,136 @@
+Prompt complet : Téléchargement sécurisé de contrat (avec lien régénérable à la demande)
+🎯 Objectif
+
+Mettre en place un système sécurisé permettant à un utilisateur connecté de télécharger son contrat PDF depuis son espace personnel, même plusieurs heures ou jours après sa génération.
+Le fichier reste chiffré sur le serveur, et un lien temporaire (5 minutes) est généré à chaque demande.
+
+⚙️ Technos
+
+Node.js + Express
+
+jsonwebtoken (JWT)
+
+fs + path
+
+Middleware d’authentification
+
+Compatible Render / Replit / Vercel Serverless
+
+💻 Code complet
+import express from "express";
+import jwt from "jsonwebtoken";
+import fs from "fs";
+import path from "path";
+import dotenv from "dotenv";
+import { authMiddleware } from "./middlewares/auth.js"; // 🔐 Middleware d’authentification
+
+dotenv.config();
+const app = express();
+
+const DOWNLOAD_SECRET = process.env.DOWNLOAD_SECRET || "super_secret_download_key";
+const CONTRACTS_DIR = path.join(process.cwd(), "uploads", "contracts");
+
+// ✅ Endpoint 1 : Génère un lien temporaire à la demande
+app.get("/api/contracts/:loanId/link", authMiddleware, async (req, res) => {
+  try {
+    const { loanId } = req.params;
+
+    // Exemple : récupération du contrat depuis ta BDD
+    const contract = await db.contracts.findUnique({ where: { loanId } });
+    if (!contract) return res.status(404).json({ error: "Contrat introuvable" });
+
+    // Vérifie que le contrat appartient bien à l’utilisateur connecté
+    if (contract.userId !== req.user.id && !req.user.isAdmin) {
+      return res.status(403).json({ error: "Accès non autorisé" });
+    }
+
+    // Génère un lien signé temporaire (valide 5 min)
+    const token = jwt.sign(
+      { filePath: contract.filePath, userId: req.user.id },
+      DOWNLOAD_SECRET,
+      { expiresIn: "5m" }
+    );
+
+    const signedUrl = `${process.env.BASE_URL}/api/contracts/signed/${token}`;
+    res.json({ signedUrl });
+  } catch (err) {
+    console.error("Erreur génération lien:", err);
+    res.status(500).json({ error: "Erreur interne du serveur" });
+  }
+});
+
+// ✅ Endpoint 2 : Sert le contrat via lien signé (temporaire)
+app.get("/api/contracts/signed/:token", async (req, res) => {
+  try {
+    const { token } = req.params;
+    const decoded = jwt.verify(token, DOWNLOAD_SECRET);
+
+    const filePath = path.resolve(CONTRACTS_DIR, path.basename(decoded.filePath));
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ error: "Fichier introuvable" });
+    }
+
+    // Envoi sécurisé du contrat
+    res.download(filePath, `contrat_pret_${Date.now()}.pdf`);
+  } catch (err) {
+    console.error("Erreur téléchargement:", err);
+    return res.status(403).json({ error: "Lien invalide ou expiré" });
+  }
+});
+
+// ✅ Exemple de middleware d’authentification
+// (à adapter selon ton système JWT / session)
+export function authMiddleware(req, res, next) {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "Non authentifié" });
+
+  try {
+    const user = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = user;
+    next();
+  } catch (err) {
+    return res.status(403).json({ error: "Token invalide" });
+  }
+}
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Serveur en ligne sur le port ${PORT}`));
+
+🧩 .env requis
+JWT_SECRET=ta_clef_jwt_principale
+DOWNLOAD_SECRET=ta_clef_secrete_pour_liens_temporaire
+BASE_URL=https://api.altusfinancegroup.com
+
+🔐 Fonctionnement résumé
+
+👨‍💼 Admin approuve une demande → le contrat est généré et sauvegardé dans /uploads/contracts/.
+
+📦 Base de données contient :
+
+loanId, userId, filePath, status
+
+👤 Utilisateur clique sur “Télécharger le contrat”
+
+🛰️ Le frontend appelle :
+
+const res = await fetch(`/api/contracts/${loanId}/link`, { headers: { Authorization: `Bearer ${token}` }});
+const { signedUrl } = await res.json();
+window.open(signedUrl, "_blank");
+
+
+🔏 Le backend génère un lien signé JWT (valide 5 min) et le retourne.
+
+💾 L’utilisateur télécharge le PDF via /api/contracts/signed/:token
+
+⏱️ Le lien expire automatiquement après 5 minutes.
+
+🔁 Si l’utilisateur revient plus tard → un nouveau lien est régénéré à la demande.
+
+🧱 Avantages
+
+✅ Sécurité maximale (pas de lien permanent ni de partage possible)
+✅ Fonctionne même si l’utilisateur revient plus tard
+✅ Zéro dépendance externe (pas de S3, pas de Cloudinary)
+✅ Compatible Render / Replit / Vercel
+✅ Aucun risque de corruption ou de fuite de fichier
+✅ Facile à tester et à déboguer

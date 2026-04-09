@@ -1,0 +1,265 @@
+PROMPT À COLLER TEL QUEL DANS REPLIT :
+
+Je veux que tu génères la nouvelle page d’authentification premium fintech de mon site.
+Voici tout le code complet que tu dois intégrer tel quel dans mon projet React/Next.js + TypeScript + Tailwind.
+
+Tu dois créer 3 fichiers :
+
+📁 1️⃣ tailwind.config.js (ajoute animations + couleurs ALTUS)
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        altus: {
+          blue: "#1A4BFF",
+          purple: "#6A5BFF",
+        }
+      },
+      keyframes: {
+        float: {
+          "0%,100%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(10px)" },
+        },
+        shine: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(200%)" },
+        }
+      },
+      animation: {
+        float: "float 18s ease-in-out infinite",
+        shine: "shine 2s infinite",
+      }
+    }
+  },
+  plugins: [],
+};
+
+📁 2️⃣ src/components/AuthCard.tsx (FORMULAIRE COMPLET PREMIUM FINTECH)
+import React, { useState } from "react";
+import { FaEnvelope, FaLock, FaUser, FaPhone, FaGlobe, FaBuilding } from "react-icons/fa";
+
+const languages = [
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+];
+
+export default function AuthCard() {
+  const [tab, setTab] = useState<"login" | "signup">("login");
+  const [lang, setLang] = useState("fr");
+  const [accountType, setAccountType] = useState<"personal" | "business">("personal");
+
+  return (
+    <div className="relative flex items-center justify-center min-h-screen bg-white overflow-hidden">
+
+      {/* BACKGROUND ANIMATED BUBBLES */}
+      <div className="absolute w-[500px] h-[500px] bg-gradient-to-br from-altus-purple to-altus-blue opacity-20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tr from-altus-blue to-altus-purple opacity-20 rounded-full blur-3xl animate-float" />
+
+      {/* AUTH CARD */}
+      <div className="relative z-10 w-full max-w-2xl bg-white/90 backdrop-blur-xl border border-gray-100 shadow-2xl rounded-2xl p-10">
+
+        {/* HEADER */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="text-center w-full">
+            <img src="/logo.png" alt="ALTUS FINANCE GROUP" className="mx-auto w-20 mb-2" />
+            <h2 className="text-xl font-bold text-gray-900">ALTUS FINANCE GROUP</h2>
+            <p className="text-gray-500 text-sm">Votre partenaire de confiance pour le financement</p>
+          </div>
+
+          {/* LANGUAGE SELECTOR */}
+          <div className="absolute right-4 top-4">
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+              className="border border-gray-200 rounded-lg px-3 py-1 text-sm bg-white shadow-sm"
+            >
+              {languages.map((l) => (
+                <option key={l.code} value={l.code}>
+                  {l.flag} {l.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* TABS */}
+        <div className="grid grid-cols-2 rounded-xl mb-8 border border-gray-200 overflow-hidden">
+          <button
+            onClick={() => setTab("login")}
+            className={`py-3 font-semibold ${tab === "login" ? "bg-altus-blue text-white" : "bg-gray-100 text-gray-600"}`}
+          >
+            Connexion
+          </button>
+
+          <button
+            onClick={() => setTab("signup")}
+            className={`py-3 font-semibold ${tab === "signup" ? "bg-altus-blue text-white" : "bg-gray-100 text-gray-600"}`}
+          >
+            Inscription
+          </button>
+        </div>
+
+        {/* LOGIN FORM */}
+        {tab === "login" && (
+          <div className="space-y-5">
+            <div>
+              <label>Email</label>
+              <div className="input-box">
+                <FaEnvelope className="input-icon" />
+                <input type="email" placeholder="jean.dupont@example.com" />
+              </div>
+            </div>
+
+            <div>
+              <label>Mot de passe</label>
+              <div className="input-box">
+                <FaLock className="input-icon" />
+                <input type="password" placeholder="••••••••" />
+              </div>
+            </div>
+
+            <div className="text-right text-sm text-altus-blue cursor-pointer">
+              Mot de passe oublié ?
+            </div>
+
+            <button className="cta-button">Se connecter</button>
+          </div>
+        )}
+
+        {/* SIGNUP FORM */}
+        {tab === "signup" && (
+          <div className="space-y-5">
+
+            {/* ACCOUNT TYPE */}
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                onClick={() => setAccountType("personal")}
+                className={`account-type ${accountType === "personal" && "active"}`}
+              >
+                <FaUser className="text-2xl" />
+                <span>Particulier</span>
+              </button>
+
+              <button
+                onClick={() => setAccountType("business")}
+                className={`account-type ${accountType === "business" && "active"}`}
+              >
+                <FaBuilding className="text-2xl" />
+                <span>Professionnel</span>
+              </button>
+            </div>
+
+            {/* FORM INPUTS */}
+            <div>
+              <label>Nom complet</label>
+              <div className="input-box">
+                <FaUser className="input-icon" />
+                <input type="text" placeholder="Jean Dupont" />
+              </div>
+            </div>
+
+            <div>
+              <label>Téléphone</label>
+              <div className="input-box">
+                <FaPhone className="input-icon" />
+                <input type="text" placeholder="+33 6 12 34 56 78" />
+              </div>
+            </div>
+
+            <div>
+              <label>Email</label>
+              <div className="input-box">
+                <FaEnvelope className="input-icon" />
+                <input type="email" placeholder="jean@example.com" />
+              </div>
+            </div>
+
+            <div>
+              <label>Mot de passe</label>
+              <div className="input-box">
+                <FaLock className="input-icon" />
+                <input type="password" placeholder="••••••••" />
+              </div>
+            </div>
+
+            <button className="cta-button">Créer mon compte</button>
+          </div>
+        )}
+      </div>
+
+      {/* SHARED STYLES */}
+      <style>{`
+        .input-box {
+          display: flex;
+          align-items: center;
+          border: 1px solid #ddd;
+          background: #fafafa;
+          padding: 10px 14px;
+          border-radius: 10px;
+          gap: 10px;
+        }
+        .input-box input {
+          width: 100%;
+          background: transparent;
+          outline: none;
+        }
+        .input-icon {
+          color: gray;
+        }
+        .account-type {
+          border: 1px solid #ddd;
+          padding: 15px;
+          border-radius: 12px;
+          text-align: center;
+          font-weight: 600;
+          background: #fafafa;
+        }
+        .account-type.active {
+          background: #1A4BFF;
+          color: white;
+          border-color: #1A4BFF;
+        }
+        .cta-button {
+          background: #1A4BFF;
+          color: white;
+          padding: 14px;
+          width: 100%;
+          border-radius: 10px;
+          font-weight: bold;
+          position: relative;
+          overflow: hidden;
+        }
+        .cta-button::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+          animation: shine 2s infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+📁 3️⃣ src/pages/login.tsx
+import AuthCard from "../components/AuthCard";
+
+export default function LoginPage() {
+  return <AuthCard />;
+}
+
+🎉 TU OBTIENS :
+
+✔ un login/signup bancaire premium
+✔ un design haut de gamme fintech
+✔ fond animé pro
+✔ CTA shine
+✔ sélecteur de langue avec drapeaux
+✔ interface 2025+

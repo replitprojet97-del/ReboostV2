@@ -1,0 +1,94 @@
+Necesito que revises y corrijas dos problemas críticos en mi proyecto full-stack JS (frontend React + backend Express en Render).
+
+🟥 1. Implementar correctamente la OPCIÓN B para servir archivos del chat
+
+Quiero que TODAS las imágenes y archivos del chat se sirvan desde la siguiente ruta del backend:
+
+GET https://api.altusfinancesgroup.com/api/chat/file/:filename
+
+
+Necesito que:
+
+✅ A ) Crees o verifiques que exista esta ruta Express:
+app.get('/api/chat/file/:filename', (req, res) => {
+  const filePath = path.join(process.cwd(), 'uploads', 'chat', req.params.filename);
+
+  res.setHeader("Access-Control-Allow-Origin", "https://altusfinancesgroup.com");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).send("File not found");
+  }
+
+  res.sendFile(filePath);
+});
+
+✅ B ) Confirmes que Render permite servir estos archivos desde /uploads/chat.
+✅ C ) Actualices getFileUrl() en el frontend para que SIEMPRE construya la URL así:
+https://api.altusfinancesgroup.com/api/chat/file/${fileName}
+
+
+Sin excepción.
+No quiero usar la ruta directa /uploads/chat/....
+
+🟥 2. El problema de SALTO DE LÍNEA NO está resuelto
+
+El textarea funciona, pero cuando el mensaje se envía y se renderiza en el chat, NO respeta los saltos de línea.
+Desde el lado del usuario (cliente), el mensaje llega como una sola línea, y el texto se corta.
+
+Eso significa que el problema está en el componente Message.tsx, NO en MessageInput.
+
+Necesito que revises el componente que renderiza:
+
+< p > {message.content} < /p >
+
+
+Y que le añadas las clases correctas en el lugar donde se muestra el mensaje recibido, no en el input.
+
+Debes asegurarte de que el texto enviado se muestre con:
+
+whitespace-pre-wrap
+break-words
+overflow-wrap: break-word
+
+
+Por ejemplo:
+
+<p
+  className="
+    text-sm 
+    whitespace-pre-wrap 
+    break-words 
+    overflow-wrap break-word
+  "
+>
+  {message.content}
+</p>
+
+⚠️ IMPORTANTE:
+
+Estas clases deben aplicarse al contenedor del mensaje recibido, no solo al input.
+
+El bug ocurre solo desde el punto de vista del usuario, no del administrador.
+
+Por favor revisa también si el backend está guardando los saltos de línea correctamente (los \n deben mantenerse intactos).
+
+🟥 3. Verifica ambas vistas
+
+Necesito que pruebes el chat desde:
+
+una cuenta USUARIO
+
+una cuenta ADMIN / Soporte
+
+Porque el problema solo aparece en el lado usuario.
+
+🟩 Objetivo final
+
+Después de tus correcciones, debe cumplirse lo siguiente:
+
+✔️ Los archivos e imágenes deben cargarse correctamente desde Option B
+✔️ Los mensajes deben respetar los saltos de línea cuando se muestran en el chat
+✔️ Los textos largos deben partirse en varias líneas sin desaparecer ni cortar
+✔️ No debe aparecer ninguna barra horizontal
+Gracias. Espero tu corrección.

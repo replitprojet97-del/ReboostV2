@@ -1,0 +1,223 @@
+envoie ce prompt dans Replit AI en une seule fois
+
+You are a senior front-end engineer specialized in cinematic UI animations.
+
+Context:
+- Project: Full-stack web app
+- Frontend: Next.js 14 (App Router), deployed on Vercel
+- Backend: Render (not relevant for this task)
+- Styling: CSS Modules or global CSS
+- Animation library: GSAP + ScrollTrigger
+- No Tailwind unless explicitly needed
+- Code must be production-ready and clean
+
+Task:
+Create a HERO SECTION with a cinematic animation sequence:
+
+Animation requirements:
+1. Two images start off-screen:
+   - Image A enters from the left
+   - Image B enters from the right
+2. They move toward the center and visually "meet"
+3. A text block appears (fade + slight upward motion)
+4. The images then split:
+   - Image A is clipped in half and exits upward
+   - Image B is clipped in half and exits downward
+5. Text fades out
+6. The system must support multiple slides (each slide has its own images and text)
+7. Animations are auto-play (not scroll-based)
+8. Use GSAP timelines and clip-path animations
+9. Ensure no hydration errors in Next.js (use useEffect / dynamic import if needed)
+
+Deliverables:
+- A HeroSection React component
+- Required CSS
+- GSAP setup
+- Slide data structure
+- Clear comments in code
+
+Constraints:
+- Must work in Next.js App Router
+- Must be compatible with Vercel deployment
+- Must avoid window access outside useEffect
+- Use modern ES syntax
+
+Output:
+Provide the complete code for:
+- HeroSection.tsx
+- hero.css (or module)
+- Any required setup instructions
+
+🧩 2️⃣ CODE COMPLET (ce que Replit DOIT produire)
+📁 /components/HeroSection.tsx
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import "./hero.css";
+
+const slides = [
+  {
+    leftImage: "/images/left1.jpg",
+    rightImage: "/images/right1.jpg",
+    title: "Build fast.",
+    subtitle: "Cinematic UI for modern products."
+  },
+  {
+    leftImage: "/images/left2.jpg",
+    rightImage: "/images/right2.jpg",
+    title: "Deploy smarter.",
+    subtitle: "Performance-first animations."
+  }
+];
+
+export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline({ repeat: -1 });
+
+      slides.forEach((_, index) => {
+        timeline
+          .fromTo(
+            `.slide-${index} .left`,
+            { x: "-100%" },
+            { x: "0%", duration: 1, ease: "power4.out" }
+          )
+          .fromTo(
+            `.slide-${index} .right`,
+            { x: "100%" },
+            { x: "0%", duration: 1, ease: "power4.out" },
+            "<"
+          )
+          .fromTo(
+            `.slide-${index} .text`,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.6 },
+            "-=0.4"
+          )
+          .to(
+            `.slide-${index} .text`,
+            { opacity: 0, duration: 0.4 },
+            "+=1"
+          )
+          .to(
+            `.slide-${index} .left`,
+            {
+              clipPath: "inset(0 0 50% 0)",
+              y: "-100%",
+              duration: 1,
+              ease: "power4.in"
+            }
+          )
+          .to(
+            `.slide-${index} .right`,
+            {
+              clipPath: "inset(50% 0 0 0)",
+              y: "100%",
+              duration: 1,
+              ease: "power4.in"
+            },
+            "<"
+          )
+          .set(`.slide-${index} .left`, { clearProps: "all" })
+          .set(`.slide-${index} .right`, { clearProps: "all" });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section className="hero" ref={containerRef}>
+      {slides.map((slide, index) => (
+        <div className={`slide slide-${index}`} key={index}>
+          <div
+            className="image left"
+            style={{ backgroundImage: `url(${slide.leftImage})` }}
+          />
+          <div
+            className="image right"
+            style={{ backgroundImage: `url(${slide.rightImage})` }}
+          />
+          <div className="text">
+            <h1>{slide.title}</h1>
+            <p>{slide.subtitle}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+🎨 /components/hero.css
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  clip-path: inset(0 0 0 0);
+}
+
+.image.left {
+  left: 0;
+}
+
+.image.right {
+  right: 0;
+}
+
+.text {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+
+.text h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+}
+
+.text p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+🚀 3️⃣ Instructions Vercel / Next.js
+Installer GSAP
+npm install gsap
+
+Utilisation
+import HeroSection from "@/components/HeroSection";
+
+export default function Home() {
+  return <HeroSection />;
+}
+
+Images
+
+Place-les dans :
+
+/public/images/

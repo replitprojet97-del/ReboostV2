@@ -1,0 +1,50 @@
+2025-11-18T00:25:33.159996253Z Node.js v22.16.0
+2025-11-18T00:26:46.790073234Z ==> Deploying...
+2025-11-18T00:27:18.865973598Z ==> Running 'npm start'
+2025-11-18T00:27:19.864818006Z 
+2025-11-18T00:27:19.864847528Z > rest-express@1.0.0 start
+2025-11-18T00:27:19.864853208Z > NODE_ENV=production node dist/index.js
+2025-11-18T00:27:19.864855759Z 
+2025-11-18T00:27:20.470167135Z node:internal/modules/package_json_reader:256
+2025-11-18T00:27:20.470198988Z   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+2025-11-18T00:27:20.470203408Z         ^
+2025-11-18T00:27:20.470206158Z 
+2025-11-18T00:27:20.470209808Z Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /opt/render/project/src/dist/index.js
+2025-11-18T00:27:20.470215939Z     at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+2025-11-18T00:27:20.470219869Z     at packageResolve (node:internal/modules/esm/resolve:768:81)
+2025-11-18T00:27:20.47022322Z     at moduleResolve (node:internal/modules/esm/resolve:854:18)
+2025-11-18T00:27:20.47022675Z     at defaultResolve (node:internal/modules/esm/resolve:984:11)
+2025-11-18T00:27:20.47022964Z     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+2025-11-18T00:27:20.47023259Z     at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+2025-11-18T00:27:20.47023547Z     at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+2025-11-18T00:27:20.470238341Z     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+2025-11-18T00:27:20.470241351Z     at ModuleJob._link (node:internal/modules/esm/module_job:137:49) {
+2025-11-18T00:27:20.470245641Z   code: 'ERR_MODULE_NOT_FOUND'
+2025-11-18T00:27:20.470248322Z }
+2025-11-18T00:27:20.470251222Z 
+2025-11-18T00:27:20.470254612Z Node.js v22.16.0
+2025-11-18T00:27:27.207781841Z ==> Exited with status 1
+2025-11-18T00:27:27.364889668Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+2025-11-18T00:27:32.112802219Z ==> Running 'npm start'
+2025-11-18T00:27:33.022056412Z 
+2025-11-18T00:27:33.022091775Z > rest-express@1.0.0 start
+2025-11-18T00:27:33.022099236Z > NODE_ENV=production node dist/index.js
+2025-11-18T00:27:33.022101376Z 
+2025-11-18T00:27:33.716110118Z node:internal/modules/package_json_reader:256
+2025-11-18T00:27:33.71613412Z   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+2025-11-18T00:27:33.71613776Z         ^
+2025-11-18T00:27:33.71614046Z 
+2025-11-18T00:27:33.71614466Z Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /opt/render/project/src/dist/index.js
+2025-11-18T00:27:33.716152481Z     at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+2025-11-18T00:27:33.716155871Z     at packageResolve (node:internal/modules/esm/resolve:768:81)
+2025-11-18T00:27:33.716158492Z     at moduleResolve (node:internal/modules/esm/resolve:854:18)
+2025-11-18T00:27:33.716161052Z     at defaultResolve (node:internal/modules/esm/resolve:984:11)
+2025-11-18T00:27:33.716164132Z     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+2025-11-18T00:27:33.716166832Z     at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+2025-11-18T00:27:33.716169742Z     at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+2025-11-18T00:27:33.716172202Z     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+2025-11-18T00:27:33.716174713Z     at ModuleJob._link (node:internal/modules/esm/module_job:137:49) {
+2025-11-18T00:27:33.716179123Z   code: 'ERR_MODULE_NOT_FOUND'
+2025-11-18T00:27:33.716181713Z }
+2025-11-18T00:27:33.716183963Z 
+2025-11-18T00:27:33.716186594Z Node.js v22.16.0

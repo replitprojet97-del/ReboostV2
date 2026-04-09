@@ -1,0 +1,84 @@
+2025-11-22T18:06:19.569083559Z 6:06:19 PM [express] 🗄️ Database: Connected
+2025-11-22T18:06:19.569092609Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-22T18:06:19.56911257Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-22T18:06:19.5691185Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-22T18:06:19.56912281Z [CONFIG] Session Cookie Secure: true
+2025-11-22T18:06:19.56912918Z [CONFIG] Session Cookie SameSite: none
+2025-11-22T18:06:20.227902577Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-22T18:06:21.714449915Z ==> Your service is live 🎉
+2025-11-22T18:06:21.904483866Z ==> 
+2025-11-22T18:06:22.075464897Z ==> ///////////////////////////////////////////////////////////
+2025-11-22T18:06:22.234278521Z ==> 
+2025-11-22T18:06:22.391695974Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-22T18:06:22.550144218Z ==> 
+2025-11-22T18:06:22.708524021Z ==> ///////////////////////////////////////////////////////////
+2025-11-22T18:06:24.580554839Z Expired OTPs cleaned up
+2025-11-22T18:11:25.240113169Z ==> Detected service running on port 10000
+2025-11-22T18:11:25.804745301Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2025-11-22T18:36:28.133275237Z ==> Deploying...
+2025-11-22T18:36:54.726423979Z 
+2025-11-22T18:36:54.72645283Z > rest-express@1.0.0 start
+2025-11-22T18:36:54.726457791Z > NODE_ENV=production node dist/index.js
+2025-11-22T18:36:54.726460411Z 
+2025-11-22T18:37:12.525191905Z ✅ Cloudinary configured successfully
+2025-11-22T18:37:12.527379575Z ============================================================
+2025-11-22T18:37:12.527393756Z [CONFIG] Environment: production
+2025-11-22T18:37:12.527423208Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-22T18:37:12.52744486Z [CONFIG] Cookie SameSite: none
+2025-11-22T18:37:12.52744971Z [CONFIG] Cookie Secure: true
+2025-11-22T18:37:12.52745697Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-22T18:37:12.527570519Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-22T18:37:12.527646574Z [CONFIG] Trust Proxy: enabled
+2025-11-22T18:37:12.527868231Z ============================================================
+2025-11-22T18:37:12.636678689Z [SOCKET.IO] ✅ Socket.IO configured with session authentication
+2025-11-22T18:37:12.924609769Z 6:37:12 PM [express] ✅ Backend API server listening on port 10000
+2025-11-22T18:37:12.924844566Z 6:37:12 PM [express] 🌍 Environment: production
+2025-11-22T18:37:12.924988616Z 6:37:12 PM [express] 🗄️ Database: Connected
+2025-11-22T18:37:12.925000277Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-22T18:37:12.92504389Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-22T18:37:12.925054771Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-22T18:37:12.925059061Z [CONFIG] Session Cookie Secure: true
+2025-11-22T18:37:12.925070562Z [CONFIG] Session Cookie SameSite: none
+2025-11-22T18:37:13.640730408Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-22T18:37:17.935647785Z Expired OTPs cleaned up
+2025-11-22T18:37:18.95548296Z ==> Your service is live 🎉
+2025-11-22T18:37:19.176026764Z ==> 
+2025-11-22T18:37:19.336454186Z ==> ///////////////////////////////////////////////////////////
+2025-11-22T18:37:19.497269209Z ==> 
+2025-11-22T18:37:19.656743841Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-22T18:37:19.815618013Z ==> 
+2025-11-22T18:37:19.974059015Z ==> ///////////////////////////////////////////////////////////
+2025-11-22T18:41:34.381632758Z ==> Deploying...
+2025-11-22T18:42:00.223728867Z ==> Running 'npm start'
+2025-11-22T18:42:01.316925614Z 
+2025-11-22T18:42:01.316968925Z > rest-express@1.0.0 start
+2025-11-22T18:42:01.316975135Z > NODE_ENV=production node dist/index.js
+2025-11-22T18:42:01.316978706Z 
+2025-11-22T18:42:18.917787201Z ✅ Cloudinary configured successfully
+2025-11-22T18:42:18.918951448Z ============================================================
+2025-11-22T18:42:18.918966458Z [CONFIG] Environment: production
+2025-11-22T18:42:18.919017569Z [CONFIG] Cookie Domain: .altusfinancesgroup.com
+2025-11-22T18:42:18.919025349Z [CONFIG] Cookie SameSite: none
+2025-11-22T18:42:18.919088921Z [CONFIG] Cookie Secure: true
+2025-11-22T18:42:18.919139782Z [CONFIG] CORS Allowed Origins: production domains
+2025-11-22T18:42:18.919243794Z [CONFIG] Frontend URL: https://altusfinancesgroup.com
+2025-11-22T18:42:18.919358407Z [CONFIG] Trust Proxy: enabled
+2025-11-22T18:42:18.919538801Z ============================================================
+2025-11-22T18:42:19.025755335Z [SOCKET.IO] ✅ Socket.IO configured with session authentication
+2025-11-22T18:42:19.310185965Z 6:42:19 PM [express] ✅ Backend API server listening on port 10000
+2025-11-22T18:42:19.31041083Z 6:42:19 PM [express] 🌍 Environment: production
+2025-11-22T18:42:19.310547603Z 6:42:19 PM [express] 🗄️ Database: Connected
+2025-11-22T18:42:19.310557153Z [CONFIG] FRONTEND_URL: https://altusfinancesgroup.com
+2025-11-22T18:42:19.310575044Z [CONFIG] Allowed Origins: ["https://altusfinancesgroup.com","https://www.altusfinancesgroup.com","https://altusfinancesgroup.com"]
+2025-11-22T18:42:19.310589874Z [CONFIG] Session Cookie Domain: .altusfinancesgroup.com
+2025-11-22T18:42:19.310598684Z [CONFIG] Session Cookie Secure: true
+2025-11-22T18:42:19.310656376Z [CONFIG] Session Cookie SameSite: none
+2025-11-22T18:42:20.176811776Z ℹ️ Compte administrateur existant: admin@altusfinancesgroup.com
+2025-11-22T18:42:24.319667055Z Expired OTPs cleaned up
+2025-11-22T18:42:25.193636346Z ==> Your service is live 🎉
+2025-11-22T18:42:25.376682055Z ==> 
+2025-11-22T18:42:25.533661728Z ==> ///////////////////////////////////////////////////////////
+2025-11-22T18:42:25.68902452Z ==> 
+2025-11-22T18:42:25.844726143Z ==> Available at your primary URL https://api.altusfinancesgroup.com + 1 more domain
+2025-11-22T18:42:26.014303494Z ==> 
+2025-11-22T18:42:26.169884156Z ==> ///////////////////////////////////////////////////////////

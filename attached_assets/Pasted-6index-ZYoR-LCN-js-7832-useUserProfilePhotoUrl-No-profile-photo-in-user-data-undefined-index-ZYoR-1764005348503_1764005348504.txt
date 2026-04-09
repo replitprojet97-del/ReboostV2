@@ -1,0 +1,23 @@
+6index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: undefined
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: Object
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: Object
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: Object
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: Object
+index-ZYoR_LCN.js:7921 ✅ Socket connected: wPJFSR-Iiw-yBWNOAAAB
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+index-ZYoR_LCN.js:7832 [useUserProfilePhotoUrl] No profile photo in user data: Object
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/unread/1b9acdff-62b8-4f01-925e-1ae551ef7e81:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations/69c02406-8ae2-4e2c-a3f7-9ae70a8bc174/messages:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations/69c02406-8ae2-4e2c-a3f7-9ae70a8bc174/messages:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations/69c02406-8ae2-4e2c-a3f7-9ae70a8bc174/messages:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations/69c02406-8ae2-4e2c-a3f7-9ae70a8bc174/messages:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur
+api/chat/conversations:1  Failed to load resource: the server responded with a status of 404 ()Comprendre cette erreur

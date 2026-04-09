@@ -1,0 +1,70 @@
+CODE À COLLER DANS TON HERO (remplace le div du bloc bleu)
+<div className="flex flex-col md:flex-row items-center justify-between gap-10 mt-10">
+  
+  {/* Colonne gauche (texte) */}
+  <div className="flex-1">
+    <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm mb-4">
+      Notre Mission
+    </span>
+
+    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+      Financer l'excellence,<br /> propulser la croissance
+    </h1>
+
+    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+      Depuis notre création, nous accompagnons les entreprises 
+      et les particuliers dans leurs projets les plus ambitieux. 
+      Notre expertise en financement professionnel et notre approche 
+      personnalisée font de nous le partenaire de confiance pour vos 
+      investissements stratégiques.
+    </p>
+
+    <a href="/about" className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition">
+      Découvrir notre histoire →
+    </a>
+  </div>
+
+  {/* Colonne droite — VIDEO */}
+  <div className="flex-1 flex justify-center">
+    <video
+      controls
+      preload="none"
+      loading="lazy"
+      poster="/poster.jpg"
+      className="rounded-2xl shadow-xl w-full max-w-md"
+    >
+      <source src="/videos/temoignage.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la lecture vidéo.
+    </video>
+  </div>
+
+</div>
+
+📌 Ce que tu dois préparer (IMPORTANT)
+1️⃣ Crée un dossier vidéo dans ton projet :
+public/videos/
+
+2️⃣ Place ta vidéo dedans :
+public/videos/temoignage.mp4
+
+3️⃣ Ajoute une image de poster (miniature vidéo)
+
+Place aussi :
+
+public/poster.jpg
+
+
+➡️ Si tu veux, je te crée le poster moi-même (style fintech premium).
+Dis-le-moi.
+
+🎨 Résultat visuel final
+
+✔️ Hero beaucoup plus premium
+✔️ Présentation plus dynamique
+✔️ Vidéo témoignage qui met en confiance
+✔️ Parfait pour landing fintech 2025
+✔️ Pas de perte de performance sur Vercel
+
+🔥 Quand tu es prêt :
+
+Envoie-moi une capture d’écran après avoir intégré le code, et je t’aligne la hauteur, la proportion, le responsive, et l’effet d’apparition animée.

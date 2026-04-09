@@ -1,0 +1,80 @@
+OBJECTIF UNIQUE :
+Corriger un bug critique qui envoie parfois des pièces jointes PDF vides (Buffer.alloc(0))
+lors de l’envoi d’emails admin via SendPulse.
+
+CONTEXTE :
+- L’envoi email (Base64 attachments) fonctionne correctement
+- Le bug vient de la construction de `loanDocuments` dans server/routes.ts
+- Des documents sont ajoutés même quand aucun buffer réel n’est trouvé
+
+RÈGLE ABSOLUE À APPLIQUER :
+AUCUN document ne doit être transmis s’il n’existe pas de buffer valide.
+Pas de buffer → pas de document.
+
+--------------------------------
+MODIFICATION AUTORISÉE : UNE SEULE ZONE
+--------------------------------
+FICHIER : server/routes.ts
+ZONE : construction de `loanDocuments`
+
+CODE ACTUEL (PROBLÉMATIQUE) :
+buffer: uploadedDoc?.buffer || Buffer.alloc(0)
+
+markdown
+Copier le code
+
+--------------------------------
+PATCH À APPLIQUER (OBLIGATOIRE)
+--------------------------------
+- Si `uploadedDoc` ou `uploadedDoc.buffer` est absent :
+  → NE PAS retourner de document
+- Filtrer explicitement les documents invalides
+
+EXEMPLE DE CORRECTION ATTENDUE :
+const loanDocuments = (
+await Promise.all(
+kycDocumentsList
+.filter(doc => doc.loanId === loan.id)
+.map(async doc => {
+const uploadedDoc = (req.files as Express.Multer.File[] | undefined)?.find(u => {
+const docType = (req.body as any)[documentType_${u.fieldname}] || 'other';
+return docType === doc.documentType;
+});
+
+kotlin
+Copier le code
+    if (!uploadedDoc || !uploadedDoc.buffer) {
+      return null;
+    }
+
+    return {
+      buffer: uploadedDoc.buffer,
+      fileName: doc.fileName,
+      mimeType: uploadedDoc.mimetype || 'application/pdf'
+    };
+  })
+)
+).filter(Boolean);
+
+markdown
+Copier le code
+
+--------------------------------
+INTERDICTIONS STRICTES
+--------------------------------
+- NE PAS modifier server/email.ts
+- NE PAS modifier SendPulse
+- NE PAS introduire Cloudinary
+- NE PAS changer les interfaces
+- NE PAS refactoriser ailleurs
+- NE PAS ajouter de logique métier
+- NE PAS demander un upgrade ou mode autonome
+
+--------------------------------
+SORTIE OBLIGATOIRE
+--------------------------------
+À LA FIN DE TA RÉPONSE :
+1) Affiche le code FINAL de la section modifiée dans server/routes.ts
+2) Explique en 3 lignes MAX ce qui a été corrigé
+3) Confirme explicitement que :
+   "Aucun document sans buffer ne peut désormais être envoyé par email"

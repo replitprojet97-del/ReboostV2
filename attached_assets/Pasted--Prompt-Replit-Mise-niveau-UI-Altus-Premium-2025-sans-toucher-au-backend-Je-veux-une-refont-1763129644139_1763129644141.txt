@@ -1,0 +1,272 @@
+🚀 Prompt Replit — Mise à niveau UI Altus Premium 2025 (sans toucher au backend)
+
+Je veux une refonte UNIQUEMENT VISUELLE de l’espace utilisateur, totalement premium (niveau banque privée 2025), sans modifier aucune fonctionnalité existante.
+
+Ne modifie pas :
+
+les endpoints
+
+la logique backend
+
+les handlers
+
+les calculs
+
+les pages
+
+les workflows
+
+👉 Tu ajoutes uniquement des composants UI modernes et remplaces l’interface visuelle.
+
+Voici les instructions EXACTES à appliquer :
+
+1️⃣ Créer un Design System Premium Altus 2025
+🔹 Fichier : client/src/styles/theme.css
+:root {
+  --altus-indigo: #5b21b6;
+  --altus-royal: #3b82f6;
+  --altus-ink: #0f172a;
+  --altus-muted: #6b7280;
+  --altus-bg: #ffffff;
+  --glass-bg: rgba(255,255,255,0.6);
+  --glass-border: rgba(255,255,255,0.6);
+  --soft-shadow: 0 6px 30px rgba(11, 15, 30, 0.06);
+}
+
+body {
+  background: var(--altus-bg);
+  color: var(--altus-ink);
+}
+
+
+Et l’importer dans l’entrypoint React :
+
+import './styles/theme.css';
+
+2️⃣ Mise à jour Tailwind (si présent)
+
+Dans tailwind.config.js :
+
+extend: {
+  colors: {
+    altus: {
+      indigo: '#5b21b6',
+      royal: '#3b82f6',
+      ink: '#0f172a',
+      muted: '#6b7280'
+    }
+  },
+  boxShadow: {
+    'soft-2025': '0 8px 40px rgba(11,15,30,0.06)'
+  },
+  borderRadius: {
+    'xl-3': '18px'
+  }
+}
+
+3️⃣ Créer les composants UI premium
+
+Créer les fichiers suivants dans :
+client/src/components/ui/
+
+🔘 ButtonPremium.tsx
+import React from "react";
+
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "solid" | "ghost" | "outline";
+  size?: "sm" | "md" | "lg";
+};
+
+export default function ButtonPremium({ variant="solid", size="md", children, ...rest }: Props){
+  const base = "font-semibold rounded-xl-3 transition-transform active:scale-[0.995]";
+  const sizes = {
+    sm: "px-3 py-1 text-sm",
+    md: "px-5 py-3 text-base",
+    lg: "px-6 py-4 text-lg"
+  };
+  const styles = {
+    solid: "bg-altus-indigo text-white shadow-soft-2025 hover:brightness-105",
+    ghost: "bg-transparent text-altus-indigo border border-altus-indigo/10",
+    outline: "bg-white border border-gray-200 text-altus-ink"
+  };
+  return (
+    <button className={`${base} ${sizes[size]} ${styles[variant]}`} {...rest}>
+      {children}
+    </button>
+  );
+}
+
+🧭 TopbarPremium.tsx
+import React from "react";
+import ButtonPremium from "./ButtonPremium";
+
+export default function TopbarPremium({ onMenuClick, rightNode }) {
+  return (
+    <header className="w-full bg-white shadow-sm sticky top-0 z-40">
+      <div className="max-w-[1300px] mx-auto flex items-center justify-between py-3 px-4 md:px-6">
+
+        <div className="flex items-center gap-4">
+          <button onClick={onMenuClick} className="p-2 rounded-md hover:bg-gray-100 md:hidden">
+            <svg width="22" height="22" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0f172a" strokeWidth="1.6"/></svg>
+          </button>
+
+          <div className="flex items-center gap-3">
+            <img src="/logo-altus.svg" className="h-8" />
+            <span className="font-semibold text-lg text-altus-ink hidden md:inline">
+              Altus Finance Group
+            </span>
+          </div>
+        </div>
+
+        <nav className="hidden md:flex gap-6 text-sm text-altus-muted">
+          <a href="/" className="hover:text-altus-royal">Accueil</a>
+          <a href="/products" className="hover:text-altus-royal">Nos Prêts</a>
+          <a href="/how" className="hover:text-altus-royal">Fonctionnement</a>
+          <a href="/faq" className="hover:text-altus-royal">FAQ</a>
+        </nav>
+
+        <div>
+          {rightNode ?? <ButtonPremium size="sm">Mon espace</ButtonPremium>}
+        </div>
+
+      </div>
+    </header>
+  );
+}
+
+📂 SidebarPremium.tsx
+import React from "react";
+
+export default function SidebarPremium({ items, onSelect }) {
+  return (
+    <aside className="w-72 hidden lg:block border-r bg-white h-full py-6 px-4">
+      <img src="/logo-altus.svg" className="h-10 mb-6" />
+
+      <nav className="flex flex-col gap-2">
+        {items.map(i => (
+          <button key={i.key} onClick={() => onSelect(i.key)}
+            className="text-left py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3">
+            {i.icon}
+            <span className="font-medium text-sm">{i.label}</span>
+          </button>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+📦 CardPremium.tsx
+import React from "react";
+
+export default function CardPremium({ children, className="" }) {
+  return (
+    <div className={`bg-white rounded-2xl shadow-soft-2025 p-6 border ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+⚡ ProgressGlow.tsx
+import React from "react";
+
+export default function ProgressGlow({ value=50 }) {
+  const pct = Math.min(100, Math.max(0, value));
+  return (
+    <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden relative">
+      <div style={{ width: `${pct}%` }} className="h-full relative">
+
+        <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed] via-[#5b21b6] to-[#3b82f6] opacity-95"
+             style={{ boxShadow:'0 6px 24px rgba(91,33,182,0.32)', transition:'width 700ms cubic-bezier(.2,.9,.2,1)' }}/>
+
+        <div className="absolute -left-16 top-0 bottom-0 w-32 animate-[slide_1.8s_linear_infinite]"
+             style={{background:'linear-gradient(90deg,rgba(255,255,255,0.22),rgba(255,255,255,0.06),rgba(255,255,255,0.18))', mixBlendMode:'overlay'}}/>
+      </div>
+
+      <style>{`@keyframes slide {0%{transform:translateX(0)}100%{transform:translateX(160%)}}`}</style>
+    </div>
+  );
+}
+
+⭐ 4️⃣ Barre d’information défilante premium
+
+Créer :
+client/src/components/ui/InfoBarPremium.tsx
+
+import React, { useState, useEffect } from "react";
+
+export default function InfoBarPremium() {
+  const messages = [
+    "💳 Les virements Altus sont désormais traités sous 24h ouvrées.",
+    "🔐 Vos opérations sont protégées par une authentification renforcée.",
+    "📄 Votre contrat numérique est disponible dans votre espace sécurisé.",
+    "💼 Altus Finance Group – Solutions professionnelles haut de gamme."
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % messages.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="w-full bg-gradient-to-r from-altus-indigo via-altus-royal to-altus-indigo text-white shadow-md">
+      <div className="max-w-[1400px] mx-auto py-2 px-4 text-center">
+        <p
+          key={index}
+          className="text-sm font-medium transition-opacity duration-700 opacity-100 animate-fade"
+        >
+          {messages[index]}
+        </p>
+      </div>
+
+      <style>
+        {`
+          @keyframes fade {
+            0% { opacity: 0; transform: translateY(4px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-4px); }
+          }
+          .animate-fade {
+            animation: fade 3.5s linear;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+
+5️⃣ Exemple d’intégration dans Dashboard.tsx
+import TopbarPremium from "../components/ui/TopbarPremium";
+import SidebarPremium from "../components/ui/SidebarPremium";
+import CardPremium from "../components/ui/CardPremium";
+import InfoBarPremium from "../components/ui/InfoBarPremium";
+import ProgressGlow from "../components/ui/ProgressGlow";
+
+<TopbarPremium onMenuClick={() => setMenuOpen(true)} />
+<InfoBarPremium />
+<ModalMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+
+<div className="max-w-[1300px] mx-auto flex gap-6 px-4 py-8">
+  <SidebarPremium
+    items={[
+      { key: 'dashboard', label: 'Tableau de bord' },
+      { key: 'transfers', label: 'Transferts' },
+      { key: 'loans', label: 'Mes prêts' },
+      { key: 'settings', label: 'Paramètres' }
+    ]}
+    onSelect={(k) => navigate('/' + k)}
+  />
+
+  <main className="flex-1">
+    <CardPremium>
+      <h3 className="text-2xl font-bold">Traitement du virement</h3>
+      <div className="mt-4">
+        <ProgressGlow value={69}/>
+      </div>
+    </CardPremium>
+  </main>
+</div>

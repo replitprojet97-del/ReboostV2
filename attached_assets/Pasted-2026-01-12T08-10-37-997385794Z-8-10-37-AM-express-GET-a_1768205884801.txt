@@ -1,0 +1,185 @@
+2026-01-12T08:10:37.997385794Z 8:10:37 AM [express] GET /api/dashboard 304 in 661ms
+2026-01-12T08:10:42.667674489Z 8:10:42 AM [express] GET /api/notifications/unread-count 304 in 284ms
+2026-01-12T08:10:42.680146115Z 8:10:42 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:10:42.793785996Z 8:10:42 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:10:44.293137109Z 8:10:44 AM [express] GET /api/dashboard 304 in 668ms
+2026-01-12T08:10:48.39891342Z 8:10:48 AM [express] GET /api/notifications/unread-count 304 in 285ms
+2026-01-12T08:10:48.440755617Z 8:10:48 AM [express] GET /api/notifications 304 in 283ms
+2026-01-12T08:10:48.590240688Z 8:10:48 AM [express] GET /api/user/stats 304 in 382ms
+2026-01-12T08:10:50.420094683Z 8:10:50 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:10:54.16335419Z 8:10:54 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:10:54.18615787Z 8:10:54 AM [express] GET /api/notifications 304 in 290ms
+2026-01-12T08:10:54.301928142Z 8:10:54 AM [express] GET /api/user/stats 304 in 379ms
+2026-01-12T08:10:56.470050398Z 8:10:56 AM [express] GET /api/dashboard 304 in 663ms
+2026-01-12T08:10:59.878588657Z 8:10:59 AM [express] GET /api/notifications/unread-count 304 in 284ms
+2026-01-12T08:10:59.915246497Z 8:10:59 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:11:00.082586245Z 8:11:00 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:11:04.022254038Z 8:11:04 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:11:05.630683814Z 8:11:05 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:11:05.643433757Z 8:11:05 AM [express] GET /api/notifications 304 in 283ms
+2026-01-12T08:11:06.356298968Z 8:11:06 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:11:07.026344086Z 8:11:07 AM [express] GET /api/csrf-token 200 in 101ms
+2026-01-12T08:11:10.415182255Z 8:11:10 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:11:14.125130541Z 8:11:14 AM [express] GET /api/notifications 304 in 286ms
+2026-01-12T08:11:14.125640713Z 8:11:14 AM [express] GET /api/notifications/unread-count 304 in 285ms
+2026-01-12T08:11:14.225350891Z 8:11:14 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:11:18.039482668Z 8:11:18 AM [express] GET /api/dashboard 304 in 662ms
+2026-01-12T08:11:21.259082576Z 8:11:21 AM [express] GET /api/notifications 304 in 284ms
+2026-01-12T08:11:21.290797105Z 8:11:21 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:11:21.361646604Z 8:11:21 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:11:26.315001795Z 8:11:26 AM [express] GET /api/dashboard 200 in 658ms
+2026-01-12T08:11:27.278880159Z 8:11:27 AM [express] GET /api/user 304 in 608ms
+2026-01-12T08:11:27.372773803Z 8:11:27 AM [express] GET /api/notifications 304 in 600ms
+2026-01-12T08:11:27.467075887Z 8:11:27 AM [express] GET /api/notifications/unread-count 304 in 289ms
+2026-01-12T08:11:27.657772477Z 8:11:27 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:11:27.884204163Z [Notification] Triggering loanRequestAdminNotification for loan df893e0a-840e-4088-9f49-307766b1534e
+2026-01-12T08:11:27.907445863Z [Email] Preparing loan request admin email. To: ${adminEmail}, From: ${fromEmail}, User: ${email}
+2026-01-12T08:11:27.907483744Z [Email] Number of documents to attach: 0
+2026-01-12T08:11:28.238655541Z [Email] SendPulse response: { result: true, id: 't8qs34-11g34q-me' }
+2026-01-12T08:11:28.238675952Z [Email] Loan request admin email sent to admin@solventisgroup.org with 0 attachments, status: true
+2026-01-12T08:11:28.238779934Z [LoanRequest] Admin notification sent with 0 attachments extracted from user KYC
+2026-01-12T08:11:28.334390041Z Loan creation error: ReferenceError: uploadedDocuments is not defined
+2026-01-12T08:11:28.368868836Z     at file:///opt/render/project/src/dist/index.js:9738:65
+2026-01-12T08:11:28.368882447Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T08:11:28.429920905Z 8:11:28 AM [express] POST /api/loans 400 in 1854ms
+2026-01-12T08:11:32.349328073Z 8:11:32 AM [express] GET /api/dashboard 200 in 664ms
+2026-01-12T08:11:33.497067825Z 8:11:33 AM [express] GET /api/notifications 304 in 283ms
+2026-01-12T08:11:33.530929391Z 8:11:33 AM [express] GET /api/notifications/unread-count 304 in 284ms
+2026-01-12T08:11:33.646366664Z 8:11:33 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:11:38.528481195Z 8:11:38 AM [express] GET /api/dashboard 304 in 680ms
+2026-01-12T08:11:39.388382536Z 8:11:39 AM [express] GET /api/user/stats 304 in 380ms
+2026-01-12T08:11:44.516714917Z 8:11:44 AM [express] GET /api/dashboard 304 in 664ms
+2026-01-12T08:11:45.10166301Z 8:11:45 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:11:50.623344901Z 8:11:50 AM [express] GET /api/dashboard 304 in 662ms
+2026-01-12T08:11:50.857963817Z 8:11:50 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:11:58.26854789Z 8:11:58 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:11:58.454432889Z 8:11:58 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:12:05.530414666Z 8:12:05 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:12:06.41705462Z 8:12:06 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:12:12.432054903Z 8:12:12 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:12:12.813234212Z 8:12:12 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:12:14.999902273Z 8:12:14 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:12:15.127769802Z 8:12:15 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:12:18.171983891Z 8:12:18 AM [express] GET /api/user/stats 304 in 389ms
+2026-01-12T08:12:19.430942435Z 8:12:19 AM [express] GET /api/dashboard 304 in 660ms
+2026-01-12T08:12:24.186052377Z 8:12:24 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:12:26.475398142Z 8:12:26 AM [express] GET /api/dashboard 200 in 658ms
+2026-01-12T08:12:30.286168275Z 8:12:30 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:12:33.461847572Z 8:12:33 AM [express] GET /api/dashboard 304 in 661ms
+2026-01-12T08:12:36.158996183Z 8:12:36 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:12:40.438656282Z 8:12:40 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:12:42.657206389Z 8:12:42 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:12:48.434344437Z 8:12:48 AM [express] GET /api/dashboard 304 in 660ms
+2026-01-12T08:12:49.245422593Z 8:12:49 AM [express] GET /api/user/stats 304 in 416ms
+2026-01-12T08:12:55.631570134Z 8:12:55 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:12:55.982694894Z 8:12:55 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:13:02.301815719Z 8:13:02 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:13:02.580435141Z 8:13:02 AM [express] GET /api/dashboard 304 in 661ms
+2026-01-12T08:13:08.162747914Z 8:13:08 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:13:09.426044346Z 8:13:09 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:13:14.150353193Z 8:13:14 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:13:16.81393702Z 8:13:16 AM [express] GET /api/dashboard 304 in 664ms
+2026-01-12T08:13:20.184070589Z 8:13:20 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:13:24.914873786Z 8:13:24 AM [express] GET /api/dashboard 200 in 662ms
+2026-01-12T08:13:25.715895804Z 8:13:25 AM [express] GET /api/notifications/unread-count 304 in 286ms
+2026-01-12T08:13:25.937437121Z 8:13:25 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:13:26.167185152Z 8:13:26 AM [express] GET /api/notifications 304 in 854ms
+2026-01-12T08:13:31.433550038Z 8:13:31 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:13:32.145918625Z 8:13:32 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:13:35.758420949Z ==> Detected service running on port 10000
+2026-01-12T08:13:36.123876034Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2026-01-12T08:13:37.436380321Z 8:13:37 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:13:38.155397271Z 8:13:38 AM [express] GET /api/user/stats 304 in 375ms
+2026-01-12T08:13:45.141641578Z 8:13:45 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:13:45.437633535Z 8:13:45 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:13:46.75641038Z 8:13:46 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:13:46.784851428Z 8:13:46 AM [express] GET /api/notifications 304 in 281ms
+2026-01-12T08:13:51.121869789Z 8:13:51 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:13:51.240244155Z 8:13:51 AM [express] GET /api/dashboard 304 in 660ms
+2026-01-12T08:13:52.425115743Z 8:13:52 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T08:13:52.435013579Z 8:13:52 AM [express] GET /api/notifications 304 in 285ms
+2026-01-12T08:14:08.588946852Z 8:14:08 AM [express] GET /api/user/stats 304 in 381ms
+2026-01-12T08:14:08.856285412Z 8:14:08 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:14:20.22708045Z 8:14:20 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:14:20.228132566Z 8:14:20 AM [express] GET /api/notifications 304 in 281ms
+2026-01-12T08:14:31.512591009Z 8:14:31 AM [express] GET /api/user/stats 304 in 381ms
+2026-01-12T08:14:31.788430948Z 8:14:31 AM [express] GET /api/dashboard 200 in 661ms
+2026-01-12T08:14:34.300089333Z 8:14:34 AM [express] GET /api/notifications/unread-count 304 in 282ms
+2026-01-12T08:14:34.31565643Z 8:14:34 AM [express] GET /api/notifications 304 in 284ms
+2026-01-12T08:14:35.012803142Z 8:14:35 AM [express] GET /api/user 304 in 856ms
+2026-01-12T08:14:38.613823733Z 8:14:38 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:14:39.273166203Z 8:14:39 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:14:40.679129152Z 8:14:40 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:14:40.732904089Z 8:14:40 AM [express] GET /api/notifications 304 in 283ms
+2026-01-12T08:14:47.323656327Z 8:14:47 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:14:47.750213228Z 8:14:47 AM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T08:14:47.850008468Z 8:14:47 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:14:47.860761136Z 8:14:47 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:14:55.818274439Z 8:14:55 AM [express] GET /api/notifications/unread-count 304 in 280ms
+2026-01-12T08:14:56.133117992Z 8:14:56 AM [express] GET /api/user/stats 304 in 952ms
+2026-01-12T08:14:56.179652299Z 8:14:56 AM [express] GET /api/dashboard 304 in 667ms
+2026-01-12T08:14:56.418549455Z 8:14:56 AM [express] GET /api/notifications 304 in 287ms
+2026-01-12T08:15:06.580979065Z 8:15:06 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:15:07.145774616Z 8:15:07 AM [express] GET /api/user/stats 304 in 383ms
+2026-01-12T08:15:07.998363406Z 8:15:07 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:15:08.022923826Z 8:15:08 AM [express] GET /api/notifications 304 in 283ms
+2026-01-12T08:15:28.834593928Z 8:15:28 AM [express] GET /api/notifications/unread-count 304 in 281ms
+2026-01-12T08:15:29.0956539Z 8:15:29 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:15:29.168685263Z 8:15:29 AM [express] GET /api/notifications 304 in 282ms
+2026-01-12T08:15:29.505207029Z 8:15:29 AM [express] GET /api/dashboard 200 in 659ms
+2026-01-12T08:15:32.558756663Z [Notification] Triggering loanRequestAdminNotification for loan 381fe25a-b0ed-4825-84b4-4ea564ac2267
+2026-01-12T08:15:32.558859906Z [Email] Preparing loan request admin email. To: ${adminEmail}, From: ${fromEmail}, User: ${email}
+2026-01-12T08:15:32.559329438Z [Email] Number of documents to attach: 0
+2026-01-12T08:15:32.713157267Z [Email] SendPulse response: { result: true, id: 't8qs9w-0euyih-33' }
+2026-01-12T08:15:32.730141819Z [Email] Loan request admin email sent to admin@solventisgroup.org with 0 attachments, status: true
+2026-01-12T08:15:32.751381766Z [LoanRequest] Admin notification sent with 0 attachments extracted from user KYC
+2026-01-12T08:15:32.854288711Z Loan creation error: ReferenceError: uploadedDocuments is not defined
+2026-01-12T08:15:32.874163644Z     at file:///opt/render/project/src/dist/index.js:9738:65
+2026-01-12T08:15:32.874172675Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-12T08:15:32.94206395Z 8:15:32 AM [express] POST /api/loans 400 in 1701ms
+2026-01-12T08:15:34.44690086Z 8:15:34 AM [express] GET /api/notifications/unread-count 304 in 283ms
+2026-01-12T08:15:34.759998574Z 8:15:34 AM [express] GET /api/notifications 304 in 284ms
+2026-01-12T08:15:34.784463861Z 8:15:34 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:15:35.522604127Z 8:15:35 AM [express] GET /api/dashboard 200 in 657ms
+2026-01-12T08:15:35.619250186Z 8:15:35 AM [express] GET /api/user 304 in 286ms
+2026-01-12T08:15:40.521494571Z 8:15:40 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:15:41.557040816Z 8:15:41 AM [express] GET /api/dashboard 304 in 687ms
+2026-01-12T08:15:46.206256214Z 8:15:46 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:15:48.493262066Z 8:15:48 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:15:53.487290173Z 8:15:53 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:15:54.527695171Z 8:15:54 AM [express] GET /api/dashboard 304 in 661ms
+2026-01-12T08:16:01.555987094Z 8:16:01 AM [express] GET /api/dashboard 304 in 660ms
+2026-01-12T08:16:01.855835183Z 8:16:01 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:16:08.806349689Z 8:16:08 AM [express] GET /api/user/stats 304 in 380ms
+2026-01-12T08:16:09.107919319Z 8:16:09 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:16:16.069419058Z 8:16:16 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:16:16.350347286Z 8:16:16 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:16:22.862872372Z 8:16:22 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:16:23.116470521Z 8:16:23 AM [express] GET /api/dashboard 200 in 657ms
+2026-01-12T08:16:29.484685925Z 8:16:29 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:16:29.790925069Z 8:16:29 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:16:36.1640315Z 8:16:36 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:16:36.484932045Z 8:16:36 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:16:43.506973859Z 8:16:43 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:16:43.795385348Z 8:16:43 AM [express] GET /api/dashboard 304 in 656ms
+2026-01-12T08:16:50.55747516Z 8:16:50 AM [express] GET /api/user/stats 304 in 374ms
+2026-01-12T08:16:50.83912619Z 8:16:50 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:16:57.162081435Z 8:16:57 AM [express] GET /api/user/stats 304 in 385ms
+2026-01-12T08:16:57.443120949Z 8:16:57 AM [express] GET /api/dashboard 304 in 662ms
+2026-01-12T08:17:05.750026554Z 8:17:05 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:17:06.01021404Z 8:17:06 AM [express] GET /api/dashboard 304 in 663ms
+2026-01-12T08:17:12.64917196Z 8:17:12 AM [express] GET /api/user/stats 304 in 393ms
+2026-01-12T08:17:12.947663514Z 8:17:12 AM [express] GET /api/dashboard 304 in 659ms
+2026-01-12T08:17:19.18817322Z 8:17:19 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:17:19.500953877Z 8:17:19 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:17:25.783773568Z 8:17:25 AM [express] GET /api/user/stats 304 in 376ms
+2026-01-12T08:17:26.434435742Z 8:17:26 AM [express] GET /api/dashboard 200 in 658ms
+2026-01-12T08:17:32.560710183Z 8:17:32 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:17:32.784043153Z 8:17:32 AM [express] GET /api/dashboard 304 in 657ms
+2026-01-12T08:17:39.179673742Z 8:17:39 AM [express] GET /api/user/stats 304 in 378ms
+2026-01-12T08:17:39.473098097Z 8:17:39 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:17:45.614439747Z 8:17:45 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:17:47.41793261Z 8:17:47 AM [express] GET /api/dashboard 304 in 658ms
+2026-01-12T08:17:52.555592564Z 8:17:52 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:17:52.555592564Z 8:17:52 AM [express] GET /api/user/stats 304 in 377ms
+2026-01-12T08:17:54.42940901Z 8:17:54 AM [express] GET /api/dashboard 304 in 658ms
