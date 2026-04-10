@@ -190,6 +190,9 @@ export default function AdminUsers() {
   });
 
   const toggleUserSelection = (userId: string) => {
+    const userList = Array.isArray(users) ? users : [];
+    const user = userList.find((u: any) => u.id === userId);
+    if (user?.role === 'admin') return;
     const newSelection = new Set(selectedUsers);
     if (newSelection.has(userId)) {
       newSelection.delete(userId);
@@ -201,10 +204,11 @@ export default function AdminUsers() {
 
   const toggleSelectAll = () => {
     const userList = Array.isArray(users) ? users : [];
-    if (selectedUsers.size === userList.length) {
+    const selectableUsers = userList.filter((user: any) => user.role !== 'admin');
+    if (selectedUsers.size === selectableUsers.length && selectableUsers.length > 0) {
       setSelectedUsers(new Set());
     } else {
-      setSelectedUsers(new Set(userList.map((user: any) => user.id)));
+      setSelectedUsers(new Set(selectableUsers.map((user: any) => user.id)));
     }
   };
 
@@ -367,7 +371,7 @@ export default function AdminUsers() {
                 <TableRow>
                   <TableHead className="w-12">
                     <Checkbox
-                      checked={Array.isArray(users) && selectedUsers.size === users.length && users.length > 0}
+                      checked={Array.isArray(users) && users.filter((u: any) => u.role !== 'admin').length > 0 && selectedUsers.size === users.filter((u: any) => u.role !== 'admin').length}
                       onCheckedChange={toggleSelectAll}
                       data-testid="checkbox-select-all-users"
                     />
