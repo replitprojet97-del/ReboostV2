@@ -63,7 +63,7 @@ function getErrorMessage(status: number): string {
 }
 
 // API URL configuration
-// Production: Use the dedicated API subdomain (https://api.kreditpass.org)
+// Production: Use VITE_API_URL env var (set on Vercel) or fallback to kreditpass.org subdomain
 // Development (Replit/localhost): Use empty string to proxy via Vite to same port
 const IS_DEV = typeof window !== 'undefined' && (
   window.location.hostname === 'localhost' ||
@@ -73,7 +73,9 @@ const IS_DEV = typeof window !== 'undefined' && (
   window.location.hostname.includes('web-container.io')
 );
 
-const API_BASE_URL = IS_DEV ? '' : 'https://api.kreditpass.org';
+const API_BASE_URL = IS_DEV
+  ? ''
+  : (import.meta.env.VITE_API_URL || 'https://api.kreditpass.org');
 
 export function getApiUrl(path: string): string {
   if (!path.startsWith('/')) {

@@ -99,16 +99,20 @@ const IS_REPLIT = !IS_PRODUCTION && (
 const COOKIE_DOMAIN = IS_PRODUCTION ? '.kreditpass.org' : undefined;
 
 // In production: allow the dashboard subdomain and current vercel domain
+// FRONTEND_URL env var allows adding any extra origin (Vercel preview URL, custom domain, etc.)
+const defaultProductionOrigins = [
+  'https://kreditpass.org',
+  'https://www.kreditpass.org',
+  'https://dashboard.kreditpass.org',
+  'https://api.kreditpass.org',
+];
+
+if (process.env.FRONTEND_URL && !defaultProductionOrigins.includes(process.env.FRONTEND_URL)) {
+  defaultProductionOrigins.push(process.env.FRONTEND_URL);
+}
+
 const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? [
-      'https://kreditpass.org',
-      'https://www.kreditpass.org',
-      'https://dashboard.kreditpass.org',
-      'https://www.kreditpass.org',
-      'https://kreditpass.org',
-      'https://api.kreditpass.org',
-      'https://kreditpass.org/dashboard', // Add specific dashboard path just in case
-    ]
+  ? defaultProductionOrigins
   : ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:3000'];
 
 // In production: use 'none' for cross-domain cookies (frontend on kreditpass.org, api on api.kreditpass.org)
