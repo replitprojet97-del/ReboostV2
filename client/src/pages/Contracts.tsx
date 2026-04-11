@@ -327,7 +327,7 @@ export default function Contracts() {
                           {t.contracts?.loanNumber || 'Prêt'} {loan.loanReference || `#${loan.id.substring(0, 8)}`}
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          {formatCurrency(loan.amount)} • {loan.interestRate}% • {loan.duration} mois
+                          {formatCurrency(loan.amount)} • {loan.interestRate}% • {loan.duration} {t.common?.months || 'mois'}
                         </p>
                       </div>
                       <Badge variant="secondary" className="shadow-sm">
@@ -386,7 +386,7 @@ export default function Contracts() {
                           {t.contracts?.loanNumber || 'Prêt'} {loan.loanReference || `#${loan.id.substring(0, 8)}`}
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          {formatCurrency(loan.amount)} • {loan.interestRate}% • {loan.duration} mois
+                          {formatCurrency(loan.amount)} • {loan.interestRate}% • {loan.duration} {t.common?.months || 'mois'}
                         </p>
                       </div>
                       <Badge variant="default" className="shadow-sm bg-accent/90 text-accent-foreground">
