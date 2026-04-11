@@ -3522,7 +3522,7 @@ Tous les codes de validation ont été vérifiés avec succès.`,
       const totalBorrowed = dashboardData.loans.reduce((sum, loan) => sum + parseFloat(loan.amount), 0);
       const totalRepaid = dashboardData.loans.reduce((sum, loan) => sum + parseFloat(loan.totalRepaid), 0);
       const currentBalance = totalBorrowed - totalRepaid;
-      const maxCapacity = dashboardData.user.accountType === 'business' || dashboardData.user.accountType === 'professional' ? 2000000 : 500000;
+      const maxCapacity = dashboardData.user.accountType === 'business' || dashboardData.user.accountType === 'professional' ? 10000000 : 1000000;
       const availableCredit = maxCapacity - currentBalance;
       
       const data = months.map((month, index) => {

@@ -3541,20 +3541,20 @@ export class DatabaseStorage implements IStorage {
   // Business/Professional accounts always have 2,000,000€ regardless of tier
   // Individual accounts have tier-based limits: Bronze=500K, Silver=750K, Gold=1M
   getMaxBorrowingCapacity(tier: string, accountType: string): number {
-    const DEFAULT_MAX_BUSINESS = 2000000; // 2,000,000€ for business/professional
-    
+    const DEFAULT_MAX_BUSINESS = 10000000; // 10,000,000€ for business/professional
+
     // Business and professional accounts always get the higher limit
     if (accountType === 'business' || accountType === 'professional') {
       return DEFAULT_MAX_BUSINESS;
     }
-    
-    // Individual accounts have tier-based limits
+
+    // Individual accounts — ceiling 1,000,000€
     switch (tier) {
-      case 'gold': return 1000000;   // 1,000,000€
-      case 'silver': return 750000;  // 750,000€
+      case 'gold':
+      case 'silver':
       case 'bronze':
       default:
-        return 500000;               // 500,000€
+        return 1000000; // 1,000,000€
     }
   }
 

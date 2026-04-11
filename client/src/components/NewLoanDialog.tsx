@@ -92,8 +92,10 @@ export default function NewLoanDialog({ open, onOpenChange }: NewLoanDialogProps
     const amount = parseFloat(formData.amount);
     if (!formData.amount || amount <= 0) {
       newErrors.amount = t.dialogs.newLoan.errors.amountMustBePositive;
-    } else if (amount > 1000000) {
-      newErrors.amount = t.dialogs.newLoan.errors.amountMaxExceeded;
+    } else if (amount > (user?.accountType === 'business' ? 10000000 : 1000000)) {
+      newErrors.amount = user?.accountType === 'business'
+        ? (t.loanModal?.amountMax || t.dialogs.newLoan.errors.amountMaxExceeded)
+        : t.dialogs.newLoan.errors.amountMaxExceeded;
     }
 
     const rate = parseFloat(formData.interestRate);
