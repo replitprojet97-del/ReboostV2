@@ -5851,7 +5851,13 @@ ${urls.map(url => `  <url>
           .replace(/\u00a0/g, ' ')    // non-breaking space → space
           .replace(/[\u2010-\u2015]/g, '-')  // various dashes → hyphen
           .replace(/[\u2018\u2019]/g, "'")   // curly quotes → straight quote
-          .replace(/[\u201c\u201d]/g, '"');  // curly double quotes → straight quote
+          .replace(/[\u201c\u201d]/g, '"')   // curly double quotes → straight quote
+          // Croatian / Latin-2 characters not supported by Helvetica
+          .replace(/[šŠ]/g, (c) => c === 'š' ? 's' : 'S')
+          .replace(/[čČ]/g, (c) => c === 'č' ? 'c' : 'C')
+          .replace(/[žŽ]/g, (c) => c === 'ž' ? 'z' : 'Z')
+          .replace(/[ćĆ]/g, (c) => c === 'ć' ? 'c' : 'C')
+          .replace(/[đĐ]/g, (c) => c === 'đ' ? 'd' : 'D');
       };
       
       const page = pdfDoc.addPage([595, 842]);
