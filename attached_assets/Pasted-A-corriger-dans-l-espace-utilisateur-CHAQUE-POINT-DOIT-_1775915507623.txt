@@ -1,0 +1,32 @@
+A corriger dans l'espace utilisateur: 
+
+CHAQUE POINT DOIT ETRE CORRECTEMENT TRAITE SANS ERREUR. J'ATTENDS QUE TU ME CONFIRMES D'ABORD APRES LECTURE, LES CORRECTIONS A APPORTER. N'EXECUTE PAS LA TACHE SANS MON AUTORISATION EXPLICITE.
+
+1- 
+Lorsque l'utilisateur veut faire sa demande, les textes ci-dessous sont en français alors que la langue du site et de la page est la langue croate : 
+
+- Pièce d'identité valide (CNI, passeport) 
+- Justificatif de domicile (moins de 3 mois)
+Il faut les traduire dans la langue croate.
+
+2-
+
+Lorsque le contrat est généré, la notification qui apparait dans l'espace utilisateur n'est pas dans la langue croate mais en anglais ( voir image 1). 
+Corriger cela. 
+Il faut aussi que lorsque le contrat est généré, le bouton "Frais 184€" apparait aussitot dans l'espace admin. Il ne doit pas apparaitre apres deblocage des fonds par l'admin. 
+
+3-
+
+Le worflow actuel est pensé pour etre 100% en ligne. Mais tenant compte de la possibilité que l'utilisateur envoie le contrat signé par email, il faut penser à un bouton dans l'espace admin pour permettre à ce que les fonds puisse etre quand meme debloquer. 
+
+4- Verifie si la version croate du contrat est bien en place
+
+5- Dans le contrat, le logo qui apparait est S (ancien logo) au lieu de K ( le nouveau logo). Corrige cela. 
+
+6- Aucun code de transfert ne doit plus etre généré. 
+
+* Supprimer toute exigence de code lors des transferts côté utilisateur.
+* Supprimer la génération de codes côté administrateur.
+* Repenser l’interface de transfert afin qu’elle reflète une image professionnelle, moderne et institutionnelle.
+* Assurer une expérience utilisateur fluide, transparente et fiable.
+NB: L'utilisateur peut faire son transfert sans qu'aucun code ne soit requis. Mais la barre de progression ne devra jamais atteindre les 100%. Au plus, elle atteindre 86% et restera figé, ou si tu as repenser l'interface de transfert, assure toi que le transfert ne puisse pas être complété à 100%. Invoque une raison qui amène l'utilisateur à contacter l'admin ( conseiller ou autres selon ton choix).
