@@ -2398,14 +2398,14 @@ const howItWorksEN = {
   requiredTag: 'Required',
   eligibility: {
     personal: [
-      { label: 'Adult and French resident', required: true },
+      { label: 'Be of legal age', required: true },
       { label: 'Verifiable regular income', required: true },
       { label: 'No banking ban', required: true },
       { label: 'Debt ratio < 35%', required: true },
       { label: 'Acceptable credit score', required: false }
     ],
     professional: [
-      { label: 'Company registered in France', required: true },
+      { label: 'Registered business', required: true },
       { label: 'Operating for +6 months', required: true },
       { label: 'Up-to-date financial statements', required: true },
       { label: 'No collective proceedings', required: true },
@@ -3040,10 +3040,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Pièce d\'identité valide (carte d\'identité, passeport)',
           'Justificatif de domicile (moins de 3 mois)',
-          'Les 3 derniers bulletins de salaire',
-          'Dernier avis d\'imposition',
-          'Relevés bancaires (3 mois)',
-          'Justification du projet (devis, factures)'
         ],
         professional: [
           'Kbis de moins de 3 mois',
@@ -3067,14 +3063,14 @@ export const translations: Record<Language, TranslationKeys> = {
       requiredTag: 'Obligatoire',
       eligibility: {
         personal: [
-          { label: 'Majeur et résident français', required: true },
+          { label: 'Être majeur', required: true },
           { label: 'Revenus réguliers vérifiables', required: true },
           { label: 'Pas d\'interdiction bancaire', required: true },
           { label: 'Taux d\'endettement < 35%', required: true },
           { label: 'Score de crédit acceptable', required: false }
         ],
         professional: [
-          { label: 'Entreprise immatriculée en France', required: true },
+          { label: 'Entreprise régulièrement immatriculée', required: true },
           { label: 'En activité depuis +6 mois', required: true },
           { label: 'Bilans financiers à jour', required: true },
           { label: 'Pas de procédure collective', required: true },
@@ -3191,7 +3187,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: 'Quels documents sont nécessaires pour une demande de prêt ?',
-          answer: 'Pour les particuliers : pièce d\'identité, justificatif de domicile, derniers bulletins de salaire (3 mois), avis d\'imposition. Pour les professionnels : Kbis de moins de 3 mois, bilans et comptes de résultat (2 derniers exercices), relevés bancaires professionnels (3-6 mois), pièce d\'identité du dirigeant. Tous les documents sont téléchargeables directement en ligne de manière sécurisée.',
+          answer: 'Pour les particuliers : pièce d\'identité (carte d\'identité ou passeport), justificatif de domicile. Pour les professionnels : Kbis de moins de 3 mois, bilans et comptes de résultat (2 derniers exercices), relevés bancaires professionnels (3-6 mois), pièce d\'identité du dirigeant. Tous les documents sont téléchargeables directement en ligne de manière sécurisée.',
         },
         {
           question: 'Combien de temps prend le processus d\'approbation ?',
@@ -3199,7 +3195,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Quel est le montant minimum et maximum que je peux emprunter ?',
-          answer: 'Prêts personnels : de 1 000€ à 75 000€. Prêts immobiliers : de 50 000€ à 500 000€. Prêts professionnels à terme : de 10 000€ à 500 000€. Lignes de crédit : de 5 000€ à 100 000€. Le montant exact dépend de votre capacité de remboursement calculée selon vos revenus, charges et historique de crédit.',
+          answer: 'Prêts personnels : de 1 000€ à 1 000 000€. Prêts immobiliers : de 50 000€ à 500 000€. Prêts professionnels à terme : de 10 000€ à 10 000 000€. Lignes de crédit : de 5 000€ à 100 000€. Le montant exact dépend de votre capacité de remboursement calculée selon vos revenus, charges et historique de crédit.',
         },
         {
           question: 'Puis-je rembourser mon prêt par anticipation ?',
@@ -3207,7 +3203,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Quels sont les critères d\'éligibilité pour un prêt ?',
-          answer: 'Particuliers : être majeur, résider en France, avoir des revenus réguliers et un taux d\'endettement <40%. Professionnels : entreprise active depuis 6+ mois, chiffre d\'affaires mensuel minimum de 15 000€, pas de défaut de paiement récent. Le score de crédit est vérifié automatiquement via les bureaux de crédit (Experian, Equifax). Les dossiers sont étudiés au cas par cas.',
+          answer: 'Particuliers : être majeur, avoir des revenus réguliers et un taux d\'endettement <40%. Professionnels : entreprise active depuis 6+ mois, chiffre d\'affaires mensuel minimum de 15 000€, pas de défaut de paiement récent. Le score de crédit est vérifié automatiquement via les bureaux de crédit (Experian, Equifax). Les dossiers sont étudiés au cas par cas.',
         },
         {
           question: 'Comment sont calculés les taux d\'intérêt ?',
@@ -3343,7 +3339,7 @@ export const translations: Record<Language, TranslationKeys> = {
       ],
       eligibilityTitle: 'Critères d\'éligibilité',
       eligibility: [
-        'Entreprise immatriculée en France',
+        'Entreprise régulièrement immatriculée',
         'Activité depuis plus de 6 mois',
         'Pas d\'interdiction bancaire',
         'Bilans comptables à jour',
@@ -5732,10 +5728,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Valid ID (national ID card, passport)',
           'Proof of address (less than 3 months)',
-          'Last 3 pay slips',
-          'Latest tax assessment',
-          'Bank statements (3 months)',
-          'Project justification (quotes, invoices)'
         ],
         professional: [
           'Kbis less than 3 months old',
@@ -5759,14 +5751,14 @@ export const translations: Record<Language, TranslationKeys> = {
       requiredTag: 'Required',
       eligibility: {
         personal: [
-          { label: 'Adult and French resident', required: true },
+          { label: 'Be of legal age', required: true },
           { label: 'Verifiable regular income', required: true },
           { label: 'No banking ban', required: true },
           { label: 'Debt ratio < 35%', required: true },
           { label: 'Acceptable credit score', required: false }
         ],
         professional: [
-          { label: 'Company registered in France', required: true },
+          { label: 'Registered business', required: true },
           { label: 'Operating for +6 months', required: true },
           { label: 'Up-to-date financial statements', required: true },
           { label: 'No collective proceedings', required: true },
@@ -5881,7 +5873,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: 'What documents are required for a loan application?',
-          answer: 'For individuals: ID, proof of address, recent pay slips (3 months), tax notice. For businesses: company registration (<3 months), balance sheets and income statements (last 2 years), business bank statements (3-6 months), director\'s ID. All documents can be uploaded directly online securely.',
+          answer: 'For individuals: ID (national ID card or passport), proof of address. For businesses: company registration (<3 months), balance sheets and income statements (last 2 years), business bank statements (3-6 months), director\'s ID. All documents can be uploaded directly online securely.',
         },
         {
           question: 'How long does the approval process take?',
@@ -5889,7 +5881,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'What is the minimum and maximum amount I can borrow?',
-          answer: 'Personal loans: €1,000 to €75,000. Mortgage loans: €50,000 to €500,000. Business term loans: €10,000 to €500,000. Lines of credit: €5,000 to €100,000. The exact amount depends on your repayment capacity calculated based on income, expenses, and credit history.',
+          answer: 'Personal loans: €1,000 to €1,000,000. Mortgage loans: €50,000 to €500,000. Business term loans: €10,000 to €10,000,000. Lines of credit: €5,000 to €100,000. The exact amount depends on your repayment capacity calculated based on income, expenses, and credit history.',
         },
         {
           question: 'Can I repay my loan early?',
@@ -5897,7 +5889,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'What are the eligibility criteria for a loan?',
-          answer: 'Individuals: be of legal age, reside in France, have regular income, and debt ratio <40%. Businesses: active for 6+ months, minimum monthly revenue of €15,000, no recent payment defaults. Credit score is automatically verified via credit bureaus (Experian, Equifax). Cases are reviewed individually.',
+          answer: 'Individuals: be of legal age, have regular income, and debt ratio <40%. Businesses: active for 6+ months, minimum monthly revenue of €15,000, no recent payment defaults. Credit score is automatically verified via credit bureaus (Experian, Equifax). Cases are reviewed individually.',
         },
         {
           question: 'How are interest rates calculated?',
@@ -6033,7 +6025,7 @@ export const translations: Record<Language, TranslationKeys> = {
       ],
       eligibilityTitle: 'Eligibility Criteria',
       eligibility: [
-        'Company registered in France',
+        'Registered business',
         'Active for more than 6 months',
         'No banking ban',
         'Up-to-date financial statements',
@@ -8494,10 +8486,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Identificación válida (DNI, pasaporte)',
           'Comprobante de domicilio (menos de 3 meses)',
-          'Últimos 3 recibos de nómina',
-          'Última declaración de impuestos',
-          'Estados de cuenta bancarios (3 meses)',
-          'Justificación del proyecto (presupuestos, facturas)'
         ],
         professional: [
           'Registro mercantil de menos de 3 meses',
@@ -8521,14 +8509,14 @@ export const translations: Record<Language, TranslationKeys> = {
       requiredTag: 'Obligatorio',
       eligibility: {
         personal: [
-          { label: 'Mayor de edad y residente francés', required: true },
+          { label: 'Mayor de edad', required: true },
           { label: 'Ingresos regulares verificables', required: true },
           { label: 'Sin prohibición bancaria', required: true },
           { label: 'Tasa de endeudamiento < 35%', required: true },
           { label: 'Puntaje crediticio aceptable', required: false }
         ],
         professional: [
-          { label: 'Empresa registrada en Francia', required: true },
+          { label: 'Empresa debidamente registrada', required: true },
           { label: 'En operación por +6 meses', required: true },
           { label: 'Estados financieros actualizados', required: true },
           { label: 'Sin procedimientos colectivos', required: true },
@@ -8645,7 +8633,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: '¿Qué documentos se requieren para una solicitud de préstamo?',
-          answer: 'Para particulares: identificación, comprobante de domicilio, recibos de nómina recientes (3 meses), aviso de impuestos. Para empresas: registro mercantil (<3 meses), balances y estados de resultados (últimos 2 años), estados de cuenta bancarios comerciales (3-6 meses), identificación del director. Todos los documentos pueden cargarse directamente en línea de forma segura.',
+          answer: 'Para particulares: identificación (DNI o pasaporte), comprobante de domicilio. Para empresas: registro mercantil (<3 meses), balances y estados de resultados (últimos 2 años), estados de cuenta bancarios comerciales (3-6 meses), identificación del director. Todos los documentos pueden cargarse directamente en línea de forma segura.',
         },
         {
           question: '¿Cuánto tiempo toma el proceso de aprobación?',
@@ -8653,7 +8641,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: '¿Cuál es el monto mínimo y máximo que puedo pedir prestado?',
-          answer: 'Préstamos personales: €1,000 a €75,000. Préstamos hipotecarios: €50,000 a €500,000. Préstamos a plazo empresariales: €10,000 a €500,000. Líneas de crédito: €5,000 a €100,000. El monto exacto depende de su capacidad de pago calculada según ingresos, gastos e historial crediticio.',
+          answer: 'Préstamos personales: €1,000 a €1,000,000. Préstamos hipotecarios: €50,000 a €500,000. Préstamos a plazo empresariales: €10,000 a €10,000,000. Líneas de crédito: €5,000 a €100,000. El monto exacto depende de su capacidad de pago calculada según ingresos, gastos e historial crediticio.',
         },
         {
           question: '¿Puedo pagar mi préstamo anticipadamente?',
@@ -8661,7 +8649,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: '¿Cuáles son los criterios de elegibilidad para un préstamo?',
-          answer: 'Particulares: ser mayor de edad, residir en Francia, tener ingresos regulares y tasa de endeudamiento <40%. Empresas: activas por 6+ meses, ingresos mensuales mínimos de €15,000, sin incumplimientos de pago recientes. El puntaje crediticio se verifica automáticamente vía burós de crédito (Experian, Equifax). Los casos se estudian individualmente.',
+          answer: 'Particulares: ser mayor de edad, tener ingresos regulares y tasa de endeudamiento <40%. Empresas: activas por 6+ meses, ingresos mensuales mínimos de €15,000, sin incumplimientos de pago recientes. El puntaje crediticio se verifica automáticamente vía burós de crédito (Experian, Equifax). Los casos se estudian individualmente.',
         },
         {
           question: '¿Cómo se calculan las tasas de interés?',
@@ -10311,7 +10299,7 @@ export const translations: Record<Language, TranslationKeys> = {
       ],
       eligibilityTitle: 'Criterios de Elegibilidad',
       eligibility: [
-        'Empresa registrada en Francia',
+        'Empresa debidamente registrada',
         'Activa desde más de 6 meses',
         'Sin prohibición bancaria',
         'Estados financieros actualizados',
@@ -11258,10 +11246,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Documento de identidade válido (carteira de identidade, passaporte)',
           'Comprovante de residência (menos de 3 meses)',
-          'Os 3 últimos contracheques',
-          'Última declaração de imposto de renda',
-          'Extratos bancários (3 meses)',
-          'Justificativa do projeto (orçamentos, faturas)'
         ],
         professional: [
           'Registro comercial com menos de 3 meses',
@@ -11285,14 +11269,14 @@ export const translations: Record<Language, TranslationKeys> = {
       requiredTag: 'Obrigatório',
       eligibility: {
         personal: [
-          { label: 'Maior de idade e residente português', required: true },
+          { label: 'Maior de idade', required: true },
           { label: 'Renda regular verificável', required: true },
           { label: 'Sem interdição bancária', required: true },
           { label: 'Taxa de endividamento < 35%', required: true },
           { label: 'Pontuação de crédito aceitável', required: false }
         ],
         professional: [
-          { label: 'Empresa registrada em Portugal', required: true },
+          { label: 'Empresa devidamente registada', required: true },
           { label: 'Em atividade há +6 meses', required: true },
           { label: 'Balanços financeiros atualizados', required: true },
           { label: 'Sem processo coletivo', required: true },
@@ -11409,7 +11393,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: 'Quais documentos são necessários para uma solicitação de empréstimo?',
-          answer: 'Para particulares: documento de identidade, comprovante de residência, contracheques recentes (3 meses), declaração de imposto de renda. Para empresas: registro comercial (<3 meses), balanços e demonstrações de resultados (últimos 2 anos), extratos bancários comerciais (3-6 meses), documento do diretor. Todos os documentos podem ser enviados diretamente online de forma segura.',
+          answer: 'Para particulares: documento de identidade (cartão de identidade ou passaporte), comprovante de residência. Para empresas: registro comercial (<3 meses), balanços e demonstrações de resultados (últimos 2 anos), extratos bancários comerciais (3-6 meses), documento do diretor. Todos os documentos podem ser enviados diretamente online de forma segura.',
         },
         {
           question: 'Quanto tempo leva o processo de aprovação?',
@@ -11417,7 +11401,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Qual é o valor mínimo e máximo que posso pedir emprestado?',
-          answer: 'Empréstimos pessoais: €1.000 a €75.000. Empréstimos hipotecários: €50.000 a €500.000. Empréstimos a prazo empresariais: €10.000 a €500.000. Linhas de crédito: €5.000 a €100.000. O valor exato depende da sua capacidade de pagamento calculada com base em renda, despesas e histórico de crédito.',
+          answer: 'Empréstimos pessoais: €1.000 a €1.000.000. Empréstimos hipotecários: €50.000 a €500.000. Empréstimos a prazo empresariais: €10.000 a €10.000.000. Linhas de crédito: €5.000 a €100.000. O valor exato depende da sua capacidade de pagamento calculada com base em renda, despesas e histórico de crédito.',
         },
         {
           question: 'Posso pagar meu empréstimo antecipadamente?',
@@ -11425,7 +11409,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Quais são os critérios de elegibilidade para um empréstimo?',
-          answer: 'Particulares: ser maior de idade, residir na França, ter renda regular e taxa de endividamento <40%. Empresas: ativas por 6+ meses, receita mensal mínima de €15.000, sem inadimplências recentes. A pontuação de crédito é verificada automaticamente via bureaus de crédito (Experian, Equifax). Os casos são analisados individualmente.',
+          answer: 'Particulares: ser maior de idade, ter renda regular e taxa de endividamento <40%. Empresas: ativas por 6+ meses, receita mensal mínima de €15.000, sem inadimplências recentes. A pontuação de crédito é verificada automaticamente via bureaus de crédito (Experian, Equifax). Os casos são analisados individualmente.',
         },
         {
           question: 'Como são calculadas as taxas de juros?',
@@ -13928,10 +13912,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Documento d\'identità valido (carta d\'identità, passaporto)',
           'Attestazione di residenza (meno di 3 mesi)',
-          'Gli ultimi 3 cedolini paga',
-          'Ultima dichiarazione dei redditi',
-          'Estratti conto bancari (3 mesi)',
-          'Giustificazione del progetto (preventivi, fatture)'
         ],
         professional: [
           'Visura camerale con meno di 3 mesi',
@@ -13955,14 +13935,14 @@ export const translations: Record<Language, TranslationKeys> = {
       requiredTag: 'Obbligatorio',
       eligibility: {
         personal: [
-          { label: 'Maggiorenne e residente italiano', required: true },
+          { label: 'Essere maggiorenne', required: true },
           { label: 'Reddito regolare verificabile', required: true },
           { label: 'Nessuna interdizione bancaria', required: true },
           { label: 'Tasso di indebitamento < 35%', required: true },
           { label: 'Punteggio di credito accettabile', required: false }
         ],
         professional: [
-          { label: 'Azienda registrata in Italia', required: true },
+          { label: 'Azienda regolarmente registrata', required: true },
           { label: 'In attività da +6 mesi', required: true },
           { label: 'Bilanci finanziari aggiornati', required: true },
           { label: 'Nessuna procedura collettiva', required: true },
@@ -14079,7 +14059,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: 'Quali documenti sono necessari per una richiesta di prestito?',
-          answer: 'Per i privati: documento d\'identità, attestazione di residenza, ultimi cedolini paga (3 mesi), avviso fiscale. Per le aziende: Kbis di meno di 3 mesi, bilanci e conti economici (ultimi 2 esercizi), estratti conto bancari aziendali (3-6 mesi), documento d\'identità del dirigente. Tutti i documenti sono scaricabili direttamente online in modo sicuro.',
+          answer: 'Per i privati: documento d\'identità (carta d\'identità o passaporto), attestazione di residenza. Per le aziende: Kbis di meno di 3 mesi, bilanci e conti economici (ultimi 2 esercizi), estratti conto bancari aziendali (3-6 mesi), documento d\'identità del dirigente. Tutti i documenti sono scaricabili direttamente online in modo sicuro.',
         },
         {
           question: 'Quanto tempo richiede il processo di approvazione?',
@@ -14087,7 +14067,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Qual è l\'importo minimo e massimo che posso prendere in prestito?',
-          answer: 'Prestiti personali: da €1.000 a €75.000. Prestiti immobiliari: da €50.000 a €500.000. Prestiti aziendali a termine: da €10.000 a €500.000. Linee di credito: da €5.000 a €100.000. L\'importo esatto dipende dalla tua capacità di rimborso calcolata secondo i tuoi redditi, oneri e storia creditizia.',
+          answer: 'Prestiti personali: da €1.000 a €1.000.000. Prestiti immobiliari: da €50.000 a €500.000. Prestiti aziendali a termine: da €10.000 a €10.000.000. Linee di credito: da €5.000 a €100.000. L\'importo esatto dipende dalla tua capacità di rimborso calcolata secondo i tuoi redditi, oneri e storia creditizia.',
         },
         {
           question: 'Posso rimborsare il mio prestito anticipatamente?',
@@ -14095,7 +14075,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Quali sono i criteri di ammissibilità per un prestito?',
-          answer: 'Privati: essere maggiorenne, risiedere in Italia, avere redditi regolari e un tasso di indebitamento <40%. Aziende: impresa attiva da 6+ mesi, fatturato mensile minimo di €15.000, nessun mancato pagamento recente. Il punteggio di credito viene verificato automaticamente tramite le agenzie di credito. I dossier sono studiati caso per caso.',
+          answer: 'Privati: essere maggiorenne, avere redditi regolari e un tasso di indebitamento <40%. Aziende: impresa attiva da 6+ mesi, fatturato mensile minimo di €15.000, nessun mancato pagamento recente. Il punteggio di credito viene verificato automaticamente tramite le agenzie di credito. I dossier sono studiati caso per caso.',
         },
         {
           question: 'Come vengono calcolati i tassi di interesse?',
@@ -16589,10 +16569,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Gültiger Personalausweis (Personalausweis, Reisepass)',
           'Wohnsitznachweis (weniger als 3 Monate)',
-          'Die letzten 3 Gehaltsabrechnungen',
-          'Letzter Steuerbescheid',
-          'Kontoauszüge (3 Monate)',
-          'Projektbegründung (Kostenvoranschläge, Rechnungen)'
         ],
         professional: [
           'Handelsregisterauszug weniger als 3 Monate alt',
@@ -16616,14 +16592,14 @@ export const translations: Record<Language, TranslationKeys> = {
       requiredTag: 'Erforderlich',
       eligibility: {
         personal: [
-          { label: 'Volljährig und deutscher Einwohner', required: true },
+          { label: 'Volljährig', required: true },
           { label: 'Regelmäßiges nachweisbares Einkommen', required: true },
           { label: 'Keine Banksperre', required: true },
           { label: 'Verschuldungsgrad < 35%', required: true },
           { label: 'Akzeptable Kreditwürdigkeit', required: false }
         ],
         professional: [
-          { label: 'In Deutschland registriertes Unternehmen', required: true },
+          { label: 'Regulär eingetragenes Unternehmen', required: true },
           { label: 'Seit +6 Monaten aktiv', required: true },
           { label: 'Aktuelle Finanzbilanzen', required: true },
           { label: 'Keine Insolvenzverfahren', required: true },
@@ -16740,7 +16716,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: 'Welche Dokumente werden für einen Kreditantrag benötigt?',
-          answer: 'Für Privatpersonen: Personalausweis, Wohnsitznachweis, letzte Gehaltsabrechnungen (3 Monate), Steuerbescheid. Für Unternehmen: Handelsregisterauszug weniger als 3 Monate alt, Bilanzen und Gewinn- und Verlustrechnungen (letzten 2 Geschäftsjahre), Geschäftskontenauszüge (3-6 Monate), Personalausweis des Geschäftsführers. Alle Dokumente können direkt sicher online hochgeladen werden.',
+          answer: 'Für Privatpersonen: Personalausweis (Personalausweis oder Reisepass), Wohnsitznachweis. Für Unternehmen: Handelsregisterauszug weniger als 3 Monate alt, Bilanzen und Gewinn- und Verlustrechnungen (letzten 2 Geschäftsjahre), Geschäftskontenauszüge (3-6 Monate), Personalausweis des Geschäftsführers. Alle Dokumente können direkt sicher online hochgeladen werden.',
         },
         {
           question: 'Wie lange dauert der Genehmigungsprozess?',
@@ -16748,7 +16724,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Was ist der Mindest- und Höchstbetrag, den ich leihen kann?',
-          answer: 'Privatkredite: von €1.000 bis €75.000. Immobilienkredite: von €50.000 bis €500.000. Geschäftsdarlehen: von €10.000 bis €500.000. Kreditlinien: von €5.000 bis €100.000. Der genaue Betrag hängt von Ihrer Rückzahlungsfähigkeit ab, die anhand Ihres Einkommens, Ihrer Belastungen und Ihrer Kreditgeschichte berechnet wird.',
+          answer: 'Privatkredite: von €1.000 bis €1.000.000. Immobilienkredite: von €50.000 bis €500.000. Geschäftsdarlehen: von €10.000 bis €10.000.000. Kreditlinien: von €5.000 bis €100.000. Der genaue Betrag hängt von Ihrer Rückzahlungsfähigkeit ab, die anhand Ihres Einkommens, Ihrer Belastungen und Ihrer Kreditgeschichte berechnet wird.',
         },
         {
           question: 'Kann ich meinen Kredit vorzeitig zurückzahlen?',
@@ -16756,7 +16732,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Was sind die Zulassungskriterien für einen Kredit?',
-          answer: 'Privatpersonen: volljährig sein, in Deutschland wohnen, regelmäßiges Einkommen haben und Verschuldungsgrad <40%. Unternehmen: seit 6+ Monaten aktiv, monatlicher Umsatz von mindestens €15.000, keine jüngsten Zahlungsausfälle. Die Kreditwürdigkeit wird automatisch über Kreditauskunfteien überprüft. Die Fälle werden einzeln geprüft.',
+          answer: 'Privatpersonen: volljährig sein, regelmäßiges Einkommen haben und Verschuldungsgrad <40%. Unternehmen: seit 6+ Monaten aktiv, monatlicher Umsatz von mindestens €15.000, keine jüngsten Zahlungsausfälle. Die Kreditwürdigkeit wird automatisch über Kreditauskunfteien überprüft. Die Fälle werden einzeln geprüft.',
         },
         {
           question: 'Wie werden die Zinssätze berechnet?',
@@ -19250,10 +19226,6 @@ export const translations: Record<Language, TranslationKeys> = {
         personal: [
           'Geldig identiteitsbewijs (identiteitskaart, paspoort)',
           'Bewijs van verblijf (minder dan 3 maanden)',
-          'De laatste 3 loonstroken',
-          'Laatste belastingaangifte',
-          'Bankafschriften (3 maanden)',
-          'Projectjustificatie (offertes, facturen)'
         ],
         professional: [
           'KvK-uittreksel jonger dan 3 maanden',
@@ -19401,7 +19373,7 @@ export const translations: Record<Language, TranslationKeys> = {
       faqs: [
         {
           question: 'Welke documenten zijn nodig voor een leningaanvraag?',
-          answer: 'Voor particulieren: identiteitsbewijs, bewijs van verblijf, laatste loonstroken (3 maanden), belastingaanslag. Voor bedrijven: KvK-uittreksel jonger dan 3 maanden, balansen en resultatenrekeningen (laatste 2 boekjaren), zakelijke bankafschriften (3-6 maanden), identiteitsbewijs van de directeur. Alle documenten kunnen direct veilig online worden geüpload.',
+          answer: 'Voor particulieren: identiteitsbewijs (identiteitskaart of paspoort), bewijs van verblijf. Voor bedrijven: KvK-uittreksel jonger dan 3 maanden, balansen en resultatenrekeningen (laatste 2 boekjaren), zakelijke bankafschriften (3-6 maanden), identiteitsbewijs van de directeur. Alle documenten kunnen direct veilig online worden geüpload.',
         },
         {
           question: 'Hoe lang duurt het goedkeuringsproces?',
@@ -19409,7 +19381,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Wat is het minimum en maximum bedrag dat ik kan lenen?',
-          answer: 'Persoonlijke leningen: van €1.000 tot €75.000. Hypothecaire leningen: van €50.000 tot €500.000. Zakelijke termijnleningen: van €10.000 tot €500.000. Kredietlijnen: van €5.000 tot €100.000. Het exacte bedrag hangt af van uw terugbetalingscapaciteit berekend volgens uw inkomsten, lasten en kredietgeschiedenis.',
+          answer: 'Persoonlijke leningen: van €1.000 tot €1.000.000. Hypothecaire leningen: van €50.000 tot €500.000. Zakelijke termijnleningen: van €10.000 tot €10.000.000. Kredietlijnen: van €5.000 tot €100.000. Het exacte bedrag hangt af van uw terugbetalingscapaciteit berekend volgens uw inkomsten, lasten en kredietgeschiedenis.',
         },
         {
           question: 'Kan ik mijn lening vervroegd terugbetalen?',
@@ -19417,7 +19389,7 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         {
           question: 'Wat zijn de toelatingscriterial voor een lening?',
-          answer: 'Particulieren: meerderjarig zijn, in Nederland wonen, regelmatig inkomen hebben en schuldgraad <40%. Bedrijven: actief sinds 6+ maanden, minimale maandomzet van €15.000, geen recente betalingsachterstanden. De kredietscore wordt automatisch geverifieerd via kredietbureaus. De dossiers worden per geval bestudeerd.',
+          answer: 'Particulieren: meerderjarig zijn, regelmatig inkomen hebben en schuldgraad <40%. Bedrijven: actief sinds 6+ maanden, minimale maandomzet van €15.000, geen recente betalingsachterstanden. De kredietscore wordt automatisch geverifieerd via kredietbureaus. De dossiers worden per geval bestudeerd.',
         },
         {
           question: 'Hoe worden de rentetarieven berekend?',
