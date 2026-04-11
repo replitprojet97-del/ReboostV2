@@ -127,7 +127,7 @@ export default function AdminLoans() {
       queryClient.invalidateQueries({ queryKey: ["/api/admin/loans"] });
       toast({
         title: "Contrat confirmé - Fonds disponibles",
-        description: "Le contrat a été confirmé, les codes de transfert ont été générés et les fonds sont désormais disponibles pour l'utilisateur.",
+        description: "Le contrat a été confirmé et les fonds sont désormais disponibles pour l'utilisateur.",
       });
     },
     onError: (error: any) => {
@@ -468,7 +468,7 @@ export default function AdminLoans() {
                           </span>
                         </TooltipTrigger>
                         <TooltipContent>
-                          Les fonds ont déjà été débloqués pour ce prêt. Les codes de transfert ont été générés.
+                          Les fonds ont déjà été débloqués pour ce prêt.
                         </TooltipContent>
                       </Tooltip>
                     ) : canConfirmContract(loan) ? (
@@ -488,7 +488,7 @@ export default function AdminLoans() {
                           <AlertDialogHeader>
                             <AlertDialogTitle>Confirmer le contrat signé</AlertDialogTitle>
                             <AlertDialogDescription>
-                              Le contrat signé par {loan.userName} a été reçu. Cette action va confirmer le contrat et générer automatiquement 6 codes de validation de transfert. Les fonds seront ensuite prêts pour le déblocage.
+                              Le contrat signé par {loan.userName} a été reçu. Cette action va confirmer le contrat et débloquer immédiatement les fonds pour le client.
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
@@ -520,7 +520,7 @@ export default function AdminLoans() {
                           <AlertDialogHeader>
                             <AlertDialogTitle>Confirmer la réception du contrat par email</AlertDialogTitle>
                             <AlertDialogDescription>
-                              Vous confirmez que le contrat signé par <strong>{loan.userName}</strong> a été reçu par email (sans dépôt numérique). Cette action va débloquer les fonds et générer les codes de transfert.
+                              Vous confirmez que le contrat signé par <strong>{loan.userName}</strong> a été reçu par email (sans dépôt numérique). Cette action va débloquer immédiatement les fonds pour le client.
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
@@ -820,7 +820,7 @@ export default function AdminLoans() {
                             </span>
                           </TooltipTrigger>
                           <TooltipContent>
-                            Les fonds ont déjà été débloqués pour ce prêt. Les codes de transfert ont été générés.
+                            Les fonds ont déjà été débloqués pour ce prêt.
                           </TooltipContent>
                         </Tooltip>
                       ) : canConfirmContract(loan) ? (
@@ -839,7 +839,7 @@ export default function AdminLoans() {
                             <AlertDialogHeader>
                               <AlertDialogTitle>Confirmer le contrat signé</AlertDialogTitle>
                               <AlertDialogDescription>
-                                Le contrat signé par {loan.userName} a été reçu. Cette action va confirmer le contrat et générer automatiquement 6 codes de validation de transfert. Les fonds seront ensuite prêts pour le déblocage.
+                                Le contrat signé par {loan.userName} a été reçu. Cette action va confirmer le contrat et débloquer immédiatement les fonds pour le client.
                               </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
@@ -871,7 +871,7 @@ export default function AdminLoans() {
                             <AlertDialogHeader>
                               <AlertDialogTitle>Confirmer la réception du contrat par email</AlertDialogTitle>
                               <AlertDialogDescription>
-                                Vous confirmez que le contrat signé par <strong>{loan.userName}</strong> a été reçu par email (sans dépôt numérique). Cette action va débloquer les fonds et générer les codes de transfert.
+                                Vous confirmez que le contrat signé par <strong>{loan.userName}</strong> a été reçu par email (sans dépôt numérique). Cette action va débloquer immédiatement les fonds pour le client.
                               </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>

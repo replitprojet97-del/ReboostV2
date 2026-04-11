@@ -757,7 +757,7 @@ export async function registerRoutes(app: Express, sessionMiddleware: any): Prom
           .regex(/[^A-Za-z0-9]/, 'Le mot de passe doit contenir au moins un caractère spécial'),
         fullName: z.string().min(1, 'Nom complet requis'),
         phone: z.string().optional(),
-        preferredLanguage: z.enum(['fr', 'en', 'es', 'pt', 'it', 'de', 'nl']).optional(),
+        preferredLanguage: z.enum(['fr', 'en', 'es', 'pt', 'it', 'de', 'nl', 'hr']).optional(),
         accountType: z.enum(['personal', 'business', 'professional']).optional(),
         companyName: z.string().optional(),
         siret: z.string().optional(),
@@ -1800,6 +1800,7 @@ export async function registerRoutes(app: Express, sessionMiddleware: any): Prom
         email: z.string().email('Email invalide').optional(),
         phone: z.string().optional(),
         companyName: z.string().optional(),
+        preferredLanguage: z.enum(['fr', 'en', 'es', 'pt', 'it', 'de', 'nl', 'hr']).optional(),
       });
 
       const validatedData = updateProfileSchema.parse(req.body);
@@ -4254,13 +4255,12 @@ Tous les codes de validation ont été vérifiés avec succès.`,
         });
       }
 
-      const result = await storage.markLoanFundsAvailable(req.params.id, req.session.userId!);
+      const updatedLoan = await storage.markLoanFundsAvailable(req.params.id, req.session.userId!);
       
-      if (!result) {
+      if (!updatedLoan) {
         return res.status(500).json({ error: 'Erreur lors de la mise à jour du prêt' });
       }
 
-      const { loan: updatedLoan, codes: generatedCodes } = result;
       const user = await storage.getUser(loan.userId);
       const userName = user?.fullName || 'Utilisateur';
 
@@ -4268,53 +4268,18 @@ Tous les codes de validation ont été vérifiés avec succès.`,
 
       await notifyLoanFundsAvailable(loan.userId, loan.id, loan.amount);
 
-      const codesListFormatted = generatedCodes
-        .map((c, idx) => `\n${idx + 1}. **${c.codeContext}** - Code: ${c.code} - Pause à ${c.pausePercent}%`)
-        .join('');
-
       await storage.createNotification({
         userId: req.session.userId!,
         type: 'admin_message_sent',
-        title: 'Codes de transfert générés automatiquement',
-        message: `Les codes de transfert pour ${userName} (Prêt ${loan.amount} EUR) ont été générés avec des pourcentages de pause aléatoires. Transmettez-les manuellement au moment approprié.
-
-**Liste des codes de validation:**${codesListFormatted}
-
-**Note:** Le transfert se mettra automatiquement en pause à chaque pourcentage indiqué.`,
+        title: 'Fonds débloqués avec succès',
+        message: `Les fonds de ${parseFloat(loan.amount).toFixed(2)} EUR ont été débloqués pour ${userName}. Le client peut désormais initier son virement depuis son espace personnel.`,
         severity: 'success',
         metadata: { 
           loanId: loan.id, 
           userName, 
-          codesCount: generatedCodes.length, 
           amount: loan.amount,
-          codes: generatedCodes.map(c => ({ 
-            sequence: c.sequence, 
-            code: c.code, 
-            pausePercent: c.pausePercent,
-            context: c.codeContext 
-          }))
         },
       });
-
-      try {
-        const { sendTransferCodesAdminEmail } = await import('./email');
-        const userForEmail = await storage.getUser(loan.userId);
-        await sendTransferCodesAdminEmail(
-          userName,
-          userForEmail?.email || '',
-          loan.id,
-          loan.amount,
-          generatedCodes.map(c => ({
-            sequence: c.sequence,
-            code: c.code,
-            pausePercent: c.pausePercent!,
-            codeContext: c.codeContext || `Code ${c.sequence}`
-          })),
-          'fr'
-        );
-      } catch (emailError) {
-        console.error('Failed to send transfer codes admin email:', emailError);
-      }
 
       await storage.createAuditLog({
         actorId: req.session.userId!,
@@ -4322,7 +4287,7 @@ Tous les codes de validation ont été vérifiés avec succès.`,
         action: 'confirm_loan_contract',
         entityType: 'loan',
         entityId: req.params.id,
-        metadata: { amount: loan.amount, loanType: loan.loanType, codesGenerated: generatedCodes.length },
+        metadata: { amount: loan.amount, loanType: loan.loanType },
       });
 
       emitLoanUpdate(loan.userId, 'confirmed', req.params.id, updatedLoan);
@@ -4331,7 +4296,6 @@ Tous les codes de validation ont été vérifiés avec succès.`,
 
       res.json({ 
         loan: updatedLoan,
-        codes: generatedCodes,
         message: 'Contrat confirmé avec succès. Les fonds sont maintenant disponibles pour l\'utilisateur.'
       });
     } catch (error) {

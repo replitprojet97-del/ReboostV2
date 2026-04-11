@@ -176,7 +176,7 @@ export interface IStorage {
   approveLoan(id: string, approvedBy: string): Promise<Loan | undefined>;
   rejectLoan(id: string, rejectedBy: string, reason: string): Promise<Loan | undefined>;
   deleteLoan(id: string, deletedBy: string, reason: string): Promise<boolean>;
-  markLoanFundsAvailable(loanId: string, adminId: string): Promise<{ loan: Loan; codes: TransferValidationCode[] } | undefined>;
+  markLoanFundsAvailable(loanId: string, adminId: string): Promise<Loan | undefined>;
   generateTransferCodes(transferId: string, loanId: string, userId: string, count?: number): Promise<TransferValidationCode[]>;
   generateLoanTransferCodes(loanId: string, userId: string, count?: number): Promise<TransferValidationCode[]>;
   getTransferCodes(transferId: string): Promise<TransferValidationCode[]>;
@@ -2414,7 +2414,7 @@ export class DatabaseStorage implements IStorage {
     return result.length > 0;
   }
 
-  async markLoanFundsAvailable(loanId: string, adminId: string): Promise<{ loan: Loan; codes: TransferValidationCode[] } | undefined> {
+  async markLoanFundsAvailable(loanId: string, adminId: string): Promise<Loan | undefined> {
     return await db.transaction(async (tx) => {
       const existingLoans = await tx
         .select()
@@ -2474,86 +2474,7 @@ export class DatabaseStorage implements IStorage {
         },
       });
       
-      // Check if pre-generated codes already exist for this loan
-      const existingCodes = await tx
-        .select()
-        .from(transferValidationCodes)
-        .where(
-          and(
-            eq(transferValidationCodes.loanId, loan.id),
-            isNull(transferValidationCodes.transferId)
-          )
-        )
-        .orderBy(transferValidationCodes.sequence);
-
-      let codes: TransferValidationCode[] = [];
-      const now = new Date();
-      const requiredCount = 6;
-
-      // Validate existing batch: must be complete (count = 6) and all non-expired
-      const isValidBatch = existingCodes.length === requiredCount && 
-                          existingCodes.every(c => new Date(c.expiresAt) > now);
-
-      if (existingCodes.length > 0 && isValidBatch) {
-        // Codes already generated and valid - return existing ones (idempotent)
-        console.log(`Reusing ${existingCodes.length} valid existing pre-generated codes for loan ${loan.id}`);
-        codes = existingCodes;
-      } else {
-        // Clean up invalid/incomplete/expired batch if exists
-        if (existingCodes.length > 0) {
-          console.warn(`Found ${existingCodes.length} pre-generated codes but batch is invalid (expected ${requiredCount}, has expired: ${existingCodes.some(c => new Date(c.expiresAt) <= now)}). Regenerating...`);
-          
-          await tx
-            .delete(transferValidationCodes)
-            .where(
-              and(
-                eq(transferValidationCodes.loanId, loan.id),
-                isNull(transferValidationCodes.transferId)
-              )
-            );
-        }
-        // Generate transfer validation codes for admin (pre-generated, not yet linked to a transfer)
-        const codesCount = 6;
-        const expiresAt = new Date();
-        expiresAt.setFullYear(expiresAt.getFullYear() + 100); // No practical expiration (100 years)
-        
-        const randomPercentages = this.generateRandomPausePercentages(codesCount);
-        
-        const codeContexts = [
-          'regulatory_compliance',
-          'transfer_authorization',
-          'security_verification',
-          'funds_release',
-          'final_validation',
-          'insurance_fee'
-        ];
-        
-        console.log(`Generating ${codesCount} new validation codes for loan ${loan.id}`);
-        
-        for (let i = 1; i <= codesCount; i++) {
-          const code = Math.floor(100000 + Math.random() * 900000).toString();
-          
-          const result = await tx.insert(transferValidationCodes)
-            .values({
-              transferId: null, // Pre-generated, not yet linked to a transfer
-              loanId: loan.id,
-              code,
-              deliveryMethod: 'admin_only',
-              codeType: 'initial',
-              codeContext: codeContexts[i - 1] || `Code de validation ${i}`,
-              sequence: i,
-              pausePercent: randomPercentages[i - 1],
-              expiresAt,
-            })
-            .returning();
-          
-          if (result[0]) {
-            codes.push(result[0]);
-          }
-        }
-      }
-      
-      return { loan, codes };
+      return loan;
     });
   }
 

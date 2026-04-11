@@ -1575,6 +1575,10 @@ type TranslationKeys = {
       accountNamePlaceholder: string;
       useExistingAccount: string;
       addNewAccount: string;
+      fromLabel: string;
+      networkSEPA: string;
+      feesFreeLabel: string;
+      summaryTitle: string;
     };
     security: {
       title: string;
@@ -1693,6 +1697,10 @@ type TranslationKeys = {
       contactDesc: string;
       contactButton: string;
       returnButton: string;
+      statusBadge: string;
+      timelineStep1: string;
+      timelineStep2: string;
+      timelineStep3: string;
     };
     complete: {
       title: string;
@@ -1712,6 +1720,7 @@ type TranslationKeys = {
       securityDescription: string;
       viewTransfers: string;
       confirmationEmail: string;
+      downloadButton: string;
     };
     toast: {
       transferInProgress: string;
@@ -4203,6 +4212,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Mon compte courant',
         useExistingAccount: 'Compte enregistré',
         addNewAccount: 'Nouveau compte',
+        fromLabel: 'De',
+        networkSEPA: 'Virement SEPA',
+        feesFreeLabel: 'Gratuit',
+        summaryTitle: 'Récapitulatif',
       },
       processing: {
         title: 'Demande de virement enregistrée',
@@ -4217,6 +4230,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Pour finaliser votre virement, veuillez contacter notre équipe support. Un conseiller prendra en charge votre dossier dans les meilleurs délais.',
         contactButton: 'Contacter le support',
         returnButton: 'Retour au tableau de bord',
+        statusBadge: 'En cours de traitement',
+        timelineStep1: 'Reçu',
+        timelineStep2: 'Traitement',
+        timelineStep3: 'Complété',
       },
       security: {
         title: 'Sécurité & Conformité',
@@ -4340,6 +4357,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Cette transaction a été traitée via nos protocoles de sécurité bancaire AES-256 avec authentification multi-niveaux.',
         viewTransfers: 'Voir mes transferts',
         confirmationEmail: 'Un email de confirmation vous a été envoyé.',
+        downloadButton: 'Télécharger le reçu',
       },
       toast: {
         transferInProgress: 'Transfert en cours',
@@ -6958,6 +6976,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'My current account',
         useExistingAccount: 'Saved account',
         addNewAccount: 'New account',
+        fromLabel: 'From',
+        networkSEPA: 'SEPA Transfer',
+        feesFreeLabel: 'Free',
+        summaryTitle: 'Summary',
       },
       processing: {
         title: 'Transfer Request Registered',
@@ -6972,6 +6994,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'To finalise your transfer, please contact our support team. An advisor will handle your file as soon as possible.',
         contactButton: 'Contact Support',
         returnButton: 'Return to Dashboard',
+        statusBadge: 'Processing',
+        timelineStep1: 'Received',
+        timelineStep2: 'Processing',
+        timelineStep3: 'Completed',
       },
       security: {
         title: 'Security & Compliance',
@@ -7095,6 +7121,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'This transaction was processed via our AES-256 banking security protocols with multi-level authentication.',
         viewTransfers: 'View my transfers',
         confirmationEmail: 'A confirmation email has been sent to you.',
+        downloadButton: 'Download Receipt',
       },
       toast: {
         transferInProgress: 'Transfer in progress',
@@ -9606,6 +9633,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Mi cuenta corriente',
         useExistingAccount: 'Cuenta guardada',
         addNewAccount: 'Nueva cuenta',
+        fromLabel: 'De',
+        networkSEPA: 'Transferencia SEPA',
+        feesFreeLabel: 'Gratis',
+        summaryTitle: 'Resumen',
       },
       processing: {
         title: 'Solicitud de transferencia registrada',
@@ -9620,6 +9651,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Para finalizar su transferencia, póngase en contacto con nuestro equipo de soporte. Un asesor gestionará su expediente lo antes posible.',
         contactButton: 'Contactar soporte',
         returnButton: 'Volver al panel',
+        statusBadge: 'En proceso',
+        timelineStep1: 'Recibido',
+        timelineStep2: 'Procesando',
+        timelineStep3: 'Completado',
       },
       security: {
         title: 'Seguridad y Conformidad',
@@ -9743,6 +9778,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Esta transacción fue procesada a través de nuestros protocolos de seguridad bancaria AES-256 con autenticación multinivel.',
         viewTransfers: 'Ver mis transferencias',
         confirmationEmail: 'Se le ha enviado un correo de confirmación.',
+        downloadButton: 'Descargar recibo',
       },
       toast: {
         transferInProgress: 'Transferencia en curso',
@@ -12352,6 +12388,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Minha conta corrente',
         useExistingAccount: 'Conta salva',
         addNewAccount: 'Nova conta',
+        fromLabel: 'De',
+        networkSEPA: 'Transferência SEPA',
+        feesFreeLabel: 'Gratuito',
+        summaryTitle: 'Resumo',
       },
       processing: {
         title: 'Solicitação de transferência registrada',
@@ -12366,6 +12406,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Para finalizar sua transferência, entre em contato com nossa equipe de suporte. Um consultor cuidará do seu processo o mais rápido possível.',
         contactButton: 'Contatar suporte',
         returnButton: 'Voltar ao painel',
+        statusBadge: 'Em processamento',
+        timelineStep1: 'Recebido',
+        timelineStep2: 'Processando',
+        timelineStep3: 'Concluído',
       },
       security: {
         title: 'Segurança & Conformidade',
@@ -12489,6 +12533,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Esta transação foi processada através dos nossos protocolos de segurança bancária AES-256 com autenticação multinível.',
         viewTransfers: 'Ver minhas transferências',
         confirmationEmail: 'Um email de confirmação foi enviado para você.',
+        downloadButton: 'Baixar comprovante',
       },
       toast: {
         transferInProgress: 'Transferência em andamento',
@@ -14909,6 +14954,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Il mio conto corrente',
         useExistingAccount: 'Conto salvato',
         addNewAccount: 'Nuovo conto',
+        fromLabel: 'Da',
+        networkSEPA: 'Bonifico SEPA',
+        feesFreeLabel: 'Gratuito',
+        summaryTitle: 'Riepilogo',
       },
       processing: {
         title: 'Richiesta di bonifico registrata',
@@ -14923,6 +14972,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Per finalizzare il suo bonifico, contatti il nostro team di supporto. Un consulente gestirà la sua pratica il prima possibile.',
         contactButton: 'Contatta il supporto',
         returnButton: 'Torna alla dashboard',
+        statusBadge: 'In elaborazione',
+        timelineStep1: 'Ricevuto',
+        timelineStep2: 'Elaborazione',
+        timelineStep3: 'Completato',
       },
       security: {
         title: 'Sicurezza & Conformità',
@@ -15046,6 +15099,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Questa transazione è stata elaborata tramite i nostri protocolli di sicurezza bancaria AES-256 con autenticazione multilivello.',
         viewTransfers: 'Vedi i miei trasferimenti',
         confirmationEmail: 'Ti è stata inviata una email di conferma.',
+        downloadButton: 'Scarica ricevuta',
       },
       toast: {
         transferInProgress: 'Trasferimento in corso',
@@ -17552,6 +17606,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Mein Girokonto',
         useExistingAccount: 'Gespeichertes Konto',
         addNewAccount: 'Neues Konto',
+        fromLabel: 'Von',
+        networkSEPA: 'SEPA-Überweisung',
+        feesFreeLabel: 'Kostenlos',
+        summaryTitle: 'Übersicht',
       },
       processing: {
         title: 'Überweisungsauftrag registriert',
@@ -17566,6 +17624,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Um Ihre Überweisung abzuschließen, kontaktieren Sie bitte unser Support-Team. Ein Berater kümmert sich schnellstmöglich um Ihre Anfrage.',
         contactButton: 'Support kontaktieren',
         returnButton: 'Zurück zum Dashboard',
+        statusBadge: 'In Bearbeitung',
+        timelineStep1: 'Empfangen',
+        timelineStep2: 'Verarbeitung',
+        timelineStep3: 'Abgeschlossen',
       },
       security: {
         title: 'Sicherheit & Compliance',
@@ -17689,6 +17751,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Diese Transaktion wurde über unsere AES-256-Banksicherheitsprotokolle mit mehrstufiger Authentifizierung verarbeitet.',
         viewTransfers: 'Meine Überweisungen anzeigen',
         confirmationEmail: 'Eine Bestätigungs-E-Mail wurde an Sie gesendet.',
+        downloadButton: 'Quittung herunterladen',
       },
       toast: {
         transferInProgress: 'Überweisung läuft',
@@ -20165,6 +20228,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Mijn betaalrekening',
         useExistingAccount: 'Opgeslagen rekening',
         addNewAccount: 'Nieuwe rekening',
+        fromLabel: 'Van',
+        networkSEPA: 'SEPA-Overboeking',
+        feesFreeLabel: 'Gratis',
+        summaryTitle: 'Overzicht',
       },
       processing: {
         title: 'Overboekingsaanvraag geregistreerd',
@@ -20179,6 +20246,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Om uw overboeking te voltooien, neem contact op met ons supportteam. Een adviseur behandelt uw dossier zo snel mogelijk.',
         contactButton: 'Contact opnemen met support',
         returnButton: 'Terug naar dashboard',
+        statusBadge: 'In behandeling',
+        timelineStep1: 'Ontvangen',
+        timelineStep2: 'Verwerking',
+        timelineStep3: 'Voltooid',
       },
       security: {
         title: 'Beveiliging & Naleving',
@@ -20302,6 +20373,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Deze transactie werd verwerkt via onze AES-256 bankbeveiligingsprotocollen met meervoudige authenticatie.',
         viewTransfers: 'Mijn overboekingen bekijken',
         confirmationEmail: 'Er is een bevestigingsmail naar u verzonden.',
+        downloadButton: 'Ontvangstbewijs downloaden',
       },
       toast: {
         transferInProgress: 'Overdracht bezig',
@@ -22693,6 +22765,10 @@ export const translations: Record<Language, TranslationKeys> = {
         accountNamePlaceholder: 'Moj tekući račun',
         useExistingAccount: 'Spremljeni račun',
         addNewAccount: 'Novi račun',
+        fromLabel: 'Od',
+        networkSEPA: 'SEPA transakcija',
+        feesFreeLabel: 'Besplatno',
+        summaryTitle: 'Pregled',
       },
       processing: {
         title: 'Zahtjev za prijenos registriran',
@@ -22707,6 +22783,10 @@ export const translations: Record<Language, TranslationKeys> = {
         contactDesc: 'Za dovršetak vašeg prijenosa, obratite se našem timu za podršku. Savjetnik će se pobrinuti za vaš predmet u najkraćem mogućem roku.',
         contactButton: 'Kontaktirajte podršku',
         returnButton: 'Povratak na nadzornu ploču',
+        statusBadge: 'U obradi',
+        timelineStep1: 'Primljeno',
+        timelineStep2: 'Obrada',
+        timelineStep3: 'Završeno',
       },
       security: {
         title: 'Sigurnost i usklađenost',
@@ -22830,6 +22910,7 @@ export const translations: Record<Language, TranslationKeys> = {
         securityDescription: 'Ova transakcija je obrađena putem naših AES-256 bankarskih sigurnosnih protokola s višerazinskom autentifikacijom.',
         viewTransfers: 'Pogledaj moje prijenose',
         confirmationEmail: 'Potvrda je poslana na vašu e-poštu.',
+        downloadButton: 'Preuzmi potvrdu',
       },
       toast: {
         transferInProgress: 'Prijenos u tijeku',
