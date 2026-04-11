@@ -1017,7 +1017,7 @@ const getContractTemplate = (data: ContractData): string => {
         <div class="company-name">KreditPass S.à r.l.</div>
         <span class="contact-line"><strong>Siège:</strong> 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg</span>
         <span class="contact-line"><strong>Company Reg:</strong> RCS Luxembourg</span>
-        <span class="contact-line"><strong>Tél:</strong> +353-431-5918</span>
+        <span class="contact-line"><strong>Tél:</strong> +352-431-5918</span>
         <span class="contact-line"><strong>Email:</strong> infos@kreditpass.org</span>
         <span class="contact-line"><strong>Web:</strong> www.kreditpass.org</span>
       </div>
@@ -1183,7 +1183,7 @@ const getContractTemplate = (data: ContractData): string => {
     <p style="margin: 8px 0;">
       ${t.shareCapital}: 120 000 000 € • RCS Luxembourg<br>
       ${t.headquarters}: 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg<br>
-      ${t.tel}: +353-431-5918 • Email: infos@kreditpass.org<br>
+      ${t.tel}: +352-431-5918 • Email: infos@kreditpass.org<br>
       www.kreditpass.org
     </p>
     <p style="margin-top: 15px; font-size: 8pt; font-style: italic;">
