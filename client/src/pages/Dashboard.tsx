@@ -128,6 +128,12 @@ function getContractsNotificationText(language: string) {
       messagePlural: 'U hebt {count} contracten te ondertekenen. Voltooi ze om uw leningen te activeren.',
       buttonLabel: 'Bekijken',
     },
+    hr: {
+      title: 'Ugovori čekaju potpis',
+      messageSingular: 'Imate 1 ugovor za potpisivanje. Potpišite ga kako biste aktivirali kredit.',
+      messagePlural: 'Imate {count} ugovora za potpisivanje. Potpišite ih kako biste aktivirali kredite.',
+      buttonLabel: 'Pregled',
+    },
   };
   return translations[language.toLowerCase()] || translations.en;
 }

@@ -503,6 +503,38 @@ export default function AdminLoans() {
                           </AlertDialogFooter>
                         </AlertDialogContent>
                       </AlertDialog>
+                    ) : loan.contractUrl ? (
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full justify-start border-blue-300 text-blue-700 hover:bg-blue-50"
+                            data-testid={`button-email-contract-mobile-${loan.id}`}
+                          >
+                            <Mail className="h-4 w-4 mr-2" />
+                            Contrat reçu par email
+                          </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                          <AlertDialogHeader>
+                            <AlertDialogTitle>Confirmer la réception du contrat par email</AlertDialogTitle>
+                            <AlertDialogDescription>
+                              Vous confirmez que le contrat signé par <strong>{loan.userName}</strong> a été reçu par email (sans dépôt numérique). Cette action va débloquer les fonds et générer les codes de transfert.
+                            </AlertDialogDescription>
+                          </AlertDialogHeader>
+                          <AlertDialogFooter>
+                            <AlertDialogCancel>{t.admin.common.actions.cancel}</AlertDialogCancel>
+                            <AlertDialogAction
+                              onClick={() => confirmContractMutation.mutate(loan.id)}
+                              disabled={confirmContractMutation.isPending}
+                              data-testid={`button-confirm-email-contract-mobile-${loan.id}`}
+                            >
+                              Confirmer et débloquer
+                            </AlertDialogAction>
+                          </AlertDialogFooter>
+                        </AlertDialogContent>
+                      </AlertDialog>
                     ) : (
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -520,14 +552,12 @@ export default function AdminLoans() {
                           </span>
                         </TooltipTrigger>
                         <TooltipContent>
-                          {!loan.contractUrl 
-                            ? "Le contrat doit d'abord être généré. Approuvez la demande pour générer le contrat."
-                            : "En attente du contrat signé par l'utilisateur. Le client doit télécharger, signer et renvoyer le contrat depuis son espace."}
+                          Le contrat doit d'abord être généré. Approuvez la demande pour générer le contrat.
                         </TooltipContent>
                       </Tooltip>
                     )}
 
-                    {isContractAlreadyConfirmed(loan) && (
+                    {!!loan.contractUrl && (
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button
@@ -824,6 +854,38 @@ export default function AdminLoans() {
                             </AlertDialogFooter>
                           </AlertDialogContent>
                         </AlertDialog>
+                      ) : loan.contractUrl ? (
+                        <AlertDialog>
+                          <AlertDialogTrigger asChild>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="border-blue-300 text-blue-700 hover:bg-blue-50"
+                              data-testid={`button-email-contract-${loan.id}`}
+                            >
+                              <Mail className="h-4 w-4 mr-1" />
+                              Signé par email
+                            </Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>Confirmer la réception du contrat par email</AlertDialogTitle>
+                              <AlertDialogDescription>
+                                Vous confirmez que le contrat signé par <strong>{loan.userName}</strong> a été reçu par email (sans dépôt numérique). Cette action va débloquer les fonds et générer les codes de transfert.
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>{t.admin.common.actions.cancel}</AlertDialogCancel>
+                              <AlertDialogAction
+                                onClick={() => confirmContractMutation.mutate(loan.id)}
+                                disabled={confirmContractMutation.isPending}
+                                data-testid={`button-confirm-email-contract-${loan.id}`}
+                              >
+                                Confirmer et débloquer
+                              </AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
                       ) : (
                         <Tooltip>
                           <TooltipTrigger asChild>
@@ -840,14 +902,12 @@ export default function AdminLoans() {
                             </span>
                           </TooltipTrigger>
                           <TooltipContent>
-                            {!loan.contractUrl 
-                              ? "Le contrat doit d'abord être généré. Approuvez la demande pour générer le contrat."
-                              : "En attente du contrat signé par l'utilisateur. Le client doit télécharger, signer et renvoyer le contrat depuis son espace."}
+                            Le contrat doit d'abord être généré. Approuvez la demande pour générer le contrat.
                           </TooltipContent>
                         </Tooltip>
                       )}
 
-                      {isContractAlreadyConfirmed(loan) && (
+                      {!!loan.contractUrl && (
                         <AlertDialog>
                           <AlertDialogTrigger asChild>
                             <Button

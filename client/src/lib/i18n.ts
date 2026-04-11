@@ -22060,6 +22060,9 @@ export const translations: Record<Language, TranslationKeys> = {
       markAllRead: 'Označi sve kao pročitano',
       markAsRead: 'Označi kao pročitano',
       deleteNotification: 'Obriši obavijest',
+      contractAction: 'Ugovor o kreditu od {amount} čeka vaš potpis',
+      viewContract: 'Pogledajte ugovor',
+      downloadError: 'Greška pri preuzimanju',
     },
     dialogs: {
       newLoan: {
@@ -22096,6 +22099,10 @@ export const translations: Record<Language, TranslationKeys> = {
         business_registration: 'Registracija tvrtke',
         financial_statements: 'Financijski izvještaji',
         tax_returns: 'Porezna prijava',
+        identityDoc: 'Važeći osobni dokument (osobna iskaznica, putovnica)',
+        addressProof: 'Dokaz o boravištu (mlađi od 3 mjeseca)',
+        subtitleFirstRequest: 'Prvi zahtjev: molimo dostavite identifikacijske dokumente i popunite obrazac',
+        subtitleRegular: 'Ispunite obrazac za podnošenje novog zahtjeva za kredit',
         submit: 'Podnesi zahtjev',
         submitting: 'Slanje...',
         cancel: 'Odustani',

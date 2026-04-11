@@ -296,25 +296,7 @@ export default function TransferFlow() {
     // 1. Le backend dit explicitement isPaused = true
     // 2. OU si la progression actuelle >= pausePercent du code en attente
     // 
-    // CORRECTION BUG CRITIQUE: Si prevCodesValidatedRef.current === null, c'est un nouveau
-    // transfert initié depuis le formulaire. Dans ce cas, NE PAS forcer isPausedForCode à false
-    // car l'animation va s'en occuper et le mettre à true quand elle atteint le seuil.
-    const isNewlyInitiatedTransfer = prevCodesValidatedRef.current === null;
-    
-    if (server.isPaused) {
-      setIsPausedForCode(true);
-    } else if (nextCodeMeta && nextCodeMeta.pausePercent) {
-      const targetPercent = nextCodeMeta.pausePercent;
-      // Si la progression actuelle est >= au pourcentage cible - 1, on attend un code
-      const shouldPause = backendProgress >= targetPercent - 1;
-      // Pour un nouveau transfert, ne pas forcer à false - laisser l'animation gérer
-      if (shouldPause || !isNewlyInitiatedTransfer) {
-        setIsPausedForCode(shouldPause);
-      }
-    } else if (!isNewlyInitiatedTransfer) {
-      // Ne pas forcer à false pour un nouveau transfert
-      setIsPausedForCode(false);
-    }
+    setIsPausedForCode(false);
     
     // ⚠️ TRÈS IMPORTANT: Mettre à jour les refs pour éviter les fausses détections
     // CORRECTION BUG CRITIQUE: Si prevCodesValidatedRef est null, cela signifie qu'on vient
@@ -367,12 +349,7 @@ export default function TransferFlow() {
         animationFrameRef.current = null;
         // vérifie que nextSequence attendu n'a pas changé entre-temps
         try {
-          const currentNext = transferData?.nextSequence;
-          if (expectedNextSequence == null || currentNext === expectedNextSequence) {
-            setIsPausedForCode(true);
-          } else {
-            // si le nextSequence a changé, ne pas forcer la pause
-          }
+          setIsPausedForCode(false);
         } finally {
           animationRunningRef.current = false;
         }
@@ -609,7 +586,7 @@ export default function TransferFlow() {
         return;
       }
       
-      const targetPercent = computedNextCode.pausePercent || 90;
+      const targetPercent = 86;
       
       // CORRECTION CRITIQUE: Détecter si une validation VIENT de se produire via la mutation
       // La ref justValidatedRef est mise à true dans validateMutation.onSuccess
@@ -692,8 +669,8 @@ export default function TransferFlow() {
         if (!animationRunningRef.current) {
           // Si on a atteint le pourcentage cible, mettre en pause pour le code
           if (backendProgress >= targetPercent) {
-            setSimulatedProgress(backendProgress);
-            setIsPausedForCode(true);
+            setSimulatedProgress(Math.min(backendProgress, 86));
+            setIsPausedForCode(false);
             // Marquer comme animé pour éviter les reboucles
             lastAnimatedToTargetSequenceRef.current = nextSequence;
             // Annuler toute animation en cours
@@ -706,8 +683,8 @@ export default function TransferFlow() {
               progressIntervalRef.current = null;
             }
           } else if (alreadyAnimatedToTarget && currentSimulatedProgress >= targetPercent - 1) {
-            // On a déjà animé vers ce target et on y est, rester en pause
-            setIsPausedForCode(true);
+            // On a déjà animé vers ce target et on y est, rester sans pauser pour un code
+            setIsPausedForCode(false);
           }
         }
       }
@@ -1382,7 +1359,7 @@ export default function TransferFlow() {
 
     const renderProgressCard = () => (
       <div className="bg-white shadow-sm rounded-xl p-6 flex flex-col items-center">
-        <ProgressCircle percent={Math.round(simulatedProgress ?? 0)} />
+        <ProgressCircle percent={Math.min(Math.round(simulatedProgress ?? 0), 86)} />
         <div className="mt-4 text-center">
           <p className="text-sm text-muted-foreground">{t.transferFlow.progress.progressLabelShort} {t.transferFlow.progress.transferProgressLabel}</p>
         </div>
@@ -1406,9 +1383,6 @@ export default function TransferFlow() {
     );
 
     const renderAdvisorCard = () => {
-      const currentProgress = Math.round(simulatedProgress ?? transfer?.progressPercent ?? 0);
-      if (currentProgress < 84) return null;
-      
       return (
         <div className="bg-blue-50 dark:bg-blue-950/30 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
           <div className="space-y-4">

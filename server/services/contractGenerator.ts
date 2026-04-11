@@ -12,7 +12,7 @@ interface ContractData {
   language?: string;
 }
 
-type ContractLanguage = 'fr' | 'en' | 'de' | 'pt' | 'es' | 'it' | 'nl';
+type ContractLanguage = 'fr' | 'en' | 'de' | 'pt' | 'es' | 'it' | 'nl' | 'hr';
 
 interface ContractTranslations {
   contractTitle: string;
@@ -607,6 +607,82 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
       'lineOfCredit': 'Kredietlijn',
       'commercialProperty': 'Commercieel Vastgoed Lening',
     }
+  },
+  hr: {
+    contractTitle: 'Profesionalni Ugovor o Kreditu',
+    contractNumber: 'UGOVOR O KREDITU BR.',
+    borrowerInfo: 'Podaci o Zajmoprimcu',
+    fullName: 'Puno Ime i Prezime',
+    email: 'E-mail',
+    phone: 'Telefon',
+    company: 'Tvrtka',
+    siret: 'ID Tvrtke',
+    loanDetails: 'Detalji Kredita',
+    loanType: 'Vrsta Kredita',
+    amountBorrowed: 'Iznos Kredita',
+    annualInterestRate: 'Godišnja Kamatna Stopa',
+    loanDuration: 'Trajanje Kredita',
+    contractDate: 'Datum Ugovora',
+    months: 'mjeseci',
+    loanConditions: 'Uvjeti Kredita',
+    article1Title: 'Članak 1 - Svrha Ugovora',
+    article1Content: (userName, amount, rate, duration) =>
+      `Ovim ugovorom KreditPass (u daljnjem tekstu "Zajmodavac") odobrava ${userName} (u daljnjem tekstu "Zajmoprimac") kredit u iznosu od <strong>${amount} €</strong> uz godišnju kamatnu stopu od <strong>${rate}%</strong> na rok od <strong>${duration} mjeseci</strong>.`,
+    article2Title: 'Članak 2 - Uvjeti Otplate',
+    article2Content: (duration, rate, monthly) =>
+      `Zajmoprimac se obvezuje otplatiti kredit prema mjesečnom rasporedu tijekom ${duration} mjeseci. Svaka mjesečna rata uključuje dio pozajmljenog kapitala i kamate izračunate po godišnjoj stopi od ${rate}%. Procijenjeni mjesečni iznos rate iznosi <strong>${monthly} €</strong>.`,
+    article3Title: 'Članak 3 - Kamatna Stopa i Ukupni Troškovi Kredita',
+    article3Content: (rate, totalInterest, totalRepayment) =>
+      `Primijenjena kamatna stopa je fiksna i iznosi ${rate}% godišnje. Ukupni troškovi kredita, uključujući kamate, procijenjeni su na <strong>${totalInterest} €</strong>. Ukupni iznos za otplatu stoga iznosi <strong>${totalRepayment} €</strong>.`,
+    article4Title: 'Članak 4 – Isplata Sredstava',
+    article4Content: 'Kreditna sredstva bit će stavljena na raspolaganje Zajmoprimcu na KreditPass podružnom računu otvorenom na ime Zajmoprimca unutar KreditPass mreže. Zajmoprimac potvrđuje i prihvaća da će početna uplata biti pripisana na ovaj podružni račun, da je njegova odgovornost pokrenuti prijenos na vanjski bankovni račun, te da će se stvarna isplata sredstava odviti u roku od najviše 24 radna sata od primitka ovog propisno potpisanog ugovora.',
+    article5Title: 'Članak 5 - Prijevremena Otplata',
+    article5Content: 'Zajmoprimac ima mogućnost prijevremene otplate, potpune ili djelomične, preostalog kapitala bez kazni. Svaki zahtjev za prijevremenenu otplatu mora biti dostavljen pisanim putem najmanje 30 dana prije željenog datuma.',
+    article6Title: 'Članak 6 - Neplaćanje',
+    article6Content: 'U slučaju neplaćanja miesečne rate, primjenjuju se zatezne kamate od 5% godišnje na preostale dospjele iznose. Nakon dva uzastopna neplaćena obroka, Zajmodavac zadržava pravo zahtijevati trenutnu otplatu preostalog kapitala.',
+    article7Title: 'Članak 7 – Osiguranje Zajmoprimca',
+    article7Content: 'Osiguranje zajmoprimca ostaje neobvezno, ali pokriće koje uključuje barem rizike smrti i invalidnosti pruža značajne prednosti za zajmoprimca. KreditPass preporučuje njegovo ugovaranje, ostavljajući svakom zajmoprimcu slobodu odluke.',
+    article8Title: 'Članak 8 - Pravo na Odustanak',
+    article8Content: 'U skladu s primjenjivim zakonskim odredbama, Zajmoprimac ima rok za odustanak od 14 kalendarskih dana od potpisivanja ovog ugovora.',
+    article9Title: 'Članak 9 - Mjerodavno Pravo i Nadležnost',
+    article9Content: 'Ovaj ugovor uređuje se irskim pravom. U slučaju spora, stranke će nastojati pronaći mirno rješenje. U suprotnom, isključivo su nadležni mjerodavni sudovi u Dublinu.',
+    signatureSection: 'Potpisi',
+    madeInDuplicates: 'Sačinjeno u dva originalna primjerka',
+    inIreland: 'U Dublinu, dana',
+    forKreditPass: 'Za KreditPass',
+    lender: 'Zajmodavac',
+    borrower: 'Zajmoprimac',
+    preSigned: '✓ Prethodno potpisani i validirani dokument',
+    management: 'Opće Upravljanje',
+    kreditPassStamp: 'KreditPass',
+    luxembourg: 'Irska',
+    electronicSignature: 'Certificirani elektronički potpis',
+    date: 'Datum',
+    signatureInstructions: 'Upute za potpis:',
+    instruction1: '1. Preuzmite ovaj dokument',
+    instruction2: '2. Isprintajte i potpišite s "Pročitano i odobreno"',
+    instruction3: '3. Skenirajte potpisani dokument',
+    instruction4: '4. Pošaljite ga natrag putem korisničkog prostora',
+    signatureLine: 'Potpis prethodimo s',
+    readAndApproved: '"Pročitano i odobreno"',
+    confidentialNotice: 'Ovaj dokument je povjerljiv i namijenjen isključivo primatelju. Svaka reprodukcija, distribucija ili neovlaštena upotreba strogo je zabranjena.',
+    shareCapital: 'Temeljni Kapital',
+    headquarters: 'Sjedište',
+    tel: 'Tel',
+    loanTypes: {
+      'auto': 'Auto Kredit',
+      'mortgage': 'Hipotekarni Kredit',
+      'green': 'Zeleni Kredit',
+      'renovation': 'Kredit za Renovaciju',
+      'student': 'Studentski Kredit',
+      'business': 'Poslovni Kredit',
+      'personal': 'Osobni Kredit',
+      'cashFlow': 'Kredit za Likvidnost',
+      'equipment': 'Kredit za Opremu',
+      'vehicleFleet': 'Kredit za Vozni Park',
+      'lineOfCredit': 'Kreditna Linija',
+      'commercialProperty': 'Kredit za Poslovnu Nekretninu',
+    }
   }
 };
 
@@ -623,7 +699,8 @@ const getContractTemplate = (data: ContractData): string => {
       pt: 'pt-PT',
       es: 'es-ES',
       it: 'it-IT',
-      nl: 'nl-NL'
+      nl: 'nl-NL',
+      hr: 'hr-HR'
     };
     return localeMap[l];
   };
@@ -928,7 +1005,7 @@ const getContractTemplate = (data: ContractData): string => {
       <div class="logo-section">
         <div class="logo-container">
           <div class="logo-icon">
-            <div class="logo-icon-text">S</div>
+            <div class="logo-icon-text">K</div>
           </div>
           <div class="logo-text-group">
             <div class="logo">KreditPass</div>
