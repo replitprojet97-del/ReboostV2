@@ -400,5 +400,20 @@ app.get('/healthz', (req, res) => {
     };
     
     startOTPCleanup();
+
+    // Keep Render server awake — ping /healthz every 14 minutes
+    const SELF_URL = process.env.RENDER_EXTERNAL_URL || process.env.BACKEND_URL;
+    if (SELF_URL) {
+      const pingUrl = `${SELF_URL.replace(/\/$/, '')}/healthz`;
+      setInterval(async () => {
+        try {
+          const res = await fetch(pingUrl);
+          console.log(`[Keep-Alive] Ping ${pingUrl} → ${res.status}`);
+        } catch (err) {
+          console.warn('[Keep-Alive] Ping failed:', err);
+        }
+      }, 14 * 60 * 1000);
+      console.log(`[Keep-Alive] Self-ping configured → ${pingUrl} every 14 min`);
+    }
   });
 })();
