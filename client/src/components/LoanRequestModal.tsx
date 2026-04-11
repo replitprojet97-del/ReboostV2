@@ -154,6 +154,23 @@ const getDocumentLabels = (language: string) => {
       business_plan: "Bedrijfsplan",
       financial_forecast: "3-jarige financiële prognose",
       quotes: "Offertes of proforma facturen"
+    },
+    hr: {
+      id_card: "Važeća osobna iskaznica ili putovnica",
+      proof_of_address: "Dokaz o adresi (ne stariji od 3 mjeseca)",
+      pay_slips: "Posljednje 3 platne liste",
+      tax_assessment: "Posljednje porezno rješenje",
+      bank_statements: "Bankovni izvodi (3 mjeseca)",
+      project_justification: "Dokumentacija projekta (ponude, računi)",
+      kbis: "Izvod iz sudskog registra (ne stariji od 3 mjeseca)",
+      director_id: "Osobna iskaznica ili putovnica direktora",
+      company_statutes: "Statut tvrtke",
+      financial_statements: "Financijska izvješća (posljednje 3 godine)",
+      tax_package: "Cjelovit porezni paket",
+      bank_statements_pro: "Poslovni bankovni izvodi (6 mjeseci)",
+      business_plan: "Poslovni plan",
+      financial_forecast: "Trogodišnja financijska prognoza",
+      quotes: "Ponude ili predračuni"
     }
   };
   return labels[language] || labels['fr'];
