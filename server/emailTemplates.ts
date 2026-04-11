@@ -3093,49 +3093,130 @@ export function getRecognitionFeeEmailTemplate(vars: {
     amountLabel: string;
     feeAmountLabel: string;
     loanIdLabel: string;
-    paymentTitle: string;
-    paymentInstruction: string;
-    beneficiary: string;
-    iban: string;
-    bic: string;
-    reference: string;
+    nextStepTitle: string;
+    nextStepDesc: string;
+    ctaButton: string;
     footerNote: string;
     footer: string;
   }> = {
     fr: {
-      subject: 'Frais de reconnaissance de dette – KreditPass',
+      subject: 'Action requise – Frais de reconnaissance de dette – KreditPass',
       greeting: `Madame, Monsieur ${vars.userName},`,
       intro: 'Suite à la signature de votre contrat de prêt, nous vous informons que des frais de reconnaissance de dette d\'un montant de <strong>184,00 EUR</strong> sont à régler avant le déblocage définitif des fonds.',
       feeTitle: 'Détail des frais',
-      feeExplanation: 'Ces frais correspondent aux frais administratifs de traitement et de reconnaissance de dette liés à votre dossier de financement.',
+      feeExplanation: 'Ces frais correspondent aux frais administratifs de traitement et de reconnaissance de dette liés à votre dossier de financement. Ils sont obligatoires pour finaliser le déblocage de votre prêt.',
       amountLabel: 'Montant du prêt :',
       feeAmountLabel: 'Frais de reconnaissance de dette :',
       loanIdLabel: 'Référence dossier :',
-      paymentTitle: 'Modalités de règlement',
-      paymentInstruction: 'Veuillez effectuer le virement bancaire des frais aux coordonnées suivantes :',
-      beneficiary: 'KreditPass',
-      iban: 'LU96 0019 4006 8898 1000',
-      bic: 'BCEELULL',
-      reference: `FRAIS-${vars.loanId.substring(0, 8).toUpperCase()}`,
-      footerNote: 'Le déblocage des fonds interviendra dans un délai de 24h ouvrées après réception du règlement. Pour toute question, contactez-nous à support@kreditpass.org.',
+      nextStepTitle: 'Comment procéder ?',
+      nextStepDesc: 'Pour régler ces frais et finaliser le déblocage de vos fonds, veuillez contacter notre équipe support. Nos conseillers vous accompagneront dans les démarches de paiement et répondront à toutes vos questions.',
+      ctaButton: 'Contacter le support',
+      footerNote: 'Le déblocage des fonds interviendra dans un délai de 24h ouvrées après réception du règlement. Notre équipe reste disponible pour vous guider.',
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     en: {
-      subject: 'Debt Recognition Fee – KreditPass',
+      subject: 'Action Required – Debt Recognition Fee – KreditPass',
       greeting: `Dear ${vars.userName},`,
       intro: 'Following the signing of your loan agreement, we inform you that a debt recognition fee of <strong>€184.00</strong> is due before the final release of funds.',
       feeTitle: 'Fee Details',
-      feeExplanation: 'This fee covers the administrative processing and debt recognition costs associated with your financing file.',
+      feeExplanation: 'This fee covers the administrative processing and debt recognition costs associated with your financing file. It is required to finalise the release of your loan funds.',
       amountLabel: 'Loan Amount:',
       feeAmountLabel: 'Debt Recognition Fee:',
       loanIdLabel: 'File Reference:',
-      paymentTitle: 'Payment Instructions',
-      paymentInstruction: 'Please make a bank transfer for the fee to the following account:',
-      beneficiary: 'KreditPass',
-      iban: 'LU96 0019 4006 8898 1000',
-      bic: 'BCEELULL',
-      reference: `FEE-${vars.loanId.substring(0, 8).toUpperCase()}`,
-      footerNote: 'Funds will be released within 24 business hours after receipt of payment. For any questions, contact us at support@kreditpass.org.',
+      nextStepTitle: 'How to Proceed?',
+      nextStepDesc: 'To pay this fee and finalise the release of your funds, please contact our support team. Our advisors will guide you through the payment process and answer all your questions.',
+      ctaButton: 'Contact Support',
+      footerNote: 'Funds will be released within 24 business hours after receipt of payment. Our team is available to guide you every step of the way.',
+      footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
+    },
+    de: {
+      subject: 'Maßnahme erforderlich – Schuldanerkennungsgebühr – KreditPass',
+      greeting: `Sehr geehrte/r ${vars.userName},`,
+      intro: 'Nach der Unterzeichnung Ihres Darlehensvertrags teilen wir Ihnen mit, dass eine Schuldanerkennungsgebühr in Höhe von <strong>184,00 EUR</strong> vor der endgültigen Auszahlung der Mittel zu entrichten ist.',
+      feeTitle: 'Gebührendetails',
+      feeExplanation: 'Diese Gebühr deckt die Verwaltungskosten für die Bearbeitung und Schuldanerkennung im Zusammenhang mit Ihrer Finanzierungsakte ab.',
+      amountLabel: 'Darlehensbetrag:',
+      feeAmountLabel: 'Schuldanerkennungsgebühr:',
+      loanIdLabel: 'Aktenreferenz:',
+      nextStepTitle: 'Wie weiter vorgehen?',
+      nextStepDesc: 'Um diese Gebühr zu begleichen und die Auszahlung Ihrer Mittel abzuschließen, kontaktieren Sie bitte unser Support-Team. Unsere Berater begleiten Sie durch den Zahlungsprozess.',
+      ctaButton: 'Support kontaktieren',
+      footerNote: 'Die Mittel werden innerhalb von 24 Werktagen nach Zahlungseingang freigegeben. Unser Team steht Ihnen jederzeit zur Verfügung.',
+      footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
+    },
+    es: {
+      subject: 'Acción requerida – Tarifa de reconocimiento de deuda – KreditPass',
+      greeting: `Estimado/a ${vars.userName},`,
+      intro: 'Tras la firma de su contrato de préstamo, le informamos que una tarifa de reconocimiento de deuda de <strong>184,00 EUR</strong> debe abonarse antes del desbloqueo definitivo de los fondos.',
+      feeTitle: 'Detalle de la tarifa',
+      feeExplanation: 'Esta tarifa cubre los costos administrativos de tramitación y reconocimiento de deuda asociados a su expediente de financiación.',
+      amountLabel: 'Importe del préstamo:',
+      feeAmountLabel: 'Tarifa de reconocimiento de deuda:',
+      loanIdLabel: 'Referencia del expediente:',
+      nextStepTitle: '¿Cómo proceder?',
+      nextStepDesc: 'Para abonar esta tarifa y finalizar el desbloqueo de sus fondos, póngase en contacto con nuestro equipo de soporte. Nuestros asesores le guiarán a lo largo del proceso de pago.',
+      ctaButton: 'Contactar soporte',
+      footerNote: 'Los fondos se desbloquearán en un plazo de 24 horas hábiles tras la recepción del pago. Nuestro equipo está disponible para acompañarle.',
+      footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
+    },
+    pt: {
+      subject: 'Ação necessária – Taxa de reconhecimento de dívida – KreditPass',
+      greeting: `Caro(a) ${vars.userName},`,
+      intro: 'Após a assinatura do seu contrato de empréstimo, informamos que uma taxa de reconhecimento de dívida no valor de <strong>184,00 EUR</strong> deve ser paga antes da liberação definitiva dos fundos.',
+      feeTitle: 'Detalhes da taxa',
+      feeExplanation: 'Esta taxa cobre os custos administrativos de processamento e reconhecimento de dívida associados ao seu processo de financiamento.',
+      amountLabel: 'Valor do empréstimo:',
+      feeAmountLabel: 'Taxa de reconhecimento de dívida:',
+      loanIdLabel: 'Referência do processo:',
+      nextStepTitle: 'Como proceder?',
+      nextStepDesc: 'Para pagar esta taxa e finalizar a liberação dos seus fundos, entre em contato com nossa equipe de suporte. Nossos consultores irão guiá-lo durante todo o processo.',
+      ctaButton: 'Contatar suporte',
+      footerNote: 'Os fundos serão liberados em até 24 horas úteis após o recebimento do pagamento. Nossa equipe está disponível para orientá-lo.',
+      footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
+    },
+    it: {
+      subject: 'Azione richiesta – Spese di riconoscimento del debito – KreditPass',
+      greeting: `Gentile ${vars.userName},`,
+      intro: 'A seguito della firma del contratto di prestito, La informiamo che è dovuta una commissione di riconoscimento del debito di <strong>184,00 EUR</strong> prima dello sblocco definitivo dei fondi.',
+      feeTitle: 'Dettaglio delle spese',
+      feeExplanation: 'Questa commissione copre i costi amministrativi di trattamento e riconoscimento del debito associati alla sua pratica di finanziamento.',
+      amountLabel: 'Importo del prestito:',
+      feeAmountLabel: 'Commissione di riconoscimento del debito:',
+      loanIdLabel: 'Riferimento pratica:',
+      nextStepTitle: 'Come procedere?',
+      nextStepDesc: 'Per saldare questa commissione e finalizzare lo sblocco dei Suoi fondi, contatti il nostro team di supporto. I nostri consulenti La guideranno nel processo di pagamento.',
+      ctaButton: 'Contatta il supporto',
+      footerNote: 'I fondi verranno sbloccati entro 24 ore lavorative dal ricevimento del pagamento. Il nostro team è disponibile per supportarla.',
+      footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
+    },
+    nl: {
+      subject: 'Actie vereist – Kosten voor schulderkentenis – KreditPass',
+      greeting: `Geachte ${vars.userName},`,
+      intro: 'Na de ondertekening van uw leningsovereenkomst informeren wij u dat een vergoeding voor schulderkentenis van <strong>€184,00</strong> verschuldigd is vóór de definitieve vrijgave van de middelen.',
+      feeTitle: 'Kostendetails',
+      feeExplanation: 'Deze vergoeding dekt de administratieve verwerkings- en schulderkenteniskosten die verband houden met uw financieringsdossier.',
+      amountLabel: 'Leningsbedrag:',
+      feeAmountLabel: 'Kosten voor schulderkentenis:',
+      loanIdLabel: 'Dossiernummer:',
+      nextStepTitle: 'Hoe te handelen?',
+      nextStepDesc: 'Om deze vergoeding te betalen en de vrijgave van uw middelen te voltooien, neemt u contact op met ons supportteam. Onze adviseurs begeleiden u door het betalingsproces.',
+      ctaButton: 'Contact opnemen met support',
+      footerNote: 'De middelen worden vrijgegeven binnen 24 werkdagen na ontvangst van de betaling. Ons team staat voor u klaar.',
+      footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
+    },
+    hr: {
+      subject: 'Potrebna radnja – Naknade za priznanicu duga – KreditPass',
+      greeting: `Poštovani/a ${vars.userName},`,
+      intro: 'Nakon potpisivanja ugovora o zajmu, obavještavamo Vas da je naknada za priznanicu duga u iznosu od <strong>184,00 EUR</strong> potrebna prije konačnog isplate sredstava.',
+      feeTitle: 'Detalji naknade',
+      feeExplanation: 'Ova naknada pokriva administrativne troškove obrade i priznanice duga povezane s Vašim financijskim predmetom.',
+      amountLabel: 'Iznos zajma:',
+      feeAmountLabel: 'Naknada za priznanicu duga:',
+      loanIdLabel: 'Referenca predmeta:',
+      nextStepTitle: 'Kako postupiti?',
+      nextStepDesc: 'Za plaćanje ove naknade i dovršetak isplate Vaših sredstava, obratite se našem timu za podršku. Naši savjetnici vodit će Vas kroz proces plaćanja.',
+      ctaButton: 'Kontaktirajte podršku',
+      footerNote: 'Sredstva će biti isplaćena u roku od 24 radna sata nakon primitka uplate. Naš tim je dostupan za Vašu pomoć.',
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
   };
@@ -3169,26 +3250,13 @@ export function getRecognitionFeeEmailTemplate(vars: {
           </tr>
         </table>
 
-        <h2 style="font-size: 17px; font-weight: bold; color: #1e40af; margin: 25px 0 15px 0;">${t.paymentTitle}</h2>
-        <p style="color: #374151; font-size: 15px; margin: 0 0 15px 0;">${t.paymentInstruction}</p>
+        <h2 style="font-size: 17px; font-weight: bold; color: #1e40af; margin: 25px 0 12px 0;">${t.nextStepTitle}</h2>
+        <p style="color: #374151; font-size: 15px; line-height: 1.6; margin: 0 0 20px 0;">${t.nextStepDesc}</p>
 
-        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 25px;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 25px;">
           <tr>
-            <td style="padding: 20px;">
-              <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                <tr>
-                  <td style="padding: 8px 0; color: #374151; border-bottom: 1px solid #e2e8f0;"><strong>Bénéficiaire / Beneficiary:</strong> ${escapeHtml(t.beneficiary)}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; color: #374151; border-bottom: 1px solid #e2e8f0;"><strong>IBAN:</strong> <span style="font-family: monospace;">${t.iban}</span></td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; color: #374151; border-bottom: 1px solid #e2e8f0;"><strong>BIC/SWIFT:</strong> <span style="font-family: monospace;">${t.bic}</span></td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; color: #374151;"><strong>Référence / Reference:</strong> <span style="font-weight: bold; color: #2563eb;">${t.reference}</span></td>
-                </tr>
-              </table>
+            <td align="center">
+              <a href="mailto:support@kreditpass.org" style="display: inline-block; background: linear-gradient(135deg, #1e3a5f, #2563eb); color: #ffffff; text-decoration: none; padding: 16px 36px; border-radius: 8px; font-size: 16px; font-weight: 700; letter-spacing: 0.3px;">${t.ctaButton} →</a>
             </td>
           </tr>
         </table>
@@ -3216,13 +3284,10 @@ ${t.amountLabel} ${vars.loanAmount} EUR
 ${t.feeAmountLabel} 184,00 EUR
 ${t.loanIdLabel} ${vars.loanId}
 
-${t.paymentTitle}
-${t.paymentInstruction}
+${t.nextStepTitle}
+${t.nextStepDesc}
 
-Bénéficiaire: ${t.beneficiary}
-IBAN: ${t.iban}
-BIC: ${t.bic}
-Référence: ${t.reference}
+${t.ctaButton}: support@kreditpass.org
 
 ${t.footerNote}
 

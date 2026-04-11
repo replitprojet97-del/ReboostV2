@@ -1567,6 +1567,14 @@ type TranslationKeys = {
       recipientPlaceholder: string;
       initiateButton: string;
       initiating: string;
+      ibanLabel: string;
+      ibanPlaceholder: string;
+      bicLabel: string;
+      bicPlaceholder: string;
+      accountNameLabel: string;
+      accountNamePlaceholder: string;
+      useExistingAccount: string;
+      addNewAccount: string;
     };
     security: {
       title: string;
@@ -1671,6 +1679,20 @@ type TranslationKeys = {
         final_validation: string;
         insurance_fee: string;
       };
+    };
+    processing: {
+      title: string;
+      subtitle: string;
+      description: string;
+      detailsTitle: string;
+      amountLabel: string;
+      recipientLabel: string;
+      ibanLabel: string;
+      referenceLabel: string;
+      contactTitle: string;
+      contactDesc: string;
+      contactButton: string;
+      returnButton: string;
     };
     complete: {
       title: string;
@@ -4173,6 +4195,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Nom du bénéficiaire',
         initiateButton: 'Initier le transfert',
         initiating: 'Initiation...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'FR76 XXXX XXXX XXXX XXXX XXXX XXX',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Libellé du compte',
+        accountNamePlaceholder: 'Mon compte courant',
+        useExistingAccount: 'Compte enregistré',
+        addNewAccount: 'Nouveau compte',
+      },
+      processing: {
+        title: 'Demande de virement enregistrée',
+        subtitle: 'Votre demande est en cours de traitement par notre équipe',
+        description: 'Le délai de traitement habituel est de 24 à 48 heures ouvrées. Notre équipe de conformité examine votre dossier.',
+        detailsTitle: 'Détails du virement',
+        amountLabel: 'Montant',
+        recipientLabel: 'Bénéficiaire',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Référence',
+        contactTitle: 'Prochaine étape',
+        contactDesc: 'Pour finaliser votre virement, veuillez contacter notre équipe support. Un conseiller prendra en charge votre dossier dans les meilleurs délais.',
+        contactButton: 'Contacter le support',
+        returnButton: 'Retour au tableau de bord',
       },
       security: {
         title: 'Sécurité & Conformité',
@@ -6906,6 +6950,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Recipient name',
         initiateButton: 'Initiate Transfer',
         initiating: 'Initiating...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'GB29 XXXX XXXX XXXX XXXX XX',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Account label',
+        accountNamePlaceholder: 'My current account',
+        useExistingAccount: 'Saved account',
+        addNewAccount: 'New account',
+      },
+      processing: {
+        title: 'Transfer Request Registered',
+        subtitle: 'Your request is being processed by our team',
+        description: 'Standard processing time is 24–48 business hours. Our compliance team is reviewing your file.',
+        detailsTitle: 'Transfer Details',
+        amountLabel: 'Amount',
+        recipientLabel: 'Recipient',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Reference',
+        contactTitle: 'Next Step',
+        contactDesc: 'To finalise your transfer, please contact our support team. An advisor will handle your file as soon as possible.',
+        contactButton: 'Contact Support',
+        returnButton: 'Return to Dashboard',
       },
       security: {
         title: 'Security & Compliance',
@@ -9532,6 +9598,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Nombre del beneficiario',
         initiateButton: 'Iniciar transferencia',
         initiating: 'Iniciando...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'ES91 XXXX XXXX XXXX XXXX XXXX',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Etiqueta de la cuenta',
+        accountNamePlaceholder: 'Mi cuenta corriente',
+        useExistingAccount: 'Cuenta guardada',
+        addNewAccount: 'Nueva cuenta',
+      },
+      processing: {
+        title: 'Solicitud de transferencia registrada',
+        subtitle: 'Su solicitud está siendo procesada por nuestro equipo',
+        description: 'El tiempo de procesamiento habitual es de 24 a 48 horas hábiles. Nuestro equipo de cumplimiento revisará su expediente.',
+        detailsTitle: 'Detalles de la transferencia',
+        amountLabel: 'Importe',
+        recipientLabel: 'Beneficiario',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Referencia',
+        contactTitle: 'Próximo paso',
+        contactDesc: 'Para finalizar su transferencia, póngase en contacto con nuestro equipo de soporte. Un asesor gestionará su expediente lo antes posible.',
+        contactButton: 'Contactar soporte',
+        returnButton: 'Volver al panel',
       },
       security: {
         title: 'Seguridad y Conformidad',
@@ -12256,6 +12344,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Nome do beneficiário',
         initiateButton: 'Iniciar Transferência',
         initiating: 'Iniciando...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'PT50 XXXX XXXX XXXX XXXX XXXX X',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Rótulo da conta',
+        accountNamePlaceholder: 'Minha conta corrente',
+        useExistingAccount: 'Conta salva',
+        addNewAccount: 'Nova conta',
+      },
+      processing: {
+        title: 'Solicitação de transferência registrada',
+        subtitle: 'Sua solicitação está sendo processada pela nossa equipe',
+        description: 'O tempo de processamento habitual é de 24 a 48 horas úteis. Nossa equipe de conformidade revisará seu processo.',
+        detailsTitle: 'Detalhes da transferência',
+        amountLabel: 'Valor',
+        recipientLabel: 'Beneficiário',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Referência',
+        contactTitle: 'Próximo passo',
+        contactDesc: 'Para finalizar sua transferência, entre em contato com nossa equipe de suporte. Um consultor cuidará do seu processo o mais rápido possível.',
+        contactButton: 'Contatar suporte',
+        returnButton: 'Voltar ao painel',
       },
       security: {
         title: 'Segurança & Conformidade',
@@ -14791,6 +14901,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Nome del beneficiario',
         initiateButton: 'Inizia il trasferimento',
         initiating: 'Inizializzazione...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'IT60 XXXX XXXX XXXX XXXX XXXX XXX',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Etichetta del conto',
+        accountNamePlaceholder: 'Il mio conto corrente',
+        useExistingAccount: 'Conto salvato',
+        addNewAccount: 'Nuovo conto',
+      },
+      processing: {
+        title: 'Richiesta di bonifico registrata',
+        subtitle: 'La sua richiesta è in fase di elaborazione da parte del nostro team',
+        description: 'Il tempo di elaborazione standard è di 24-48 ore lavorative. Il nostro team di conformità esaminerà la sua pratica.',
+        detailsTitle: 'Dettagli del bonifico',
+        amountLabel: 'Importo',
+        recipientLabel: 'Beneficiario',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Riferimento',
+        contactTitle: 'Prossimo passo',
+        contactDesc: 'Per finalizzare il suo bonifico, contatti il nostro team di supporto. Un consulente gestirà la sua pratica il prima possibile.',
+        contactButton: 'Contatta il supporto',
+        returnButton: 'Torna alla dashboard',
       },
       security: {
         title: 'Sicurezza & Conformità',
@@ -17412,6 +17544,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Name des Empfängers',
         initiateButton: 'Überweisung starten',
         initiating: 'Wird initiiert...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'DE89 XXXX XXXX XXXX XXXX XX',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Kontobezeichnung',
+        accountNamePlaceholder: 'Mein Girokonto',
+        useExistingAccount: 'Gespeichertes Konto',
+        addNewAccount: 'Neues Konto',
+      },
+      processing: {
+        title: 'Überweisungsauftrag registriert',
+        subtitle: 'Ihr Antrag wird von unserem Team bearbeitet',
+        description: 'Die übliche Bearbeitungszeit beträgt 24–48 Werktage. Unser Compliance-Team prüft Ihre Unterlagen.',
+        detailsTitle: 'Überweisungsdetails',
+        amountLabel: 'Betrag',
+        recipientLabel: 'Empfänger',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Referenz',
+        contactTitle: 'Nächster Schritt',
+        contactDesc: 'Um Ihre Überweisung abzuschließen, kontaktieren Sie bitte unser Support-Team. Ein Berater kümmert sich schnellstmöglich um Ihre Anfrage.',
+        contactButton: 'Support kontaktieren',
+        returnButton: 'Zurück zum Dashboard',
       },
       security: {
         title: 'Sicherheit & Compliance',
@@ -20003,6 +20157,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Naam van begunstigde',
         initiateButton: 'Overschrijving starten',
         initiating: 'Initialiseren...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'NL91 XXXX XXXX XXXX XXXX XX',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Accountlabel',
+        accountNamePlaceholder: 'Mijn betaalrekening',
+        useExistingAccount: 'Opgeslagen rekening',
+        addNewAccount: 'Nieuwe rekening',
+      },
+      processing: {
+        title: 'Overboekingsaanvraag geregistreerd',
+        subtitle: 'Uw aanvraag wordt verwerkt door ons team',
+        description: 'De gebruikelijke verwerkingstijd is 24–48 werkdagen. Ons compliance-team beoordeelt uw dossier.',
+        detailsTitle: 'Overboekingsdetails',
+        amountLabel: 'Bedrag',
+        recipientLabel: 'Begunstigde',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Referentie',
+        contactTitle: 'Volgende stap',
+        contactDesc: 'Om uw overboeking te voltooien, neem contact op met ons supportteam. Een adviseur behandelt uw dossier zo snel mogelijk.',
+        contactButton: 'Contact opnemen met support',
+        returnButton: 'Terug naar dashboard',
       },
       security: {
         title: 'Beveiliging & Naleving',
@@ -22509,6 +22685,28 @@ export const translations: Record<Language, TranslationKeys> = {
         recipientPlaceholder: 'Ime primatelja',
         initiateButton: 'Pokreni prijenos',
         initiating: 'Pokretanje...',
+        ibanLabel: 'IBAN',
+        ibanPlaceholder: 'HR17 XXXX XXXX XXXX XXXX X',
+        bicLabel: 'BIC / SWIFT',
+        bicPlaceholder: 'XXXXXXXX',
+        accountNameLabel: 'Naziv računa',
+        accountNamePlaceholder: 'Moj tekući račun',
+        useExistingAccount: 'Spremljeni račun',
+        addNewAccount: 'Novi račun',
+      },
+      processing: {
+        title: 'Zahtjev za prijenos registriran',
+        subtitle: 'Vaš zahtjev obrađuje naš tim',
+        description: 'Uobičajeno vrijeme obrade je 24 do 48 radnih sati. Naš tim za usklađenost pregledava vaš predmet.',
+        detailsTitle: 'Detalji prijenosa',
+        amountLabel: 'Iznos',
+        recipientLabel: 'Primatelj',
+        ibanLabel: 'IBAN',
+        referenceLabel: 'Referenca',
+        contactTitle: 'Sljedeći korak',
+        contactDesc: 'Za dovršetak vašeg prijenosa, obratite se našem timu za podršku. Savjetnik će se pobrinuti za vaš predmet u najkraćem mogućem roku.',
+        contactButton: 'Kontaktirajte podršku',
+        returnButton: 'Povratak na nadzornu ploču',
       },
       security: {
         title: 'Sigurnost i usklađenost',
