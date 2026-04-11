@@ -61,7 +61,7 @@ export function ScrollingInfoBanner() {
   const getBgColor = () => {
     switch (currentMessage.type) {
       case 'warning':
-        return 'bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900/30 text-amber-900 dark:text-amber-200';
+        return 'bg-slate-50 dark:bg-slate-900/20 border-slate-200 dark:border-slate-700/30 text-slate-700 dark:text-slate-300';
       case 'success':
         return 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-900/30 text-emerald-900 dark:text-emerald-200';
       case 'update':
