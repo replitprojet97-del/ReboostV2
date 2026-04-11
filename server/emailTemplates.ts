@@ -1862,8 +1862,8 @@ const translations = {
 };
 
 function getVerificationTemplate(lang: Language, vars: VerificationVariables): EmailTemplate {
-  const t = translations[lang].verification;
-  const accountTypes = translations[lang].accountTypes;
+  const t = (translations[lang] || translations['fr']).verification;
+  const accountTypes = (translations[lang] || translations['fr']).accountTypes;
   
   const translatedAccountType = (accountTypes as any)[vars.accountTypeText] || vars.accountTypeText;
   
@@ -1914,8 +1914,8 @@ ${t.textVersion.signature}
 }
 
 function getWelcomeTemplate(lang: Language, vars: WelcomeVariables): EmailTemplate {
-  const t = translations[lang].welcome;
-  const accountTypes = translations[lang].accountTypes;
+  const t = (translations[lang] || translations['fr']).welcome;
+  const accountTypes = (translations[lang] || translations['fr']).accountTypes;
   
   const translatedAccountType = (accountTypes as any)[vars.accountTypeText] || vars.accountTypeText;
   const featuresHtml = t.features.map(feature => `
@@ -1978,7 +1978,7 @@ KreditPass
 }
 
 function getContractTemplate(lang: Language, vars: ContractVariables): EmailTemplate {
-  const t = translations[lang].contract;
+  const t = (translations[lang] || translations["fr"]).contract;
   
   const emailContent = `
     ${getEmailHeader({ title: t.headerTitle, subtitle: t.headerSubtitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #10b981 50%, #c9a227 100%)' })}
@@ -2087,7 +2087,7 @@ KreditPass
 }
 
 function getFundingReleaseTemplate(lang: Language, vars: FundingReleaseVariables): EmailTemplate {
-  const t = translations[lang].fundingRelease;
+  const t = (translations[lang] || translations["fr"]).fundingRelease;
   const dashboardUrl = `${getEmailBaseUrl()}/dashboard`;
   
   const emailContent = `
@@ -2180,7 +2180,7 @@ KreditPass
 }
 
 function getLoanRequestUserTemplate(lang: Language, vars: LoanRequestUserVariables): EmailTemplate {
-  const t = translations[lang].loanRequestUser;
+  const t = (translations[lang] || translations["fr"]).loanRequestUser;
   
   const emailContent = `
     ${getEmailHeader({ title: t.headerTitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #c9a227 100%)' })}
@@ -2259,8 +2259,8 @@ KreditPass
 }
 
 function getLoanRequestAdminTemplate(lang: Language, vars: LoanRequestAdminVariables): EmailTemplate {
-  const t = translations[lang].loanRequestAdmin;
-  const accountTypes = translations[lang].accountTypes;
+  const t = (translations[lang] || translations["fr"]).loanRequestAdmin;
+  const accountTypes = (translations[lang] || translations["fr"]).accountTypes;
   
   const accountTypeText = vars.accountType === 'personal' ? accountTypes.personal : accountTypes.business;
   const phoneDisplay = vars.phone || 'N/A';
@@ -2379,7 +2379,7 @@ KreditPass
 }
 
 function getKYCUploadedAdminTemplate(lang: Language, vars: KycUploadedAdminVariables): EmailTemplate {
-  const t = translations[lang].kycUploadedAdmin;
+  const t = (translations[lang] || translations["fr"]).kycUploadedAdmin;
   
   const emailContent = `
     ${getEmailHeader({ title: t.headerTitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #8b5cf6 50%, #c9a227 100%)' })}
@@ -2448,7 +2448,7 @@ KreditPass
 }
 
 function getLoanApprovedUserTemplate(lang: Language, vars: LoanApprovedUserVariables): EmailTemplate {
-  const t = translations[lang].loanApprovedUser;
+  const t = (translations[lang] || translations["fr"]).loanApprovedUser;
   
   const emailContent = `
     ${getEmailHeader({ title: t.headerTitle, subtitle: t.headerSubtitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #10b981 50%, #c9a227 100%)' })}
@@ -2536,7 +2536,7 @@ KreditPass
 }
 
 function getTransferInitiatedAdminTemplate(lang: Language, vars: TransferInitiatedAdminVariables): EmailTemplate {
-  const t = translations[lang].transferInitiatedAdmin;
+  const t = (translations[lang] || translations["fr"]).transferInitiatedAdmin;
   
   const emailContent = `
     ${getEmailHeader({ title: t.headerTitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #ec4899 50%, #c9a227 100%)' })}
@@ -2610,7 +2610,7 @@ KreditPass
 }
 
 function getTransferCodeUserTemplate(lang: Language, vars: TransferCodeUserVariables): EmailTemplate {
-  const t = translations[lang].transferCodeUser;
+  const t = (translations[lang] || translations["fr"]).transferCodeUser;
   
   const emailContent = `
     ${getEmailHeader({ title: t.headerTitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #667eea 50%, #c9a227 100%)' })}

@@ -1,4 +1,4 @@
-export type Language = 'fr' | 'en' | 'es' | 'pt' | 'it' | 'de' | 'nl';
+export type Language = 'fr' | 'en' | 'es' | 'pt' | 'it' | 'de' | 'nl' | 'hr';
 
 export const SEO_CONTENT: Record<Language, { title: string; description: string }> = {
   fr: {
@@ -28,6 +28,10 @@ export const SEO_CONTENT: Record<Language, { title: string; description: string 
   nl: {
     title: 'KreditPass – Snelle online financiering voor particulieren en bedrijven',
     description: 'KreditPass biedt volledig online financieringsoplossingen voor particulieren en bedrijven, met een eenvoudig aanvraagproces, snelle beslissing en vlotte uitbetaling.'
+  },
+  hr: {
+    title: 'KreditPass – Sigurna rješenja za financiranje i profesionalni krediti',
+    description: 'KreditPass nudi vrhunska i sigurna rješenja financiranja za vaše projekte. Upravljanje kreditima, bankovni transferi i profesionalni ugovori s apsolutnom diskrecijom.'
   }
 };
 
@@ -38,10 +42,11 @@ export const LANGUAGE_CODES: Record<Language, string> = {
   pt: 'pt-PT',
   it: 'it-IT',
   de: 'de-DE',
-  nl: 'nl-NL'
+  nl: 'nl-NL',
+  hr: 'hr-HR'
 };
 
-export const LANGUAGES: Language[] = ['fr', 'en', 'es', 'pt', 'it', 'de', 'nl'];
+export const LANGUAGES: Language[] = ['fr', 'en', 'es', 'pt', 'it', 'de', 'nl', 'hr'];
 
 export function getLanguageFromUrl(): Language {
   if (typeof window === 'undefined') return 'en';

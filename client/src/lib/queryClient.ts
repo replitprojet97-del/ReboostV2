@@ -58,6 +58,12 @@ function getErrorMessage(status: number): string {
       404: 'Bron niet gevonden.',
       500: 'Serverfout. Probeer het opnieuw.',
     },
+    hr: {
+      401: 'Vaša sesija je istekla. Molimo prijavite se ponovo.',
+      403: 'Pristup odbijen.',
+      404: 'Resurs nije pronađen.',
+      500: 'Greška poslužitelja. Molimo pokušajte ponovo.',
+    },
   };
   return messages[lang]?.[status] || messages['en']?.[status] || 'An error occurred';
 }

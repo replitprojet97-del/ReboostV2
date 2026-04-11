@@ -410,6 +410,11 @@ export function getProductsSEOByLocale(locale: string = 'fr'): { title: string; 
       title: 'Unsere Finanzierungsprodukte - KreditPass',
       description: 'Entdecken Sie unser vollständiges Angebot an Finanzierungsprodukten: Privatkredite, Autokredite, Hypotheken, Geschäftskredite und Unternehmenslösungen mit wettbewerbsfähigen Zinssätzen.',
       keywords: getKeywordsByPage('loans')
+    },
+    hr: {
+      title: 'Naši financijski proizvodi - KreditPass',
+      description: 'Otkrijte našu potpunu ponudu financijskih proizvoda: osobni krediti, auto krediti, hipoteke, poslovni krediti i rješenja za poduzeća s konkurentnim stopama.',
+      keywords: getKeywordsByPage('loans')
     }
   };
   
@@ -446,6 +451,11 @@ export function getResourcesSEOByLocale(locale: string = 'fr'): { title: string;
     de: {
       title: 'Ressourcen und Häufig Gestellte Fragen - KreditPass',
       description: 'Finden Sie Antworten auf alle Ihre Fragen zu unseren Finanzierungsdienstleistungen, Antragsprozess, Bedingungen und Rückzahlungsmodalitäten.',
+      keywords: getAllKeywords()
+    },
+    hr: {
+      title: 'Resursi i često postavljana pitanja - KreditPass',
+      description: 'Pronađite odgovore na sva vaša pitanja o našim uslugama financiranja, procesu prijave, uvjetima i modalitetima otplate.',
       keywords: getAllKeywords()
     }
   };
