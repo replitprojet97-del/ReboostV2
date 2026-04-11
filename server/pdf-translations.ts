@@ -133,6 +133,25 @@ export const pdfTranslations = {
     monthlyPayment: 'Maandelijkse Betaling:',
     localeCode: 'nl-NL',
   },
+  hr: {
+    title: 'TABLICA AMORTIZACIJE',
+    filename: 'tablica-amortizacije',
+    loanLabel: 'Kredit:',
+    amountLabel: 'Iznos:',
+    rateLabel: 'Stopa:',
+    durationLabel: 'Trajanje:',
+    months: 'mjeseci',
+    month: 'Mjesec',
+    payment: 'Rata',
+    interest: 'Kamate',
+    principal: 'Glavnica',
+    balance: 'Saldo',
+    summary: 'SAŽETAK',
+    totalInterest: 'Ukupne kamate:',
+    totalCost: 'Ukupni trošak kredita:',
+    monthlyPayment: 'Mjesečna rata:',
+    localeCode: 'hr-HR',
+  },
 } as const;
 
 export type Language = keyof typeof pdfTranslations;
