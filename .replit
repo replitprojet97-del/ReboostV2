@@ -53,6 +53,9 @@ COMETCHAT_REGION = "eu"
 VITE_TRANSFER_PROGRESS_SPEED = "0.5"
 FRONTEND_URL = "https://solventisgroup.org"
 
+[userenv.production]
+BACKEND_URL = "https://api.kreditpass.org"
+
 [[ports]]
 localPort = 5000
 externalPort = 80
