@@ -113,17 +113,17 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Article 8 - Droit de rétractation',
     article8Content: "Conformément aux dispositions légales en vigueur, l'Emprunteur dispose d'un délai de rétractation de 14 jours calendaires à compter de la signature du présent contrat.",
     article9Title: 'Article 9 - Loi applicable et juridiction compétente',
-    article9Content: "Le présent contrat est régi par le droit irlandais. En cas de litige, les parties s'efforceront de trouver une solution amiable. À défaut, les tribunaux compétents de Dublin seront seuls compétents.",
+    article9Content: "Le présent contrat est régi par le droit luxembourgeois. En cas de litige, les parties s'efforceront de trouver une solution amiable. À défaut, les tribunaux compétents de Luxembourg-Ville seront seuls compétents.",
     signatureSection: 'Signatures',
     madeInDuplicates: 'Fait en deux exemplaires originaux',
-    inIreland: 'À Dublin, le',
+    inIreland: 'À Luxembourg, le',
     forKreditPass: 'Pour KreditPass',
     lender: 'Le Prêteur',
     borrower: "L'Emprunteur",
     preSigned: '✓ Document pré-signé et validé',
     management: 'Direction Générale',
     kreditPassStamp: 'KreditPass',
-    luxembourg: 'Irlande',
+    luxembourg: 'Luxembourg',
     electronicSignature: 'Signature électronique certifiée',
     date: 'Date',
     signatureInstructions: 'Instructions de signature :',
@@ -189,17 +189,17 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Article 8 - Right of Withdrawal',
     article8Content: 'In accordance with applicable legal provisions, the Borrower has a withdrawal period of 14 calendar days from the signing of this contract.',
     article9Title: 'Article 9 - Applicable Law and Jurisdiction',
-    article9Content: 'This contract is governed by Irish law. In case of dispute, the parties will endeavor to find an amicable solution. Failing that, the competent courts of Dublin shall have sole jurisdiction.',
+    article9Content: 'This contract is governed by Luxembourg law. In case of dispute, the parties will endeavor to find an amicable solution. Failing that, the competent courts of Luxembourg City shall have sole jurisdiction.',
     signatureSection: 'Signatures',
     madeInDuplicates: 'Made in two original copies',
-    inIreland: 'In Dublin, on',
+    inIreland: 'In Luxembourg, on',
     forKreditPass: 'For KreditPass',
     lender: 'The Lender',
     borrower: 'The Borrower',
     preSigned: '✓ Pre-signed and validated document',
     management: 'General Management',
     kreditPassStamp: 'KreditPass',
-    luxembourg: 'Irlande',
+    luxembourg: 'Luxembourg',
     electronicSignature: 'Certified electronic signature',
     date: 'Date',
     signatureInstructions: 'Signature instructions:',
@@ -265,10 +265,10 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Artikel 8 - Widerrufsrecht',
     article8Content: 'Gemäß den geltenden gesetzlichen Bestimmungen hat der Darlehensnehmer eine Widerrufsfrist von 14 Kalendertagen ab Unterzeichnung dieses Vertrags.',
     article9Title: 'Artikel 9 - Anwendbares Recht und zuständige Gerichte',
-    article9Content: 'Dieser Vertrag unterliegt irischem Recht. Im Streitfall werden sich die Parteien bemühen, eine gütliche Lösung zu finden. Andernfalls sind ausschließlich die zuständigen Gerichte in Dublin zuständig.',
+    article9Content: 'Dieser Vertrag unterliegt luxemburgischem Recht. Im Streitfall werden sich die Parteien bemühen, eine gütliche Lösung zu finden. Andernfalls sind ausschließlich die zuständigen Gerichte in Luxemburg-Stadt zuständig.',
     signatureSection: 'Unterschriften',
     madeInDuplicates: 'In zwei Originalexemplaren erstellt',
-    inIreland: 'In Dublin, am',
+    inIreland: 'In Luxemburg, am',
     forKreditPass: 'Für KreditPass',
     lender: 'Der Darlehensgeber',
     borrower: 'Der Darlehensnehmer',
@@ -341,10 +341,10 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Artigo 8 - Direito de Retratação',
     article8Content: 'Em conformidade com as disposições legais em vigor, o Mutuário dispõe de um prazo de retratação de 14 dias corridos a contar da assinatura deste contrato.',
     article9Title: 'Artigo 9 - Lei Aplicável e Jurisdição Competente',
-    article9Content: 'Este contrato é regido pelo direito irlandês. Em caso de litígio, as parties esforçar-se-ão por encontrar uma solução amigável. Na sua falta, apenas os tribunais competentes de Dublin terão jurisdição.',
+    article9Content: 'Este contrato é regido pelo direito luxemburguês. Em caso de litígio, as partes esforçar-se-ão por encontrar uma solução amigável. Na sua falta, apenas os tribunais competentes do Luxemburgo terão jurisdição.',
     signatureSection: 'Assinaturas',
     madeInDuplicates: 'Feito em dois originais',
-    inIreland: 'Em Dublin, em',
+    inIreland: 'No Luxemburgo, em',
     forKreditPass: 'Por KreditPass',
     lender: 'O Mutuante',
     borrower: 'O Mutuário',
@@ -417,10 +417,10 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Artículo 8 - Derecho de Retractación',
     article8Content: 'De conformidad con las disposiciones legales vigentes, el Prestatario dispone de un plazo de retractación de 14 días calendario a partir de la firma de este contrato.',
     article9Title: 'Artículo 9 - Ley aplicable y jurisdicción competente',
-    article9Content: "El presente contrato se rige por la ley irlandesa. En caso de litigio, las partes se esforzarán por encontrar una solución amistosa. En su defecto, los tribunales competentes de Dublín serán los únicos competentes.",
+    article9Content: "El presente contrato se rige por la ley luxemburguesa. En caso de litigio, las partes se esforzarán por encontrar una solución amistosa. En su defecto, los tribunales competentes de la Ciudad de Luxemburgo serán los únicos competentes.",
     signatureSection: 'Firmas',
     madeInDuplicates: 'Hecho en dos originales',
-    inIreland: 'En Dublín, el',
+    inIreland: 'En Luxemburgo, el',
     forKreditPass: 'Por KreditPass',
     lender: 'El Prestamista',
     borrower: 'El Prestatario',
@@ -493,10 +493,10 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Articolo 8 - Diritto di Recesso',
     article8Content: 'In conformità con le disposizioni legali in vigore, il Mutuatario dispone di un periodo di recesso di 14 giorni di calendario dalla firma del presente contratto.',
     article9Title: 'Articolo 9 - Legge applicabile e foro competente',
-    article9Content: 'Il presente contratto è regolato dalla legge irlandese. In caso di controversia, le parti si sforzeranno di trovare una soluzione amichevole. In mancanza, solo i tribunali competenti di Dublino avranno giurisdizione.',
+    article9Content: 'Il presente contratto è regolato dalla legge lussemburghese. In caso di controversia, le parti si sforzeranno di trovare una soluzione amichevole. In mancanza, solo i tribunali competenti della Città di Lussemburgo avranno giurisdizione.',
     signatureSection: 'Firme',
     madeInDuplicates: 'Fatto in due originali',
-    inIreland: 'A Dublino, il',
+    inIreland: 'A Lussemburgo, il',
     forKreditPass: 'Per KreditPass',
     lender: 'Il Prestatore',
     borrower: 'Il Mutuatario',
@@ -569,10 +569,10 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Artikel 8 - Herroepingsrecht',
     article8Content: 'In overeenstemming met de geldende wettelijke bepalingen heeft de Lener een herroepingsperiode van 14 kalenderdagen vanaf de ondertekening van dit contract.',
     article9Title: 'Artikel 9 - Toepasselijk recht en bevoegde rechtbank',
-    article9Content: 'Dit contract wordt beheerst door het Ierse recht. In geval van geschil zullen de partijen streven naar een minnelijke oplossing. Bij gebrek daaraan zijn alleen de bevoegde rechtbanken van Dublin bevoegd.',
+    article9Content: 'Dit contract wordt beheerst door het Luxemburgse recht. In geval van geschil zullen de partijen streven naar een minnelijke oplossing. Bij gebrek daaraan zijn alleen de bevoegde rechtbanken van Luxemburg-Stad bevoegd.',
     signatureSection: 'Handtekeningen',
     madeInDuplicates: 'Opgesteld in twee originelen',
-    inIreland: 'In Dublin, op',
+    inIreland: 'In Luxemburg, op',
     forKreditPass: 'Voor KreditPass',
     lender: 'De Kredietgever',
     borrower: 'De Lener',
@@ -645,17 +645,17 @@ const contractTranslations: Record<ContractLanguage, ContractTranslations> = {
     article8Title: 'Članak 8 - Pravo na Odustanak',
     article8Content: 'U skladu s primjenjivim zakonskim odredbama, Zajmoprimac ima rok za odustanak od 14 kalendarskih dana od potpisivanja ovog ugovora.',
     article9Title: 'Članak 9 - Mjerodavno Pravo i Nadležnost',
-    article9Content: 'Ovaj ugovor uređuje se irskim pravom. U slučaju spora, stranke će nastojati pronaći mirno rješenje. U suprotnom, isključivo su nadležni mjerodavni sudovi u Dublinu.',
+    article9Content: 'Ovaj ugovor uređuje se luksemburškim pravom. U slučaju spora, stranke će nastojati pronaći mirno rješenje. U suprotnom, isključivo su nadležni mjerodavni sudovi u Luksemburgu.',
     signatureSection: 'Potpisi',
     madeInDuplicates: 'Sačinjeno u dva originalna primjerka',
-    inIreland: 'U Dublinu, dana',
+    inIreland: 'U Luksemburgu, dana',
     forKreditPass: 'Za KreditPass',
     lender: 'Zajmodavac',
     borrower: 'Zajmoprimac',
     preSigned: '✓ Prethodno potpisani i validirani dokument',
     management: 'Opće Upravljanje',
     kreditPassStamp: 'KreditPass',
-    luxembourg: 'Irska',
+    luxembourg: 'Luksemburg',
     electronicSignature: 'Certificirani elektronički potpis',
     date: 'Datum',
     signatureInstructions: 'Upute za potpis:',
@@ -1015,8 +1015,8 @@ const getContractTemplate = (data: ContractData): string => {
       </div>
       <div class="header-info">
         <div class="company-name">KreditPass S.à r.l.</div>
-        <span class="contact-line"><strong>Siège:</strong> 1 Pakenhamhall Rd, Townparks, Castlepollard, Co. Westmeath, N91 X6Y0, Ireland</span>
-        <span class="contact-line"><strong>Company Reg:</strong> Ireland</span>
+        <span class="contact-line"><strong>Siège:</strong> 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg</span>
+        <span class="contact-line"><strong>Company Reg:</strong> RCS Luxembourg</span>
         <span class="contact-line"><strong>Tél:</strong> +353-431-5918</span>
         <span class="contact-line"><strong>Email:</strong> infos@kreditpass.org</span>
         <span class="contact-line"><strong>Web:</strong> www.kreditpass.org</span>
@@ -1181,8 +1181,8 @@ const getContractTemplate = (data: ContractData): string => {
   <div class="footer">
     <p class="footer-bold">KreditPass - S.à r.l.</p>
     <p style="margin: 8px 0;">
-      ${t.shareCapital}: 1 000 000 € • Company Registration Ireland<br>
-      ${t.headquarters}: 1 Pakenhamhall Rd, Townparks, Castlepollard, Co. Westmeath, N91 X6Y0, Ireland<br>
+      ${t.shareCapital}: 120 000 000 € • RCS Luxembourg<br>
+      ${t.headquarters}: 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg<br>
       ${t.tel}: +353-431-5918 • Email: infos@kreditpass.org<br>
       www.kreditpass.org
     </p>

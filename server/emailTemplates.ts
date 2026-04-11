@@ -3329,6 +3329,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
   const lang = vars.language || 'fr';
 
   const translations: Record<string, {
+    headerTitle: string;
     subject: string;
     greeting: string;
     intro: string;
@@ -3344,6 +3345,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
     footer: string;
   }> = {
     fr: {
+      headerTitle: 'Frais de Reconnaissance de Dette',
       subject: 'Action requise – Frais de reconnaissance de dette – KreditPass',
       greeting: `Madame, Monsieur ${vars.userName},`,
       intro: 'Suite à la signature de votre contrat de prêt, nous vous informons que des frais de reconnaissance de dette d\'un montant de <strong>184,00 EUR</strong> sont à régler avant le déblocage définitif des fonds.',
@@ -3359,6 +3361,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     en: {
+      headerTitle: 'Debt Recognition Fee',
       subject: 'Action Required – Debt Recognition Fee – KreditPass',
       greeting: `Dear ${vars.userName},`,
       intro: 'Following the signing of your loan agreement, we inform you that a debt recognition fee of <strong>€184.00</strong> is due before the final release of funds.',
@@ -3374,6 +3377,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     de: {
+      headerTitle: 'Schuldanerkennungsgebühr',
       subject: 'Maßnahme erforderlich – Schuldanerkennungsgebühr – KreditPass',
       greeting: `Sehr geehrte/r ${vars.userName},`,
       intro: 'Nach der Unterzeichnung Ihres Darlehensvertrags teilen wir Ihnen mit, dass eine Schuldanerkennungsgebühr in Höhe von <strong>184,00 EUR</strong> vor der endgültigen Auszahlung der Mittel zu entrichten ist.',
@@ -3389,6 +3393,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     es: {
+      headerTitle: 'Tarifa de Reconocimiento de Deuda',
       subject: 'Acción requerida – Tarifa de reconocimiento de deuda – KreditPass',
       greeting: `Estimado/a ${vars.userName},`,
       intro: 'Tras la firma de su contrato de préstamo, le informamos que una tarifa de reconocimiento de deuda de <strong>184,00 EUR</strong> debe abonarse antes del desbloqueo definitivo de los fondos.',
@@ -3404,6 +3409,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     pt: {
+      headerTitle: 'Taxa de Reconhecimento de Dívida',
       subject: 'Ação necessária – Taxa de reconhecimento de dívida – KreditPass',
       greeting: `Caro(a) ${vars.userName},`,
       intro: 'Após a assinatura do seu contrato de empréstimo, informamos que uma taxa de reconhecimento de dívida no valor de <strong>184,00 EUR</strong> deve ser paga antes da liberação definitiva dos fundos.',
@@ -3419,6 +3425,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     it: {
+      headerTitle: 'Commissione di Riconoscimento del Debito',
       subject: 'Azione richiesta – Spese di riconoscimento del debito – KreditPass',
       greeting: `Gentile ${vars.userName},`,
       intro: 'A seguito della firma del contratto di prestito, La informiamo che è dovuta una commissione di riconoscimento del debito di <strong>184,00 EUR</strong> prima dello sblocco definitivo dei fondi.',
@@ -3434,6 +3441,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     nl: {
+      headerTitle: 'Kosten voor Schulderkentenis',
       subject: 'Actie vereist – Kosten voor schulderkentenis – KreditPass',
       greeting: `Geachte ${vars.userName},`,
       intro: 'Na de ondertekening van uw leningsovereenkomst informeren wij u dat een vergoeding voor schulderkentenis van <strong>€184,00</strong> verschuldigd is vóór de definitieve vrijgave van de middelen.',
@@ -3449,6 +3457,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
       footer: 'KreditPass – 14 Rue du Marché-aux-Herbes, L-1728 Luxembourg | support@kreditpass.org',
     },
     hr: {
+      headerTitle: 'Naknada za Priznanicu Duga',
       subject: 'Potrebna radnja – Naknade za priznanicu duga – KreditPass',
       greeting: `Poštovani/a ${vars.userName},`,
       intro: 'Nakon potpisivanja ugovora o zajmu, obavještavamo Vas da je naknada za priznanicu duga u iznosu od <strong>184,00 EUR</strong> potrebna prije konačnog isplate sredstava.',
@@ -3468,7 +3477,7 @@ export function getRecognitionFeeEmailTemplate(vars: {
   const t = translations[lang] || translations['fr'];
 
   const emailContent = `
-    ${getEmailHeader({ title: 'Frais de Reconnaissance de Dette', gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #c9a227 100%)' })}
+    ${getEmailHeader({ title: t.headerTitle, gradientColors: 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #c9a227 100%)' })}
     <tr>
       <td style="padding: 40px 30px;">
         <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">${t.greeting}</p>

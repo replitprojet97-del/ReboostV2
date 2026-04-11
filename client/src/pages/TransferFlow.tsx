@@ -564,7 +564,7 @@ export default function TransferFlow() {
                   </div>
                   <div className="flex-1 flex flex-col items-center py-2.5 px-3 bg-gray-50 dark:bg-gray-700/50 border-r border-gray-200 dark:border-gray-700">
                     <span className="text-gray-400 dark:text-gray-500 mb-0.5">{t.transferFlow.complete.feesLabel}</span>
-                    <span className="font-semibold text-green-600 dark:text-green-400">{t.transferFlow.form.feesFreeLabel}</span>
+                    <span className="font-semibold text-green-600 dark:text-green-400">-</span>
                   </div>
                   <div className="flex-1 flex flex-col items-center py-2.5 px-3 bg-gray-50 dark:bg-gray-700/50">
                     <span className="text-gray-400 dark:text-gray-500 mb-0.5">{t.transferFlow.security.processingTimeTitle}</span>
@@ -681,7 +681,7 @@ function ProcessingStep({ t, transfer, refNum, amount, recipient, onBack }: {
             <DetailRow
               label={t.transferFlow.complete.feesLabel}
               value="0,00 EUR"
-              badge={t.transferFlow.form.feesFreeLabel}
+              badge="-"
             />
             <DetailRow label={t.transferFlow.form.summaryTitle} value={t.transferFlow.form.networkSEPA} />
           </div>
@@ -763,7 +763,7 @@ function CompleteStep({ t, transfer, refNum, onBack }: {
             <DetailRow
               label={t.transferFlow.complete.feesLabel}
               value="0,00 EUR"
-              badge={t.transferFlow.form.feesFreeLabel}
+              badge="-"
             />
           </div>
         </div>
