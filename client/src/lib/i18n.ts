@@ -1590,8 +1590,17 @@ type TranslationKeys = {
       processingTimeDesc: string;
       strongAuthTitle: string;
       strongAuthDesc: string;
-      securityCodesTitle: string;
-      securityCodesDesc: string;
+      helpTitle: string;
+      helpIbanTitle: string;
+      helpIbanDesc: string;
+      helpBicTitle: string;
+      helpBicDesc: string;
+      helpTip: string;
+      guaranteesTitle: string;
+      guarantee1: string;
+      guarantee2: string;
+      guarantee3: string;
+      guarantee4: string;
     };
     verification: {
       title: string;
@@ -4245,8 +4254,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Les fonds seront disponibles sous 24 à 72 heures ouvrées selon votre banque',
         strongAuthTitle: 'Authentification renforcée',
         strongAuthDesc: 'Validation en plusieurs étapes pour garantir la sécurité de votre transaction',
-        securityCodesTitle: 'Codes de sécurité requis',
-        securityCodesDesc: 'Des codes de validation vous seront demandés pendant le processus. Gardez votre téléphone à portée de main.',
+        helpTitle: 'Aide au remplissage',
+        helpIbanTitle: 'Où trouver mon IBAN ?',
+        helpIbanDesc: 'Il figure sur votre RIB ou dans votre espace bancaire en ligne.',
+        helpBicTitle: 'Qu\'est-ce que le BIC ?',
+        helpBicDesc: 'Code international de votre banque, composé de 8 ou 11 caractères.',
+        helpTip: 'Conseil : copiez-collez directement depuis votre banque pour éviter les erreurs.',
+        guaranteesTitle: 'Vos garanties',
+        guarantee1: 'Virement SEPA protocolé',
+        guarantee2: 'Données chiffrées AES-256',
+        guarantee3: 'Délai garanti 1–3 jours ouvrés',
+        guarantee4: 'Conforme au droit luxembourgeois',
       },
       verification: {
         title: 'Vérification du transfert',
@@ -7009,8 +7027,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Funds will be available within 24 to 72 business hours depending on your bank',
         strongAuthTitle: 'Enhanced Authentication',
         strongAuthDesc: 'Multi-step validation to ensure the security of your transaction',
-        securityCodesTitle: 'Security Codes Required',
-        securityCodesDesc: 'Validation codes will be requested during the process. Keep your phone handy.',
+        helpTitle: 'Filling Guide',
+        helpIbanTitle: 'Where to find my IBAN?',
+        helpIbanDesc: 'It appears on your bank statement or in your online banking portal.',
+        helpBicTitle: 'What is the BIC?',
+        helpBicDesc: 'Your bank\'s international code, 8 or 11 characters long.',
+        helpTip: 'Tip: copy and paste directly from your bank to avoid errors.',
+        guaranteesTitle: 'Your Guarantees',
+        guarantee1: 'SEPA protocol transfer',
+        guarantee2: 'AES-256 encrypted data',
+        guarantee3: 'Guaranteed 1–3 business day delivery',
+        guarantee4: 'Compliant with Luxembourg law',
       },
       verification: {
         title: 'Transfer Verification',
@@ -9666,8 +9693,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Los fondos estarán disponibles en 24 a 72 horas laborables según su banco',
         strongAuthTitle: 'Autenticación reforzada',
         strongAuthDesc: 'Validación en varios pasos para garantizar la seguridad de su transacción',
-        securityCodesTitle: 'Códigos de seguridad requeridos',
-        securityCodesDesc: 'Se solicitarán códigos de validación durante el proceso. Mantenga su teléfono a mano.',
+        helpTitle: 'Guía de Relleno',
+        helpIbanTitle: '¿Dónde encontrar mi IBAN?',
+        helpIbanDesc: 'Aparece en su extracto bancario o en su portal de banca online.',
+        helpBicTitle: '¿Qué es el BIC?',
+        helpBicDesc: 'Código internacional de su banco, de 8 u 11 caracteres.',
+        helpTip: 'Consejo: copie y pegue directamente desde su banco para evitar errores.',
+        guaranteesTitle: 'Sus Garantías',
+        guarantee1: 'Transferencia SEPA protocolada',
+        guarantee2: 'Datos cifrados AES-256',
+        guarantee3: 'Plazo garantizado de 1 a 3 días hábiles',
+        guarantee4: 'Conforme al derecho luxemburgués',
       },
       verification: {
         title: 'Verificación de la Transferencia',
@@ -12421,8 +12457,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Os fundos estarão disponíveis em 24 a 72 horas úteis, dependendo do seu banco',
         strongAuthTitle: 'Autenticação reforçada',
         strongAuthDesc: 'Validação em várias etapas para garantir a segurança da sua transação',
-        securityCodesTitle: 'Códigos de segurança necessários',
-        securityCodesDesc: 'Códigos de validação serão solicitados durante o processo. Mantenha seu telefone à mão.',
+        helpTitle: 'Guia de Preenchimento',
+        helpIbanTitle: 'Onde encontrar o meu IBAN?',
+        helpIbanDesc: 'Consta no seu extrato bancário ou no portal de banco online.',
+        helpBicTitle: 'O que é o BIC?',
+        helpBicDesc: 'Código internacional do seu banco, com 8 ou 11 caracteres.',
+        helpTip: 'Dica: copie e cole diretamente do seu banco para evitar erros.',
+        guaranteesTitle: 'As Suas Garantias',
+        guarantee1: 'Transferência SEPA protocolada',
+        guarantee2: 'Dados cifrados AES-256',
+        guarantee3: 'Prazo garantido de 1 a 3 dias úteis',
+        guarantee4: 'Conforme ao direito luxemburguês',
       },
       verification: {
         title: 'Verificação de Transferência',
@@ -14987,8 +15032,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'I fondi saranno disponibili entro 24-72 ore lavorative a seconda della tua banca',
         strongAuthTitle: 'Autenticazione rafforzata',
         strongAuthDesc: 'Convalida in più fasi per garantire la sicurezza della transazione',
-        securityCodesTitle: 'Codici di sicurezza richiesti',
-        securityCodesDesc: 'I codici di convalida verranno richiesti durante il processo. Tieni il telefono a portata di mano.',
+        helpTitle: 'Guida alla Compilazione',
+        helpIbanTitle: 'Dove trovare il mio IBAN?',
+        helpIbanDesc: 'Si trova sull\'estratto conto o nel portale di home banking.',
+        helpBicTitle: 'Cos\'è il BIC?',
+        helpBicDesc: 'Codice internazionale della tua banca, di 8 o 11 caratteri.',
+        helpTip: 'Consiglio: copia e incolla direttamente dalla tua banca per evitare errori.',
+        guaranteesTitle: 'Le Vostre Garanzie',
+        guarantee1: 'Bonifico SEPA protocolato',
+        guarantee2: 'Dati cifrati AES-256',
+        guarantee3: 'Elaborazione garantita in 1–3 giorni lavorativi',
+        guarantee4: 'Conforme al diritto lussemburghese',
       },
       verification: {
         title: 'Verifica del trasferimento',
@@ -17639,8 +17693,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Die Mittel werden innerhalb von 24 bis 72 Werktagen je nach Ihrer Bank verfügbar sein',
         strongAuthTitle: 'Verstärkte Authentifizierung',
         strongAuthDesc: 'Mehrstufige Validierung zur Gewährleistung der Sicherheit Ihrer Transaktion',
-        securityCodesTitle: 'Erforderliche Sicherheitscodes',
-        securityCodesDesc: 'Validierungscodes werden während des Prozesses angefordert. Halten Sie Ihr Telefon bereit.',
+        helpTitle: 'Ausfüllhilfe',
+        helpIbanTitle: 'Wo finde ich meine IBAN?',
+        helpIbanDesc: 'Sie steht auf Ihrem Kontoauszug oder im Online-Banking-Portal.',
+        helpBicTitle: 'Was ist der BIC?',
+        helpBicDesc: 'Internationaler Code Ihrer Bank, 8 oder 11 Zeichen.',
+        helpTip: 'Tipp: Kopieren Sie direkt aus Ihrem Banking-Portal, um Fehler zu vermeiden.',
+        guaranteesTitle: 'Ihre Garantien',
+        guarantee1: 'SEPA-Protokollüberweisung',
+        guarantee2: 'AES-256-verschlüsselte Daten',
+        guarantee3: 'Garantierte Bearbeitung in 1–3 Werktagen',
+        guarantee4: 'Konform mit luxemburgischem Recht',
       },
       verification: {
         title: 'Überweisungsüberprüfung',
@@ -20261,8 +20324,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Het geld zal binnen 24 tot 72 werkdagen beschikbaar zijn, afhankelijk van uw bank',
         strongAuthTitle: 'Versterkte authenticatie',
         strongAuthDesc: 'Validatie in meerdere stappen om de veiligheid van uw transactie te garanderen',
-        securityCodesTitle: 'Beveiligingscodes vereist',
-        securityCodesDesc: 'Validatiecodes worden tijdens het proces gevraagd. Houd uw telefoon bij de hand.',
+        helpTitle: 'Invulhulp',
+        helpIbanTitle: 'Waar vind ik mijn IBAN?',
+        helpIbanDesc: 'U vindt het op uw rekeningafschrift of in uw online bankportal.',
+        helpBicTitle: 'Wat is de BIC?',
+        helpBicDesc: 'Internationale code van uw bank, 8 of 11 tekens.',
+        helpTip: 'Tip: kopieer en plak rechtstreeks vanuit uw bank om fouten te vermijden.',
+        guaranteesTitle: 'Uw Garanties',
+        guarantee1: 'SEPA-protocoloverschrijving',
+        guarantee2: 'AES-256 versleutelde gegevens',
+        guarantee3: 'Gegarandeerde verwerking in 1–3 werkdagen',
+        guarantee4: 'Conform Luxemburgs recht',
       },
       verification: {
         title: 'Verificatie van overschrijving',
@@ -22798,8 +22870,17 @@ export const translations: Record<Language, TranslationKeys> = {
         processingTimeDesc: 'Sredstva će biti dostupna u roku od 24 do 72 radna sata ovisno o vašoj banci',
         strongAuthTitle: 'Pojačana autentifikacija',
         strongAuthDesc: 'Višestupanjska provjera za osiguranje sigurnosti vaše transakcije',
-        securityCodesTitle: 'Potrebni sigurnosni kodovi',
-        securityCodesDesc: 'Tijekom procesa tražit će se kodovi za provjeru. Držite telefon pri ruci.',
+        helpTitle: 'Pomoć pri ispunjavanju',
+        helpIbanTitle: 'Gdje pronaći moj IBAN?',
+        helpIbanDesc: 'Nalazi se na vašem bankovnom izvodu ili u online bankarskom portalu.',
+        helpBicTitle: 'Što je BIC?',
+        helpBicDesc: 'Međunarodni kod vaše banke, sastavljen od 8 ili 11 znakova.',
+        helpTip: 'Savjet: kopirajte i zalijepite izravno iz vaše banke kako biste izbjegli greške.',
+        guaranteesTitle: 'Vaša jamstva',
+        guarantee1: 'SEPA protokolni prijenos',
+        guarantee2: 'Podaci šifrirani AES-256',
+        guarantee3: 'Zajamčena obrada u roku 1–3 radna dana',
+        guarantee4: 'U skladu s luksemburškim pravom',
       },
       verification: {
         title: 'Provjera prijenosa',
