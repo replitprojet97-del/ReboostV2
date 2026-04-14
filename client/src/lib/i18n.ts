@@ -62,7 +62,7 @@ export async function detectLanguageFromIP(): Promise<Language | null> {
 }
 
 // Read explicit user language synchronously before first render
-const initialLanguage: Language = getStoredLanguage() || 'hr';
+const initialLanguage: Language = getStoredLanguage() || 'fr';
 
 export const useLanguage = create<LanguageStore>()(
   (set) => ({

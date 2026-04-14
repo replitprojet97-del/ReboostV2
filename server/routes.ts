@@ -328,17 +328,21 @@ export async function registerRoutes(app: Express, sessionMiddleware: any): Prom
         'DE': 'de', // Germany
         'AT': 'de', // Austria
         'NL': 'nl', // Netherlands
+        'LU': 'fr', // Luxembourg
+        'MC': 'fr', // Monaco
         'GB': 'en', // United Kingdom
         'US': 'en', // United States
         'AU': 'en', // Australia
         'IE': 'en', // Ireland
         'NZ': 'en', // New Zealand
         'ZA': 'en', // South Africa
+        'IN': 'en', // India
+        'SG': 'en', // Singapore
       };
 
       // For development/localhost, use a default
       if (!clientIp || clientIp === '::1' || clientIp.startsWith('127.') || clientIp.startsWith('192.168.')) {
-        return res.json({ language: 'hr', country: null, source: 'default' });
+        return res.json({ language: 'fr', country: null, source: 'default' });
       }
 
       // Call FreeIPAPI for geolocation (HTTPS supported, no API key required)
@@ -356,10 +360,10 @@ export async function registerRoutes(app: Express, sessionMiddleware: any): Prom
       }
 
       // Default fallback
-      res.json({ language: 'hr', country: null, source: 'fallback' });
+      res.json({ language: 'fr', country: null, source: 'fallback' });
     } catch (error) {
       console.error('Language detection error:', error);
-      res.json({ language: 'hr', country: null, source: 'error' });
+      res.json({ language: 'fr', country: null, source: 'error' });
     }
   });
 
